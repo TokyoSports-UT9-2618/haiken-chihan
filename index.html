@@ -992,6 +992,20 @@ function submitHanName() {
   finalizeHan(null);
 }
 
+function dissolveHan(hanId) {
+  saveHistory();
+  // Remove all assignments for this han
+  Object.keys(state.assignments).forEach(code => {
+    if (state.assignments[code] === hanId) delete state.assignments[code];
+  });
+  // Remove the han
+  state.hans = state.hans.filter(h => h.id !== hanId);
+  if (state.currentHanId === hanId) state.currentHanId = null;
+  updateAllStyles();
+  updateSidebar();
+  showToast('藩を解散しました（Cmd+Zで戻せます）');
+}
+
 function finalizeHan(tokkuData) {
   const currentHan = state.hans.find(h => h.id === state.currentHanId);
   if (!currentHan) return;
@@ -1517,6 +1531,7 @@ function updateSidebar() {
         ${tokkuBadge}
         <div class="han-card-actions">
           <button class="han-card-btn" onclick="renameHan('${han.id}')">✏ リネーム</button>
+          <button class="han-card-btn" style="color:#c0392b;" onclick="dissolveHan('${han.id}')">解散</button>
         </div>
       </div>`;
     }).join('');
