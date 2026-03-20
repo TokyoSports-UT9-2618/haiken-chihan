@@ -1343,21 +1343,31 @@ function buildPDFReport(el) {
     </div>`
   ).join('');
 
+  // AI overall review (from DOM)
+  const aiReviewEl = document.getElementById('aiReview');
+  const aiReviewText = aiReviewEl && !aiReviewEl.querySelector('.ai-loading') ? aiReviewEl.textContent.trim() : null;
+
   const hanRowsHTML = confirmedHans.map(han => {
     const members = getHanMembers(han.id);
     const pop = getHanPopulation(han.id);
     const tax = members.reduce((s, m) => s + m.taxRevenue, 0);
     const tokku = han.tokku ? `<span style="font-size:10px;color:#1a6ea3;margin-left:5px;background:#e8f4fd;padding:1px 5px;border-radius:3px;">${han.tokku.label}</span>` : '';
+    // AI per-han comment (from DOM)
+    const aiHanEl = document.getElementById('ai-han-' + han.id);
+    const aiHanText = aiHanEl && !aiHanEl.querySelector('.ai-loading-text') ? aiHanEl.textContent.trim() : null;
+    const aiRow = aiHanText
+      ? `<tr><td colspan="5" style="padding:3px 8px 7px 28px;font-size:10px;color:#666;font-style:italic;border-bottom:1px solid #eee;background:#fafafa;">${aiHanText}</td></tr>`
+      : '';
     return `<tr>
-      <td style="padding:5px 8px;border-bottom:1px solid #eee;white-space:nowrap;">
+      <td style="padding:5px 8px;border-bottom:${aiHanText ? 'none' : '1px solid #eee'};white-space:nowrap;">
         <span style="display:inline-block;width:10px;height:10px;background:${han.color};border-radius:2px;margin-right:4px;vertical-align:middle;"></span>
         <strong>${han.name}</strong>${tokku}
       </td>
-      <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">${(pop / 10000).toFixed(1)}万人</td>
-      <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">${members.length}市町村</td>
-      <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">約${formatOku(tax)}億円</td>
-      <td style="padding:5px 8px;border-bottom:1px solid #eee;font-size:9px;color:#888;">${members.map(m => m.name).join('・')}</td>
-    </tr>`;
+      <td style="padding:5px 8px;border-bottom:${aiHanText ? 'none' : '1px solid #eee'};text-align:right;white-space:nowrap;">${(pop / 10000).toFixed(1)}万人</td>
+      <td style="padding:5px 8px;border-bottom:${aiHanText ? 'none' : '1px solid #eee'};text-align:right;white-space:nowrap;">${members.length}市町村</td>
+      <td style="padding:5px 8px;border-bottom:${aiHanText ? 'none' : '1px solid #eee'};text-align:right;white-space:nowrap;">約${formatOku(tax)}億円</td>
+      <td style="padding:5px 8px;border-bottom:${aiHanText ? 'none' : '1px solid #eee'};font-size:9px;color:#888;">${members.map(m => m.name).join('・')}</td>
+    </tr>${aiRow}`;
   }).join('');
 
   const MAP_W = 714, MAP_H = 424;
@@ -1372,6 +1382,7 @@ function buildPDFReport(el) {
         <div style="font-size:28px;font-weight:bold;color:#e67e22;">${score.toLocaleString()}<span style="font-size:14px;margin-left:2px;">点</span></div>
         <div style="font-size:12px;color:#555;">${confirmedHans.length}藩編成 ／ 福島県59市町村</div>
       </div>
+      ${aiReviewText ? `<div style="background:#f8f4e8;border-left:4px solid #e67e22;padding:10px 14px;border-radius:0 4px 4px 0;font-size:12px;color:#444;line-height:1.7;margin-bottom:14px;">${aiReviewText}</div>` : ''}
       <div style="display:flex;gap:16px;align-items:flex-start;">
         <canvas id="_pdfMapEl" width="${MAP_W}" height="${MAP_H}" style="display:block;width:${MAP_W}px;height:${MAP_H}px;border:1px solid #ccc;border-radius:4px;flex-shrink:0;"></canvas>
         <div style="min-width:110px;">${legendHTML}</div>
@@ -1427,6 +1438,11 @@ function buildPDFReport(el) {
 async function generatePDF(btn) {
   if (!window.html2canvas || !window.jspdf) {
     alert('PDFライブラリの読み込みが完了していません。少し待ってから再試行してください。');
+    return;
+  }
+  const aiEl = document.getElementById('aiReview');
+  if (aiEl && aiEl.querySelector('.ai-loading')) {
+    showToast('AI講評を取得中です。少し待ってから再度お試しください');
     return;
   }
   const origText = btn.textContent;
