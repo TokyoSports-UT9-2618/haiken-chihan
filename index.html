@@ -150,6 +150,39 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 .ai-han-comment { font-size: 12px; color: #777; margin-top: 5px; line-height: 1.6; font-style: italic; padding-top: 4px; border-top: 1px dashed #eee; }
 .ai-loading-text { color: #ccc; font-size: 11px; }
 
+/* Help modal */
+.help-btn { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; margin-right: 8px; }
+.help-btn:hover { background: rgba(255,255,255,0.15); }
+.help-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.65); z-index: 9800; display: none; align-items: center; justify-content: center; }
+.help-overlay.show { display: flex; }
+.help-modal { background: #fff; border-radius: 14px; width: 92%; max-width: 620px; max-height: 88vh; overflow-y: auto; box-shadow: 0 24px 64px rgba(0,0,0,0.35); display: flex; flex-direction: column; }
+.help-modal-header { background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff; padding: 20px 24px 16px; border-radius: 14px 14px 0 0; position: sticky; top: 0; z-index: 1; }
+.help-modal-header h2 { font-size: 18px; margin-bottom: 4px; }
+.help-modal-header p { font-size: 12px; opacity: 0.75; line-height: 1.5; }
+.help-modal-close { position: absolute; top: 14px; right: 18px; background: rgba(255,255,255,0.2); border: none; color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; font-size: 16px; line-height: 1; }
+.help-modal-close:hover { background: rgba(255,255,255,0.35); }
+.help-modal-body { padding: 20px 24px 24px; }
+.help-steps { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.help-step { display: flex; gap: 14px; align-items: flex-start; }
+.help-step-num { flex-shrink: 0; width: 28px; height: 28px; background: #2c3e50; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+.help-step-body h4 { font-size: 14px; font-weight: 700; margin-bottom: 3px; color: #2c3e50; }
+.help-step-body p { font-size: 12px; color: #555; line-height: 1.6; }
+.help-step-body .help-note { font-size: 11px; color: #999; margin-top: 3px; }
+.help-section { margin-bottom: 18px; }
+.help-section h3 { font-size: 13px; font-weight: 700; color: #fff; background: #7f8c8d; padding: 4px 10px; border-radius: 4px; margin-bottom: 10px; display: inline-block; }
+.help-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.help-card { background: #f8f8f8; border-radius: 6px; padding: 10px 12px; border-left: 3px solid #3498db; }
+.help-card.orange { border-left-color: #e67e22; }
+.help-card.green { border-left-color: #27ae60; }
+.help-card.purple { border-left-color: #9b59b6; }
+.help-card h4 { font-size: 12px; font-weight: 700; margin-bottom: 3px; color: #333; }
+.help-card p { font-size: 11px; color: #666; line-height: 1.5; }
+.help-score-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.help-score-table th { background: #ecf0f1; padding: 5px 10px; text-align: left; font-size: 11px; color: #666; }
+.help-score-table td { padding: 5px 10px; border-bottom: 1px solid #eee; }
+.help-footer-btn { display: block; width: 100%; padding: 12px; background: #27ae60; color: #fff; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 4px; }
+.help-footer-btn:hover { background: #219a52; }
+
 /* Responsive */
 @media (max-width: 1199px) {
   #map { flex: 6; }
@@ -171,6 +204,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
     <div class="subtitle">福島県 59市町村 → 新しい藩へ</div>
   </div>
   <div>
+    <button class="help-btn" onclick="openHelp()">？ 使い方</button>
     <button class="undo-btn" id="btnUndo" onclick="undoAction()" disabled>↩ 戻る</button>
     <button class="reset-btn" onclick="resetGame()">リセット</button>
   </div>
@@ -273,6 +307,100 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
   <input type="text" id="tokkuCustom" placeholder="特区の理由を入力" style="display:none;">
   <div class="tokku-btn-row">
     <button class="btn btn-confirm" onclick="submitTokku()">確定する</button>
+  </div>
+</div>
+
+<!-- Help modal -->
+<div class="help-overlay" id="helpOverlay" onclick="closeHelp(event)">
+  <div class="help-modal">
+    <div class="help-modal-header" style="position:relative;">
+      <h2>廃県置藩シミュレーター　使い方</h2>
+      <p>福島県59市町村を「藩」に再編成するシミュレーターです。<br>江戸時代の廃藩置県を逆転させ、現代版の道州制を体感してみましょう。</p>
+      <button class="help-modal-close" onclick="closeHelp()">✕</button>
+    </div>
+    <div class="help-modal-body">
+
+      <div class="help-section">
+        <h3>▶ 遊び方（5ステップ）</h3>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="help-step-num">1</div>
+            <div class="help-step-body">
+              <h4>新しい藩を作る</h4>
+              <p>サイドパネルの「新しい藩を作る」ボタンを押します。地図上の市町村が選択可能な状態になります。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">2</div>
+            <div class="help-step-body">
+              <h4>地図をクリックして市町村を追加</h4>
+              <p>地図上の市町村をクリックして藩に追加します。金色の枠線が「追加済み」、破線が「追加可能」な市町村です。</p>
+              <p class="help-note">⚠ 飛び地禁止：隣接している市町村のみ追加できます。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">3</div>
+            <div class="help-step-body">
+              <h4>人口ゲージを目標の緑帯に合わせる</h4>
+              <p>1藩あたりの目標人口は <strong>30〜50万人</strong>（理想は40万人）。サイドパネルのゲージが緑になるよう調整しましょう。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">4</div>
+            <div class="help-step-body">
+              <h4>藩を確定する</h4>
+              <p>「この藩を確定する」ボタンを押し、藩名を入力します。人口が30万未満の場合は「特区」設定が可能です（減点が半減されます）。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">5</div>
+            <div class="help-step-body">
+              <h4>全59市町村を割り当ててゴール！</h4>
+              <p>1〜4を繰り返し、全ての市町村を藩に割り当てるとゲームクリアです。AIが藩編成を講評し、PDFレポートが生成できます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="help-section">
+        <h3>▶ スコアの仕組み</h3>
+        <table class="help-score-table">
+          <thead><tr><th>条件</th><th>点数</th></tr></thead>
+          <tbody>
+            <tr><td>藩ひとつあたりの基本点</td><td>1,000点</td></tr>
+            <tr><td>人口が30〜50万人（適正範囲）</td><td>＋200点</td></tr>
+            <tr><td>人口が25〜30万 or 50〜55万（やや外れ）</td><td>±0点</td></tr>
+            <tr><td>人口が25万未満 or 55万超（大きく外れ）</td><td>－200点</td></tr>
+            <tr><td>特区設定あり（人口不足の減点を半減）</td><td>補正あり</td></tr>
+            <tr><td>藩数ボーナス（4藩以上）</td><td>藩数×100点</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="help-section">
+        <h3>▶ 便利な機能</h3>
+        <div class="help-grid">
+          <div class="help-card">
+            <h4>↩ 戻る（Cmd+Z）</h4>
+            <p>直前の操作を取り消します。最大80手まで遡れます。</p>
+          </div>
+          <div class="help-card orange">
+            <h4>やり直す</h4>
+            <p>確定済みの藩カードにある「やり直す」ボタンで、その藩の割り当てを全解除して再編集できます。</p>
+          </div>
+          <div class="help-card green">
+            <h4>行政コスト試算</h4>
+            <p>藩編集中は首長・議員・施設費の年間コストをリアルタイム表示。廃県置藩前後での削減額も確認できます。</p>
+          </div>
+          <div class="help-card purple">
+            <h4>PDFレポート出力</h4>
+            <p>クリア後にAI講評・各藩コメント・コスト比較・カラー地図を含むPDFをダウンロードできます。</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="help-footer-btn" onclick="closeHelp()">さっそく始める →</button>
+    </div>
   </div>
 </div>
 
@@ -1655,10 +1783,24 @@ document.addEventListener('keydown', e => {
 // ============================================================
 // INIT
 // ============================================================
+function openHelp() {
+  document.getElementById('helpOverlay').classList.add('show');
+}
+
+function closeHelp(e) {
+  if (e && e.target !== document.getElementById('helpOverlay')) return;
+  document.getElementById('helpOverlay').classList.remove('show');
+}
+
 initMap();
 updateSidebar();
 // Ensure Leaflet recalculates size after flex layout settles
 setTimeout(() => map.invalidateSize(), 100);
+// Show help on first visit
+if (!localStorage.getItem('haiken_help_seen')) {
+  localStorage.setItem('haiken_help_seen', '1');
+  setTimeout(() => openHelp(), 600);
+}
 </script>
 </body>
 </html>
