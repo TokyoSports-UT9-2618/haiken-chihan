@@ -317,11 +317,19 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
         この数字で政策判断はしないでください。廃県置藩の可能性を体感するためのシミュレーターです。
       </div>
     </div>
-    <button class="btn btn-new" onclick="resetGame()">もう一度プレイ</button>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <button class="btn btn-new" onclick="resetGame()">もう一度プレイ</button>
+      <button class="btn btn-confirm" id="btnPdf" onclick="generatePDF(this)">PDFレポートをダウンロード</button>
+    </div>
   </div>
 </div>
 
+<!-- Hidden PDF report template -->
+<div id="pdfReport" style="position:fixed;top:-9999px;left:-9999px;width:800px;background:#fff;padding:32px;font-family:sans-serif;line-height:1.5;"></div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
 // ============================================================
 // CONFIG
@@ -594,7 +602,7 @@ const state = {
   sliders: { memberReductionRate: 0.5, facilityClosureRate: 0.4 },
 };
 
-let map, municipalityLayers = {}, geojsonLoaded = false;
+let map, municipalityLayers = {}, geojsonLoaded = false, geojsonCache = null;
 
 // ============================================================
 // UNDO HISTORY
@@ -664,6 +672,7 @@ function loadGeoJSON() {
     .then(r => { clearTimeout(timeout); if (!r.ok) throw new Error('fetch failed'); return r.json(); })
     .then(data => {
       geojsonLoaded = true;
+      geojsonCache = data;
       renderGeoJSON(data);
     })
     .catch(() => {
@@ -1242,6 +1251,174 @@ function updateCostComparison() {
   }).join('');
   document.getElementById('taxSummary').innerHTML =
     `<div style="font-weight:bold;margin-bottom:4px;">税収規模（2018年度・参考値）: 計約${formatOku(totalTax)}億円</div>${taxLines}`;
+}
+
+// ============================================================
+// PDF REPORT
+// ============================================================
+function renderMapCanvas(w, h) {
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#f0f0e8';
+  ctx.fillRect(0, 0, w, h);
+
+  if (!geojsonCache) return canvas;
+
+  // Fukushima approximate bounding box
+  const minLng = 136.85, maxLng = 141.15, minLat = 36.75, maxLat = 38.05;
+
+  function project(lat, lng) {
+    const x = ((lng - minLng) / (maxLng - minLng)) * w;
+    const y = (1 - (lat - minLat) / (maxLat - minLat)) * h;
+    return [x, y];
+  }
+
+  geojsonCache.features.forEach(feature => {
+    const name = feature.properties.ward_ja || feature.properties.N03_004 || '';
+    const muni = MUNICIPALITIES.find(m => m.name === name);
+    const hanId = muni ? state.assignments[muni.code] : null;
+    const han = hanId ? state.hans.find(h => h.id === hanId) : null;
+
+    const geom = feature.geometry;
+    const polys = geom.type === 'Polygon' ? [geom.coordinates] : geom.coordinates;
+
+    polys.forEach(poly => {
+      const ring = poly[0];
+      if (!ring || ring.length < 3) return;
+      ctx.beginPath();
+      ring.forEach(([lng, lat], i) => {
+        const [x, y] = project(lat, lng);
+        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+      });
+      ctx.closePath();
+      if (han) {
+        const r = parseInt(han.color.slice(1, 3), 16);
+        const g = parseInt(han.color.slice(3, 5), 16);
+        const b = parseInt(han.color.slice(5, 7), 16);
+        ctx.fillStyle = `rgba(${r},${g},${b},0.75)`;
+      } else {
+        ctx.fillStyle = '#e0d8c8';
+      }
+      ctx.fill();
+      ctx.strokeStyle = '#999';
+      ctx.lineWidth = 0.4;
+      ctx.stroke();
+    });
+  });
+
+  return canvas;
+}
+
+function buildPDFReport(el) {
+  const confirmedHans = state.hans.filter(h => h.confirmed);
+  const score = calculateScore();
+  const memberRate = state.sliders.memberReductionRate;
+  const facilityRate = state.sliders.facilityClosureRate;
+  const after = calcAfterCost(memberRate, facilityRate);
+  const saving = BEFORE_COST.total - after.total;
+  const totalTax = MUNICIPALITIES.reduce((s, m) => s + m.taxRevenue, 0);
+  const now = new Date().toLocaleDateString('ja-JP');
+
+  const legendHTML = confirmedHans.map(han =>
+    `<span style="display:inline-flex;align-items:center;margin:0 12px 4px 0;font-size:12px;">
+      <span style="display:inline-block;width:12px;height:12px;background:${han.color};border-radius:2px;margin-right:4px;flex-shrink:0;"></span>${han.name}
+    </span>`
+  ).join('');
+
+  const hanRowsHTML = confirmedHans.map(han => {
+    const members = getHanMembers(han.id);
+    const pop = getHanPopulation(han.id);
+    const tax = members.reduce((s, m) => s + m.taxRevenue, 0);
+    const tokku = han.tokku ? `<span style="font-size:11px;color:#1a6ea3;margin-left:6px;">${han.tokku.label}</span>` : '';
+    return `<div style="margin:6px 0;padding:8px 10px;border-left:5px solid ${han.color};background:#f9f9f9;border-radius:0 4px 4px 0;">
+      <div style="font-weight:bold;font-size:13px;">${han.name}${tokku}</div>
+      <div style="font-size:11px;color:#555;margin-top:2px;">人口: ${(pop / 10000).toFixed(1)}万人 ／ ${members.length}市町村 ／ 税収: 約${formatOku(tax)}億円</div>
+      <div style="font-size:10px;color:#888;margin-top:2px;">${members.map(m => m.name).join('・')}</div>
+    </div>`;
+  }).join('');
+
+  el.innerHTML = `
+    <div style="font-size:22px;font-weight:bold;color:#2c3e50;margin-bottom:2px;">廃県置藩シミュレーター</div>
+    <div style="font-size:13px;color:#666;margin-bottom:14px;">福島県 藩編成レポート ／ スコア: <strong style="color:#e67e22;">${score.toLocaleString()}点</strong> ／ ${now}</div>
+    <canvas id="_pdfMapEl" width="736" height="430" style="display:block;width:736px;height:430px;border:1px solid #ddd;border-radius:4px;"></canvas>
+    <div style="margin:8px 0 16px;">${legendHTML}</div>
+    <div style="font-size:15px;font-weight:bold;border-bottom:2px solid #2c3e50;padding-bottom:4px;margin-bottom:10px;">藩一覧（${confirmedHans.length}藩）</div>
+    ${hanRowsHTML}
+    <div style="margin-top:18px;font-size:15px;font-weight:bold;border-bottom:2px solid #2c3e50;padding-bottom:4px;margin-bottom:10px;">行政コスト比較</div>
+    <div style="display:flex;gap:12px;margin-bottom:10px;">
+      <div style="flex:1;background:#fff3f3;padding:10px;border-radius:4px;font-size:11px;">
+        <div style="font-weight:bold;font-size:12px;margin-bottom:4px;">廃県置藩 前（福島県 + 59市町村）</div>
+        <div>首長・議員報酬: 約${formatOku(BEFORE_COST.totalSalary)}億円/年</div>
+        <div>施設維持費: 約${formatOku(BEFORE_COST.totalFacility)}億円/年</div>
+        <div style="font-weight:bold;margin-top:3px;">合計: 約${formatOku(BEFORE_COST.total)}億円/年</div>
+      </div>
+      <div style="flex:1;background:#f0fff4;padding:10px;border-radius:4px;font-size:11px;">
+        <div style="font-weight:bold;font-size:12px;margin-bottom:4px;">廃県置藩 後（${confirmedHans.length}藩）</div>
+        <div>首長・議員報酬: 約${formatOku(after.totalSalary)}億円/年</div>
+        <div>施設維持費: 約${formatOku(after.totalFacility)}億円/年</div>
+        <div style="font-weight:bold;margin-top:3px;">合計: 約${formatOku(after.total)}億円/年</div>
+      </div>
+    </div>
+    <div style="font-size:14px;font-weight:bold;color:${saving >= 0 ? '#27ae60' : '#e74c3c'};margin-bottom:6px;">
+      ${saving >= 0 ? '削減コスト' : '増加コスト'}: 約${formatOku(Math.abs(saving))}億円/年
+      （議員削減率${Math.round(memberRate * 100)}% ／ 施設統廃合率${Math.round(facilityRate * 100)}%前提）
+    </div>
+    <div style="font-size:11px;color:#888;margin-top:4px;">税収規模（参考・2018年度）: 計約${formatOku(totalTax)}億円</div>
+    <div style="font-size:10px;color:#bbb;margin-top:10px;">※概算・推計値です（総務省地方公務員給与実態調査・e-Stat等より推計）。このデータで政策判断はしないでください。</div>
+  `;
+
+  const mapEl = el.querySelector('#_pdfMapEl');
+  mapEl.getContext('2d').drawImage(renderMapCanvas(736, 430), 0, 0);
+}
+
+async function generatePDF(btn) {
+  if (!window.html2canvas || !window.jspdf) {
+    alert('PDFライブラリの読み込みが完了していません。少し待ってから再試行してください。');
+    return;
+  }
+  const origText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'PDF生成中...';
+  try {
+    const reportEl = document.getElementById('pdfReport');
+    buildPDFReport(reportEl);
+
+    const canvas = await html2canvas(reportEl, {
+      scale: 2,
+      useCORS: true,
+      backgroundColor: '#ffffff',
+      width: 800,
+      windowWidth: 864,
+    });
+
+    const { jsPDF } = window.jspdf;
+    const A4_W = 210, A4_H = 297;
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+    const imgW = A4_W;
+    const pageH_px = Math.round((A4_H / A4_W) * canvas.width);
+    const totalPages = Math.ceil(canvas.height / pageH_px);
+
+    for (let i = 0; i < totalPages; i++) {
+      if (i > 0) doc.addPage();
+      const pageCanvas = document.createElement('canvas');
+      pageCanvas.width = canvas.width;
+      const sliceH = Math.min(pageH_px, canvas.height - i * pageH_px);
+      pageCanvas.height = sliceH;
+      pageCanvas.getContext('2d').drawImage(canvas, 0, -i * pageH_px);
+      doc.addImage(pageCanvas.toDataURL('image/jpeg', 0.92), 'JPEG', 0, 0, imgW, (sliceH / canvas.width) * imgW);
+    }
+
+    const score = calculateScore();
+    const dateStr = new Date().toISOString().slice(0, 10);
+    doc.save(`haiken-chihan-${score}pt-${dateStr}.pdf`);
+  } catch (e) {
+    alert('PDF生成に失敗しました: ' + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = origText;
+  }
 }
 
 function onSliderChange() {
