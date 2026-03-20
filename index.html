@@ -206,6 +206,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
             <div class="cost-row"><span>首長・議員報酬</span><span id="costSalary">-</span></div>
             <div class="cost-row"><span>施設維持費</span><span id="costFacility">-</span></div>
             <div class="cost-row cost-total"><span>合計</span><span id="costTotal">-</span></div>
+            <div class="cost-row" style="margin-top:6px;padding-top:6px;border-top:1px dashed #ddd;"><span>税収規模（参考）</span><span id="costTax">-</span></div>
             <div class="cost-note">※概算・推計値</div>
           </div>
           <div class="muni-list" id="currentMuniList"></div>
@@ -297,6 +298,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
         <div class="cost-line cost-line-total"><span>合計</span><span id="afterTotal">-</span></div>
       </div>
       <div class="cost-saving" id="costSaving">-</div>
+      <div id="taxSummary" style="margin:10px 0;padding:10px;background:#f0f4f8;border-radius:6px;font-size:13px;"></div>
       <div class="slider-section">
         <div class="slider-title">削減前提の仮定を変えてみよう</div>
         <div class="slider-row">
@@ -503,8 +505,30 @@ function calcMunicipalityCost(pop) {
   return { mayorAnnual, memberCount, memberAnnual, facilityAnnual, total: mayorAnnual + memberAnnual + facilityAnnual };
 }
 
+// 2018年度 地方税収入（千円単位、e-Stat 市町村財政状況より）
+const MUNI_TAX = {
+  '福島市':40605070,'会津若松市':15216417,'郡山市':51282388,'いわき市':50587919,
+  '白河市':9154339,'須賀川市':9431334,'喜多方市':4842032,'相馬市':5259724,
+  '二本松市':6397422,'田村市':3800353,'南相馬市':9657675,'伊達市':5567683,
+  '本宮市':4635986,'桑折町':1294702,'国見町':1005827,'川俣町':1267465,
+  '大玉村':946410,'鏡石町':1600504,'天栄村':760268,'下郷町':1049110,
+  '檜枝岐村':433368,'只見町':882446,'南会津町':1572583,'北塩原村':482141,
+  '西会津町':616612,'磐梯町':614316,'猪苗代町':1886282,'会津坂下町':1607178,
+  '湯川村':335276,'柳津町':392943,'三島町':172674,'金山町':529560,
+  '昭和村':92145,'会津美里町':1628320,'西郷村':3902426,'泉崎村':1244745,
+  '中島村':546691,'矢吹町':2294431,'棚倉町':1987704,'矢祭町':996502,
+  '塙町':935342,'鮫川村':284030,'石川町':1656969,'玉川村':724137,
+  '平田村':632075,'浅川町':702161,'古殿町':522279,'三春町':1898805,
+  '小野町':1030593,'広野町':2511210,'楢葉町':1944537,'富岡町':1944943,
+  '川内村':486595,'大熊町':3908509,'双葉町':1097704,'浪江町':669300,
+  '葛尾村':111594,'新地町':2216182,'飯舘村':428642,
+};
+
 // Pre-calculate cost for each municipality
-MUNICIPALITIES.forEach(m => { m.cost = calcMunicipalityCost(m.pop); });
+MUNICIPALITIES.forEach(m => {
+  m.cost = calcMunicipalityCost(m.pop);
+  m.taxRevenue = (MUNI_TAX[m.name] || 0) * 1000; // 千円→円
+});
 
 // Pre-calculate "before" totals (prefecture + all municipalities)
 const BEFORE_COST = {
@@ -1107,6 +1131,7 @@ function showGameClear() {
     const members = getHanMembers(han.id);
     const tokkuText = han.tokku ? `<span style="font-size:11px;color:#1a6ea3;margin-left:6px;">${han.tokku.label}</span>` : '';
     const muniNames = members.map(m => m.name).join('・');
+    const hanTax = members.reduce((s, m) => s + m.taxRevenue, 0);
     return `<div class="han-summary-item">
       <div class="han-color-dot" style="background:${han.color}"></div>
       <div style="flex:1">
@@ -1115,6 +1140,7 @@ function showGameClear() {
         ${tokkuText}
         <br><span style="font-size:13px;">${popMan}万人</span>
         <span class="${statusClass}" style="margin-left:8px;">${statusText}</span>
+        <span style="font-size:12px;color:#555;margin-left:8px;">税収 約${formatOku(hanTax)}億円</span>
         <div style="font-size:11px;color:#aaa;margin-top:3px;line-height:1.5;">${muniNames}</div>
         <div class="ai-han-comment" id="ai-han-${han.id}"><span class="ai-loading-text">AIコメント生成中...</span></div>
       </div>
@@ -1205,6 +1231,17 @@ function updateCostComparison() {
     savingEl.textContent = '増加コスト: 約' + formatOku(Math.abs(saving)) + '億円/年';
     savingEl.className = 'cost-saving negative';
   }
+
+  // Tax summary per han
+  const totalTax = MUNICIPALITIES.reduce((s, m) => s + m.taxRevenue, 0);
+  const taxLines = confirmedHans.map(han => {
+    const members = getHanMembers(han.id);
+    const hanTax = members.reduce((s, m) => s + m.taxRevenue, 0);
+    const pct = totalTax > 0 ? ((hanTax / totalTax) * 100).toFixed(1) : '0.0';
+    return `<span style="display:inline-block;margin:2px 8px 2px 0;"><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${han.color};vertical-align:middle;margin-right:3px;"></span>${han.name}: 約${formatOku(hanTax)}億円（${pct}%）</span>`;
+  }).join('');
+  document.getElementById('taxSummary').innerHTML =
+    `<div style="font-weight:bold;margin-bottom:4px;">税収規模（2018年度・参考値）: 計約${formatOku(totalTax)}億円</div>${taxLines}`;
 }
 
 function onSliderChange() {
@@ -1259,9 +1296,11 @@ function updateSidebar() {
       costPreview.style.display = 'block';
       const salarySum = members.reduce((s, m) => s + m.cost.mayorAnnual + m.cost.memberAnnual, 0);
       const facilitySum = members.reduce((s, m) => s + m.cost.facilityAnnual, 0);
+      const taxSum = members.reduce((s, m) => s + m.taxRevenue, 0);
       document.getElementById('costSalary').textContent = '約' + formatOku(salarySum) + '億円/年';
       document.getElementById('costFacility').textContent = '約' + formatOku(facilitySum) + '億円/年';
       document.getElementById('costTotal').textContent = '約' + formatOku(salarySum + facilitySum) + '億円/年';
+      document.getElementById('costTax').textContent = '約' + formatOku(taxSum) + '億円/年';
     } else {
       costPreview.style.display = 'none';
     }
