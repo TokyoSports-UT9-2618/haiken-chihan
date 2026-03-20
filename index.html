@@ -1106,6 +1106,7 @@ function showGameClear() {
     }
     const members = getHanMembers(han.id);
     const tokkuText = han.tokku ? `<span style="font-size:11px;color:#1a6ea3;margin-left:6px;">${han.tokku.label}</span>` : '';
+    const muniNames = members.map(m => m.name).join('・');
     return `<div class="han-summary-item">
       <div class="han-color-dot" style="background:${han.color}"></div>
       <div style="flex:1">
@@ -1114,6 +1115,7 @@ function showGameClear() {
         ${tokkuText}
         <br><span style="font-size:13px;">${popMan}万人</span>
         <span class="${statusClass}" style="margin-left:8px;">${statusText}</span>
+        <div style="font-size:11px;color:#aaa;margin-top:3px;line-height:1.5;">${muniNames}</div>
         <div class="ai-han-comment" id="ai-han-${han.id}"><span class="ai-loading-text">AIコメント生成中...</span></div>
       </div>
     </div>`;
@@ -1149,7 +1151,7 @@ async function loadAIComments(confirmedHans, score) {
   }).join('\n');
 
   callAI(
-    'あなたは江戸時代の藩政に詳しい歴史家です。プレイヤーが福島県を再編した藩構成を短く評価してください。ユーモアを交えた時代劇風の口調で、200字以内で。',
+    '地理と行政に詳しい現代のコメンテーターとして、プレイヤーが福島県を藩に再編した結果を評価してください。軽いユーモアを交えたカジュアルな口調で、200字以内でコメントしてください。',
     `プレイヤーの藩編成（スコア${score}点）：\n${hanList}\nこの藩編成を評価してください。`
   ).then(text => {
     document.getElementById('aiReview').textContent = text;
