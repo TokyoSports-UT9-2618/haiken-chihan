@@ -15,6 +15,9 @@ header h1 { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
 header .subtitle { font-size: 12px; opacity: 0.7; }
 .reset-btn { background: #e74c3c; color: #fff; border: none; padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; }
 .reset-btn:hover { background: #c0392b; }
+.undo-btn { background: #7f8c8d; color: #fff; border: none; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; margin-right: 8px; }
+.undo-btn:hover:not(:disabled) { background: #626d6d; }
+.undo-btn:disabled { opacity: 0.35; cursor: not-allowed; }
 
 /* Main layout */
 .main { display: flex; height: calc(100vh - 50px); }
@@ -154,7 +157,10 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
     <h1>廃県置藩シミュレーター</h1>
     <div class="subtitle">福島県 59市町村 → 新しい藩へ</div>
   </div>
-  <button class="reset-btn" onclick="resetGame()">リセット</button>
+  <div>
+    <button class="undo-btn" id="btnUndo" onclick="undoAction()" disabled>↩ 戻る</button>
+    <button class="reset-btn" onclick="resetGame()">リセット</button>
+  </div>
 </header>
 
 <div class="main">
@@ -547,6 +553,41 @@ const state = {
 let map, municipalityLayers = {}, geojsonLoaded = false;
 
 // ============================================================
+// UNDO HISTORY
+// ============================================================
+const history = [];
+
+function saveHistory() {
+  history.push(JSON.parse(JSON.stringify({
+    assignments: state.assignments,
+    hans: state.hans,
+    currentHanId: state.currentHanId,
+    phase: state.phase,
+    hanCounter: state.hanCounter,
+    renamingHanId: state.renamingHanId,
+  })));
+  if (history.length > 80) history.shift();
+  document.getElementById('btnUndo').disabled = false;
+}
+
+function undoAction() {
+  if (history.length === 0) { showToast("これ以上戻れません"); return; }
+  const prev = history.pop();
+  state.assignments = prev.assignments;
+  state.hans = prev.hans;
+  state.currentHanId = prev.currentHanId;
+  state.phase = prev.phase;
+  state.hanCounter = prev.hanCounter;
+  state.renamingHanId = prev.renamingHanId;
+  ['nameDialog','nameOverlay','tokkuDialog','tokkuOverlay','modalOverlay'].forEach(id => {
+    document.getElementById(id).classList.remove('show');
+  });
+  document.getElementById('btnUndo').disabled = history.length === 0;
+  updateAllStyles();
+  updateSidebar();
+}
+
+// ============================================================
 // MAP INITIALIZATION
 // ============================================================
 function initMap() {
@@ -795,6 +836,7 @@ function handleMunicipalityClick(code) {
       showToast("この市町村を外すと飛び地になります");
       return;
     }
+    saveHistory();
     delete state.assignments[code];
   } else if (!currentAssignment) {
     // Add
@@ -802,6 +844,7 @@ function handleMunicipalityClick(code) {
       showToast("隣接する市町村を先に追加してください");
       return;
     }
+    saveHistory();
     state.assignments[code] = state.currentHanId;
   }
 
@@ -810,6 +853,7 @@ function handleMunicipalityClick(code) {
 }
 
 function createNewHan() {
+  saveHistory();
   if (state.currentHanId) {
     const current = state.hans.find(h => h.id === state.currentHanId);
     if (current && !current.confirmed) {
@@ -862,6 +906,7 @@ function submitHanName() {
   const name = document.getElementById('nameInput').value.trim();
   if (!name) return;
 
+  saveHistory();
   document.getElementById('nameDialog').classList.remove('show');
   document.getElementById('nameOverlay').classList.remove('show');
 
@@ -935,21 +980,6 @@ function renameHan(hanId) {
   document.getElementById('nameInput').select();
 }
 
-function undoHan(hanId) {
-  if (state.currentHanId && state.currentHanId !== hanId) {
-    showToast("編集中の藩を先に確定してください");
-    return;
-  }
-  const han = state.hans.find(h => h.id === hanId);
-  if (!han) return;
-  han.confirmed = false;
-  han.tokku = null;
-  state.currentHanId = hanId;
-  state.phase = "playing";
-  updateAllStyles();
-  updateSidebar();
-  showToast(han.name + " を編集中に戻しました");
-}
 
 function onTokkuTypeChange() {
   const type = document.getElementById('tokkuType').value;
@@ -979,6 +1009,8 @@ function resetGame() {
   state.hanCounter = 0;
   state.renamingHanId = null;
   state.sliders = { memberReductionRate: 0.5, facilityClosureRate: 0.4 };
+  history.length = 0;
+  document.getElementById('btnUndo').disabled = true;
 
   document.getElementById('sliderMember').value = 50;
   document.getElementById('sliderMemberVal').textContent = '50%';
@@ -1193,7 +1225,6 @@ function updateSidebar() {
         ${tokkuBadge}
         <div class="han-card-actions">
           <button class="han-card-btn" onclick="renameHan('${han.id}')">✏ リネーム</button>
-          <button class="han-card-btn" onclick="undoHan('${han.id}')">↩ やり直し</button>
         </div>
       </div>`;
     }).join('');
@@ -1224,6 +1255,14 @@ function showToast(msg, duration = 2500) {
 // Enter key for name dialog
 document.getElementById('nameInput').addEventListener('keydown', e => {
   if (e.key === 'Enter') submitHanName();
+});
+
+// Cmd+Z / Ctrl+Z for undo
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'z') {
+    e.preventDefault();
+    undoAction();
+  }
 });
 
 // ============================================================
