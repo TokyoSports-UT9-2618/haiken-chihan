@@ -69,6 +69,13 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 .status-warn { color: #f39c12; }
 .status-bad { color: #e74c3c; }
 
+/* Unassigned list */
+.unassigned-item { display: flex; justify-content: space-between; align-items: center; padding: 4px 6px; font-size: 12px; border-bottom: 1px solid #f5f5f5; cursor: pointer; border-radius: 3px; }
+.unassigned-item:hover { background: #fff3f3; }
+.unassigned-item .u-name { color: #c0392b; font-weight: 600; }
+.unassigned-item .u-pop { color: #aaa; font-size: 11px; }
+.unassigned-item .u-jump { font-size: 10px; color: #bbb; }
+
 /* Progress bar */
 .progress-section { margin-top: auto; padding-top: 12px; border-top: 2px solid #e0e0e0; }
 .progress-text { font-size: 12px; color: #666; text-align: center; margin-bottom: 4px; }
@@ -218,6 +225,12 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
       <div class="confirmed-list" id="confirmedList">
         <div style="color:#999; font-size:13px; font-style:italic;">まだありません</div>
       </div>
+    </div>
+
+    <!-- Unassigned municipalities -->
+    <div id="unassignedSection" style="display:none;">
+      <div class="section-title" style="color:#e74c3c;">未割り当ての市町村</div>
+      <div id="unassignedList"></div>
     </div>
 
     <!-- Progress -->
@@ -1295,6 +1308,22 @@ function updateSidebar() {
   const assigned = Object.keys(state.assignments).length;
   document.getElementById('progressText').textContent = assigned + ' / ' + MUNICIPALITIES.length + ' 市町村を割り当て済み';
   document.getElementById('progressFill').style.width = (assigned / MUNICIPALITIES.length * 100) + '%';
+
+  // Unassigned list (show when ≤10 remaining)
+  const unassigned = MUNICIPALITIES.filter(m => !state.assignments[m.code]);
+  const unassignedSection = document.getElementById('unassignedSection');
+  if (unassigned.length > 0 && unassigned.length <= 10) {
+    unassignedSection.style.display = 'block';
+    document.getElementById('unassignedList').innerHTML = unassigned
+      .sort((a, b) => b.pop - a.pop)
+      .map(m => `<div class="unassigned-item" onclick="jumpToMuni('${m.code}')">
+        <span class="u-name">${m.name}</span>
+        <span class="u-pop">${formatPop(m.pop)}人</span>
+        <span class="u-jump">→地図</span>
+      </div>`).join('');
+  } else {
+    unassignedSection.style.display = 'none';
+  }
 }
 
 // ============================================================
@@ -1302,6 +1331,17 @@ function updateSidebar() {
 // ============================================================
 function formatPop(pop) {
   return pop.toLocaleString();
+}
+
+function jumpToMuni(code) {
+  const m = MUNICIPALITIES.find(mu => mu.code === code);
+  if (!m) return;
+  map.setView([m.lat, m.lng], 12, { animate: true });
+  const layer = municipalityLayers[code];
+  if (layer) {
+    layer.setStyle({ fillOpacity: 0.9, weight: 3 });
+    setTimeout(() => updateAllStyles(), 1200);
+  }
 }
 
 let toastTimer = null;
