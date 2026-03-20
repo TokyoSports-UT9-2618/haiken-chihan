@@ -58,6 +58,10 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 .han-card .han-card-name { font-weight: 700; font-size: 14px; }
 .han-card .han-card-pop { font-size: 12px; color: #666; margin-top: 2px; }
 .han-card .han-card-status { font-size: 11px; margin-top: 2px; font-weight: 600; }
+.han-card-actions { display: flex; gap: 4px; margin-top: 6px; }
+.han-card-btn { border: none; background: #efefef; border-radius: 4px; padding: 3px 8px; font-size: 11px; cursor: pointer; color: #555; }
+.han-card-btn:hover { background: #ddd; }
+.tokku-badge { display: inline-block; font-size: 10px; background: #eaf4fb; color: #1a6ea3; border: 1px solid #aed6f1; border-radius: 10px; padding: 1px 7px; margin-top: 3px; }
 .status-good { color: #27ae60; }
 .status-warn { color: #f39c12; }
 .status-bad { color: #e74c3c; }
@@ -91,6 +95,17 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 .name-dialog .btn { margin-top: 12px; }
 .name-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 9400; display: none; }
 .name-overlay.show { display: block; }
+
+/* Tokku dialog */
+.tokku-dialog { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); z-index: 9500; display: none; text-align: center; width: 320px; }
+.tokku-dialog.show { display: block; }
+.tokku-dialog h3 { margin-bottom: 6px; font-size: 16px; }
+.tokku-dialog .tokku-desc { font-size: 13px; color: #666; margin-bottom: 4px; }
+.tokku-dialog .tokku-hint { font-size: 11px; color: #aaa; margin-bottom: 12px; }
+.tokku-dialog select { width: 100%; padding: 8px; border: 2px solid #ddd; border-radius: 6px; font-size: 13px; margin-bottom: 8px; }
+.tokku-dialog input[type="text"] { width: 100%; padding: 8px 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 13px; box-sizing: border-box; margin-bottom: 8px; }
+.tokku-btn-row { display: flex; gap: 8px; margin-top: 4px; }
+.tokku-btn-row .btn { flex: 1; }
 
 /* Tooltip */
 .muni-tooltip { font-size: 13px; font-weight: 600; padding: 4px 8px; }
@@ -211,6 +226,28 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
   <input type="text" id="nameInput" placeholder="例: 福島藩" maxlength="20">
   <br>
   <button class="btn btn-confirm" onclick="submitHanName()">決定</button>
+</div>
+
+<!-- Tokku dialog -->
+<div class="name-overlay" id="tokkuOverlay"></div>
+<div class="tokku-dialog" id="tokkuDialog">
+  <h3>人口が30万人未満です</h3>
+  <p class="tokku-desc" id="tokkuPopMsg"></p>
+  <p class="tokku-hint">「特区」として設定すると、人口不足の減点が半減されます</p>
+  <select id="tokkuType" onchange="onTokkuTypeChange()">
+    <option value="">-- 特区設定なし（このまま確定）--</option>
+    <option value="water">水源・自然保護特区</option>
+    <option value="agri">農業・食料生産特区</option>
+    <option value="fish">漁業・水産特区</option>
+    <option value="tourism">観光・文化特区</option>
+    <option value="nuclear">原子力復興特区</option>
+    <option value="border">国境・防衛特区</option>
+    <option value="custom">自由記述...</option>
+  </select>
+  <input type="text" id="tokkuCustom" placeholder="特区の理由を入力" style="display:none;">
+  <div class="tokku-btn-row">
+    <button class="btn btn-confirm" onclick="submitTokku()">確定する</button>
+  </div>
 </div>
 
 <!-- Game clear modal -->
@@ -503,6 +540,7 @@ const state = {
   currentHanId: null,
   phase: "playing",
   hanCounter: 0,
+  renamingHanId: null,
   sliders: { memberReductionRate: 0.5, facilityClosureRate: 0.4 },
 };
 
@@ -824,15 +862,44 @@ function submitHanName() {
   const name = document.getElementById('nameInput').value.trim();
   if (!name) return;
 
-  const currentHan = state.hans.find(h => h.id === state.currentHanId);
-  if (!currentHan) return;
-
-  currentHan.name = name;
-  currentHan.confirmed = true;
-
   document.getElementById('nameDialog').classList.remove('show');
   document.getElementById('nameOverlay').classList.remove('show');
 
+  // Rename mode: just update the name, no further flow
+  if (state.renamingHanId) {
+    const han = state.hans.find(h => h.id === state.renamingHanId);
+    if (han) han.name = name;
+    state.renamingHanId = null;
+    updateSidebar();
+    return;
+  }
+
+  // Confirm mode: save name, then check population for tokku
+  const currentHan = state.hans.find(h => h.id === state.currentHanId);
+  if (!currentHan) return;
+  currentHan.name = name;
+
+  const pop = getHanPopulation(state.currentHanId);
+  if (pop < CONFIG.targetRange[0]) {
+    document.getElementById('tokkuPopMsg').textContent =
+      `この藩の人口は ${(pop / 10000).toFixed(1)}万人です。`;
+    document.getElementById('tokkuType').value = '';
+    document.getElementById('tokkuCustom').style.display = 'none';
+    document.getElementById('tokkuCustom').value = '';
+    document.getElementById('tokkuDialog').classList.add('show');
+    document.getElementById('tokkuOverlay').classList.add('show');
+    return;
+  }
+
+  finalizeHan(null);
+}
+
+function finalizeHan(tokkuData) {
+  const currentHan = state.hans.find(h => h.id === state.currentHanId);
+  if (!currentHan) return;
+
+  currentHan.confirmed = true;
+  currentHan.tokku = tokkuData;
   state.currentHanId = null;
 
   // Check for isolated municipalities
@@ -857,12 +924,60 @@ function submitHanName() {
   updateSidebar();
 }
 
+function renameHan(hanId) {
+  const han = state.hans.find(h => h.id === hanId);
+  if (!han) return;
+  state.renamingHanId = hanId;
+  document.getElementById('nameInput').value = han.name;
+  document.getElementById('nameDialog').classList.add('show');
+  document.getElementById('nameOverlay').classList.add('show');
+  document.getElementById('nameInput').focus();
+  document.getElementById('nameInput').select();
+}
+
+function undoHan(hanId) {
+  if (state.currentHanId && state.currentHanId !== hanId) {
+    showToast("編集中の藩を先に確定してください");
+    return;
+  }
+  const han = state.hans.find(h => h.id === hanId);
+  if (!han) return;
+  han.confirmed = false;
+  han.tokku = null;
+  state.currentHanId = hanId;
+  state.phase = "playing";
+  updateAllStyles();
+  updateSidebar();
+  showToast(han.name + " を編集中に戻しました");
+}
+
+function onTokkuTypeChange() {
+  const type = document.getElementById('tokkuType').value;
+  document.getElementById('tokkuCustom').style.display = type === 'custom' ? 'block' : 'none';
+}
+
+function submitTokku() {
+  const type = document.getElementById('tokkuType').value;
+  const customText = document.getElementById('tokkuCustom').value.trim();
+  const TOKKU_LABELS = {
+    water: '水源・自然保護特区', agri: '農業・食料生産特区',
+    fish: '漁業・水産特区', tourism: '観光・文化特区',
+    nuclear: '原子力復興特区', border: '国境・防衛特区',
+    custom: customText || '特区',
+  };
+  const tokkuData = type ? { type, label: TOKKU_LABELS[type] } : null;
+  document.getElementById('tokkuDialog').classList.remove('show');
+  document.getElementById('tokkuOverlay').classList.remove('show');
+  finalizeHan(tokkuData);
+}
+
 function resetGame() {
   state.assignments = {};
   state.hans = [];
   state.currentHanId = null;
   state.phase = "playing";
   state.hanCounter = 0;
+  state.renamingHanId = null;
   state.sliders = { memberReductionRate: 0.5, facilityClosureRate: 0.4 };
 
   document.getElementById('sliderMember').value = 50;
@@ -872,6 +987,8 @@ function resetGame() {
   document.getElementById('modalOverlay').classList.remove('show');
   document.getElementById('nameDialog').classList.remove('show');
   document.getElementById('nameOverlay').classList.remove('show');
+  document.getElementById('tokkuDialog').classList.remove('show');
+  document.getElementById('tokkuOverlay').classList.remove('show');
 
   updateAllStyles();
   updateSidebar();
@@ -889,9 +1006,9 @@ function calculateScore() {
     if (pop >= 300000 && pop <= 500000) {
       score += 100;
     } else if ((pop >= 250000 && pop < 300000) || (pop > 500000 && pop <= 550000)) {
-      score -= 50;
+      score -= han.tokku ? 25 : 50;
     } else {
-      score -= 200;
+      score -= han.tokku ? 100 : 200;
     }
   });
 
@@ -1068,10 +1185,16 @@ function updateSidebar() {
         statusText = '多い'; statusClass = pop > 550000 ? 'status-bad' : 'status-warn';
       }
       const count = getHanMembers(han.id).length;
+      const tokkuBadge = han.tokku ? `<div class="tokku-badge">${han.tokku.label}</div>` : '';
       return `<div class="han-card" style="border-left-color:${han.color}">
         <div class="han-card-name" style="color:${han.color}">${han.name}</div>
         <div class="han-card-pop">${popMan}万人（${count}市町村）</div>
         <div class="han-card-status ${statusClass}">${statusText}</div>
+        ${tokkuBadge}
+        <div class="han-card-actions">
+          <button class="han-card-btn" onclick="renameHan('${han.id}')">✏ リネーム</button>
+          <button class="han-card-btn" onclick="undoHan('${han.id}')">↩ やり直し</button>
+        </div>
       </div>`;
     }).join('');
   }
