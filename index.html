@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>廃県置藩シミュレーター｜福島県</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Hiragino Sans', 'Yu Gothic', 'Meiryo', sans-serif; background: #f5f5f0; color: #333; overflow: hidden; height: 100vh; }
+
+/* Header */
+header { background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; height: 50px; }
+header h1 { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+header .subtitle { font-size: 12px; opacity: 0.7; }
+.reset-btn { background: #e74c3c; color: #fff; border: none; padding: 6px 16px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600; }
+.reset-btn:hover { background: #c0392b; }
+
+/* Main layout */
+.main { display: flex; height: calc(100vh - 50px); }
+#map { flex: 7; min-height: 300px; overflow: hidden; }
+.sidebar { flex: 3; min-width: 280px; max-width: 380px; background: #fff; overflow-y: auto; padding: 16px; border-left: 2px solid #ddd; display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1000; }
+
+/* Sidebar sections */
+.section-title { font-size: 14px; font-weight: 700; color: #555; border-bottom: 2px solid #e0e0e0; padding-bottom: 4px; margin-bottom: 8px; }
+.current-han { background: #fffdf0; border: 2px solid #FFD700; border-radius: 8px; padding: 12px; }
+.current-han .han-name { font-size: 16px; font-weight: 700; color: #b8860b; margin-bottom: 8px; }
+.current-han .no-han { color: #999; font-style: italic; font-size: 13px; }
+
+/* Population gauge */
+.gauge-container { margin: 8px 0; }
+.gauge-label { font-size: 12px; color: #666; margin-bottom: 4px; display: flex; justify-content: space-between; }
+.gauge-bar { height: 20px; background: #e8e8e8; border-radius: 10px; overflow: hidden; position: relative; }
+.gauge-fill { height: 100%; border-radius: 10px; transition: width 0.3s ease, background-color 0.3s ease; }
+.gauge-text { position: absolute; top: 0; left: 0; right: 0; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+.gauge-fill.under { background: linear-gradient(90deg, #e74c3c, #f39c12); }
+.gauge-fill.good { background: linear-gradient(90deg, #27ae60, #2ecc71); }
+.gauge-fill.over { background: linear-gradient(90deg, #f1c40f, #e67e22); }
+
+/* Municipality list in current han */
+.muni-list { max-height: 150px; overflow-y: auto; font-size: 12px; margin-top: 8px; }
+.muni-list .muni-item { padding: 3px 6px; display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; }
+.muni-list .muni-item:hover { background: #fafafa; }
+.muni-pop { color: #888; }
+
+/* Action buttons */
+.actions { display: flex; flex-direction: column; gap: 8px; }
+.btn { padding: 10px 16px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn-new { background: #3498db; color: #fff; }
+.btn-new:hover:not(:disabled) { background: #2980b9; }
+.btn-confirm { background: #27ae60; color: #fff; }
+.btn-confirm:hover:not(:disabled) { background: #219a52; }
+
+/* Confirmed hans list */
+.confirmed-list { display: flex; flex-direction: column; gap: 6px; }
+.han-card { padding: 10px; border-radius: 6px; border-left: 5px solid; background: #fafafa; }
+.han-card .han-card-name { font-weight: 700; font-size: 14px; }
+.han-card .han-card-pop { font-size: 12px; color: #666; margin-top: 2px; }
+.han-card .han-card-status { font-size: 11px; margin-top: 2px; font-weight: 600; }
+.status-good { color: #27ae60; }
+.status-warn { color: #f39c12; }
+.status-bad { color: #e74c3c; }
+
+/* Progress bar */
+.progress-section { margin-top: auto; padding-top: 12px; border-top: 2px solid #e0e0e0; }
+.progress-text { font-size: 12px; color: #666; text-align: center; margin-bottom: 4px; }
+.progress-bar { height: 8px; background: #e8e8e8; border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: #3498db; transition: width 0.3s ease; border-radius: 4px; }
+
+/* Toast notifications */
+.toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(44,62,80,0.9); color: #fff; padding: 10px 24px; border-radius: 8px; font-size: 13px; z-index: 10000; opacity: 0; transition: opacity 0.3s; pointer-events: none; }
+.toast.show { opacity: 1; }
+
+/* Game clear modal */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 9000; display: none; align-items: center; justify-content: center; }
+.modal-overlay.show { display: flex; }
+.modal { background: #fff; border-radius: 16px; padding: 32px; max-width: 480px; width: 90%; max-height: 80vh; overflow-y: auto; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.modal h2 { font-size: 28px; margin-bottom: 8px; }
+.modal .score { font-size: 48px; font-weight: 800; color: #e67e22; margin: 16px 0; }
+.modal .han-summary { text-align: left; margin: 16px 0; }
+.modal .han-summary-item { display: flex; align-items: center; gap: 8px; padding: 8px; border-bottom: 1px solid #eee; font-size: 14px; }
+.modal .han-color-dot { width: 16px; height: 16px; border-radius: 50%; flex-shrink: 0; }
+.modal .btn { margin-top: 16px; width: 100%; }
+
+/* Name input dialog */
+.name-dialog { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); z-index: 9500; display: none; text-align: center; }
+.name-dialog.show { display: block; }
+.name-dialog h3 { margin-bottom: 12px; font-size: 16px; }
+.name-dialog input { width: 200px; padding: 8px 12px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; text-align: center; }
+.name-dialog .btn { margin-top: 12px; }
+.name-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 9400; display: none; }
+.name-overlay.show { display: block; }
+
+/* Tooltip */
+.muni-tooltip { font-size: 13px; font-weight: 600; padding: 4px 8px; }
+
+/* Cost preview in sidebar */
+.cost-preview { background: #f8f6f0; border: 1px solid #e0ddd4; border-radius: 6px; padding: 10px; margin-top: 8px; font-size: 12px; }
+.cost-preview .cost-title { font-size: 11px; font-weight: 700; color: #888; margin-bottom: 6px; border-bottom: 1px dashed #ddd; padding-bottom: 4px; }
+.cost-preview .cost-row { display: flex; justify-content: space-between; padding: 2px 0; }
+.cost-preview .cost-total { font-weight: 700; color: #b8860b; border-top: 1px solid #ddd; margin-top: 4px; padding-top: 4px; }
+.cost-preview .cost-note { font-size: 10px; color: #aaa; margin-top: 4px; }
+
+/* Cost comparison in clear modal */
+.cost-comparison { text-align: left; margin: 20px 0; padding: 16px; background: #f9f9f4; border-radius: 10px; border: 1px solid #e8e4d8; }
+.cost-comparison h3 { font-size: 15px; text-align: center; margin-bottom: 12px; color: #555; }
+.cost-block { margin-bottom: 12px; }
+.cost-block-title { font-size: 13px; font-weight: 700; color: #666; margin-bottom: 6px; }
+.cost-block .cost-line { display: flex; justify-content: space-between; font-size: 13px; padding: 2px 0; }
+.cost-block .cost-line-total { font-weight: 700; border-top: 1px solid #ccc; margin-top: 4px; padding-top: 4px; }
+.cost-saving { text-align: center; font-size: 20px; font-weight: 800; color: #27ae60; margin: 12px 0; padding: 12px; background: #eafaf1; border-radius: 8px; }
+.cost-saving.negative { color: #e74c3c; background: #fdecea; }
+.slider-section { margin-top: 12px; padding-top: 12px; border-top: 1px dashed #ddd; }
+.slider-section .slider-title { font-size: 12px; font-weight: 600; color: #777; margin-bottom: 8px; text-align: center; }
+.slider-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-size: 12px; }
+.slider-row label { flex: 0 0 110px; text-align: right; color: #666; }
+.slider-row input[type="range"] { flex: 1; }
+.slider-row .slider-val { flex: 0 0 40px; font-weight: 700; color: #333; }
+.cost-disclaimer { font-size: 10px; color: #999; text-align: center; margin-top: 12px; line-height: 1.5; }
+
+/* Responsive */
+@media (max-width: 1199px) {
+  #map { flex: 6; }
+  .sidebar { flex: 4; }
+}
+@media (max-width: 767px) {
+  .main { flex-direction: column; }
+  #map { flex: none; height: 50vh; }
+  .sidebar { flex: none; max-width: none; min-width: auto; border-left: none; border-top: 2px solid #ddd; height: 50vh; }
+  header h1 { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>廃県置藩シミュレーター</h1>
+    <div class="subtitle">福島県 59市町村 → 新しい藩へ</div>
+  </div>
+  <button class="reset-btn" onclick="resetGame()">リセット</button>
+</header>
+
+<div class="main">
+  <div id="map"></div>
+  <div class="sidebar" id="sidebar">
+    <!-- Current han section -->
+    <div>
+      <div class="section-title">編集中の藩</div>
+      <div class="current-han" id="currentHanSection">
+        <div class="no-han" id="noHanMsg">「新しい藩を作る」を押してください</div>
+        <div id="currentHanInfo" style="display:none;">
+          <div class="han-name" id="currentHanName"></div>
+          <div class="gauge-container">
+            <div class="gauge-label">
+              <span>人口</span>
+              <span id="gaugePopText">0万人</span>
+            </div>
+            <div class="gauge-bar">
+              <div class="gauge-fill" id="gaugeFill"></div>
+              <div class="gauge-text" id="gaugeBarText"></div>
+            </div>
+            <div class="gauge-label" style="margin-top:2px;">
+              <span style="color:#27ae60;">30万</span>
+              <span>目標 40万</span>
+              <span style="color:#f39c12;">50万</span>
+            </div>
+          </div>
+          <div class="cost-preview" id="costPreview" style="display:none;">
+            <div class="cost-title">行政コスト試算</div>
+            <div class="cost-row"><span>首長・議員報酬</span><span id="costSalary">-</span></div>
+            <div class="cost-row"><span>施設維持費</span><span id="costFacility">-</span></div>
+            <div class="cost-row cost-total"><span>合計</span><span id="costTotal">-</span></div>
+            <div class="cost-note">※概算・推計値</div>
+          </div>
+          <div class="muni-list" id="currentMuniList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="actions">
+      <button class="btn btn-new" id="btnNew" onclick="createNewHan()">新しい藩を作る</button>
+      <button class="btn btn-confirm" id="btnConfirm" onclick="confirmHan()" disabled>この藩を確定する</button>
+    </div>
+
+    <!-- Confirmed hans -->
+    <div>
+      <div class="section-title">確定済みの藩</div>
+      <div class="confirmed-list" id="confirmedList">
+        <div style="color:#999; font-size:13px; font-style:italic;">まだありません</div>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-section">
+      <div class="progress-text" id="progressText">0 / 59 市町村を割り当て済み</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Name input dialog -->
+<div class="name-overlay" id="nameOverlay"></div>
+<div class="name-dialog" id="nameDialog">
+  <h3>藩の名前を入力</h3>
+  <input type="text" id="nameInput" placeholder="例: 福島藩" maxlength="20">
+  <br>
+  <button class="btn btn-confirm" onclick="submitHanName()">決定</button>
+</div>
+
+<!-- Game clear modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>ゲームクリア！</h2>
+    <div class="score" id="finalScore"></div>
+    <div class="han-summary" id="hanSummary"></div>
+    <div class="cost-comparison" id="costComparison">
+      <h3>行政コスト比較</h3>
+      <div class="cost-block">
+        <div class="cost-block-title">【廃県置藩 前】福島県 + 59市町村</div>
+        <div class="cost-line"><span>首長・議員報酬</span><span id="beforeSalary">-</span></div>
+        <div class="cost-line"><span>施設維持費</span><span id="beforeFacility">-</span></div>
+        <div class="cost-line cost-line-total"><span>合計</span><span id="beforeTotal">-</span></div>
+      </div>
+      <div class="cost-block">
+        <div class="cost-block-title" id="afterTitle">【廃県置藩 後】あなたの設計</div>
+        <div class="cost-line"><span>首長・議員報酬</span><span id="afterSalary">-</span></div>
+        <div class="cost-line"><span>施設維持費</span><span id="afterFacility">-</span></div>
+        <div class="cost-line cost-line-total"><span>合計</span><span id="afterTotal">-</span></div>
+      </div>
+      <div class="cost-saving" id="costSaving">-</div>
+      <div class="slider-section">
+        <div class="slider-title">削減前提の仮定を変えてみよう</div>
+        <div class="slider-row">
+          <label>議員定数削減率</label>
+          <input type="range" id="sliderMember" min="20" max="80" value="50" oninput="onSliderChange()">
+          <span class="slider-val" id="sliderMemberVal">50%</span>
+        </div>
+        <div class="slider-row">
+          <label>施設統廃合率</label>
+          <input type="range" id="sliderFacility" min="10" max="70" value="40" oninput="onSliderChange()">
+          <span class="slider-val" id="sliderFacilityVal">40%</span>
+        </div>
+      </div>
+      <div class="cost-disclaimer">
+        ※概算・推計値です（総務省地方公務員給与実態調査・各市町村条例等より推計）<br>
+        この数字で政策判断はしないでください。廃県置藩の可能性を体感するためのシミュレーターです。
+      </div>
+    </div>
+    <button class="btn btn-new" onclick="resetGame()">もう一度プレイ</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// ============================================================
+// CONFIG
+// ============================================================
+const CONFIG = {
+  prefecture: "福島県",
+  mapCenter: [37.4, 140.2],
+  mapZoom: 9,
+  targetPop: 400000,
+  targetRange: [300000, 500000],
+  geoJsonUrl: "https://raw.githubusercontent.com/dataofjapan/land/master/fukushima.geojson",
+};
+
+// ============================================================
+// MUNICIPALITIES DATA (2020 Census, e-Stat 国勢調査) ※双葉町のみ推計値
+// ============================================================
+const MUNICIPALITIES = [
+  { code: "07201", name: "福島市",    pop: 282802, lat: 37.7608, lng: 140.4747, region: "中通り" },
+  { code: "07202", name: "会津若松市",    pop: 117433, lat: 37.4942, lng: 139.9299, region: "会津" },
+  { code: "07203", name: "郡山市",    pop: 327872, lat: 37.3941, lng: 140.3875, region: "中通り" },
+  { code: "07204", name: "いわき市",    pop: 333202, lat: 37.0534, lng: 140.8873, region: "浜通り" },
+  { code: "07205", name: "白河市",    pop: 59531, lat: 37.1282, lng: 140.1961, region: "中通り" },
+  { code: "07207", name: "須賀川市",  pop: 75039, lat: 37.2909, lng: 140.3865, region: "中通り" },
+  { code: "07208", name: "喜多方市",  pop: 44810, lat: 37.6529, lng: 139.8752, region: "会津" },
+  { code: "07209", name: "相馬市",    pop: 34884, lat: 37.7962, lng: 140.9194, region: "浜通り" },
+  { code: "07210", name: "二本松市",  pop: 53593, lat: 37.5854, lng: 140.4265, region: "中通り" },
+  { code: "07211", name: "田村市",    pop: 35192, lat: 37.3313, lng: 140.5811, region: "中通り" },
+  { code: "07212", name: "南相馬市",  pop: 59053, lat: 37.6437, lng: 140.9877, region: "浜通り" },
+  { code: "07213", name: "伊達市",    pop: 58250, lat: 37.8295, lng: 140.5624, region: "中通り" },
+  { code: "07214", name: "本宮市",    pop: 30240, lat: 37.5104, lng: 140.3883, region: "中通り" },
+  { code: "07301", name: "桑折町",    pop: 11464, lat: 37.8695, lng: 140.5256, region: "中通り" },
+  { code: "07303", name: "国見町",    pop: 8641, lat: 37.9163, lng: 140.5628, region: "中通り" },
+  { code: "07307", name: "川俣町",    pop: 12186, lat: 37.6670, lng: 140.5944, region: "中通り" },
+  { code: "07321", name: "大玉村",    pop: 8904, lat: 37.5281, lng: 140.3456, region: "中通り" },
+  { code: "07341", name: "鏡石町",    pop: 12316, lat: 37.2404, lng: 140.3484, region: "中通り" },
+  { code: "07342", name: "天栄村",    pop: 5198, lat: 37.2020, lng: 140.2078, region: "中通り" },
+  { code: "07362", name: "西郷村",    pop: 20809, lat: 37.1124, lng: 140.1013, region: "中通り" },
+  { code: "07364", name: "泉崎村",    pop: 6214, lat: 37.0771, lng: 140.2477, region: "中通り" },
+  { code: "07365", name: "中島村",    pop: 4889, lat: 37.0528, lng: 140.2847, region: "中通り" },
+  { code: "07366", name: "矢吹町",    pop: 17307, lat: 37.0889, lng: 140.3383, region: "中通り" },
+  { code: "07381", name: "棚倉町",    pop: 13330, lat: 37.0283, lng: 140.3731, region: "中通り" },
+  { code: "07382", name: "矢祭町",    pop: 5404, lat: 36.9553, lng: 140.4163, region: "中通り" },
+  { code: "07383", name: "塙町",      pop: 8321, lat: 36.9836, lng: 140.4082, region: "中通り" },
+  { code: "07384", name: "鮫川村",    pop: 3058, lat: 37.0193, lng: 140.4745, region: "中通り" },
+  { code: "07401", name: "石川町",    pop: 14655, lat: 37.1517, lng: 140.4435, region: "中通り" },
+  { code: "07402", name: "玉川村",    pop: 6403, lat: 37.2087, lng: 140.4784, region: "中通り" },
+  { code: "07403", name: "平田村",    pop: 5830, lat: 37.2230, lng: 140.5573, region: "中通り" },
+  { code: "07404", name: "浅川町",    pop: 6041, lat: 37.0898, lng: 140.4184, region: "中通り" },
+  { code: "07405", name: "古殿町",    pop: 4826, lat: 37.0833, lng: 140.5299, region: "中通り" },
+  { code: "07421", name: "三春町",    pop: 17026, lat: 37.3481, lng: 140.4920, region: "中通り" },
+  { code: "07422", name: "小野町",    pop: 9482, lat: 37.2692, lng: 140.6114, region: "中通り" },
+  { code: "07441", name: "広野町",    pop: 5408, lat: 37.2198, lng: 141.0133, region: "浜通り" },
+  { code: "07442", name: "楢葉町",    pop: 3700, lat: 37.3508, lng: 141.0299, region: "浜通り" },
+  { code: "07443", name: "富岡町",    pop: 2130, lat: 37.4004, lng: 141.0174, region: "浜通り" },
+  { code: "07444", name: "川内村",    pop: 2046, lat: 37.3862, lng: 140.8046, region: "浜通り" },
+  { code: "07445", name: "大熊町",    pop: 847, lat: 37.4156, lng: 141.0345, region: "浜通り" },
+  { code: "07446", name: "双葉町",    pop: 300, lat: 37.4526, lng: 141.0085, region: "浜通り" },
+  { code: "07447", name: "浪江町",    pop: 1896, lat: 37.5068, lng: 140.9830, region: "浜通り" },
+  { code: "07448", name: "葛尾村",    pop: 421, lat: 37.5388, lng: 140.7825, region: "浜通り" },
+  { code: "07461", name: "新地町",    pop: 7910, lat: 37.8680, lng: 140.9161, region: "浜通り" },
+  { code: "07462", name: "飯舘村",    pop: 1319, lat: 37.7090, lng: 140.7466, region: "浜通り" },
+  { code: "07501", name: "北塩原村",  pop: 2554, lat: 37.6814, lng: 139.9505, region: "会津" },
+  { code: "07503", name: "西会津町",  pop: 5765, lat: 37.6312, lng: 139.6597, region: "会津" },
+  { code: "07505", name: "磐梯町",    pop: 3332, lat: 37.5830, lng: 139.9823, region: "会津" },
+  { code: "07506", name: "猪苗代町",  pop: 13559, lat: 37.5621, lng: 140.1133, region: "会津" },
+  { code: "07521", name: "会津坂下町", pop: 15068, lat: 37.5627, lng: 139.8228, region: "会津" },
+  { code: "07522", name: "湯川村",    pop: 3082, lat: 37.5928, lng: 139.8621, region: "会津" },
+  { code: "07523", name: "柳津町",    pop: 3087, lat: 37.5261, lng: 139.8038, region: "会津" },
+  { code: "07531", name: "三島町",    pop: 1457, lat: 37.4830, lng: 139.7561, region: "会津" },
+  { code: "07532", name: "金山町",    pop: 1867, lat: 37.3919, lng: 139.6285, region: "会津" },
+  { code: "07533", name: "昭和村",    pop: 1247, lat: 37.3283, lng: 139.6858, region: "会津" },
+  { code: "07534", name: "会津美里町", pop: 19030, lat: 37.3979, lng: 139.8530, region: "会津" },
+  { code: "07541", name: "下郷町",    pop: 5267, lat: 37.2543, lng: 139.8667, region: "会津" },
+  { code: "07542", name: "檜枝岐村",  pop: 507, lat: 37.0295, lng: 139.3810, region: "会津" },
+  { code: "07544", name: "只見町",    pop: 4041, lat: 37.3441, lng: 139.5236, region: "会津" },
+  { code: "07545", name: "南会津町",  pop: 14453, lat: 37.1980, lng: 139.7766, region: "会津" },
+];
+
+// ============================================================
+// ADJACENCY DATA
+// ============================================================
+const ADJACENCY = {
+  "07201": ["07210","07213","07301","07307","07506"],                                              // 福島市 (5)
+  "07202": ["07203","07208","07342","07505","07506","07521","07522","07534","07541"],               // 会津若松市 (9)
+  "07203": ["07202","07207","07210","07211","07214","07321","07342","07403","07421","07422","07506"], // 郡山市 (11)
+  "07204": ["07211","07384","07403","07405","07422","07441","07442","07444"],                       // いわき市 (8)
+  "07205": ["07342","07362","07364","07365","07366","07381","07401","07404"],                       // 白河市 (8)
+  "07207": ["07203","07341","07342","07402","07403"],                                              // 須賀川市 (5)
+  "07208": ["07202","07501","07503","07505","07521","07522"],                                      // 喜多方市 (6)
+  "07209": ["07212","07213","07461","07462"],                                                      // 相馬市 (4)
+  "07210": ["07201","07203","07211","07214","07307","07321","07421","07447","07448","07506"],       // 二本松市 (10)
+  "07211": ["07203","07204","07210","07421","07422","07444","07445","07447","07448"],               // 田村市 (9)
+  "07212": ["07209","07447","07462"],                                                              // 南相馬市 (3)
+  "07213": ["07201","07209","07301","07303","07307","07462"],                                      // 伊達市 (6)
+  "07214": ["07203","07210","07321","07421"],                                                      // 本宮市 (4)
+  "07301": ["07201","07213","07303"],                                                              // 桑折町 (3)
+  "07303": ["07213","07301"],                                                                      // 国見町 (2)
+  "07307": ["07201","07210","07213","07447","07462"],                                              // 川俣町 (5)
+  "07321": ["07203","07210","07214"],                                                              // 大玉村 (3)
+  "07341": ["07207","07342","07366","07402"],                                                      // 鏡石町 (4)
+  "07342": ["07202","07203","07205","07207","07341","07362","07366","07541"],                       // 天栄村 (8)
+  "07362": ["07205","07342","07541"],                                                              // 西郷村 (3)
+  "07364": ["07205","07365","07366"],                                                              // 泉崎村 (3)
+  "07365": ["07205","07364","07366","07401"],                                                      // 中島村 (4)
+  "07366": ["07205","07341","07342","07364","07365","07401","07402"],                               // 矢吹町 (7)
+  "07381": ["07205","07382","07383","07384","07404"],                                              // 棚倉町 (5)
+  "07382": ["07381","07383"],                                                                      // 矢祭町 (2)
+  "07383": ["07381","07382","07384"],                                                              // 塙町 (3)
+  "07384": ["07204","07381","07383","07401","07404","07405"],                                      // 鮫川村 (6)
+  "07401": ["07205","07365","07366","07384","07402","07403","07404","07405"],                       // 石川町 (8)
+  "07402": ["07207","07341","07366","07401","07403"],                                              // 玉川村 (5)
+  "07403": ["07203","07204","07207","07401","07402","07405","07422"],                               // 平田村 (7)
+  "07404": ["07205","07381","07384","07401"],                                                      // 浅川町 (4)
+  "07405": ["07204","07384","07401","07403"],                                                      // 古殿町 (4)
+  "07421": ["07203","07210","07211","07214"],                                                      // 三春町 (4)
+  "07422": ["07203","07204","07211","07403"],                                                      // 小野町 (4)
+  "07441": ["07204","07442"],                                                                      // 広野町 (2)
+  "07442": ["07204","07441","07443","07444"],                                                      // 楢葉町 (4)
+  "07443": ["07442","07444","07445"],                                                              // 富岡町 (3)
+  "07444": ["07204","07211","07442","07443","07445"],                                              // 川内村 (5)
+  "07445": ["07211","07443","07444","07446","07447"],                                              // 大熊町 (5)
+  "07446": ["07445","07447"],                                                                      // 双葉町 (2)
+  "07447": ["07210","07211","07212","07307","07445","07446","07448","07462"],                       // 浪江町 (8)
+  "07448": ["07210","07211","07447"],                                                              // 葛尾村 (3)
+  "07461": ["07209"],                                                                              // 新地町 (1)
+  "07462": ["07209","07212","07213","07307","07447"],                                              // 飯舘村 (5)
+  "07501": ["07208","07505","07506"],                                                              // 北塩原村 (3)
+  "07503": ["07208","07521","07523","07532"],                                                      // 西会津町 (4)
+  "07505": ["07202","07208","07501","07506"],                                                      // 磐梯町 (4)
+  "07506": ["07201","07202","07203","07210","07501","07505"],                                      // 猪苗代町 (6)
+  "07521": ["07202","07208","07503","07522","07523","07534"],                                      // 会津坂下町 (6)
+  "07522": ["07202","07208","07521"],                                                              // 湯川村 (3)
+  "07523": ["07503","07521","07531","07532","07533","07534"],                                      // 柳津町 (6)
+  "07531": ["07523","07532","07533"],                                                              // 三島町 (3)
+  "07532": ["07503","07523","07531","07533","07544"],                                              // 金山町 (5)
+  "07533": ["07523","07531","07532","07534","07541","07544","07545"],                               // 昭和村 (7)
+  "07534": ["07202","07521","07523","07533","07541"],                                              // 会津美里町 (5)
+  "07541": ["07202","07342","07362","07533","07534","07545"],                                      // 下郷町 (6)
+  "07542": ["07544","07545"],                                                                      // 檜枝岐村 (2)
+  "07544": ["07532","07533","07542","07545"],                                                      // 只見町 (4)
+  "07545": ["07533","07541","07542","07544"],                                                      // 南会津町 (4)
+};
+
+// ============================================================
+// COST DATA & CALCULATION
+// ============================================================
+const PREFECTURE_COST = {
+  name: "福島県",
+  governorAnnual: 18000000 * 2, // 知事+副知事 2人分
+  assemblyCount: 58,
+  assemblyAnnualPerPerson: 17000000,
+  facilityAnnual: 3000000000,
+  get governorTotal() { return this.governorAnnual; },
+  get assemblyTotal() { return this.assemblyAnnualPerPerson * this.assemblyCount; },
+  get total() { return this.governorTotal + this.assemblyTotal + this.facilityAnnual; },
+};
+
+const SALARY_TIERS = {
+  mayor: [
+    { minPop: 200000, monthly: 1000000 },
+    { minPop:  50000, monthly:  800000 },
+    { minPop:  20000, monthly:  650000 },
+    { minPop:   5000, monthly:  500000 },
+    { minPop:      0, monthly:  380000 },
+  ],
+  member: [
+    { minPop: 200000, monthly: 570000 },
+    { minPop:  50000, monthly: 380000 },
+    { minPop:  20000, monthly: 270000 },
+    { minPop:      0, monthly: 200000 },
+  ],
+};
+
+function calcMunicipalityCost(pop) {
+  const mayorTier = SALARY_TIERS.mayor.find(t => pop >= t.minPop);
+  const mayorAnnual = mayorTier.monthly * 12 * 1.4;
+  const memberCount = Math.max(4, Math.round(pop / 8000));
+  const memberTier = SALARY_TIERS.member.find(t => pop >= t.minPop);
+  const memberAnnual = memberTier.monthly * 12 * 1.4 * memberCount;
+  const facilityAnnual = Math.max(30000000, pop * 10000);
+  return { mayorAnnual, memberCount, memberAnnual, facilityAnnual, total: mayorAnnual + memberAnnual + facilityAnnual };
+}
+
+// Pre-calculate cost for each municipality
+MUNICIPALITIES.forEach(m => { m.cost = calcMunicipalityCost(m.pop); });
+
+// Pre-calculate "before" totals (prefecture + all municipalities)
+const BEFORE_COST = {
+  prefGovSalary: PREFECTURE_COST.governorTotal + PREFECTURE_COST.assemblyTotal,
+  prefFacility: PREFECTURE_COST.facilityAnnual,
+  muniSalary: MUNICIPALITIES.reduce((s, m) => s + m.cost.mayorAnnual + m.cost.memberAnnual, 0),
+  muniFacility: MUNICIPALITIES.reduce((s, m) => s + m.cost.facilityAnnual, 0),
+};
+BEFORE_COST.totalSalary = BEFORE_COST.prefGovSalary + BEFORE_COST.muniSalary;
+BEFORE_COST.totalFacility = BEFORE_COST.prefFacility + BEFORE_COST.muniFacility;
+BEFORE_COST.total = BEFORE_COST.totalSalary + BEFORE_COST.totalFacility;
+
+function calcHanCost(hanId, memberReductionRate, facilityClosureRate) {
+  const members = getHanMembers(hanId);
+  const hanPop = members.reduce((s, m) => s + m.pop, 0);
+  // 藩主: 知事相当報酬
+  const chiefAnnual = 1200000 * 12 * 1.4;
+  // 合併前議員数合計 × (1 - 削減率)
+  const totalMembersBefore = members.reduce((s, m) => s + m.cost.memberCount, 0);
+  const membersAfter = Math.max(4, Math.round(totalMembersBefore * (1 - memberReductionRate)));
+  // 議員報酬は藩人口規模で決定
+  const memberTier = SALARY_TIERS.member.find(t => hanPop >= t.minPop);
+  const memberAnnual = memberTier.monthly * 12 * 1.4 * membersAfter;
+  // 施設費: 合併前合計 × (1 - 統廃合率)
+  const facilityBefore = members.reduce((s, m) => s + m.cost.facilityAnnual, 0);
+  const facilityAnnual = facilityBefore * (1 - facilityClosureRate);
+  return { chiefAnnual, membersAfter, memberAnnual, facilityAnnual, total: chiefAnnual + memberAnnual + facilityAnnual };
+}
+
+function calcAfterCost(memberReductionRate, facilityClosureRate) {
+  const confirmedHans = state.hans.filter(h => h.confirmed);
+  let totalSalary = 0, totalFacility = 0;
+  confirmedHans.forEach(han => {
+    const c = calcHanCost(han.id, memberReductionRate, facilityClosureRate);
+    totalSalary += c.chiefAnnual + c.memberAnnual;
+    totalFacility += c.facilityAnnual;
+  });
+  return { totalSalary, totalFacility, total: totalSalary + totalFacility };
+}
+
+function formatOku(yen) {
+  return (yen / 100000000).toFixed(1);
+}
+
+// ============================================================
+// HAN COLORS
+// ============================================================
+const HAN_COLORS = [
+  "#4A90D9", "#E8834A", "#5CB85C", "#9B59B6", "#E74C3C", "#1ABC9C",
+  "#8E44AD", "#D35400", "#16A085", "#2980B9"
+];
+
+// ============================================================
+// STATE
+// ============================================================
+const state = {
+  assignments: {},
+  hans: [],
+  currentHanId: null,
+  phase: "playing",
+  hanCounter: 0,
+  sliders: { memberReductionRate: 0.5, facilityClosureRate: 0.4 },
+};
+
+let map, municipalityLayers = {}, geojsonLoaded = false;
+
+// ============================================================
+// MAP INITIALIZATION
+// ============================================================
+function initMap() {
+  map = L.map('map', {
+    center: CONFIG.mapCenter,
+    zoom: CONFIG.mapZoom,
+    zoomControl: true,
+    attributionControl: true,
+  });
+
+  const tileGsiPale = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>',
+    maxZoom: 18,
+  });
+  const tileGsiStd = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/std/{z}/{x}/{y}.png', {
+    attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>',
+    maxZoom: 18,
+  });
+  tileGsiPale.addTo(map);
+  L.control.layers({ '淡色地図': tileGsiPale, '標準地図': tileGsiStd }, {}, { position: 'topleft' }).addTo(map);
+
+  loadGeoJSON();
+}
+
+function loadGeoJSON() {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 10000);
+
+  fetch(CONFIG.geoJsonUrl, { signal: controller.signal })
+    .then(r => { clearTimeout(timeout); if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+    .then(data => {
+      geojsonLoaded = true;
+      renderGeoJSON(data);
+    })
+    .catch(() => {
+      clearTimeout(timeout);
+      geojsonLoaded = false;
+      renderFallbackMarkers();
+    });
+}
+
+function renderGeoJSON(data) {
+  const muniMap = {};
+  MUNICIPALITIES.forEach(m => muniMap[m.code] = m);
+
+  L.geoJSON(data, {
+    style: () => getDefaultStyle(),
+    onEachFeature: (feature, layer) => {
+      const code = feature.properties.N03_007 || feature.properties.code;
+      const name = feature.properties.ward_ja || feature.properties.N03_004 || '';
+      // Name-based match first (GeoJSON codes differ from spec codes)
+      let matched = name ? MUNICIPALITIES.find(m => m.name === name) : null;
+      if (!matched) matched = findMuniByCode(code);
+      if (!matched) return;
+      municipalityLayers[matched.code] = layer;
+      layer.bindTooltip(matched.name + '<br>' + formatPop(matched.pop) + '人', {
+        className: 'muni-tooltip', sticky: true
+      });
+      layer.on('click', () => handleMunicipalityClick(matched.code));
+      layer.on('mouseover', () => highlightLayer(layer, matched.code));
+      layer.on('mouseout', () => unhighlightLayer(layer, matched.code));
+    }
+  }).addTo(map);
+
+  // Check for any municipalities without GeoJSON polygons, add markers as fallback
+  MUNICIPALITIES.forEach(m => {
+    if (!municipalityLayers[m.code]) {
+      addFallbackMarker(m);
+    }
+  });
+}
+
+function findMuniByCode(code) {
+  if (!code) return null;
+  let c = String(code);
+  // dataofjapan uses 6-digit codes (e.g. "072010"); normalize to 5-digit
+  if (c.length === 6) c = c.slice(0, 5);
+  c = c.padStart(5, '0');
+  return MUNICIPALITIES.find(m => m.code === c);
+}
+
+function renderFallbackMarkers() {
+  MUNICIPALITIES.forEach(m => addFallbackMarker(m));
+}
+
+function addFallbackMarker(m) {
+  const radius = Math.max(Math.sqrt(m.pop) / 25, 8);
+  const marker = L.circleMarker([m.lat, m.lng], {
+    radius: radius,
+    ...getDefaultStyle(),
+  }).addTo(map);
+  municipalityLayers[m.code] = marker;
+  marker.bindTooltip(m.name + '<br>' + formatPop(m.pop) + '人', {
+    className: 'muni-tooltip', sticky: true
+  });
+  marker.on('click', () => handleMunicipalityClick(m.code));
+  marker.on('mouseover', () => highlightLayer(marker, m.code));
+  marker.on('mouseout', () => unhighlightLayer(marker, m.code));
+}
+
+function getDefaultStyle() {
+  return { fillColor: '#f0ece3', color: '#888', weight: 1.5, fillOpacity: 0.35, opacity: 1 };
+}
+
+// ============================================================
+// MAP STYLING
+// ============================================================
+function updateAllStyles() {
+  const clickable = state.currentHanId ? new Set(getClickableMunicipalities(state.currentHanId)) : new Set();
+
+  MUNICIPALITIES.forEach(m => {
+    const layer = municipalityLayers[m.code];
+    if (!layer) return;
+
+    const assignment = state.assignments[m.code];
+    const han = assignment ? state.hans.find(h => h.id === assignment) : null;
+
+    if (han && han.confirmed) {
+      // Confirmed han
+      layer.setStyle({ fillColor: han.color, color: '#444', weight: 2, fillOpacity: 0.55, opacity: 1, dashArray: null });
+    } else if (assignment === state.currentHanId) {
+      // In current editing han
+      layer.setStyle({ fillColor: '#FFD700', color: '#b8860b', weight: 2.5, fillOpacity: 0.65, opacity: 1, dashArray: null });
+    } else if (!assignment && state.currentHanId) {
+      if (clickable.has(m.code)) {
+        // Clickable (adjacent) — pulsing border hint
+        layer.setStyle({ fillColor: '#fefcf0', color: '#DAA520', weight: 2, fillOpacity: 0.45, opacity: 1, dashArray: '5,4' });
+      } else {
+        // Not clickable (not adjacent)
+        layer.setStyle({ fillColor: '#e8e8e8', color: '#ccc', weight: 0.5, fillOpacity: 0.15, opacity: 0.5, dashArray: null });
+      }
+    } else {
+      // Default unassigned, no current han
+      layer.setStyle(getDefaultStyle());
+    }
+  });
+}
+
+function highlightLayer(layer, code) {
+  const assignment = state.assignments[code];
+  const han = assignment ? state.hans.find(h => h.id === assignment) : null;
+  if (han && han.confirmed) return;
+
+  if (!assignment && state.currentHanId) {
+    const clickable = new Set(getClickableMunicipalities(state.currentHanId));
+    if (!clickable.has(code)) return;
+  }
+
+  layer.setStyle({ fillOpacity: 1 });
+  if (layer.bringToFront) layer.bringToFront();
+}
+
+function unhighlightLayer(layer, code) {
+  updateAllStyles();
+}
+
+// ============================================================
+// ADJACENCY LOGIC
+// ============================================================
+function canAddToHan(code, hanId) {
+  const hanMembers = Object.entries(state.assignments)
+    .filter(([, h]) => h === hanId)
+    .map(([c]) => c);
+  if (hanMembers.length === 0) return true;
+  const neighbors = ADJACENCY[code] || [];
+  return hanMembers.some(member => neighbors.includes(member));
+}
+
+function canRemoveFromHan(code, hanId) {
+  const remaining = Object.entries(state.assignments)
+    .filter(([c, h]) => h === hanId && c !== code)
+    .map(([c]) => c);
+  if (remaining.length === 0) return true;
+  return isConnected(remaining);
+}
+
+function isConnected(codes) {
+  if (codes.length <= 1) return true;
+  const codeSet = new Set(codes);
+  const visited = new Set();
+  const queue = [codes[0]];
+  visited.add(codes[0]);
+  while (queue.length > 0) {
+    const current = queue.shift();
+    for (const neighbor of (ADJACENCY[current] || [])) {
+      if (codeSet.has(neighbor) && !visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
+    }
+  }
+  return visited.size === codeSet.size;
+}
+
+function getClickableMunicipalities(hanId) {
+  const hanMembers = Object.entries(state.assignments)
+    .filter(([, h]) => h === hanId)
+    .map(([c]) => c);
+  if (hanMembers.length === 0) {
+    return MUNICIPALITIES.filter(m => !state.assignments[m.code]).map(m => m.code);
+  }
+  const clickable = new Set();
+  for (const member of hanMembers) {
+    for (const neighbor of (ADJACENCY[member] || [])) {
+      if (!state.assignments[neighbor]) {
+        clickable.add(neighbor);
+      }
+    }
+  }
+  return [...clickable];
+}
+
+function checkIsolatedMunicipalities() {
+  const unassigned = MUNICIPALITIES.filter(m => !state.assignments[m.code]).map(m => m.code);
+  return unassigned.filter(code => {
+    const neighbors = ADJACENCY[code] || [];
+    return neighbors.every(n => state.assignments[n]);
+  });
+}
+
+// ============================================================
+// GAME LOGIC
+// ============================================================
+function handleMunicipalityClick(code) {
+  if (state.phase !== "playing" || !state.currentHanId) {
+    if (!state.currentHanId) showToast("まず「新しい藩を作る」を押してください");
+    return;
+  }
+
+  const currentAssignment = state.assignments[code];
+  const currentHan = state.hans.find(h => h.id === state.currentHanId);
+  if (!currentHan) return;
+
+  // Belongs to a confirmed han
+  if (currentAssignment) {
+    const assignedHan = state.hans.find(h => h.id === currentAssignment);
+    if (assignedHan && assignedHan.confirmed) {
+      showToast("確定済みの藩の市町村は変更できません");
+      return;
+    }
+  }
+
+  if (currentAssignment === state.currentHanId) {
+    // Toggle off
+    if (!canRemoveFromHan(code, state.currentHanId)) {
+      showToast("この市町村を外すと飛び地になります");
+      return;
+    }
+    delete state.assignments[code];
+  } else if (!currentAssignment) {
+    // Add
+    if (!canAddToHan(code, state.currentHanId)) {
+      showToast("隣接する市町村を先に追加してください");
+      return;
+    }
+    state.assignments[code] = state.currentHanId;
+  }
+
+  updateAllStyles();
+  updateSidebar();
+}
+
+function createNewHan() {
+  if (state.currentHanId) {
+    const current = state.hans.find(h => h.id === state.currentHanId);
+    if (current && !current.confirmed) {
+      const members = Object.values(state.assignments).filter(h => h === state.currentHanId);
+      if (members.length > 0) {
+        showToast("現在の藩を確定するか、市町村を外してから新しい藩を作ってください");
+        return;
+      }
+      // Remove empty han
+      state.hans = state.hans.filter(h => h.id !== state.currentHanId);
+    }
+  }
+
+  state.hanCounter++;
+  const colorIdx = (state.hans.filter(h => h.confirmed).length) % HAN_COLORS.length;
+  const newHan = {
+    id: 'han_' + state.hanCounter,
+    name: '藩' + String.fromCharCode(64 + state.hanCounter),
+    color: HAN_COLORS[colorIdx],
+    confirmed: false,
+  };
+  state.hans.push(newHan);
+  state.currentHanId = newHan.id;
+
+  updateAllStyles();
+  updateSidebar();
+  showToast("地図上の市町村をクリックして藩に追加してください");
+}
+
+function confirmHan() {
+  const currentHan = state.hans.find(h => h.id === state.currentHanId);
+  if (!currentHan) return;
+
+  const members = Object.entries(state.assignments)
+    .filter(([, h]) => h === state.currentHanId);
+  if (members.length === 0) {
+    showToast("市町村を1つ以上追加してください");
+    return;
+  }
+
+  // Show name dialog
+  document.getElementById('nameInput').value = currentHan.name;
+  document.getElementById('nameDialog').classList.add('show');
+  document.getElementById('nameOverlay').classList.add('show');
+  document.getElementById('nameInput').focus();
+  document.getElementById('nameInput').select();
+}
+
+function submitHanName() {
+  const name = document.getElementById('nameInput').value.trim();
+  if (!name) return;
+
+  const currentHan = state.hans.find(h => h.id === state.currentHanId);
+  if (!currentHan) return;
+
+  currentHan.name = name;
+  currentHan.confirmed = true;
+
+  document.getElementById('nameDialog').classList.remove('show');
+  document.getElementById('nameOverlay').classList.remove('show');
+
+  state.currentHanId = null;
+
+  // Check for isolated municipalities
+  const isolated = checkIsolatedMunicipalities();
+  if (isolated.length > 0) {
+    const names = isolated.map(c => MUNICIPALITIES.find(m => m.code === c)?.name).filter(Boolean);
+    if (names.length <= 3) {
+      showToast("注意: " + names.join("、") + " が孤立しています", 4000);
+    } else {
+      showToast("注意: " + names.length + "個の市町村が孤立しています", 4000);
+    }
+  }
+
+  // Check game completion
+  const assignedCount = Object.keys(state.assignments).length;
+  if (assignedCount === MUNICIPALITIES.length) {
+    state.phase = "completed";
+    showGameClear();
+  }
+
+  updateAllStyles();
+  updateSidebar();
+}
+
+function resetGame() {
+  state.assignments = {};
+  state.hans = [];
+  state.currentHanId = null;
+  state.phase = "playing";
+  state.hanCounter = 0;
+  state.sliders = { memberReductionRate: 0.5, facilityClosureRate: 0.4 };
+
+  document.getElementById('sliderMember').value = 50;
+  document.getElementById('sliderMemberVal').textContent = '50%';
+  document.getElementById('sliderFacility').value = 40;
+  document.getElementById('sliderFacilityVal').textContent = '40%';
+  document.getElementById('modalOverlay').classList.remove('show');
+  document.getElementById('nameDialog').classList.remove('show');
+  document.getElementById('nameOverlay').classList.remove('show');
+
+  updateAllStyles();
+  updateSidebar();
+}
+
+// ============================================================
+// SCORING
+// ============================================================
+function calculateScore() {
+  let score = 1000;
+  const confirmedHans = state.hans.filter(h => h.confirmed);
+
+  confirmedHans.forEach(han => {
+    const pop = getHanPopulation(han.id);
+    if (pop >= 300000 && pop <= 500000) {
+      score += 100;
+    } else if ((pop >= 250000 && pop < 300000) || (pop > 500000 && pop <= 550000)) {
+      score -= 50;
+    } else {
+      score -= 200;
+    }
+  });
+
+  const hanCount = confirmedHans.length;
+  if (hanCount === 5) score += 300;
+  else if (hanCount === 4 || hanCount === 6) score += 200;
+
+  return Math.max(0, score);
+}
+
+function getHanPopulation(hanId) {
+  return Object.entries(state.assignments)
+    .filter(([, h]) => h === hanId)
+    .reduce((sum, [code]) => {
+      const m = MUNICIPALITIES.find(mu => mu.code === code);
+      return sum + (m ? m.pop : 0);
+    }, 0);
+}
+
+function getHanMembers(hanId) {
+  return Object.entries(state.assignments)
+    .filter(([, h]) => h === hanId)
+    .map(([code]) => MUNICIPALITIES.find(m => m.code === code))
+    .filter(Boolean);
+}
+
+function showGameClear() {
+  const score = calculateScore();
+  document.getElementById('finalScore').textContent = score.toLocaleString() + '点';
+
+  const summaryEl = document.getElementById('hanSummary');
+  const confirmedHans = state.hans.filter(h => h.confirmed);
+  summaryEl.innerHTML = confirmedHans.map(han => {
+    const pop = getHanPopulation(han.id);
+    const popMan = (pop / 10000).toFixed(1);
+    let statusText, statusClass;
+    if (pop >= 300000 && pop <= 500000) {
+      statusText = '適正'; statusClass = 'status-good';
+    } else if (pop >= 250000 || pop <= 550000) {
+      statusText = pop < 300000 ? '少ない' : '多い'; statusClass = 'status-warn';
+    } else {
+      statusText = pop < 250000 ? '少なすぎ' : '多すぎ'; statusClass = 'status-bad';
+    }
+    const members = getHanMembers(han.id);
+    return `<div class="han-summary-item">
+      <div class="han-color-dot" style="background:${han.color}"></div>
+      <div style="flex:1">
+        <strong>${han.name}</strong>
+        <span style="color:#888;font-size:12px;margin-left:4px;">(${members.length}市町村)</span>
+        <br><span style="font-size:13px;">${popMan}万人</span>
+        <span class="${statusClass}" style="margin-left:8px;">${statusText}</span>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Cost comparison
+  updateCostComparison();
+
+  document.getElementById('modalOverlay').classList.add('show');
+}
+
+function updateCostComparison() {
+  const confirmedHans = state.hans.filter(h => h.confirmed);
+  const memberRate = state.sliders.memberReductionRate;
+  const facilityRate = state.sliders.facilityClosureRate;
+
+  // Before
+  document.getElementById('beforeSalary').textContent = '約' + formatOku(BEFORE_COST.totalSalary) + '億円/年';
+  document.getElementById('beforeFacility').textContent = '約' + formatOku(BEFORE_COST.totalFacility) + '億円/年';
+  document.getElementById('beforeTotal').textContent = '約' + formatOku(BEFORE_COST.total) + '億円/年';
+
+  // After
+  document.getElementById('afterTitle').textContent = '【廃県置藩 後】' + confirmedHans.length + '藩（あなたの設計）';
+  const after = calcAfterCost(memberRate, facilityRate);
+  document.getElementById('afterSalary').textContent = '約' + formatOku(after.totalSalary) + '億円/年';
+  document.getElementById('afterFacility').textContent = '約' + formatOku(after.totalFacility) + '億円/年';
+  document.getElementById('afterTotal').textContent = '約' + formatOku(after.total) + '億円/年';
+
+  // Saving
+  const saving = BEFORE_COST.total - after.total;
+  const savingEl = document.getElementById('costSaving');
+  if (saving >= 0) {
+    savingEl.textContent = '削減できるコスト: 約' + formatOku(saving) + '億円/年';
+    savingEl.className = 'cost-saving';
+  } else {
+    savingEl.textContent = '増加コスト: 約' + formatOku(Math.abs(saving)) + '億円/年';
+    savingEl.className = 'cost-saving negative';
+  }
+}
+
+function onSliderChange() {
+  const memberVal = parseInt(document.getElementById('sliderMember').value);
+  const facilityVal = parseInt(document.getElementById('sliderFacility').value);
+  state.sliders.memberReductionRate = memberVal / 100;
+  state.sliders.facilityClosureRate = facilityVal / 100;
+  document.getElementById('sliderMemberVal').textContent = memberVal + '%';
+  document.getElementById('sliderFacilityVal').textContent = facilityVal + '%';
+  updateCostComparison();
+}
+
+// ============================================================
+// UI UPDATE
+// ============================================================
+function updateSidebar() {
+  const currentHan = state.currentHanId ? state.hans.find(h => h.id === state.currentHanId) : null;
+
+  // Current han section
+  if (currentHan && !currentHan.confirmed) {
+    document.getElementById('noHanMsg').style.display = 'none';
+    document.getElementById('currentHanInfo').style.display = 'block';
+    document.getElementById('currentHanName').textContent = currentHan.name + '（編集中）';
+
+    const pop = getHanPopulation(state.currentHanId);
+    const popMan = (pop / 10000).toFixed(1);
+    document.getElementById('gaugePopText').textContent = popMan + '万人';
+
+    // Gauge fill
+    const maxDisplay = CONFIG.targetRange[1] * 1.2;
+    const pct = Math.min((pop / maxDisplay) * 100, 100);
+    const gaugeFill = document.getElementById('gaugeFill');
+    gaugeFill.style.width = pct + '%';
+    gaugeFill.className = 'gauge-fill ' + (pop < CONFIG.targetRange[0] ? 'under' : (pop > CONFIG.targetRange[1] ? 'over' : 'good'));
+    document.getElementById('gaugeBarText').textContent = popMan + '万 / 目標40万';
+
+    // Member list
+    const members = getHanMembers(state.currentHanId);
+    const listEl = document.getElementById('currentMuniList');
+    if (members.length === 0) {
+      listEl.innerHTML = '<div style="color:#999;font-size:12px;padding:4px;">市町村をクリックして追加</div>';
+    } else {
+      listEl.innerHTML = members
+        .sort((a, b) => b.pop - a.pop)
+        .map(m => `<div class="muni-item"><span>${m.name}</span><span class="muni-pop">${formatPop(m.pop)}</span></div>`)
+        .join('');
+    }
+
+    // Cost preview
+    const costPreview = document.getElementById('costPreview');
+    if (members.length > 0) {
+      costPreview.style.display = 'block';
+      const salarySum = members.reduce((s, m) => s + m.cost.mayorAnnual + m.cost.memberAnnual, 0);
+      const facilitySum = members.reduce((s, m) => s + m.cost.facilityAnnual, 0);
+      document.getElementById('costSalary').textContent = '約' + formatOku(salarySum) + '億円/年';
+      document.getElementById('costFacility').textContent = '約' + formatOku(facilitySum) + '億円/年';
+      document.getElementById('costTotal').textContent = '約' + formatOku(salarySum + facilitySum) + '億円/年';
+    } else {
+      costPreview.style.display = 'none';
+    }
+
+    document.getElementById('btnNew').disabled = true;
+    document.getElementById('btnConfirm').disabled = members.length === 0;
+  } else {
+    document.getElementById('noHanMsg').style.display = 'block';
+    document.getElementById('currentHanInfo').style.display = 'none';
+    document.getElementById('btnNew').disabled = state.phase === 'completed';
+    document.getElementById('btnConfirm').disabled = true;
+  }
+
+  // Confirmed list
+  const confirmedHans = state.hans.filter(h => h.confirmed);
+  const confirmedEl = document.getElementById('confirmedList');
+  if (confirmedHans.length === 0) {
+    confirmedEl.innerHTML = '<div style="color:#999; font-size:13px; font-style:italic;">まだありません</div>';
+  } else {
+    confirmedEl.innerHTML = confirmedHans.map(han => {
+      const pop = getHanPopulation(han.id);
+      const popMan = (pop / 10000).toFixed(1);
+      let statusText, statusClass;
+      if (pop >= CONFIG.targetRange[0] && pop <= CONFIG.targetRange[1]) {
+        statusText = '適正'; statusClass = 'status-good';
+      } else if (pop < CONFIG.targetRange[0]) {
+        statusText = '少ない'; statusClass = pop < 250000 ? 'status-bad' : 'status-warn';
+      } else {
+        statusText = '多い'; statusClass = pop > 550000 ? 'status-bad' : 'status-warn';
+      }
+      const count = getHanMembers(han.id).length;
+      return `<div class="han-card" style="border-left-color:${han.color}">
+        <div class="han-card-name" style="color:${han.color}">${han.name}</div>
+        <div class="han-card-pop">${popMan}万人（${count}市町村）</div>
+        <div class="han-card-status ${statusClass}">${statusText}</div>
+      </div>`;
+    }).join('');
+  }
+
+  // Progress
+  const assigned = Object.keys(state.assignments).length;
+  document.getElementById('progressText').textContent = assigned + ' / ' + MUNICIPALITIES.length + ' 市町村を割り当て済み';
+  document.getElementById('progressFill').style.width = (assigned / MUNICIPALITIES.length * 100) + '%';
+}
+
+// ============================================================
+// UTILITIES
+// ============================================================
+function formatPop(pop) {
+  return pop.toLocaleString();
+}
+
+let toastTimer = null;
+function showToast(msg, duration = 2500) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), duration);
+}
+
+// Enter key for name dialog
+document.getElementById('nameInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') submitHanName();
+});
+
+// ============================================================
+// INIT
+// ============================================================
+initMap();
+updateSidebar();
+// Ensure Leaflet recalculates size after flex layout settles
+setTimeout(() => map.invalidateSize(), 100);
+</script>
+</body>
+</html>
