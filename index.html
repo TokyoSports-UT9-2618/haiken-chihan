@@ -1796,11 +1796,8 @@ initMap();
 updateSidebar();
 // Ensure Leaflet recalculates size after flex layout settles
 setTimeout(() => map.invalidateSize(), 100);
-// Show help on first visit
-if (!localStorage.getItem('haiken_help_seen')) {
-  localStorage.setItem('haiken_help_seen', '1');
-  setTimeout(() => openHelp(), 600);
-}
+// Show help on every page load
+setTimeout(() => openHelp(), 600);
 </script>
 </body>
 </html>
