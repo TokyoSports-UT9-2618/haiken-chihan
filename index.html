@@ -756,7 +756,7 @@ function highlightLayer(layer, code) {
     if (!clickable.has(code)) return;
   }
 
-  layer.setStyle({ fillOpacity: 1 });
+  layer.setStyle({ fillColor: '#b5451b', fillOpacity: 0.75 });
   if (layer.bringToFront) layer.bringToFront();
 }
 
