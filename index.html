@@ -325,7 +325,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 </div>
 
 <!-- Hidden PDF report template -->
-<div id="pdfReport" style="position:fixed;top:-9999px;left:-9999px;width:800px;background:#fff;padding:32px;font-family:sans-serif;line-height:1.5;"></div>
+<div id="pdfReport" style="position:fixed;top:-9999px;left:-9999px;width:794px;background:#fff;font-family:sans-serif;line-height:1.5;"></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -921,7 +921,7 @@ function createNewHan() {
   }
 
   state.hanCounter++;
-  const colorIdx = (state.hans.filter(h => h.confirmed).length) % HAN_COLORS.length;
+  const colorIdx = state.hanCounter % HAN_COLORS.length;
   const newHan = {
     id: 'han_' + state.hanCounter,
     name: '藩' + String.fromCharCode(64 + state.hanCounter),
@@ -1280,8 +1280,8 @@ function renderMapCanvas(w, h) {
 
   if (!geojsonCache) return canvas;
 
-  // Fukushima approximate bounding box
-  const minLng = 136.85, maxLng = 141.15, minLat = 36.75, maxLat = 38.05;
+  // Fukushima bounding box (western edge ~139.0°, eastern ~141.0°)
+  const minLng = 138.72, maxLng = 141.18, minLat = 36.72, maxLat = 38.08;
 
   function project(lat, lng) {
     const x = ((lng - minLng) / (maxLng - minLng)) * w;
@@ -1335,56 +1335,93 @@ function buildPDFReport(el) {
   const totalTax = MUNICIPALITIES.reduce((s, m) => s + m.taxRevenue, 0);
   const now = new Date().toLocaleDateString('ja-JP');
 
+  // 凡例: 2列グリッド
   const legendHTML = confirmedHans.map(han =>
-    `<span style="display:inline-flex;align-items:center;margin:0 12px 4px 0;font-size:12px;">
-      <span style="display:inline-block;width:12px;height:12px;background:${han.color};border-radius:2px;margin-right:4px;flex-shrink:0;"></span>${han.name}
-    </span>`
+    `<div style="display:flex;align-items:center;gap:6px;font-size:11px;padding:3px 0;">
+      <span style="flex-shrink:0;width:14px;height:14px;background:${han.color};border-radius:3px;display:inline-block;"></span>
+      <span style="font-weight:bold;">${han.name}</span>
+    </div>`
   ).join('');
 
   const hanRowsHTML = confirmedHans.map(han => {
     const members = getHanMembers(han.id);
     const pop = getHanPopulation(han.id);
     const tax = members.reduce((s, m) => s + m.taxRevenue, 0);
-    const tokku = han.tokku ? `<span style="font-size:11px;color:#1a6ea3;margin-left:6px;">${han.tokku.label}</span>` : '';
-    return `<div style="margin:6px 0;padding:8px 10px;border-left:5px solid ${han.color};background:#f9f9f9;border-radius:0 4px 4px 0;">
-      <div style="font-weight:bold;font-size:13px;">${han.name}${tokku}</div>
-      <div style="font-size:11px;color:#555;margin-top:2px;">人口: ${(pop / 10000).toFixed(1)}万人 ／ ${members.length}市町村 ／ 税収: 約${formatOku(tax)}億円</div>
-      <div style="font-size:10px;color:#888;margin-top:2px;">${members.map(m => m.name).join('・')}</div>
-    </div>`;
+    const tokku = han.tokku ? `<span style="font-size:10px;color:#1a6ea3;margin-left:5px;background:#e8f4fd;padding:1px 5px;border-radius:3px;">${han.tokku.label}</span>` : '';
+    return `<tr>
+      <td style="padding:5px 8px;border-bottom:1px solid #eee;white-space:nowrap;">
+        <span style="display:inline-block;width:10px;height:10px;background:${han.color};border-radius:2px;margin-right:4px;vertical-align:middle;"></span>
+        <strong>${han.name}</strong>${tokku}
+      </td>
+      <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">${(pop / 10000).toFixed(1)}万人</td>
+      <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">${members.length}市町村</td>
+      <td style="padding:5px 8px;border-bottom:1px solid #eee;text-align:right;white-space:nowrap;">約${formatOku(tax)}億円</td>
+      <td style="padding:5px 8px;border-bottom:1px solid #eee;font-size:9px;color:#888;">${members.map(m => m.name).join('・')}</td>
+    </tr>`;
   }).join('');
 
+  const MAP_W = 714, MAP_H = 424;
+
   el.innerHTML = `
-    <div style="font-size:22px;font-weight:bold;color:#2c3e50;margin-bottom:2px;">廃県置藩シミュレーター</div>
-    <div style="font-size:13px;color:#666;margin-bottom:14px;">福島県 藩編成レポート ／ スコア: <strong style="color:#e67e22;">${score.toLocaleString()}点</strong> ／ ${now}</div>
-    <canvas id="_pdfMapEl" width="736" height="430" style="display:block;width:736px;height:430px;border:1px solid #ddd;border-radius:4px;"></canvas>
-    <div style="margin:8px 0 16px;">${legendHTML}</div>
-    <div style="font-size:15px;font-weight:bold;border-bottom:2px solid #2c3e50;padding-bottom:4px;margin-bottom:10px;">藩一覧（${confirmedHans.length}藩）</div>
-    ${hanRowsHTML}
-    <div style="margin-top:18px;font-size:15px;font-weight:bold;border-bottom:2px solid #2c3e50;padding-bottom:4px;margin-bottom:10px;">行政コスト比較</div>
-    <div style="display:flex;gap:12px;margin-bottom:10px;">
-      <div style="flex:1;background:#fff3f3;padding:10px;border-radius:4px;font-size:11px;">
-        <div style="font-weight:bold;font-size:12px;margin-bottom:4px;">廃県置藩 前（福島県 + 59市町村）</div>
-        <div>首長・議員報酬: 約${formatOku(BEFORE_COST.totalSalary)}億円/年</div>
-        <div>施設維持費: 約${formatOku(BEFORE_COST.totalFacility)}億円/年</div>
-        <div style="font-weight:bold;margin-top:3px;">合計: 約${formatOku(BEFORE_COST.total)}億円/年</div>
+    <div style="background:#2c3e50;color:#fff;padding:18px 28px 14px;">
+      <div style="font-size:20px;font-weight:bold;letter-spacing:0.05em;">廃県置藩シミュレーター</div>
+      <div style="font-size:12px;opacity:0.8;margin-top:3px;">福島県 藩編成レポート ／ ${now}</div>
+    </div>
+    <div style="padding:20px 28px;">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
+        <div style="font-size:28px;font-weight:bold;color:#e67e22;">${score.toLocaleString()}<span style="font-size:14px;margin-left:2px;">点</span></div>
+        <div style="font-size:12px;color:#555;">${confirmedHans.length}藩編成 ／ 福島県59市町村</div>
       </div>
-      <div style="flex:1;background:#f0fff4;padding:10px;border-radius:4px;font-size:11px;">
-        <div style="font-weight:bold;font-size:12px;margin-bottom:4px;">廃県置藩 後（${confirmedHans.length}藩）</div>
-        <div>首長・議員報酬: 約${formatOku(after.totalSalary)}億円/年</div>
-        <div>施設維持費: 約${formatOku(after.totalFacility)}億円/年</div>
-        <div style="font-weight:bold;margin-top:3px;">合計: 約${formatOku(after.total)}億円/年</div>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <canvas id="_pdfMapEl" width="${MAP_W}" height="${MAP_H}" style="display:block;width:${MAP_W}px;height:${MAP_H}px;border:1px solid #ccc;border-radius:4px;flex-shrink:0;"></canvas>
+        <div style="min-width:110px;">${legendHTML}</div>
       </div>
     </div>
-    <div style="font-size:14px;font-weight:bold;color:${saving >= 0 ? '#27ae60' : '#e74c3c'};margin-bottom:6px;">
-      ${saving >= 0 ? '削減コスト' : '増加コスト'}: 約${formatOku(Math.abs(saving))}億円/年
-      （議員削減率${Math.round(memberRate * 100)}% ／ 施設統廃合率${Math.round(facilityRate * 100)}%前提）
+    <div style="padding:0 28px 20px;">
+      <div style="font-size:13px;font-weight:bold;background:#f5f5f5;padding:6px 10px;margin-bottom:0;border-radius:4px 4px 0 0;border:1px solid #ddd;">藩一覧（${confirmedHans.length}藩）</div>
+      <table style="width:100%;border-collapse:collapse;border:1px solid #ddd;border-top:none;font-size:11px;">
+        <thead>
+          <tr style="background:#f9f9f9;color:#555;">
+            <th style="padding:4px 8px;text-align:left;border-bottom:1px solid #ddd;">藩名</th>
+            <th style="padding:4px 8px;text-align:right;border-bottom:1px solid #ddd;">人口</th>
+            <th style="padding:4px 8px;text-align:right;border-bottom:1px solid #ddd;">市町村数</th>
+            <th style="padding:4px 8px;text-align:right;border-bottom:1px solid #ddd;">税収（参考）</th>
+            <th style="padding:4px 8px;text-align:left;border-bottom:1px solid #ddd;">構成市町村</th>
+          </tr>
+        </thead>
+        <tbody>${hanRowsHTML}</tbody>
+      </table>
     </div>
-    <div style="font-size:11px;color:#888;margin-top:4px;">税収規模（参考・2018年度）: 計約${formatOku(totalTax)}億円</div>
-    <div style="font-size:10px;color:#bbb;margin-top:10px;">※概算・推計値です（総務省地方公務員給与実態調査・e-Stat等より推計）。このデータで政策判断はしないでください。</div>
+    <div style="padding:0 28px 20px;">
+      <div style="font-size:13px;font-weight:bold;background:#f5f5f5;padding:6px 10px;margin-bottom:0;border-radius:4px 4px 0 0;border:1px solid #ddd;">行政コスト比較</div>
+      <div style="border:1px solid #ddd;border-top:none;padding:14px;display:flex;gap:14px;">
+        <div style="flex:1;background:#fff5f5;padding:10px 12px;border-radius:4px;font-size:11px;border:1px solid #fdd;">
+          <div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#c0392b;">廃県置藩 前</div>
+          <div>首長・議員報酬: 約${formatOku(BEFORE_COST.totalSalary)}億円/年</div>
+          <div>施設維持費: 約${formatOku(BEFORE_COST.totalFacility)}億円/年</div>
+          <div style="font-weight:bold;margin-top:5px;font-size:12px;">合計: 約${formatOku(BEFORE_COST.total)}億円/年</div>
+        </div>
+        <div style="display:flex;align-items:center;font-size:18px;color:#888;">→</div>
+        <div style="flex:1;background:#f0faf4;padding:10px 12px;border-radius:4px;font-size:11px;border:1px solid #c3e6cb;">
+          <div style="font-weight:bold;font-size:12px;margin-bottom:6px;color:#27ae60;">廃県置藩 後（${confirmedHans.length}藩）</div>
+          <div>首長・議員報酬: 約${formatOku(after.totalSalary)}億円/年</div>
+          <div>施設維持費: 約${formatOku(after.totalFacility)}億円/年</div>
+          <div style="font-weight:bold;margin-top:5px;font-size:12px;">合計: 約${formatOku(after.total)}億円/年</div>
+        </div>
+      </div>
+      <div style="margin-top:10px;font-size:13px;font-weight:bold;color:${saving >= 0 ? '#27ae60' : '#e74c3c'};">
+        ${saving >= 0 ? '▼ 削減コスト' : '▲ 増加コスト'}: 約${formatOku(Math.abs(saving))}億円/年
+        <span style="font-size:11px;font-weight:normal;color:#888;">（議員削減率${Math.round(memberRate * 100)}% ／ 施設統廃合率${Math.round(facilityRate * 100)}%前提）</span>
+      </div>
+      <div style="margin-top:4px;font-size:11px;color:#888;">税収規模（参考・2018年度）: 計約${formatOku(totalTax)}億円</div>
+    </div>
+    <div style="padding:10px 28px 20px;font-size:9px;color:#bbb;border-top:1px solid #eee;">
+      ※概算・推計値です（総務省地方公務員給与実態調査・e-Stat等より推計）。このデータで政策判断はしないでください。
+    </div>
   `;
 
   const mapEl = el.querySelector('#_pdfMapEl');
-  mapEl.getContext('2d').drawImage(renderMapCanvas(736, 430), 0, 0);
+  mapEl.getContext('2d').drawImage(renderMapCanvas(MAP_W, MAP_H), 0, 0);
 }
 
 async function generatePDF(btn) {
@@ -1403,8 +1440,8 @@ async function generatePDF(btn) {
       scale: 2,
       useCORS: true,
       backgroundColor: '#ffffff',
-      width: 800,
-      windowWidth: 864,
+      width: 794,
+      windowWidth: 794,
     });
 
     const { jsPDF } = window.jspdf;
