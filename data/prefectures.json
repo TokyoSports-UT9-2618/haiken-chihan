@@ -13,7 +13,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/01/boundaries.geojson",
+    "geojsonUrl": "data/01/boundaries.geojson",
     "municipalityCount": 188,
     "totalPopulation": 5224614,
     "status": "available",
@@ -38,7 +38,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/02/boundaries.geojson",
+    "geojsonUrl": "data/02/boundaries.geojson",
     "municipalityCount": 40,
     "totalPopulation": 1237984,
     "status": "available",
@@ -63,7 +63,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/03/boundaries.geojson",
+    "geojsonUrl": "data/03/boundaries.geojson",
     "municipalityCount": 33,
     "totalPopulation": 1210534,
     "status": "available",
@@ -88,7 +88,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/04/boundaries.geojson",
+    "geojsonUrl": "data/04/boundaries.geojson",
     "municipalityCount": 39,
     "totalPopulation": 2301996,
     "status": "available",
@@ -113,7 +113,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/05/boundaries.geojson",
+    "geojsonUrl": "data/05/boundaries.geojson",
     "municipalityCount": 25,
     "totalPopulation": 959502,
     "status": "available",
@@ -138,7 +138,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/06/boundaries.geojson",
+    "geojsonUrl": "data/06/boundaries.geojson",
     "municipalityCount": 35,
     "totalPopulation": 1068027,
     "status": "available",
@@ -163,7 +163,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/07/boundaries.geojson",
+    "geojsonUrl": "data/07/boundaries.geojson",
     "municipalityCount": 59,
     "totalPopulation": 1833152,
     "status": "available",
@@ -188,7 +188,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/08/boundaries.geojson",
+    "geojsonUrl": "data/08/boundaries.geojson",
     "municipalityCount": 44,
     "totalPopulation": 2867009,
     "status": "available",
@@ -213,7 +213,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/09/boundaries.geojson",
+    "geojsonUrl": "data/09/boundaries.geojson",
     "municipalityCount": 25,
     "totalPopulation": 1933146,
     "status": "available",
@@ -238,7 +238,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/10/boundaries.geojson",
+    "geojsonUrl": "data/10/boundaries.geojson",
     "municipalityCount": 35,
     "totalPopulation": 1939110,
     "status": "available",
@@ -263,7 +263,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/11/boundaries.geojson",
+    "geojsonUrl": "data/11/boundaries.geojson",
     "municipalityCount": 72,
     "totalPopulation": 7344765,
     "status": "available",
@@ -288,7 +288,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/12/boundaries.geojson",
+    "geojsonUrl": "data/12/boundaries.geojson",
     "municipalityCount": 59,
     "totalPopulation": 6284480,
     "status": "available",
@@ -313,7 +313,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/13/boundaries.geojson",
+    "geojsonUrl": "data/13/boundaries.geojson",
     "municipalityCount": 63,
     "totalPopulation": 14047594,
     "status": "available",
@@ -338,7 +338,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/14/boundaries.geojson",
+    "geojsonUrl": "data/14/boundaries.geojson",
     "municipalityCount": 58,
     "totalPopulation": 9237337,
     "status": "available",
@@ -363,7 +363,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/15/boundaries.geojson",
+    "geojsonUrl": "data/15/boundaries.geojson",
     "municipalityCount": 37,
     "totalPopulation": 2201272,
     "status": "available",
@@ -388,7 +388,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/16/boundaries.geojson",
+    "geojsonUrl": "data/16/boundaries.geojson",
     "municipalityCount": 15,
     "totalPopulation": 1034814,
     "status": "available",
@@ -413,7 +413,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/17/boundaries.geojson",
+    "geojsonUrl": "data/17/boundaries.geojson",
     "municipalityCount": 19,
     "totalPopulation": 1132526,
     "status": "available",
@@ -438,7 +438,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/18/boundaries.geojson",
+    "geojsonUrl": "data/18/boundaries.geojson",
     "municipalityCount": 17,
     "totalPopulation": 766863,
     "status": "available",
@@ -463,7 +463,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/19/boundaries.geojson",
+    "geojsonUrl": "data/19/boundaries.geojson",
     "municipalityCount": 27,
     "totalPopulation": 809974,
     "status": "available",
@@ -488,7 +488,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/20/boundaries.geojson",
+    "geojsonUrl": "data/20/boundaries.geojson",
     "municipalityCount": 77,
     "totalPopulation": 2048011,
     "status": "available",
@@ -513,7 +513,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/21/boundaries.geojson",
+    "geojsonUrl": "data/21/boundaries.geojson",
     "municipalityCount": 42,
     "totalPopulation": 1978742,
     "status": "available",
@@ -538,7 +538,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/22/boundaries.geojson",
+    "geojsonUrl": "data/22/boundaries.geojson",
     "municipalityCount": 43,
     "totalPopulation": 3633202,
     "status": "available",
@@ -563,7 +563,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/23/boundaries.geojson",
+    "geojsonUrl": "data/23/boundaries.geojson",
     "municipalityCount": 69,
     "totalPopulation": 7542415,
     "status": "available",
@@ -588,7 +588,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/24/boundaries.geojson",
+    "geojsonUrl": "data/24/boundaries.geojson",
     "municipalityCount": 29,
     "totalPopulation": 1770254,
     "status": "available",
@@ -613,7 +613,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/25/boundaries.geojson",
+    "geojsonUrl": "data/25/boundaries.geojson",
     "municipalityCount": 19,
     "totalPopulation": 1413610,
     "status": "available",
@@ -638,7 +638,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/26/boundaries.geojson",
+    "geojsonUrl": "data/26/boundaries.geojson",
     "municipalityCount": 36,
     "totalPopulation": 2578087,
     "status": "available",
@@ -663,7 +663,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/27/boundaries.geojson",
+    "geojsonUrl": "data/27/boundaries.geojson",
     "municipalityCount": 72,
     "totalPopulation": 8837685,
     "status": "available",
@@ -688,7 +688,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/28/boundaries.geojson",
+    "geojsonUrl": "data/28/boundaries.geojson",
     "municipalityCount": 49,
     "totalPopulation": 5465002,
     "status": "available",
@@ -713,7 +713,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/29/boundaries.geojson",
+    "geojsonUrl": "data/29/boundaries.geojson",
     "municipalityCount": 39,
     "totalPopulation": 1324473,
     "status": "available",
@@ -738,7 +738,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/30/boundaries.geojson",
+    "geojsonUrl": "data/30/boundaries.geojson",
     "municipalityCount": 30,
     "totalPopulation": 922584,
     "status": "available",
@@ -763,7 +763,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/31/boundaries.geojson",
+    "geojsonUrl": "data/31/boundaries.geojson",
     "municipalityCount": 19,
     "totalPopulation": 553407,
     "status": "available",
@@ -788,7 +788,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/32/boundaries.geojson",
+    "geojsonUrl": "data/32/boundaries.geojson",
     "municipalityCount": 19,
     "totalPopulation": 671126,
     "status": "available",
@@ -813,7 +813,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/33/boundaries.geojson",
+    "geojsonUrl": "data/33/boundaries.geojson",
     "municipalityCount": 30,
     "totalPopulation": 1888432,
     "status": "available",
@@ -838,7 +838,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/34/boundaries.geojson",
+    "geojsonUrl": "data/34/boundaries.geojson",
     "municipalityCount": 30,
     "totalPopulation": 2799702,
     "status": "available",
@@ -863,7 +863,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/35/boundaries.geojson",
+    "geojsonUrl": "data/35/boundaries.geojson",
     "municipalityCount": 19,
     "totalPopulation": 1342059,
     "status": "available",
@@ -888,7 +888,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/36/boundaries.geojson",
+    "geojsonUrl": "data/36/boundaries.geojson",
     "municipalityCount": 24,
     "totalPopulation": 719559,
     "status": "available",
@@ -913,7 +913,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/37/boundaries.geojson",
+    "geojsonUrl": "data/37/boundaries.geojson",
     "municipalityCount": 17,
     "totalPopulation": 950244,
     "status": "available",
@@ -938,7 +938,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/38/boundaries.geojson",
+    "geojsonUrl": "data/38/boundaries.geojson",
     "municipalityCount": 20,
     "totalPopulation": 1334841,
     "status": "available",
@@ -963,7 +963,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/39/boundaries.geojson",
+    "geojsonUrl": "data/39/boundaries.geojson",
     "municipalityCount": 34,
     "totalPopulation": 691527,
     "status": "available",
@@ -988,7 +988,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/40/boundaries.geojson",
+    "geojsonUrl": "data/40/boundaries.geojson",
     "municipalityCount": 72,
     "totalPopulation": 5135214,
     "status": "available",
@@ -1013,7 +1013,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/41/boundaries.geojson",
+    "geojsonUrl": "data/41/boundaries.geojson",
     "municipalityCount": 20,
     "totalPopulation": 811442,
     "status": "available",
@@ -1038,7 +1038,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/42/boundaries.geojson",
+    "geojsonUrl": "data/42/boundaries.geojson",
     "municipalityCount": 21,
     "totalPopulation": 1312317,
     "status": "available",
@@ -1063,7 +1063,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/43/boundaries.geojson",
+    "geojsonUrl": "data/43/boundaries.geojson",
     "municipalityCount": 49,
     "totalPopulation": 1738301,
     "status": "available",
@@ -1088,7 +1088,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/44/boundaries.geojson",
+    "geojsonUrl": "data/44/boundaries.geojson",
     "municipalityCount": 18,
     "totalPopulation": 1123852,
     "status": "available",
@@ -1113,7 +1113,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/45/boundaries.geojson",
+    "geojsonUrl": "data/45/boundaries.geojson",
     "municipalityCount": 26,
     "totalPopulation": 1069576,
     "status": "available",
@@ -1138,7 +1138,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/46/boundaries.geojson",
+    "geojsonUrl": "data/46/boundaries.geojson",
     "municipalityCount": 43,
     "totalPopulation": 1588256,
     "status": "available",
@@ -1163,7 +1163,7 @@
       300000,
       500000
     ],
-    "geojsonUrl": "geo/data/47/boundaries.geojson",
+    "geojsonUrl": "data/47/boundaries.geojson",
     "municipalityCount": 41,
     "totalPopulation": 1467480,
     "status": "available",
