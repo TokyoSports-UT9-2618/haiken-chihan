@@ -1,0 +1,299 @@
+[
+  {
+    "code": "03201",
+    "prefCode": "03",
+    "name": "盛岡市",
+    "pop": 289731,
+    "taxRevenue": 0,
+    "lat": 39.708,
+    "lng": 141.1455
+  },
+  {
+    "code": "03202",
+    "prefCode": "03",
+    "name": "宮古市",
+    "pop": 50369,
+    "taxRevenue": 0,
+    "lat": 39.6385,
+    "lng": 141.9192
+  },
+  {
+    "code": "03203",
+    "prefCode": "03",
+    "name": "大船渡市",
+    "pop": 34728,
+    "taxRevenue": 0,
+    "lat": 39.0768,
+    "lng": 141.732
+  },
+  {
+    "code": "03205",
+    "prefCode": "03",
+    "name": "花巻市",
+    "pop": 93193,
+    "taxRevenue": 0,
+    "lat": 39.4104,
+    "lng": 141.1325
+  },
+  {
+    "code": "03206",
+    "prefCode": "03",
+    "name": "北上市",
+    "pop": 93045,
+    "taxRevenue": 0,
+    "lat": 39.2986,
+    "lng": 141.0952
+  },
+  {
+    "code": "03207",
+    "prefCode": "03",
+    "name": "久慈市",
+    "pop": 33043,
+    "taxRevenue": 0,
+    "lat": 40.1861,
+    "lng": 141.7531
+  },
+  {
+    "code": "03208",
+    "prefCode": "03",
+    "name": "遠野市",
+    "pop": 25366,
+    "taxRevenue": 0,
+    "lat": 39.3371,
+    "lng": 141.5189
+  },
+  {
+    "code": "03209",
+    "prefCode": "03",
+    "name": "一関市",
+    "pop": 111932,
+    "taxRevenue": 0,
+    "lat": 38.9245,
+    "lng": 141.2171
+  },
+  {
+    "code": "03210",
+    "prefCode": "03",
+    "name": "陸前高田市",
+    "pop": 18262,
+    "taxRevenue": 0,
+    "lat": 39.0127,
+    "lng": 141.644
+  },
+  {
+    "code": "03211",
+    "prefCode": "03",
+    "name": "釜石市",
+    "pop": 32078,
+    "taxRevenue": 0,
+    "lat": 39.2683,
+    "lng": 141.8425
+  },
+  {
+    "code": "03213",
+    "prefCode": "03",
+    "name": "二戸市",
+    "pop": 25513,
+    "taxRevenue": 0,
+    "lat": 40.2699,
+    "lng": 141.2678
+  },
+  {
+    "code": "03214",
+    "prefCode": "03",
+    "name": "八幡平市",
+    "pop": 24023,
+    "taxRevenue": 0,
+    "lat": 39.9602,
+    "lng": 141.0608
+  },
+  {
+    "code": "03215",
+    "prefCode": "03",
+    "name": "奥州市",
+    "pop": 112937,
+    "taxRevenue": 0,
+    "lat": 39.1333,
+    "lng": 141.1389
+  },
+  {
+    "code": "03216",
+    "prefCode": "03",
+    "name": "滝沢市",
+    "pop": 55579,
+    "taxRevenue": 0,
+    "lat": 39.7615,
+    "lng": 141.0994
+  },
+  {
+    "code": "03301",
+    "prefCode": "03",
+    "name": "雫石町",
+    "pop": 15731,
+    "taxRevenue": 0,
+    "lat": 39.6945,
+    "lng": 140.9651
+  },
+  {
+    "code": "03302",
+    "prefCode": "03",
+    "name": "葛巻町",
+    "pop": 5634,
+    "taxRevenue": 0,
+    "lat": 40.0063,
+    "lng": 141.4313
+  },
+  {
+    "code": "03303",
+    "prefCode": "03",
+    "name": "岩手町",
+    "pop": 12285,
+    "taxRevenue": 0,
+    "lat": 39.9705,
+    "lng": 141.2445
+  },
+  {
+    "code": "03321",
+    "prefCode": "03",
+    "name": "紫波町",
+    "pop": 32147,
+    "taxRevenue": 0,
+    "lat": 39.5549,
+    "lng": 141.1621
+  },
+  {
+    "code": "03322",
+    "prefCode": "03",
+    "name": "矢巾町",
+    "pop": 28056,
+    "taxRevenue": 0,
+    "lat": 39.6128,
+    "lng": 141.1492
+  },
+  {
+    "code": "03366",
+    "prefCode": "03",
+    "name": "西和賀町",
+    "pop": 5134,
+    "taxRevenue": 0,
+    "lat": 39.3888,
+    "lng": 140.7695
+  },
+  {
+    "code": "03381",
+    "prefCode": "03",
+    "name": "金ケ崎町",
+    "pop": 15535,
+    "taxRevenue": 0,
+    "lat": 39.2039,
+    "lng": 141.0876
+  },
+  {
+    "code": "03402",
+    "prefCode": "03",
+    "name": "平泉町",
+    "pop": 7252,
+    "taxRevenue": 0,
+    "lat": 38.9872,
+    "lng": 141.1184
+  },
+  {
+    "code": "03441",
+    "prefCode": "03",
+    "name": "住田町",
+    "pop": 5045,
+    "taxRevenue": 0,
+    "lat": 39.165,
+    "lng": 141.5751
+  },
+  {
+    "code": "03461",
+    "prefCode": "03",
+    "name": "大槌町",
+    "pop": 11004,
+    "taxRevenue": 0,
+    "lat": 39.3791,
+    "lng": 141.8828
+  },
+  {
+    "code": "03482",
+    "prefCode": "03",
+    "name": "山田町",
+    "pop": 14320,
+    "taxRevenue": 0,
+    "lat": 39.4672,
+    "lng": 141.9362
+  },
+  {
+    "code": "03483",
+    "prefCode": "03",
+    "name": "岩泉町",
+    "pop": 8726,
+    "taxRevenue": 0,
+    "lat": 39.8601,
+    "lng": 141.7582
+  },
+  {
+    "code": "03484",
+    "prefCode": "03",
+    "name": "田野畑村",
+    "pop": 3059,
+    "taxRevenue": 0,
+    "lat": 39.93,
+    "lng": 141.8937
+  },
+  {
+    "code": "03485",
+    "prefCode": "03",
+    "name": "普代村",
+    "pop": 2487,
+    "taxRevenue": 0,
+    "lat": 40.0026,
+    "lng": 141.8667
+  },
+  {
+    "code": "03501",
+    "prefCode": "03",
+    "name": "軽米町",
+    "pop": 8421,
+    "taxRevenue": 0,
+    "lat": 40.3161,
+    "lng": 141.4663
+  },
+  {
+    "code": "03503",
+    "prefCode": "03",
+    "name": "野田村",
+    "pop": 3936,
+    "taxRevenue": 0,
+    "lat": 40.0831,
+    "lng": 141.7875
+  },
+  {
+    "code": "03506",
+    "prefCode": "03",
+    "name": "九戸村",
+    "pop": 5378,
+    "taxRevenue": 0,
+    "lat": 40.1984,
+    "lng": 141.4298
+  },
+  {
+    "code": "03507",
+    "prefCode": "03",
+    "name": "洋野町",
+    "pop": 15091,
+    "taxRevenue": 0,
+    "lat": 40.3474,
+    "lng": 141.6947
+  },
+  {
+    "code": "03524",
+    "prefCode": "03",
+    "name": "一戸町",
+    "pop": 11494,
+    "taxRevenue": 0,
+    "lat": 40.1696,
+    "lng": 141.2823
+  }
+]

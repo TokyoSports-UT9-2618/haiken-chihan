@@ -1,0 +1,227 @@
+[
+  {
+    "code": "05201",
+    "prefCode": "05",
+    "name": "秋田市",
+    "pop": 307672,
+    "taxRevenue": 0,
+    "lat": 39.7166,
+    "lng": 140.1156
+  },
+  {
+    "code": "05202",
+    "prefCode": "05",
+    "name": "能代市",
+    "pop": 49968,
+    "taxRevenue": 0,
+    "lat": 40.2029,
+    "lng": 140.0687
+  },
+  {
+    "code": "05203",
+    "prefCode": "05",
+    "name": "横手市",
+    "pop": 85555,
+    "taxRevenue": 0,
+    "lat": 39.2892,
+    "lng": 140.5188
+  },
+  {
+    "code": "05204",
+    "prefCode": "05",
+    "name": "大館市",
+    "pop": 69237,
+    "taxRevenue": 0,
+    "lat": 40.2758,
+    "lng": 140.5595
+  },
+  {
+    "code": "05206",
+    "prefCode": "05",
+    "name": "男鹿市",
+    "pop": 25154,
+    "taxRevenue": 0,
+    "lat": 39.9254,
+    "lng": 139.8823
+  },
+  {
+    "code": "05207",
+    "prefCode": "05",
+    "name": "湯沢市",
+    "pop": 42091,
+    "taxRevenue": 0,
+    "lat": 39.1315,
+    "lng": 140.5052
+  },
+  {
+    "code": "05209",
+    "prefCode": "05",
+    "name": "鹿角市",
+    "pop": 29088,
+    "taxRevenue": 0,
+    "lat": 40.2131,
+    "lng": 140.8023
+  },
+  {
+    "code": "05210",
+    "prefCode": "05",
+    "name": "由利本荘市",
+    "pop": 74707,
+    "taxRevenue": 0,
+    "lat": 39.3696,
+    "lng": 140.0855
+  },
+  {
+    "code": "05211",
+    "prefCode": "05",
+    "name": "潟上市",
+    "pop": 31720,
+    "taxRevenue": 0,
+    "lat": 39.8596,
+    "lng": 140.0303
+  },
+  {
+    "code": "05212",
+    "prefCode": "05",
+    "name": "大仙市",
+    "pop": 77657,
+    "taxRevenue": 0,
+    "lat": 39.4931,
+    "lng": 140.4689
+  },
+  {
+    "code": "05213",
+    "prefCode": "05",
+    "name": "北秋田市",
+    "pop": 30198,
+    "taxRevenue": 0,
+    "lat": 40.1713,
+    "lng": 140.3738
+  },
+  {
+    "code": "05214",
+    "prefCode": "05",
+    "name": "にかほ市",
+    "pop": 23435,
+    "taxRevenue": 0,
+    "lat": 39.2333,
+    "lng": 139.9413
+  },
+  {
+    "code": "05215",
+    "prefCode": "05",
+    "name": "仙北市",
+    "pop": 24610,
+    "taxRevenue": 0,
+    "lat": 39.6505,
+    "lng": 140.6148
+  },
+  {
+    "code": "05303",
+    "prefCode": "05",
+    "name": "小坂町",
+    "pop": 4780,
+    "taxRevenue": 0,
+    "lat": 40.3321,
+    "lng": 140.7473
+  },
+  {
+    "code": "05327",
+    "prefCode": "05",
+    "name": "上小阿仁村",
+    "pop": 2063,
+    "taxRevenue": 0,
+    "lat": 40.0492,
+    "lng": 140.2994
+  },
+  {
+    "code": "05346",
+    "prefCode": "05",
+    "name": "藤里町",
+    "pop": 2896,
+    "taxRevenue": 0,
+    "lat": 40.3231,
+    "lng": 140.2624
+  },
+  {
+    "code": "05348",
+    "prefCode": "05",
+    "name": "三種町",
+    "pop": 15254,
+    "taxRevenue": 0,
+    "lat": 40.0843,
+    "lng": 140.063
+  },
+  {
+    "code": "05349",
+    "prefCode": "05",
+    "name": "八峰町",
+    "pop": 6577,
+    "taxRevenue": 0,
+    "lat": 40.3281,
+    "lng": 140.0367
+  },
+  {
+    "code": "05361",
+    "prefCode": "05",
+    "name": "五城目町",
+    "pop": 8538,
+    "taxRevenue": 0,
+    "lat": 39.9425,
+    "lng": 140.1367
+  },
+  {
+    "code": "05363",
+    "prefCode": "05",
+    "name": "八郎潟町",
+    "pop": 5583,
+    "taxRevenue": 0,
+    "lat": 39.9509,
+    "lng": 140.0789
+  },
+  {
+    "code": "05366",
+    "prefCode": "05",
+    "name": "井川町",
+    "pop": 4566,
+    "taxRevenue": 0,
+    "lat": 39.9113,
+    "lng": 140.0929
+  },
+  {
+    "code": "05368",
+    "prefCode": "05",
+    "name": "大潟村",
+    "pop": 3011,
+    "taxRevenue": 0,
+    "lat": 40.0197,
+    "lng": 139.9593
+  },
+  {
+    "code": "05434",
+    "prefCode": "05",
+    "name": "美郷町",
+    "pop": 18613,
+    "taxRevenue": 0,
+    "lat": 39.4228,
+    "lng": 140.5575
+  },
+  {
+    "code": "05463",
+    "prefCode": "05",
+    "name": "羽後町",
+    "pop": 13825,
+    "taxRevenue": 0,
+    "lat": 39.1967,
+    "lng": 140.3937
+  },
+  {
+    "code": "05464",
+    "prefCode": "05",
+    "name": "東成瀬村",
+    "pop": 2704,
+    "taxRevenue": 0,
+    "lat": 39.166,
+    "lng": 140.6841
+  }
+]

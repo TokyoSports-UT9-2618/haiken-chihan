@@ -1,0 +1,524 @@
+[
+  {
+    "code": "14101",
+    "prefCode": "14",
+    "name": "横浜市鶴見区",
+    "pop": 297437,
+    "taxRevenue": 0,
+    "lat": 35.5141,
+    "lng": 139.6707
+  },
+  {
+    "code": "14102",
+    "prefCode": "14",
+    "name": "横浜市神奈川区",
+    "pop": 247267,
+    "taxRevenue": 0,
+    "lat": 35.4859,
+    "lng": 139.624
+  },
+  {
+    "code": "14103",
+    "prefCode": "14",
+    "name": "横浜市西区",
+    "pop": 104935,
+    "taxRevenue": 0,
+    "lat": 35.4563,
+    "lng": 139.6166
+  },
+  {
+    "code": "14104",
+    "prefCode": "14",
+    "name": "横浜市中区",
+    "pop": 151388,
+    "taxRevenue": 0,
+    "lat": 35.4337,
+    "lng": 139.6463
+  },
+  {
+    "code": "14105",
+    "prefCode": "14",
+    "name": "横浜市南区",
+    "pop": 198157,
+    "taxRevenue": 0,
+    "lat": 35.4292,
+    "lng": 139.6044
+  },
+  {
+    "code": "14106",
+    "prefCode": "14",
+    "name": "横浜市保土ケ谷区",
+    "pop": 207811,
+    "taxRevenue": 0,
+    "lat": 35.4602,
+    "lng": 139.582
+  },
+  {
+    "code": "14107",
+    "prefCode": "14",
+    "name": "横浜市磯子区",
+    "pop": 166731,
+    "taxRevenue": 0,
+    "lat": 35.3957,
+    "lng": 139.6125
+  },
+  {
+    "code": "14108",
+    "prefCode": "14",
+    "name": "横浜市金沢区",
+    "pop": 198939,
+    "taxRevenue": 0,
+    "lat": 35.3461,
+    "lng": 139.6209
+  },
+  {
+    "code": "14109",
+    "prefCode": "14",
+    "name": "横浜市港北区",
+    "pop": 358530,
+    "taxRevenue": 0,
+    "lat": 35.5292,
+    "lng": 139.6277
+  },
+  {
+    "code": "14110",
+    "prefCode": "14",
+    "name": "横浜市戸塚区",
+    "pop": 283709,
+    "taxRevenue": 0,
+    "lat": 35.4058,
+    "lng": 139.5347
+  },
+  {
+    "code": "14111",
+    "prefCode": "14",
+    "name": "横浜市港南区",
+    "pop": 215248,
+    "taxRevenue": 0,
+    "lat": 35.3962,
+    "lng": 139.5796
+  },
+  {
+    "code": "14112",
+    "prefCode": "14",
+    "name": "横浜市旭区",
+    "pop": 245174,
+    "taxRevenue": 0,
+    "lat": 35.4741,
+    "lng": 139.5303
+  },
+  {
+    "code": "14113",
+    "prefCode": "14",
+    "name": "横浜市緑区",
+    "pop": 183082,
+    "taxRevenue": 0,
+    "lat": 35.5155,
+    "lng": 139.5306
+  },
+  {
+    "code": "14114",
+    "prefCode": "14",
+    "name": "横浜市瀬谷区",
+    "pop": 122623,
+    "taxRevenue": 0,
+    "lat": 35.4653,
+    "lng": 139.4886
+  },
+  {
+    "code": "14115",
+    "prefCode": "14",
+    "name": "横浜市栄区",
+    "pop": 120194,
+    "taxRevenue": 0,
+    "lat": 35.3642,
+    "lng": 139.5532
+  },
+  {
+    "code": "14116",
+    "prefCode": "14",
+    "name": "横浜市泉区",
+    "pop": 152378,
+    "taxRevenue": 0,
+    "lat": 35.4199,
+    "lng": 139.503
+  },
+  {
+    "code": "14117",
+    "prefCode": "14",
+    "name": "横浜市青葉区",
+    "pop": 310756,
+    "taxRevenue": 0,
+    "lat": 35.5583,
+    "lng": 139.5284
+  },
+  {
+    "code": "14118",
+    "prefCode": "14",
+    "name": "横浜市都筑区",
+    "pop": 213132,
+    "taxRevenue": 0,
+    "lat": 35.545,
+    "lng": 139.5768
+  },
+  {
+    "code": "14131",
+    "prefCode": "14",
+    "name": "川崎市川崎区",
+    "pop": 232965,
+    "taxRevenue": 0,
+    "lat": 35.5246,
+    "lng": 139.715
+  },
+  {
+    "code": "14132",
+    "prefCode": "14",
+    "name": "川崎市幸区",
+    "pop": 171119,
+    "taxRevenue": 0,
+    "lat": 35.5442,
+    "lng": 139.68
+  },
+  {
+    "code": "14133",
+    "prefCode": "14",
+    "name": "川崎市中原区",
+    "pop": 263683,
+    "taxRevenue": 0,
+    "lat": 35.5744,
+    "lng": 139.6521
+  },
+  {
+    "code": "14134",
+    "prefCode": "14",
+    "name": "川崎市高津区",
+    "pop": 234328,
+    "taxRevenue": 0,
+    "lat": 35.5916,
+    "lng": 139.6163
+  },
+  {
+    "code": "14135",
+    "prefCode": "14",
+    "name": "川崎市多摩区",
+    "pop": 221734,
+    "taxRevenue": 0,
+    "lat": 35.6196,
+    "lng": 139.5524
+  },
+  {
+    "code": "14136",
+    "prefCode": "14",
+    "name": "川崎市宮前区",
+    "pop": 233728,
+    "taxRevenue": 0,
+    "lat": 35.585,
+    "lng": 139.5808
+  },
+  {
+    "code": "14137",
+    "prefCode": "14",
+    "name": "川崎市麻生区",
+    "pop": 180705,
+    "taxRevenue": 0,
+    "lat": 35.6006,
+    "lng": 139.5031
+  },
+  {
+    "code": "14151",
+    "prefCode": "14",
+    "name": "相模原市緑区",
+    "pop": 170207,
+    "taxRevenue": 0,
+    "lat": 35.5903,
+    "lng": 139.3019
+  },
+  {
+    "code": "14152",
+    "prefCode": "14",
+    "name": "相模原市中央区",
+    "pop": 273875,
+    "taxRevenue": 0,
+    "lat": 35.5655,
+    "lng": 139.3736
+  },
+  {
+    "code": "14153",
+    "prefCode": "14",
+    "name": "相模原市南区",
+    "pop": 281411,
+    "taxRevenue": 0,
+    "lat": 35.5281,
+    "lng": 139.4205
+  },
+  {
+    "code": "14201",
+    "prefCode": "14",
+    "name": "横須賀市",
+    "pop": 388078,
+    "taxRevenue": 0,
+    "lat": 35.2531,
+    "lng": 139.6714
+  },
+  {
+    "code": "14203",
+    "prefCode": "14",
+    "name": "平塚市",
+    "pop": 258422,
+    "taxRevenue": 0,
+    "lat": 35.345,
+    "lng": 139.3315
+  },
+  {
+    "code": "14204",
+    "prefCode": "14",
+    "name": "鎌倉市",
+    "pop": 172710,
+    "taxRevenue": 0,
+    "lat": 35.3315,
+    "lng": 139.5318
+  },
+  {
+    "code": "14205",
+    "prefCode": "14",
+    "name": "藤沢市",
+    "pop": 436905,
+    "taxRevenue": 0,
+    "lat": 35.3581,
+    "lng": 139.4674
+  },
+  {
+    "code": "14206",
+    "prefCode": "14",
+    "name": "小田原市",
+    "pop": 188856,
+    "taxRevenue": 0,
+    "lat": 35.2784,
+    "lng": 139.167
+  },
+  {
+    "code": "14207",
+    "prefCode": "14",
+    "name": "茅ヶ崎市",
+    "pop": 242389,
+    "taxRevenue": 0,
+    "lat": 35.3377,
+    "lng": 139.4104
+  },
+  {
+    "code": "14208",
+    "prefCode": "14",
+    "name": "逗子市",
+    "pop": 57060,
+    "taxRevenue": 0,
+    "lat": 35.2991,
+    "lng": 139.5834
+  },
+  {
+    "code": "14210",
+    "prefCode": "14",
+    "name": "三浦市",
+    "pop": 42069,
+    "taxRevenue": 0,
+    "lat": 35.1695,
+    "lng": 139.6373
+  },
+  {
+    "code": "14211",
+    "prefCode": "14",
+    "name": "秦野市",
+    "pop": 162439,
+    "taxRevenue": 0,
+    "lat": 35.3776,
+    "lng": 139.221
+  },
+  {
+    "code": "14212",
+    "prefCode": "14",
+    "name": "厚木市",
+    "pop": 223705,
+    "taxRevenue": 0,
+    "lat": 35.458,
+    "lng": 139.3458
+  },
+  {
+    "code": "14213",
+    "prefCode": "14",
+    "name": "大和市",
+    "pop": 239169,
+    "taxRevenue": 0,
+    "lat": 35.4777,
+    "lng": 139.4557
+  },
+  {
+    "code": "14214",
+    "prefCode": "14",
+    "name": "伊勢原市",
+    "pop": 101780,
+    "taxRevenue": 0,
+    "lat": 35.4018,
+    "lng": 139.3141
+  },
+  {
+    "code": "14215",
+    "prefCode": "14",
+    "name": "海老名市",
+    "pop": 136516,
+    "taxRevenue": 0,
+    "lat": 35.4475,
+    "lng": 139.3979
+  },
+  {
+    "code": "14216",
+    "prefCode": "14",
+    "name": "座間市",
+    "pop": 132325,
+    "taxRevenue": 0,
+    "lat": 35.4897,
+    "lng": 139.4149
+  },
+  {
+    "code": "14217",
+    "prefCode": "14",
+    "name": "南足柄市",
+    "pop": 40841,
+    "taxRevenue": 0,
+    "lat": 35.3132,
+    "lng": 139.1089
+  },
+  {
+    "code": "14218",
+    "prefCode": "14",
+    "name": "綾瀬市",
+    "pop": 83913,
+    "taxRevenue": 0,
+    "lat": 35.4414,
+    "lng": 139.4296
+  },
+  {
+    "code": "14301",
+    "prefCode": "14",
+    "name": "葉山町",
+    "pop": 31665,
+    "taxRevenue": 0,
+    "lat": 35.2734,
+    "lng": 139.5908
+  },
+  {
+    "code": "14321",
+    "prefCode": "14",
+    "name": "寒川町",
+    "pop": 48348,
+    "taxRevenue": 0,
+    "lat": 35.3757,
+    "lng": 139.3878
+  },
+  {
+    "code": "14341",
+    "prefCode": "14",
+    "name": "大磯町",
+    "pop": 31634,
+    "taxRevenue": 0,
+    "lat": 35.313,
+    "lng": 139.2978
+  },
+  {
+    "code": "14342",
+    "prefCode": "14",
+    "name": "二宮町",
+    "pop": 27564,
+    "taxRevenue": 0,
+    "lat": 35.3048,
+    "lng": 139.2516
+  },
+  {
+    "code": "14361",
+    "prefCode": "14",
+    "name": "中井町",
+    "pop": 9300,
+    "taxRevenue": 0,
+    "lat": 35.3363,
+    "lng": 139.2245
+  },
+  {
+    "code": "14362",
+    "prefCode": "14",
+    "name": "大井町",
+    "pop": 17129,
+    "taxRevenue": 0,
+    "lat": 35.33,
+    "lng": 139.1549
+  },
+  {
+    "code": "14363",
+    "prefCode": "14",
+    "name": "松田町",
+    "pop": 10836,
+    "taxRevenue": 0,
+    "lat": 35.3609,
+    "lng": 139.1388
+  },
+  {
+    "code": "14364",
+    "prefCode": "14",
+    "name": "山北町",
+    "pop": 9761,
+    "taxRevenue": 0,
+    "lat": 35.3698,
+    "lng": 139.083
+  },
+  {
+    "code": "14366",
+    "prefCode": "14",
+    "name": "開成町",
+    "pop": 18329,
+    "taxRevenue": 0,
+    "lat": 35.3325,
+    "lng": 139.1265
+  },
+  {
+    "code": "14382",
+    "prefCode": "14",
+    "name": "箱根町",
+    "pop": 11293,
+    "taxRevenue": 0,
+    "lat": 35.246,
+    "lng": 139.044
+  },
+  {
+    "code": "14383",
+    "prefCode": "14",
+    "name": "真鶴町",
+    "pop": 6722,
+    "taxRevenue": 0,
+    "lat": 35.1583,
+    "lng": 139.1382
+  },
+  {
+    "code": "14384",
+    "prefCode": "14",
+    "name": "湯河原町",
+    "pop": 23426,
+    "taxRevenue": 0,
+    "lat": 35.1543,
+    "lng": 139.1002
+  },
+  {
+    "code": "14401",
+    "prefCode": "14",
+    "name": "愛川町",
+    "pop": 39869,
+    "taxRevenue": 0,
+    "lat": 35.523,
+    "lng": 139.3172
+  },
+  {
+    "code": "14402",
+    "prefCode": "14",
+    "name": "清川村",
+    "pop": 3038,
+    "taxRevenue": 0,
+    "lat": 35.479,
+    "lng": 139.2425
+  }
+]

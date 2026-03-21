@@ -1,0 +1,137 @@
+[
+  {
+    "code": "16201",
+    "prefCode": "16",
+    "name": "富山市",
+    "pop": 413938,
+    "taxRevenue": 0,
+    "lat": 36.6789,
+    "lng": 137.2171
+  },
+  {
+    "code": "16202",
+    "prefCode": "16",
+    "name": "高岡市",
+    "pop": 166393,
+    "taxRevenue": 0,
+    "lat": 36.7418,
+    "lng": 137.0085
+  },
+  {
+    "code": "16204",
+    "prefCode": "16",
+    "name": "魚津市",
+    "pop": 40535,
+    "taxRevenue": 0,
+    "lat": 36.8205,
+    "lng": 137.4175
+  },
+  {
+    "code": "16205",
+    "prefCode": "16",
+    "name": "氷見市",
+    "pop": 43950,
+    "taxRevenue": 0,
+    "lat": 36.8515,
+    "lng": 136.9734
+  },
+  {
+    "code": "16206",
+    "prefCode": "16",
+    "name": "滑川市",
+    "pop": 32349,
+    "taxRevenue": 0,
+    "lat": 36.7593,
+    "lng": 137.3575
+  },
+  {
+    "code": "16207",
+    "prefCode": "16",
+    "name": "黒部市",
+    "pop": 39638,
+    "taxRevenue": 0,
+    "lat": 36.873,
+    "lng": 137.4563
+  },
+  {
+    "code": "16208",
+    "prefCode": "16",
+    "name": "砺波市",
+    "pop": 48154,
+    "taxRevenue": 0,
+    "lat": 36.6327,
+    "lng": 136.9685
+  },
+  {
+    "code": "16209",
+    "prefCode": "16",
+    "name": "小矢部市",
+    "pop": 28983,
+    "taxRevenue": 0,
+    "lat": 36.6604,
+    "lng": 136.874
+  },
+  {
+    "code": "16210",
+    "prefCode": "16",
+    "name": "南砺市",
+    "pop": 47937,
+    "taxRevenue": 0,
+    "lat": 36.5535,
+    "lng": 136.9084
+  },
+  {
+    "code": "16211",
+    "prefCode": "16",
+    "name": "射水市",
+    "pop": 90742,
+    "taxRevenue": 0,
+    "lat": 36.7341,
+    "lng": 137.0901
+  },
+  {
+    "code": "16321",
+    "prefCode": "16",
+    "name": "舟橋村",
+    "pop": 3132,
+    "taxRevenue": 0,
+    "lat": 36.7014,
+    "lng": 137.3053
+  },
+  {
+    "code": "16322",
+    "prefCode": "16",
+    "name": "上市町",
+    "pop": 19351,
+    "taxRevenue": 0,
+    "lat": 36.704,
+    "lng": 137.3586
+  },
+  {
+    "code": "16323",
+    "prefCode": "16",
+    "name": "立山町",
+    "pop": 24792,
+    "taxRevenue": 0,
+    "lat": 36.6581,
+    "lng": 137.3204
+  },
+  {
+    "code": "16342",
+    "prefCode": "16",
+    "name": "入善町",
+    "pop": 23839,
+    "taxRevenue": 0,
+    "lat": 36.9235,
+    "lng": 137.5004
+  },
+  {
+    "code": "16343",
+    "prefCode": "16",
+    "name": "朝日町",
+    "pop": 11081,
+    "taxRevenue": 0,
+    "lat": 36.9429,
+    "lng": 137.5646
+  }
+]

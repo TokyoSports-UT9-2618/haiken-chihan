@@ -1,0 +1,335 @@
+[
+  {
+    "code": "15101",
+    "prefCode": "15",
+    "name": "新潟市北区",
+    "pop": 72804,
+    "taxRevenue": 0,
+    "lat": 37.9296,
+    "lng": 139.1875
+  },
+  {
+    "code": "15102",
+    "prefCode": "15",
+    "name": "新潟市東区",
+    "pop": 134446,
+    "taxRevenue": 0,
+    "lat": 37.9228,
+    "lng": 139.1
+  },
+  {
+    "code": "15103",
+    "prefCode": "15",
+    "name": "新潟市中央区",
+    "pop": 180345,
+    "taxRevenue": 0,
+    "lat": 37.9063,
+    "lng": 139.047
+  },
+  {
+    "code": "15104",
+    "prefCode": "15",
+    "name": "新潟市江南区",
+    "pop": 67972,
+    "taxRevenue": 0,
+    "lat": 37.8664,
+    "lng": 139.1037
+  },
+  {
+    "code": "15105",
+    "prefCode": "15",
+    "name": "新潟市秋葉区",
+    "pop": 75069,
+    "taxRevenue": 0,
+    "lat": 37.7974,
+    "lng": 139.1153
+  },
+  {
+    "code": "15106",
+    "prefCode": "15",
+    "name": "新潟市南区",
+    "pop": 43437,
+    "taxRevenue": 0,
+    "lat": 37.7743,
+    "lng": 139.0195
+  },
+  {
+    "code": "15107",
+    "prefCode": "15",
+    "name": "新潟市西区",
+    "pop": 160656,
+    "taxRevenue": 0,
+    "lat": 37.8701,
+    "lng": 138.9711
+  },
+  {
+    "code": "15108",
+    "prefCode": "15",
+    "name": "新潟市西蒲区",
+    "pop": 54546,
+    "taxRevenue": 0,
+    "lat": 37.7604,
+    "lng": 138.9046
+  },
+  {
+    "code": "15202",
+    "prefCode": "15",
+    "name": "長岡市",
+    "pop": 266936,
+    "taxRevenue": 0,
+    "lat": 37.4556,
+    "lng": 138.8407
+  },
+  {
+    "code": "15204",
+    "prefCode": "15",
+    "name": "三条市",
+    "pop": 94642,
+    "taxRevenue": 0,
+    "lat": 37.619,
+    "lng": 138.971
+  },
+  {
+    "code": "15205",
+    "prefCode": "15",
+    "name": "柏崎市",
+    "pop": 81526,
+    "taxRevenue": 0,
+    "lat": 37.3654,
+    "lng": 138.5816
+  },
+  {
+    "code": "15206",
+    "prefCode": "15",
+    "name": "新発田市",
+    "pop": 94927,
+    "taxRevenue": 0,
+    "lat": 37.9508,
+    "lng": 139.3324
+  },
+  {
+    "code": "15208",
+    "prefCode": "15",
+    "name": "小千谷市",
+    "pop": 34096,
+    "taxRevenue": 0,
+    "lat": 37.3134,
+    "lng": 138.7962
+  },
+  {
+    "code": "15209",
+    "prefCode": "15",
+    "name": "加茂市",
+    "pop": 25441,
+    "taxRevenue": 0,
+    "lat": 37.6598,
+    "lng": 139.0513
+  },
+  {
+    "code": "15210",
+    "prefCode": "15",
+    "name": "十日町市",
+    "pop": 49820,
+    "taxRevenue": 0,
+    "lat": 37.127,
+    "lng": 138.7382
+  },
+  {
+    "code": "15211",
+    "prefCode": "15",
+    "name": "見附市",
+    "pop": 39237,
+    "taxRevenue": 0,
+    "lat": 37.5325,
+    "lng": 138.9132
+  },
+  {
+    "code": "15212",
+    "prefCode": "15",
+    "name": "村上市",
+    "pop": 57418,
+    "taxRevenue": 0,
+    "lat": 38.2294,
+    "lng": 139.4824
+  },
+  {
+    "code": "15213",
+    "prefCode": "15",
+    "name": "燕市",
+    "pop": 77201,
+    "taxRevenue": 0,
+    "lat": 37.6663,
+    "lng": 138.9005
+  },
+  {
+    "code": "15216",
+    "prefCode": "15",
+    "name": "糸魚川市",
+    "pop": 40765,
+    "taxRevenue": 0,
+    "lat": 37.0368,
+    "lng": 137.8953
+  },
+  {
+    "code": "15217",
+    "prefCode": "15",
+    "name": "妙高市",
+    "pop": 30383,
+    "taxRevenue": 0,
+    "lat": 36.9934,
+    "lng": 138.2357
+  },
+  {
+    "code": "15218",
+    "prefCode": "15",
+    "name": "五泉市",
+    "pop": 47625,
+    "taxRevenue": 0,
+    "lat": 37.721,
+    "lng": 139.1822
+  },
+  {
+    "code": "15222",
+    "prefCode": "15",
+    "name": "上越市",
+    "pop": 188047,
+    "taxRevenue": 0,
+    "lat": 37.1425,
+    "lng": 138.2773
+  },
+  {
+    "code": "15223",
+    "prefCode": "15",
+    "name": "阿賀野市",
+    "pop": 40696,
+    "taxRevenue": 0,
+    "lat": 37.8209,
+    "lng": 139.2279
+  },
+  {
+    "code": "15224",
+    "prefCode": "15",
+    "name": "佐渡市",
+    "pop": 51492,
+    "taxRevenue": 0,
+    "lat": 38.0048,
+    "lng": 138.3626
+  },
+  {
+    "code": "15225",
+    "prefCode": "15",
+    "name": "魚沼市",
+    "pop": 34483,
+    "taxRevenue": 0,
+    "lat": 37.2479,
+    "lng": 138.973
+  },
+  {
+    "code": "15226",
+    "prefCode": "15",
+    "name": "南魚沼市",
+    "pop": 54851,
+    "taxRevenue": 0,
+    "lat": 37.0782,
+    "lng": 138.8895
+  },
+  {
+    "code": "15227",
+    "prefCode": "15",
+    "name": "胎内市",
+    "pop": 28509,
+    "taxRevenue": 0,
+    "lat": 38.0638,
+    "lng": 139.4037
+  },
+  {
+    "code": "15307",
+    "prefCode": "15",
+    "name": "聖籠町",
+    "pop": 14259,
+    "taxRevenue": 0,
+    "lat": 37.9843,
+    "lng": 139.2702
+  },
+  {
+    "code": "15342",
+    "prefCode": "15",
+    "name": "弥彦村",
+    "pop": 7705,
+    "taxRevenue": 0,
+    "lat": 37.6905,
+    "lng": 138.8455
+  },
+  {
+    "code": "15361",
+    "prefCode": "15",
+    "name": "田上町",
+    "pop": 11227,
+    "taxRevenue": 0,
+    "lat": 37.6968,
+    "lng": 139.0653
+  },
+  {
+    "code": "15385",
+    "prefCode": "15",
+    "name": "阿賀町",
+    "pop": 9965,
+    "taxRevenue": 0,
+    "lat": 37.6809,
+    "lng": 139.4419
+  },
+  {
+    "code": "15405",
+    "prefCode": "15",
+    "name": "出雲崎町",
+    "pop": 4113,
+    "taxRevenue": 0,
+    "lat": 37.5321,
+    "lng": 138.7096
+  },
+  {
+    "code": "15461",
+    "prefCode": "15",
+    "name": "湯沢町",
+    "pop": 7767,
+    "taxRevenue": 0,
+    "lat": 36.9053,
+    "lng": 138.8239
+  },
+  {
+    "code": "15482",
+    "prefCode": "15",
+    "name": "津南町",
+    "pop": 8989,
+    "taxRevenue": 0,
+    "lat": 37.0055,
+    "lng": 138.6489
+  },
+  {
+    "code": "15504",
+    "prefCode": "15",
+    "name": "刈羽村",
+    "pop": 4380,
+    "taxRevenue": 0,
+    "lat": 37.4224,
+    "lng": 138.6231
+  },
+  {
+    "code": "15581",
+    "prefCode": "15",
+    "name": "関川村",
+    "pop": 5144,
+    "taxRevenue": 0,
+    "lat": 38.0973,
+    "lng": 139.5602
+  },
+  {
+    "code": "15586",
+    "prefCode": "15",
+    "name": "粟島浦村",
+    "pop": 353,
+    "taxRevenue": 0,
+    "lat": 38.4626,
+    "lng": 139.2403
+  }
+]

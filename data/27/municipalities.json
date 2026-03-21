@@ -1,0 +1,650 @@
+[
+  {
+    "code": "27102",
+    "prefCode": "27",
+    "name": "大阪市都島区",
+    "pop": 107904,
+    "taxRevenue": 0,
+    "lat": 34.7111,
+    "lng": 135.5281
+  },
+  {
+    "code": "27103",
+    "prefCode": "27",
+    "name": "大阪市福島区",
+    "pop": 79328,
+    "taxRevenue": 0,
+    "lat": 34.6936,
+    "lng": 135.477
+  },
+  {
+    "code": "27104",
+    "prefCode": "27",
+    "name": "大阪市此花区",
+    "pop": 65251,
+    "taxRevenue": 0,
+    "lat": 34.6841,
+    "lng": 135.4526
+  },
+  {
+    "code": "27106",
+    "prefCode": "27",
+    "name": "大阪市西区",
+    "pop": 105862,
+    "taxRevenue": 0,
+    "lat": 34.6777,
+    "lng": 135.4849
+  },
+  {
+    "code": "27107",
+    "prefCode": "27",
+    "name": "大阪市港区",
+    "pop": 80948,
+    "taxRevenue": 0,
+    "lat": 34.6635,
+    "lng": 135.4551
+  },
+  {
+    "code": "27108",
+    "prefCode": "27",
+    "name": "大阪市大正区",
+    "pop": 62083,
+    "taxRevenue": 0,
+    "lat": 34.6512,
+    "lng": 135.4706
+  },
+  {
+    "code": "27109",
+    "prefCode": "27",
+    "name": "大阪市天王寺区",
+    "pop": 82148,
+    "taxRevenue": 0,
+    "lat": 34.6613,
+    "lng": 135.5218
+  },
+  {
+    "code": "27111",
+    "prefCode": "27",
+    "name": "大阪市浪速区",
+    "pop": 75504,
+    "taxRevenue": 0,
+    "lat": 34.66,
+    "lng": 135.4963
+  },
+  {
+    "code": "27113",
+    "prefCode": "27",
+    "name": "大阪市西淀川区",
+    "pop": 95864,
+    "taxRevenue": 0,
+    "lat": 34.7091,
+    "lng": 135.4514
+  },
+  {
+    "code": "27114",
+    "prefCode": "27",
+    "name": "大阪市東淀川区",
+    "pop": 177120,
+    "taxRevenue": 0,
+    "lat": 34.7451,
+    "lng": 135.5313
+  },
+  {
+    "code": "27115",
+    "prefCode": "27",
+    "name": "大阪市東成区",
+    "pop": 84906,
+    "taxRevenue": 0,
+    "lat": 34.673,
+    "lng": 135.5458
+  },
+  {
+    "code": "27116",
+    "prefCode": "27",
+    "name": "大阪市生野区",
+    "pop": 127309,
+    "taxRevenue": 0,
+    "lat": 34.6535,
+    "lng": 135.5439
+  },
+  {
+    "code": "27117",
+    "prefCode": "27",
+    "name": "大阪市旭区",
+    "pop": 89670,
+    "taxRevenue": 0,
+    "lat": 34.7234,
+    "lng": 135.548
+  },
+  {
+    "code": "27118",
+    "prefCode": "27",
+    "name": "大阪市城東区",
+    "pop": 169043,
+    "taxRevenue": 0,
+    "lat": 34.6983,
+    "lng": 135.5487
+  },
+  {
+    "code": "27119",
+    "prefCode": "27",
+    "name": "大阪市阿倍野区",
+    "pop": 110995,
+    "taxRevenue": 0,
+    "lat": 34.6335,
+    "lng": 135.5137
+  },
+  {
+    "code": "27120",
+    "prefCode": "27",
+    "name": "大阪市住吉区",
+    "pop": 153056,
+    "taxRevenue": 0,
+    "lat": 34.6056,
+    "lng": 135.5054
+  },
+  {
+    "code": "27121",
+    "prefCode": "27",
+    "name": "大阪市東住吉区",
+    "pop": 127849,
+    "taxRevenue": 0,
+    "lat": 34.6211,
+    "lng": 135.5314
+  },
+  {
+    "code": "27122",
+    "prefCode": "27",
+    "name": "大阪市西成区",
+    "pop": 106111,
+    "taxRevenue": 0,
+    "lat": 34.6386,
+    "lng": 135.4936
+  },
+  {
+    "code": "27123",
+    "prefCode": "27",
+    "name": "大阪市淀川区",
+    "pop": 183444,
+    "taxRevenue": 0,
+    "lat": 34.7306,
+    "lng": 135.4838
+  },
+  {
+    "code": "27124",
+    "prefCode": "27",
+    "name": "大阪市鶴見区",
+    "pop": 112691,
+    "taxRevenue": 0,
+    "lat": 34.7016,
+    "lng": 135.5739
+  },
+  {
+    "code": "27125",
+    "prefCode": "27",
+    "name": "大阪市住之江区",
+    "pop": 120072,
+    "taxRevenue": 0,
+    "lat": 34.6158,
+    "lng": 135.4672
+  },
+  {
+    "code": "27126",
+    "prefCode": "27",
+    "name": "大阪市平野区",
+    "pop": 192152,
+    "taxRevenue": 0,
+    "lat": 34.6163,
+    "lng": 135.5597
+  },
+  {
+    "code": "27127",
+    "prefCode": "27",
+    "name": "大阪市北区",
+    "pop": 139376,
+    "taxRevenue": 0,
+    "lat": 34.7064,
+    "lng": 135.5063
+  },
+  {
+    "code": "27128",
+    "prefCode": "27",
+    "name": "大阪市中央区",
+    "pop": 103726,
+    "taxRevenue": 0,
+    "lat": 34.6774,
+    "lng": 135.5139
+  },
+  {
+    "code": "27141",
+    "prefCode": "27",
+    "name": "堺市堺区",
+    "pop": 148682,
+    "taxRevenue": 0,
+    "lat": 34.5756,
+    "lng": 135.4787
+  },
+  {
+    "code": "27142",
+    "prefCode": "27",
+    "name": "堺市中区",
+    "pop": 121236,
+    "taxRevenue": 0,
+    "lat": 34.5268,
+    "lng": 135.5023
+  },
+  {
+    "code": "27143",
+    "prefCode": "27",
+    "name": "堺市東区",
+    "pop": 85043,
+    "taxRevenue": 0,
+    "lat": 34.5339,
+    "lng": 135.534
+  },
+  {
+    "code": "27144",
+    "prefCode": "27",
+    "name": "堺市西区",
+    "pop": 135375,
+    "taxRevenue": 0,
+    "lat": 34.5371,
+    "lng": 135.4636
+  },
+  {
+    "code": "27145",
+    "prefCode": "27",
+    "name": "堺市南区",
+    "pop": 138464,
+    "taxRevenue": 0,
+    "lat": 34.486,
+    "lng": 135.5009
+  },
+  {
+    "code": "27146",
+    "prefCode": "27",
+    "name": "堺市北区",
+    "pop": 159757,
+    "taxRevenue": 0,
+    "lat": 34.5655,
+    "lng": 135.509
+  },
+  {
+    "code": "27147",
+    "prefCode": "27",
+    "name": "堺市美原区",
+    "pop": 37604,
+    "taxRevenue": 0,
+    "lat": 34.5384,
+    "lng": 135.5594
+  },
+  {
+    "code": "27202",
+    "prefCode": "27",
+    "name": "岸和田市",
+    "pop": 190658,
+    "taxRevenue": 0,
+    "lat": 34.4593,
+    "lng": 135.3971
+  },
+  {
+    "code": "27203",
+    "prefCode": "27",
+    "name": "豊中市",
+    "pop": 401558,
+    "taxRevenue": 0,
+    "lat": 34.7835,
+    "lng": 135.4752
+  },
+  {
+    "code": "27204",
+    "prefCode": "27",
+    "name": "池田市",
+    "pop": 104993,
+    "taxRevenue": 0,
+    "lat": 34.8202,
+    "lng": 135.4361
+  },
+  {
+    "code": "27205",
+    "prefCode": "27",
+    "name": "吹田市",
+    "pop": 385567,
+    "taxRevenue": 0,
+    "lat": 34.7815,
+    "lng": 135.5176
+  },
+  {
+    "code": "27206",
+    "prefCode": "27",
+    "name": "泉大津市",
+    "pop": 74412,
+    "taxRevenue": 0,
+    "lat": 34.5024,
+    "lng": 135.4142
+  },
+  {
+    "code": "27207",
+    "prefCode": "27",
+    "name": "高槻市",
+    "pop": 352698,
+    "taxRevenue": 0,
+    "lat": 34.8466,
+    "lng": 135.6116
+  },
+  {
+    "code": "27208",
+    "prefCode": "27",
+    "name": "貝塚市",
+    "pop": 84443,
+    "taxRevenue": 0,
+    "lat": 34.4312,
+    "lng": 135.3652
+  },
+  {
+    "code": "27209",
+    "prefCode": "27",
+    "name": "守口市",
+    "pop": 143096,
+    "taxRevenue": 0,
+    "lat": 34.742,
+    "lng": 135.5776
+  },
+  {
+    "code": "27210",
+    "prefCode": "27",
+    "name": "枚方市",
+    "pop": 397289,
+    "taxRevenue": 0,
+    "lat": 34.8199,
+    "lng": 135.6711
+  },
+  {
+    "code": "27211",
+    "prefCode": "27",
+    "name": "茨木市",
+    "pop": 287730,
+    "taxRevenue": 0,
+    "lat": 34.8211,
+    "lng": 135.5666
+  },
+  {
+    "code": "27212",
+    "prefCode": "27",
+    "name": "八尾市",
+    "pop": 264642,
+    "taxRevenue": 0,
+    "lat": 34.6207,
+    "lng": 135.6078
+  },
+  {
+    "code": "27213",
+    "prefCode": "27",
+    "name": "泉佐野市",
+    "pop": 100131,
+    "taxRevenue": 0,
+    "lat": 34.4026,
+    "lng": 135.3241
+  },
+  {
+    "code": "27214",
+    "prefCode": "27",
+    "name": "富田林市",
+    "pop": 108699,
+    "taxRevenue": 0,
+    "lat": 34.4994,
+    "lng": 135.5879
+  },
+  {
+    "code": "27215",
+    "prefCode": "27",
+    "name": "寝屋川市",
+    "pop": 229733,
+    "taxRevenue": 0,
+    "lat": 34.7666,
+    "lng": 135.6247
+  },
+  {
+    "code": "27216",
+    "prefCode": "27",
+    "name": "河内長野市",
+    "pop": 101692,
+    "taxRevenue": 0,
+    "lat": 34.4452,
+    "lng": 135.5651
+  },
+  {
+    "code": "27217",
+    "prefCode": "27",
+    "name": "松原市",
+    "pop": 117641,
+    "taxRevenue": 0,
+    "lat": 34.5791,
+    "lng": 135.5486
+  },
+  {
+    "code": "27218",
+    "prefCode": "27",
+    "name": "大東市",
+    "pop": 119367,
+    "taxRevenue": 0,
+    "lat": 34.7123,
+    "lng": 135.6258
+  },
+  {
+    "code": "27219",
+    "prefCode": "27",
+    "name": "和泉市",
+    "pop": 184495,
+    "taxRevenue": 0,
+    "lat": 34.4723,
+    "lng": 135.4514
+  },
+  {
+    "code": "27220",
+    "prefCode": "27",
+    "name": "箕面市",
+    "pop": 136868,
+    "taxRevenue": 0,
+    "lat": 34.8329,
+    "lng": 135.4842
+  },
+  {
+    "code": "27221",
+    "prefCode": "27",
+    "name": "柏原市",
+    "pop": 68775,
+    "taxRevenue": 0,
+    "lat": 34.5776,
+    "lng": 135.6317
+  },
+  {
+    "code": "27222",
+    "prefCode": "27",
+    "name": "羽曳野市",
+    "pop": 108736,
+    "taxRevenue": 0,
+    "lat": 34.5557,
+    "lng": 135.592
+  },
+  {
+    "code": "27223",
+    "prefCode": "27",
+    "name": "門真市",
+    "pop": 119764,
+    "taxRevenue": 0,
+    "lat": 34.7346,
+    "lng": 135.5996
+  },
+  {
+    "code": "27224",
+    "prefCode": "27",
+    "name": "摂津市",
+    "pop": 87456,
+    "taxRevenue": 0,
+    "lat": 34.7776,
+    "lng": 135.5621
+  },
+  {
+    "code": "27225",
+    "prefCode": "27",
+    "name": "高石市",
+    "pop": 55635,
+    "taxRevenue": 0,
+    "lat": 34.5237,
+    "lng": 135.4394
+  },
+  {
+    "code": "27226",
+    "prefCode": "27",
+    "name": "藤井寺市",
+    "pop": 63688,
+    "taxRevenue": 0,
+    "lat": 34.5729,
+    "lng": 135.604
+  },
+  {
+    "code": "27227",
+    "prefCode": "27",
+    "name": "東大阪市",
+    "pop": 493940,
+    "taxRevenue": 0,
+    "lat": 34.6687,
+    "lng": 135.6056
+  },
+  {
+    "code": "27228",
+    "prefCode": "27",
+    "name": "泉南市",
+    "pop": 60102,
+    "taxRevenue": 0,
+    "lat": 34.3679,
+    "lng": 135.2807
+  },
+  {
+    "code": "27229",
+    "prefCode": "27",
+    "name": "四條畷市",
+    "pop": 55177,
+    "taxRevenue": 0,
+    "lat": 34.7375,
+    "lng": 135.6496
+  },
+  {
+    "code": "27230",
+    "prefCode": "27",
+    "name": "交野市",
+    "pop": 75033,
+    "taxRevenue": 0,
+    "lat": 34.7796,
+    "lng": 135.679
+  },
+  {
+    "code": "27231",
+    "prefCode": "27",
+    "name": "大阪狭山市",
+    "pop": 58435,
+    "taxRevenue": 0,
+    "lat": 34.4962,
+    "lng": 135.5488
+  },
+  {
+    "code": "27232",
+    "prefCode": "27",
+    "name": "阪南市",
+    "pop": 51254,
+    "taxRevenue": 0,
+    "lat": 34.3463,
+    "lng": 135.2378
+  },
+  {
+    "code": "27301",
+    "prefCode": "27",
+    "name": "島本町",
+    "pop": 30927,
+    "taxRevenue": 0,
+    "lat": 34.8833,
+    "lng": 135.6672
+  },
+  {
+    "code": "27321",
+    "prefCode": "27",
+    "name": "豊能町",
+    "pop": 18279,
+    "taxRevenue": 0,
+    "lat": 34.9057,
+    "lng": 135.4543
+  },
+  {
+    "code": "27322",
+    "prefCode": "27",
+    "name": "能勢町",
+    "pop": 9079,
+    "taxRevenue": 0,
+    "lat": 34.9703,
+    "lng": 135.4196
+  },
+  {
+    "code": "27341",
+    "prefCode": "27",
+    "name": "忠岡町",
+    "pop": 16567,
+    "taxRevenue": 0,
+    "lat": 34.488,
+    "lng": 135.4012
+  },
+  {
+    "code": "27361",
+    "prefCode": "27",
+    "name": "熊取町",
+    "pop": 43763,
+    "taxRevenue": 0,
+    "lat": 34.3981,
+    "lng": 135.3563
+  },
+  {
+    "code": "27362",
+    "prefCode": "27",
+    "name": "田尻町",
+    "pop": 8434,
+    "taxRevenue": 0,
+    "lat": 34.3929,
+    "lng": 135.2901
+  },
+  {
+    "code": "27366",
+    "prefCode": "27",
+    "name": "岬町",
+    "pop": 14741,
+    "taxRevenue": 0,
+    "lat": 34.3227,
+    "lng": 135.1593
+  },
+  {
+    "code": "27381",
+    "prefCode": "27",
+    "name": "太子町",
+    "pop": 13009,
+    "taxRevenue": 0,
+    "lat": 34.5221,
+    "lng": 135.6499
+  },
+  {
+    "code": "27382",
+    "prefCode": "27",
+    "name": "河南町",
+    "pop": 15697,
+    "taxRevenue": 0,
+    "lat": 34.4922,
+    "lng": 135.6353
+  },
+  {
+    "code": "27383",
+    "prefCode": "27",
+    "name": "千早赤阪村",
+    "pop": 4909,
+    "taxRevenue": 0,
+    "lat": 34.4461,
+    "lng": 135.6238
+  }
+]

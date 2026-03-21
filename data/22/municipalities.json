@@ -1,0 +1,389 @@
+[
+  {
+    "code": "22101",
+    "prefCode": "22",
+    "name": "静岡市葵区",
+    "pop": 249297,
+    "taxRevenue": 0,
+    "lat": 35.0003,
+    "lng": 138.3811
+  },
+  {
+    "code": "22102",
+    "prefCode": "22",
+    "name": "静岡市駿河区",
+    "pop": 213026,
+    "taxRevenue": 0,
+    "lat": 34.9576,
+    "lng": 138.3963
+  },
+  {
+    "code": "22103",
+    "prefCode": "22",
+    "name": "静岡市清水区",
+    "pop": 231066,
+    "taxRevenue": 0,
+    "lat": 35.0299,
+    "lng": 138.4852
+  },
+  {
+    "code": "22131",
+    "prefCode": "22",
+    "name": "浜松市中区",
+    "pop": 235240,
+    "taxRevenue": 0,
+    "lat": 34.7257,
+    "lng": 137.7231
+  },
+  {
+    "code": "22132",
+    "prefCode": "22",
+    "name": "浜松市東区",
+    "pop": 129356,
+    "taxRevenue": 0,
+    "lat": 34.7457,
+    "lng": 137.7707
+  },
+  {
+    "code": "22133",
+    "prefCode": "22",
+    "name": "浜松市西区",
+    "pop": 108160,
+    "taxRevenue": 0,
+    "lat": 34.716,
+    "lng": 137.6529
+  },
+  {
+    "code": "22134",
+    "prefCode": "22",
+    "name": "浜松市南区",
+    "pop": 99769,
+    "taxRevenue": 0,
+    "lat": 34.6865,
+    "lng": 137.7427
+  },
+  {
+    "code": "22135",
+    "prefCode": "22",
+    "name": "浜松市北区",
+    "pop": 92688,
+    "taxRevenue": 0,
+    "lat": 34.8025,
+    "lng": 137.6771
+  },
+  {
+    "code": "22136",
+    "prefCode": "22",
+    "name": "浜松市浜北区",
+    "pop": 98779,
+    "taxRevenue": 0,
+    "lat": 34.806,
+    "lng": 137.7846
+  },
+  {
+    "code": "22137",
+    "prefCode": "22",
+    "name": "浜松市天竜区",
+    "pop": 26726,
+    "taxRevenue": 0,
+    "lat": 34.9392,
+    "lng": 137.8301
+  },
+  {
+    "code": "22203",
+    "prefCode": "22",
+    "name": "沼津市",
+    "pop": 189386,
+    "taxRevenue": 0,
+    "lat": 35.108,
+    "lng": 138.852
+  },
+  {
+    "code": "22205",
+    "prefCode": "22",
+    "name": "熱海市",
+    "pop": 34208,
+    "taxRevenue": 0,
+    "lat": 35.0878,
+    "lng": 139.0698
+  },
+  {
+    "code": "22206",
+    "prefCode": "22",
+    "name": "三島市",
+    "pop": 107783,
+    "taxRevenue": 0,
+    "lat": 35.1218,
+    "lng": 138.9261
+  },
+  {
+    "code": "22207",
+    "prefCode": "22",
+    "name": "富士宮市",
+    "pop": 128105,
+    "taxRevenue": 0,
+    "lat": 35.2405,
+    "lng": 138.6141
+  },
+  {
+    "code": "22208",
+    "prefCode": "22",
+    "name": "伊東市",
+    "pop": 65491,
+    "taxRevenue": 0,
+    "lat": 34.944,
+    "lng": 139.0977
+  },
+  {
+    "code": "22209",
+    "prefCode": "22",
+    "name": "島田市",
+    "pop": 95719,
+    "taxRevenue": 0,
+    "lat": 34.84,
+    "lng": 138.1706
+  },
+  {
+    "code": "22210",
+    "prefCode": "22",
+    "name": "富士市",
+    "pop": 245392,
+    "taxRevenue": 0,
+    "lat": 35.171,
+    "lng": 138.6731
+  },
+  {
+    "code": "22211",
+    "prefCode": "22",
+    "name": "磐田市",
+    "pop": 166672,
+    "taxRevenue": 0,
+    "lat": 34.7201,
+    "lng": 137.8491
+  },
+  {
+    "code": "22212",
+    "prefCode": "22",
+    "name": "焼津市",
+    "pop": 136845,
+    "taxRevenue": 0,
+    "lat": 34.8471,
+    "lng": 138.3039
+  },
+  {
+    "code": "22213",
+    "prefCode": "22",
+    "name": "掛川市",
+    "pop": 114954,
+    "taxRevenue": 0,
+    "lat": 34.7576,
+    "lng": 138.0136
+  },
+  {
+    "code": "22214",
+    "prefCode": "22",
+    "name": "藤枝市",
+    "pop": 141342,
+    "taxRevenue": 0,
+    "lat": 34.8672,
+    "lng": 138.2563
+  },
+  {
+    "code": "22215",
+    "prefCode": "22",
+    "name": "御殿場市",
+    "pop": 86614,
+    "taxRevenue": 0,
+    "lat": 35.2948,
+    "lng": 138.9195
+  },
+  {
+    "code": "22216",
+    "prefCode": "22",
+    "name": "袋井市",
+    "pop": 87864,
+    "taxRevenue": 0,
+    "lat": 34.7467,
+    "lng": 137.9237
+  },
+  {
+    "code": "22219",
+    "prefCode": "22",
+    "name": "下田市",
+    "pop": 20183,
+    "taxRevenue": 0,
+    "lat": 34.6854,
+    "lng": 138.9376
+  },
+  {
+    "code": "22220",
+    "prefCode": "22",
+    "name": "裾野市",
+    "pop": 50911,
+    "taxRevenue": 0,
+    "lat": 35.1905,
+    "lng": 138.9069
+  },
+  {
+    "code": "22221",
+    "prefCode": "22",
+    "name": "湖西市",
+    "pop": 57885,
+    "taxRevenue": 0,
+    "lat": 34.714,
+    "lng": 137.5286
+  },
+  {
+    "code": "22222",
+    "prefCode": "22",
+    "name": "伊豆市",
+    "pop": 28190,
+    "taxRevenue": 0,
+    "lat": 34.9513,
+    "lng": 138.9346
+  },
+  {
+    "code": "22223",
+    "prefCode": "22",
+    "name": "御前崎市",
+    "pop": 31103,
+    "taxRevenue": 0,
+    "lat": 34.6349,
+    "lng": 138.1542
+  },
+  {
+    "code": "22224",
+    "prefCode": "22",
+    "name": "菊川市",
+    "pop": 47789,
+    "taxRevenue": 0,
+    "lat": 34.7354,
+    "lng": 138.0914
+  },
+  {
+    "code": "22225",
+    "prefCode": "22",
+    "name": "伊豆の国市",
+    "pop": 46804,
+    "taxRevenue": 0,
+    "lat": 35.0359,
+    "lng": 138.9479
+  },
+  {
+    "code": "22226",
+    "prefCode": "22",
+    "name": "牧之原市",
+    "pop": 43502,
+    "taxRevenue": 0,
+    "lat": 34.721,
+    "lng": 138.2003
+  },
+  {
+    "code": "22301",
+    "prefCode": "22",
+    "name": "東伊豆町",
+    "pop": 11488,
+    "taxRevenue": 0,
+    "lat": 34.8109,
+    "lng": 139.0345
+  },
+  {
+    "code": "22302",
+    "prefCode": "22",
+    "name": "河津町",
+    "pop": 6870,
+    "taxRevenue": 0,
+    "lat": 34.7617,
+    "lng": 138.9837
+  },
+  {
+    "code": "22304",
+    "prefCode": "22",
+    "name": "南伊豆町",
+    "pop": 7877,
+    "taxRevenue": 0,
+    "lat": 34.654,
+    "lng": 138.8508
+  },
+  {
+    "code": "22305",
+    "prefCode": "22",
+    "name": "松崎町",
+    "pop": 6038,
+    "taxRevenue": 0,
+    "lat": 34.7492,
+    "lng": 138.7897
+  },
+  {
+    "code": "22306",
+    "prefCode": "22",
+    "name": "西伊豆町",
+    "pop": 7090,
+    "taxRevenue": 0,
+    "lat": 34.8046,
+    "lng": 138.7799
+  },
+  {
+    "code": "22325",
+    "prefCode": "22",
+    "name": "函南町",
+    "pop": 36794,
+    "taxRevenue": 0,
+    "lat": 35.0896,
+    "lng": 138.9595
+  },
+  {
+    "code": "22341",
+    "prefCode": "22",
+    "name": "清水町",
+    "pop": 31710,
+    "taxRevenue": 0,
+    "lat": 35.0988,
+    "lng": 138.8981
+  },
+  {
+    "code": "22342",
+    "prefCode": "22",
+    "name": "長泉町",
+    "pop": 43336,
+    "taxRevenue": 0,
+    "lat": 35.1373,
+    "lng": 138.8952
+  },
+  {
+    "code": "22344",
+    "prefCode": "22",
+    "name": "小山町",
+    "pop": 18568,
+    "taxRevenue": 0,
+    "lat": 35.3529,
+    "lng": 138.94
+  },
+  {
+    "code": "22424",
+    "prefCode": "22",
+    "name": "吉田町",
+    "pop": 28919,
+    "taxRevenue": 0,
+    "lat": 34.7708,
+    "lng": 138.2521
+  },
+  {
+    "code": "22429",
+    "prefCode": "22",
+    "name": "川根本町",
+    "pop": 6206,
+    "taxRevenue": 0,
+    "lat": 35.0807,
+    "lng": 138.0973
+  },
+  {
+    "code": "22461",
+    "prefCode": "22",
+    "name": "森町",
+    "pop": 17457,
+    "taxRevenue": 0,
+    "lat": 34.8313,
+    "lng": 137.9199
+  }
+]

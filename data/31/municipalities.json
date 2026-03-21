@@ -1,0 +1,173 @@
+[
+  {
+    "code": "31201",
+    "prefCode": "31",
+    "name": "鳥取市",
+    "pop": 188465,
+    "taxRevenue": 0,
+    "lat": 35.4886,
+    "lng": 134.2009
+  },
+  {
+    "code": "31202",
+    "prefCode": "31",
+    "name": "米子市",
+    "pop": 147317,
+    "taxRevenue": 0,
+    "lat": 35.4417,
+    "lng": 133.3394
+  },
+  {
+    "code": "31203",
+    "prefCode": "31",
+    "name": "倉吉市",
+    "pop": 46485,
+    "taxRevenue": 0,
+    "lat": 35.4307,
+    "lng": 133.8144
+  },
+  {
+    "code": "31204",
+    "prefCode": "31",
+    "name": "境港市",
+    "pop": 32740,
+    "taxRevenue": 0,
+    "lat": 35.5262,
+    "lng": 133.2283
+  },
+  {
+    "code": "31302",
+    "prefCode": "31",
+    "name": "岩美町",
+    "pop": 10799,
+    "taxRevenue": 0,
+    "lat": 35.57,
+    "lng": 134.3308
+  },
+  {
+    "code": "31325",
+    "prefCode": "31",
+    "name": "若桜町",
+    "pop": 2864,
+    "taxRevenue": 0,
+    "lat": 35.3346,
+    "lng": 134.4098
+  },
+  {
+    "code": "31328",
+    "prefCode": "31",
+    "name": "智頭町",
+    "pop": 6427,
+    "taxRevenue": 0,
+    "lat": 35.2514,
+    "lng": 134.2346
+  },
+  {
+    "code": "31329",
+    "prefCode": "31",
+    "name": "八頭町",
+    "pop": 15937,
+    "taxRevenue": 0,
+    "lat": 35.3941,
+    "lng": 134.2795
+  },
+  {
+    "code": "31364",
+    "prefCode": "31",
+    "name": "三朝町",
+    "pop": 6060,
+    "taxRevenue": 0,
+    "lat": 35.3938,
+    "lng": 133.8803
+  },
+  {
+    "code": "31370",
+    "prefCode": "31",
+    "name": "湯梨浜町",
+    "pop": 16055,
+    "taxRevenue": 0,
+    "lat": 35.4833,
+    "lng": 133.8871
+  },
+  {
+    "code": "31371",
+    "prefCode": "31",
+    "name": "琴浦町",
+    "pop": 16365,
+    "taxRevenue": 0,
+    "lat": 35.4921,
+    "lng": 133.667
+  },
+  {
+    "code": "31372",
+    "prefCode": "31",
+    "name": "北栄町",
+    "pop": 14228,
+    "taxRevenue": 0,
+    "lat": 35.4843,
+    "lng": 133.789
+  },
+  {
+    "code": "31384",
+    "prefCode": "31",
+    "name": "日吉津村",
+    "pop": 3501,
+    "taxRevenue": 0,
+    "lat": 35.4422,
+    "lng": 133.3799
+  },
+  {
+    "code": "31386",
+    "prefCode": "31",
+    "name": "大山町",
+    "pop": 15370,
+    "taxRevenue": 0,
+    "lat": 35.4889,
+    "lng": 133.5089
+  },
+  {
+    "code": "31389",
+    "prefCode": "31",
+    "name": "南部町",
+    "pop": 10323,
+    "taxRevenue": 0,
+    "lat": 35.3554,
+    "lng": 133.3442
+  },
+  {
+    "code": "31390",
+    "prefCode": "31",
+    "name": "伯耆町",
+    "pop": 10696,
+    "taxRevenue": 0,
+    "lat": 35.3657,
+    "lng": 133.4248
+  },
+  {
+    "code": "31401",
+    "prefCode": "31",
+    "name": "日南町",
+    "pop": 4196,
+    "taxRevenue": 0,
+    "lat": 35.1539,
+    "lng": 133.2851
+  },
+  {
+    "code": "31402",
+    "prefCode": "31",
+    "name": "日野町",
+    "pop": 2907,
+    "taxRevenue": 0,
+    "lat": 35.2238,
+    "lng": 133.418
+  },
+  {
+    "code": "31403",
+    "prefCode": "31",
+    "name": "江府町",
+    "pop": 2672,
+    "taxRevenue": 0,
+    "lat": 35.2879,
+    "lng": 133.5021
+  }
+]

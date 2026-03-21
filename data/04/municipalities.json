@@ -1,0 +1,353 @@
+[
+  {
+    "code": "04101",
+    "prefCode": "04",
+    "name": "仙台市青葉区",
+    "pop": 311590,
+    "taxRevenue": 0,
+    "lat": 38.2788,
+    "lng": 140.8429
+  },
+  {
+    "code": "04102",
+    "prefCode": "04",
+    "name": "仙台市宮城野区",
+    "pop": 196732,
+    "taxRevenue": 0,
+    "lat": 38.2759,
+    "lng": 140.9291
+  },
+  {
+    "code": "04103",
+    "prefCode": "04",
+    "name": "仙台市若林区",
+    "pop": 141475,
+    "taxRevenue": 0,
+    "lat": 38.2396,
+    "lng": 140.913
+  },
+  {
+    "code": "04104",
+    "prefCode": "04",
+    "name": "仙台市太白区",
+    "pop": 234758,
+    "taxRevenue": 0,
+    "lat": 38.2193,
+    "lng": 140.865
+  },
+  {
+    "code": "04105",
+    "prefCode": "04",
+    "name": "仙台市泉区",
+    "pop": 212149,
+    "taxRevenue": 0,
+    "lat": 38.3225,
+    "lng": 140.8688
+  },
+  {
+    "code": "04202",
+    "prefCode": "04",
+    "name": "石巻市",
+    "pop": 140151,
+    "taxRevenue": 0,
+    "lat": 38.4548,
+    "lng": 141.2992
+  },
+  {
+    "code": "04203",
+    "prefCode": "04",
+    "name": "塩竈市",
+    "pop": 52203,
+    "taxRevenue": 0,
+    "lat": 38.3215,
+    "lng": 141.0181
+  },
+  {
+    "code": "04205",
+    "prefCode": "04",
+    "name": "気仙沼市",
+    "pop": 61147,
+    "taxRevenue": 0,
+    "lat": 38.876,
+    "lng": 141.5662
+  },
+  {
+    "code": "04206",
+    "prefCode": "04",
+    "name": "白石市",
+    "pop": 32758,
+    "taxRevenue": 0,
+    "lat": 37.9999,
+    "lng": 140.624
+  },
+  {
+    "code": "04207",
+    "prefCode": "04",
+    "name": "名取市",
+    "pop": 78718,
+    "taxRevenue": 0,
+    "lat": 38.1717,
+    "lng": 140.8724
+  },
+  {
+    "code": "04208",
+    "prefCode": "04",
+    "name": "角田市",
+    "pop": 27976,
+    "taxRevenue": 0,
+    "lat": 37.9847,
+    "lng": 140.7837
+  },
+  {
+    "code": "04209",
+    "prefCode": "04",
+    "name": "多賀城市",
+    "pop": 62827,
+    "taxRevenue": 0,
+    "lat": 38.2954,
+    "lng": 141.0024
+  },
+  {
+    "code": "04211",
+    "prefCode": "04",
+    "name": "岩沼市",
+    "pop": 44068,
+    "taxRevenue": 0,
+    "lat": 38.1097,
+    "lng": 140.868
+  },
+  {
+    "code": "04212",
+    "prefCode": "04",
+    "name": "登米市",
+    "pop": 76037,
+    "taxRevenue": 0,
+    "lat": 38.6784,
+    "lng": 141.2171
+  },
+  {
+    "code": "04213",
+    "prefCode": "04",
+    "name": "栗原市",
+    "pop": 64637,
+    "taxRevenue": 0,
+    "lat": 38.7609,
+    "lng": 141.031
+  },
+  {
+    "code": "04214",
+    "prefCode": "04",
+    "name": "東松島市",
+    "pop": 39098,
+    "taxRevenue": 0,
+    "lat": 38.4211,
+    "lng": 141.206
+  },
+  {
+    "code": "04215",
+    "prefCode": "04",
+    "name": "大崎市",
+    "pop": 127330,
+    "taxRevenue": 0,
+    "lat": 38.5786,
+    "lng": 140.9636
+  },
+  {
+    "code": "04216",
+    "prefCode": "04",
+    "name": "富谷市",
+    "pop": 51651,
+    "taxRevenue": 0,
+    "lat": 38.3702,
+    "lng": 140.885
+  },
+  {
+    "code": "04301",
+    "prefCode": "04",
+    "name": "蔵王町",
+    "pop": 11418,
+    "taxRevenue": 0,
+    "lat": 38.0923,
+    "lng": 140.6357
+  },
+  {
+    "code": "04302",
+    "prefCode": "04",
+    "name": "七ヶ宿町",
+    "pop": 1262,
+    "taxRevenue": 0,
+    "lat": 38.022,
+    "lng": 140.4227
+  },
+  {
+    "code": "04321",
+    "prefCode": "04",
+    "name": "大河原町",
+    "pop": 23571,
+    "taxRevenue": 0,
+    "lat": 38.0483,
+    "lng": 140.7317
+  },
+  {
+    "code": "04322",
+    "prefCode": "04",
+    "name": "村田町",
+    "pop": 10666,
+    "taxRevenue": 0,
+    "lat": 38.1097,
+    "lng": 140.7275
+  },
+  {
+    "code": "04323",
+    "prefCode": "04",
+    "name": "柴田町",
+    "pop": 38271,
+    "taxRevenue": 0,
+    "lat": 38.0661,
+    "lng": 140.7833
+  },
+  {
+    "code": "04324",
+    "prefCode": "04",
+    "name": "川崎町",
+    "pop": 8345,
+    "taxRevenue": 0,
+    "lat": 38.1875,
+    "lng": 140.6418
+  },
+  {
+    "code": "04341",
+    "prefCode": "04",
+    "name": "丸森町",
+    "pop": 12262,
+    "taxRevenue": 0,
+    "lat": 37.9004,
+    "lng": 140.7631
+  },
+  {
+    "code": "04361",
+    "prefCode": "04",
+    "name": "亘理町",
+    "pop": 33087,
+    "taxRevenue": 0,
+    "lat": 38.0445,
+    "lng": 140.8672
+  },
+  {
+    "code": "04362",
+    "prefCode": "04",
+    "name": "山元町",
+    "pop": 12046,
+    "taxRevenue": 0,
+    "lat": 37.9558,
+    "lng": 140.8806
+  },
+  {
+    "code": "04401",
+    "prefCode": "04",
+    "name": "松島町",
+    "pop": 13323,
+    "taxRevenue": 0,
+    "lat": 38.392,
+    "lng": 141.0727
+  },
+  {
+    "code": "04404",
+    "prefCode": "04",
+    "name": "七ヶ浜町",
+    "pop": 18132,
+    "taxRevenue": 0,
+    "lat": 38.2983,
+    "lng": 141.0533
+  },
+  {
+    "code": "04406",
+    "prefCode": "04",
+    "name": "利府町",
+    "pop": 35182,
+    "taxRevenue": 0,
+    "lat": 38.3341,
+    "lng": 140.9752
+  },
+  {
+    "code": "04421",
+    "prefCode": "04",
+    "name": "大和町",
+    "pop": 28786,
+    "taxRevenue": 0,
+    "lat": 38.4229,
+    "lng": 140.8712
+  },
+  {
+    "code": "04422",
+    "prefCode": "04",
+    "name": "大郷町",
+    "pop": 7813,
+    "taxRevenue": 0,
+    "lat": 38.4332,
+    "lng": 141.0057
+  },
+  {
+    "code": "04424",
+    "prefCode": "04",
+    "name": "大衡村",
+    "pop": 5849,
+    "taxRevenue": 0,
+    "lat": 38.4746,
+    "lng": 140.8828
+  },
+  {
+    "code": "04444",
+    "prefCode": "04",
+    "name": "色麻町",
+    "pop": 6698,
+    "taxRevenue": 0,
+    "lat": 38.5388,
+    "lng": 140.835
+  },
+  {
+    "code": "04445",
+    "prefCode": "04",
+    "name": "加美町",
+    "pop": 21943,
+    "taxRevenue": 0,
+    "lat": 38.582,
+    "lng": 140.8169
+  },
+  {
+    "code": "04501",
+    "prefCode": "04",
+    "name": "涌谷町",
+    "pop": 15388,
+    "taxRevenue": 0,
+    "lat": 38.5473,
+    "lng": 141.1377
+  },
+  {
+    "code": "04505",
+    "prefCode": "04",
+    "name": "美里町",
+    "pop": 23994,
+    "taxRevenue": 0,
+    "lat": 38.5351,
+    "lng": 141.0714
+  },
+  {
+    "code": "04581",
+    "prefCode": "04",
+    "name": "女川町",
+    "pop": 6430,
+    "taxRevenue": 0,
+    "lat": 38.4396,
+    "lng": 141.4436
+  },
+  {
+    "code": "04606",
+    "prefCode": "04",
+    "name": "南三陸町",
+    "pop": 12225,
+    "taxRevenue": 0,
+    "lat": 38.6949,
+    "lng": 141.4744
+  }
+]

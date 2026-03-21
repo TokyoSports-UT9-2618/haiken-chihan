@@ -1,0 +1,6 @@
+name = "haiken-chihan"
+pages_build_output_dir = "."
+
+[[r2_buckets]]
+binding = "GEOJSON"
+bucket_name = "haiken-geojson"

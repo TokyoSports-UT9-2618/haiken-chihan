@@ -1,0 +1,353 @@
+[
+  {
+    "code": "29201",
+    "prefCode": "29",
+    "name": "奈良市",
+    "pop": 354630,
+    "taxRevenue": 0,
+    "lat": 34.6883,
+    "lng": 135.7894
+  },
+  {
+    "code": "29202",
+    "prefCode": "29",
+    "name": "大和高田市",
+    "pop": 61744,
+    "taxRevenue": 0,
+    "lat": 34.5103,
+    "lng": 135.7427
+  },
+  {
+    "code": "29203",
+    "prefCode": "29",
+    "name": "大和郡山市",
+    "pop": 83285,
+    "taxRevenue": 0,
+    "lat": 34.6368,
+    "lng": 135.7735
+  },
+  {
+    "code": "29204",
+    "prefCode": "29",
+    "name": "天理市",
+    "pop": 63889,
+    "taxRevenue": 0,
+    "lat": 34.5951,
+    "lng": 135.8291
+  },
+  {
+    "code": "29205",
+    "prefCode": "29",
+    "name": "橿原市",
+    "pop": 120922,
+    "taxRevenue": 0,
+    "lat": 34.5039,
+    "lng": 135.7904
+  },
+  {
+    "code": "29206",
+    "prefCode": "29",
+    "name": "桜井市",
+    "pop": 54857,
+    "taxRevenue": 0,
+    "lat": 34.5174,
+    "lng": 135.8492
+  },
+  {
+    "code": "29207",
+    "prefCode": "29",
+    "name": "五條市",
+    "pop": 27927,
+    "taxRevenue": 0,
+    "lat": 34.352,
+    "lng": 135.7004
+  },
+  {
+    "code": "29208",
+    "prefCode": "29",
+    "name": "御所市",
+    "pop": 24096,
+    "taxRevenue": 0,
+    "lat": 34.4526,
+    "lng": 135.7336
+  },
+  {
+    "code": "29209",
+    "prefCode": "29",
+    "name": "生駒市",
+    "pop": 116675,
+    "taxRevenue": 0,
+    "lat": 34.6999,
+    "lng": 135.7109
+  },
+  {
+    "code": "29210",
+    "prefCode": "29",
+    "name": "香芝市",
+    "pop": 78113,
+    "taxRevenue": 0,
+    "lat": 34.5447,
+    "lng": 135.6998
+  },
+  {
+    "code": "29211",
+    "prefCode": "29",
+    "name": "葛城市",
+    "pop": 36832,
+    "taxRevenue": 0,
+    "lat": 34.4979,
+    "lng": 135.7168
+  },
+  {
+    "code": "29212",
+    "prefCode": "29",
+    "name": "宇陀市",
+    "pop": 28121,
+    "taxRevenue": 0,
+    "lat": 34.5193,
+    "lng": 135.9661
+  },
+  {
+    "code": "29322",
+    "prefCode": "29",
+    "name": "山添村",
+    "pop": 3226,
+    "taxRevenue": 0,
+    "lat": 34.6677,
+    "lng": 136.0292
+  },
+  {
+    "code": "29342",
+    "prefCode": "29",
+    "name": "平群町",
+    "pop": 18009,
+    "taxRevenue": 0,
+    "lat": 34.6324,
+    "lng": 135.7014
+  },
+  {
+    "code": "29343",
+    "prefCode": "29",
+    "name": "三郷町",
+    "pop": 23219,
+    "taxRevenue": 0,
+    "lat": 34.6017,
+    "lng": 135.693
+  },
+  {
+    "code": "29344",
+    "prefCode": "29",
+    "name": "斑鳩町",
+    "pop": 27587,
+    "taxRevenue": 0,
+    "lat": 34.6057,
+    "lng": 135.7296
+  },
+  {
+    "code": "29345",
+    "prefCode": "29",
+    "name": "安堵町",
+    "pop": 7225,
+    "taxRevenue": 0,
+    "lat": 34.6043,
+    "lng": 135.756
+  },
+  {
+    "code": "29361",
+    "prefCode": "29",
+    "name": "川西町",
+    "pop": 8167,
+    "taxRevenue": 0,
+    "lat": 34.5857,
+    "lng": 135.7774
+  },
+  {
+    "code": "29362",
+    "prefCode": "29",
+    "name": "三宅町",
+    "pop": 6439,
+    "taxRevenue": 0,
+    "lat": 34.5731,
+    "lng": 135.7758
+  },
+  {
+    "code": "29363",
+    "prefCode": "29",
+    "name": "田原本町",
+    "pop": 31177,
+    "taxRevenue": 0,
+    "lat": 34.5534,
+    "lng": 135.7923
+  },
+  {
+    "code": "29385",
+    "prefCode": "29",
+    "name": "曽爾村",
+    "pop": 1295,
+    "taxRevenue": 0,
+    "lat": 34.5184,
+    "lng": 136.1219
+  },
+  {
+    "code": "29386",
+    "prefCode": "29",
+    "name": "御杖村",
+    "pop": 1479,
+    "taxRevenue": 0,
+    "lat": 34.4931,
+    "lng": 136.1733
+  },
+  {
+    "code": "29401",
+    "prefCode": "29",
+    "name": "高取町",
+    "pop": 6729,
+    "taxRevenue": 0,
+    "lat": 34.4421,
+    "lng": 135.7895
+  },
+  {
+    "code": "29402",
+    "prefCode": "29",
+    "name": "明日香村",
+    "pop": 5179,
+    "taxRevenue": 0,
+    "lat": 34.4669,
+    "lng": 135.8131
+  },
+  {
+    "code": "29424",
+    "prefCode": "29",
+    "name": "上牧町",
+    "pop": 21714,
+    "taxRevenue": 0,
+    "lat": 34.5675,
+    "lng": 135.7162
+  },
+  {
+    "code": "29425",
+    "prefCode": "29",
+    "name": "王寺町",
+    "pop": 24043,
+    "taxRevenue": 0,
+    "lat": 34.5875,
+    "lng": 135.6999
+  },
+  {
+    "code": "29426",
+    "prefCode": "29",
+    "name": "広陵町",
+    "pop": 33810,
+    "taxRevenue": 0,
+    "lat": 34.5476,
+    "lng": 135.7385
+  },
+  {
+    "code": "29427",
+    "prefCode": "29",
+    "name": "河合町",
+    "pop": 17018,
+    "taxRevenue": 0,
+    "lat": 34.5833,
+    "lng": 135.7277
+  },
+  {
+    "code": "29441",
+    "prefCode": "29",
+    "name": "吉野町",
+    "pop": 6229,
+    "taxRevenue": 0,
+    "lat": 34.3935,
+    "lng": 135.8818
+  },
+  {
+    "code": "29442",
+    "prefCode": "29",
+    "name": "大淀町",
+    "pop": 16728,
+    "taxRevenue": 0,
+    "lat": 34.3954,
+    "lng": 135.7964
+  },
+  {
+    "code": "29443",
+    "prefCode": "29",
+    "name": "下市町",
+    "pop": 5037,
+    "taxRevenue": 0,
+    "lat": 34.364,
+    "lng": 135.7954
+  },
+  {
+    "code": "29444",
+    "prefCode": "29",
+    "name": "黒滝村",
+    "pop": 623,
+    "taxRevenue": 0,
+    "lat": 34.3096,
+    "lng": 135.8523
+  },
+  {
+    "code": "29446",
+    "prefCode": "29",
+    "name": "天川村",
+    "pop": 1176,
+    "taxRevenue": 0,
+    "lat": 34.2382,
+    "lng": 135.8622
+  },
+  {
+    "code": "29447",
+    "prefCode": "29",
+    "name": "野迫川村",
+    "pop": 357,
+    "taxRevenue": 0,
+    "lat": 34.1554,
+    "lng": 135.6434
+  },
+  {
+    "code": "29449",
+    "prefCode": "29",
+    "name": "十津川村",
+    "pop": 3061,
+    "taxRevenue": 0,
+    "lat": 33.9897,
+    "lng": 135.7799
+  },
+  {
+    "code": "29450",
+    "prefCode": "29",
+    "name": "下北山村",
+    "pop": 753,
+    "taxRevenue": 0,
+    "lat": 34.0211,
+    "lng": 135.9584
+  },
+  {
+    "code": "29451",
+    "prefCode": "29",
+    "name": "上北山村",
+    "pop": 444,
+    "taxRevenue": 0,
+    "lat": 34.1581,
+    "lng": 136.0009
+  },
+  {
+    "code": "29452",
+    "prefCode": "29",
+    "name": "川上村",
+    "pop": 1156,
+    "taxRevenue": 0,
+    "lat": 34.3277,
+    "lng": 135.9629
+  },
+  {
+    "code": "29453",
+    "prefCode": "29",
+    "name": "東吉野村",
+    "pop": 1502,
+    "taxRevenue": 0,
+    "lat": 34.4058,
+    "lng": 136.0008
+  }
+]

@@ -1,0 +1,533 @@
+[
+  {
+    "code": "12101",
+    "prefCode": "12",
+    "name": "千葉市中央区",
+    "pop": 211736,
+    "taxRevenue": 0,
+    "lat": 35.594,
+    "lng": 140.1314
+  },
+  {
+    "code": "12102",
+    "prefCode": "12",
+    "name": "千葉市花見川区",
+    "pop": 177328,
+    "taxRevenue": 0,
+    "lat": 35.6702,
+    "lng": 140.0782
+  },
+  {
+    "code": "12103",
+    "prefCode": "12",
+    "name": "千葉市稲毛区",
+    "pop": 160582,
+    "taxRevenue": 0,
+    "lat": 35.6444,
+    "lng": 140.1072
+  },
+  {
+    "code": "12104",
+    "prefCode": "12",
+    "name": "千葉市若葉区",
+    "pop": 146940,
+    "taxRevenue": 0,
+    "lat": 35.627,
+    "lng": 140.1638
+  },
+  {
+    "code": "12105",
+    "prefCode": "12",
+    "name": "千葉市緑区",
+    "pop": 129421,
+    "taxRevenue": 0,
+    "lat": 35.5446,
+    "lng": 140.2122
+  },
+  {
+    "code": "12106",
+    "prefCode": "12",
+    "name": "千葉市美浜区",
+    "pop": 148944,
+    "taxRevenue": 0,
+    "lat": 35.6339,
+    "lng": 140.0655
+  },
+  {
+    "code": "12202",
+    "prefCode": "12",
+    "name": "銚子市",
+    "pop": 58431,
+    "taxRevenue": 0,
+    "lat": 35.734,
+    "lng": 140.8123
+  },
+  {
+    "code": "12203",
+    "prefCode": "12",
+    "name": "市川市",
+    "pop": 496676,
+    "taxRevenue": 0,
+    "lat": 35.713,
+    "lng": 139.9243
+  },
+  {
+    "code": "12204",
+    "prefCode": "12",
+    "name": "船橋市",
+    "pop": 642907,
+    "taxRevenue": 0,
+    "lat": 35.7184,
+    "lng": 140.009
+  },
+  {
+    "code": "12205",
+    "prefCode": "12",
+    "name": "館山市",
+    "pop": 45153,
+    "taxRevenue": 0,
+    "lat": 34.9898,
+    "lng": 139.8608
+  },
+  {
+    "code": "12206",
+    "prefCode": "12",
+    "name": "木更津市",
+    "pop": 136166,
+    "taxRevenue": 0,
+    "lat": 35.3764,
+    "lng": 139.9431
+  },
+  {
+    "code": "12207",
+    "prefCode": "12",
+    "name": "松戸市",
+    "pop": 498232,
+    "taxRevenue": 0,
+    "lat": 35.7993,
+    "lng": 139.9299
+  },
+  {
+    "code": "12208",
+    "prefCode": "12",
+    "name": "野田市",
+    "pop": 152638,
+    "taxRevenue": 0,
+    "lat": 35.966,
+    "lng": 139.862
+  },
+  {
+    "code": "12210",
+    "prefCode": "12",
+    "name": "茂原市",
+    "pop": 86782,
+    "taxRevenue": 0,
+    "lat": 35.4366,
+    "lng": 140.302
+  },
+  {
+    "code": "12211",
+    "prefCode": "12",
+    "name": "成田市",
+    "pop": 132906,
+    "taxRevenue": 0,
+    "lat": 35.7843,
+    "lng": 140.3232
+  },
+  {
+    "code": "12212",
+    "prefCode": "12",
+    "name": "佐倉市",
+    "pop": 168743,
+    "taxRevenue": 0,
+    "lat": 35.7179,
+    "lng": 140.1842
+  },
+  {
+    "code": "12213",
+    "prefCode": "12",
+    "name": "東金市",
+    "pop": 58219,
+    "taxRevenue": 0,
+    "lat": 35.5606,
+    "lng": 140.3717
+  },
+  {
+    "code": "12215",
+    "prefCode": "12",
+    "name": "旭市",
+    "pop": 63745,
+    "taxRevenue": 0,
+    "lat": 35.7248,
+    "lng": 140.656
+  },
+  {
+    "code": "12216",
+    "prefCode": "12",
+    "name": "習志野市",
+    "pop": 176197,
+    "taxRevenue": 0,
+    "lat": 35.6849,
+    "lng": 140.0362
+  },
+  {
+    "code": "12217",
+    "prefCode": "12",
+    "name": "柏市",
+    "pop": 426468,
+    "taxRevenue": 0,
+    "lat": 35.8564,
+    "lng": 139.9703
+  },
+  {
+    "code": "12218",
+    "prefCode": "12",
+    "name": "勝浦市",
+    "pop": 16927,
+    "taxRevenue": 0,
+    "lat": 35.1601,
+    "lng": 140.2888
+  },
+  {
+    "code": "12219",
+    "prefCode": "12",
+    "name": "市原市",
+    "pop": 269524,
+    "taxRevenue": 0,
+    "lat": 35.4946,
+    "lng": 140.1157
+  },
+  {
+    "code": "12220",
+    "prefCode": "12",
+    "name": "流山市",
+    "pop": 199849,
+    "taxRevenue": 0,
+    "lat": 35.868,
+    "lng": 139.9176
+  },
+  {
+    "code": "12221",
+    "prefCode": "12",
+    "name": "八千代市",
+    "pop": 199498,
+    "taxRevenue": 0,
+    "lat": 35.724,
+    "lng": 140.1004
+  },
+  {
+    "code": "12222",
+    "prefCode": "12",
+    "name": "我孫子市",
+    "pop": 130510,
+    "taxRevenue": 0,
+    "lat": 35.8702,
+    "lng": 140.0469
+  },
+  {
+    "code": "12223",
+    "prefCode": "12",
+    "name": "鴨川市",
+    "pop": 32116,
+    "taxRevenue": 0,
+    "lat": 35.1189,
+    "lng": 140.095
+  },
+  {
+    "code": "12224",
+    "prefCode": "12",
+    "name": "鎌ケ谷市",
+    "pop": 109932,
+    "taxRevenue": 0,
+    "lat": 35.7684,
+    "lng": 139.9993
+  },
+  {
+    "code": "12225",
+    "prefCode": "12",
+    "name": "君津市",
+    "pop": 82206,
+    "taxRevenue": 0,
+    "lat": 35.3151,
+    "lng": 139.9358
+  },
+  {
+    "code": "12226",
+    "prefCode": "12",
+    "name": "富津市",
+    "pop": 42465,
+    "taxRevenue": 0,
+    "lat": 35.2841,
+    "lng": 139.862
+  },
+  {
+    "code": "12227",
+    "prefCode": "12",
+    "name": "浦安市",
+    "pop": 171362,
+    "taxRevenue": 0,
+    "lat": 35.651,
+    "lng": 139.904
+  },
+  {
+    "code": "12228",
+    "prefCode": "12",
+    "name": "四街道市",
+    "pop": 93576,
+    "taxRevenue": 0,
+    "lat": 35.6696,
+    "lng": 140.1731
+  },
+  {
+    "code": "12229",
+    "prefCode": "12",
+    "name": "袖ケ浦市",
+    "pop": 63883,
+    "taxRevenue": 0,
+    "lat": 35.4285,
+    "lng": 139.9978
+  },
+  {
+    "code": "12230",
+    "prefCode": "12",
+    "name": "八街市",
+    "pop": 67455,
+    "taxRevenue": 0,
+    "lat": 35.6597,
+    "lng": 140.3052
+  },
+  {
+    "code": "12231",
+    "prefCode": "12",
+    "name": "印西市",
+    "pop": 102609,
+    "taxRevenue": 0,
+    "lat": 35.8035,
+    "lng": 140.1544
+  },
+  {
+    "code": "12232",
+    "prefCode": "12",
+    "name": "白井市",
+    "pop": 62441,
+    "taxRevenue": 0,
+    "lat": 35.7886,
+    "lng": 140.0476
+  },
+  {
+    "code": "12233",
+    "prefCode": "12",
+    "name": "富里市",
+    "pop": 49735,
+    "taxRevenue": 0,
+    "lat": 35.7362,
+    "lng": 140.3339
+  },
+  {
+    "code": "12234",
+    "prefCode": "12",
+    "name": "南房総市",
+    "pop": 35831,
+    "taxRevenue": 0,
+    "lat": 35.011,
+    "lng": 139.9223
+  },
+  {
+    "code": "12235",
+    "prefCode": "12",
+    "name": "匝瑳市",
+    "pop": 35040,
+    "taxRevenue": 0,
+    "lat": 35.693,
+    "lng": 140.5564
+  },
+  {
+    "code": "12236",
+    "prefCode": "12",
+    "name": "香取市",
+    "pop": 72356,
+    "taxRevenue": 0,
+    "lat": 35.8641,
+    "lng": 140.5379
+  },
+  {
+    "code": "12237",
+    "prefCode": "12",
+    "name": "山武市",
+    "pop": 48444,
+    "taxRevenue": 0,
+    "lat": 35.6179,
+    "lng": 140.4212
+  },
+  {
+    "code": "12238",
+    "prefCode": "12",
+    "name": "いすみ市",
+    "pop": 35544,
+    "taxRevenue": 0,
+    "lat": 35.2762,
+    "lng": 140.3655
+  },
+  {
+    "code": "12239",
+    "prefCode": "12",
+    "name": "大網白里市",
+    "pop": 48129,
+    "taxRevenue": 0,
+    "lat": 35.5168,
+    "lng": 140.3353
+  },
+  {
+    "code": "12322",
+    "prefCode": "12",
+    "name": "酒々井町",
+    "pop": 20745,
+    "taxRevenue": 0,
+    "lat": 35.7292,
+    "lng": 140.2736
+  },
+  {
+    "code": "12329",
+    "prefCode": "12",
+    "name": "栄町",
+    "pop": 20127,
+    "taxRevenue": 0,
+    "lat": 35.8375,
+    "lng": 140.2489
+  },
+  {
+    "code": "12342",
+    "prefCode": "12",
+    "name": "神崎町",
+    "pop": 5816,
+    "taxRevenue": 0,
+    "lat": 35.8918,
+    "lng": 140.4087
+  },
+  {
+    "code": "12347",
+    "prefCode": "12",
+    "name": "多古町",
+    "pop": 13735,
+    "taxRevenue": 0,
+    "lat": 35.7529,
+    "lng": 140.4713
+  },
+  {
+    "code": "12349",
+    "prefCode": "12",
+    "name": "東庄町",
+    "pop": 13228,
+    "taxRevenue": 0,
+    "lat": 35.8219,
+    "lng": 140.6757
+  },
+  {
+    "code": "12403",
+    "prefCode": "12",
+    "name": "九十九里町",
+    "pop": 14639,
+    "taxRevenue": 0,
+    "lat": 35.5304,
+    "lng": 140.4326
+  },
+  {
+    "code": "12409",
+    "prefCode": "12",
+    "name": "芝山町",
+    "pop": 7033,
+    "taxRevenue": 0,
+    "lat": 35.7122,
+    "lng": 140.4053
+  },
+  {
+    "code": "12410",
+    "prefCode": "12",
+    "name": "横芝光町",
+    "pop": 22075,
+    "taxRevenue": 0,
+    "lat": 35.6548,
+    "lng": 140.5012
+  },
+  {
+    "code": "12421",
+    "prefCode": "12",
+    "name": "一宮町",
+    "pop": 11897,
+    "taxRevenue": 0,
+    "lat": 35.3644,
+    "lng": 140.3769
+  },
+  {
+    "code": "12422",
+    "prefCode": "12",
+    "name": "睦沢町",
+    "pop": 6760,
+    "taxRevenue": 0,
+    "lat": 35.3636,
+    "lng": 140.3193
+  },
+  {
+    "code": "12423",
+    "prefCode": "12",
+    "name": "長生村",
+    "pop": 13803,
+    "taxRevenue": 0,
+    "lat": 35.4059,
+    "lng": 140.3559
+  },
+  {
+    "code": "12424",
+    "prefCode": "12",
+    "name": "白子町",
+    "pop": 10305,
+    "taxRevenue": 0,
+    "lat": 35.4501,
+    "lng": 140.3812
+  },
+  {
+    "code": "12426",
+    "prefCode": "12",
+    "name": "長柄町",
+    "pop": 6721,
+    "taxRevenue": 0,
+    "lat": 35.4457,
+    "lng": 140.2178
+  },
+  {
+    "code": "12427",
+    "prefCode": "12",
+    "name": "長南町",
+    "pop": 7198,
+    "taxRevenue": 0,
+    "lat": 35.3822,
+    "lng": 140.2468
+  },
+  {
+    "code": "12441",
+    "prefCode": "12",
+    "name": "大多喜町",
+    "pop": 8885,
+    "taxRevenue": 0,
+    "lat": 35.2696,
+    "lng": 140.2338
+  },
+  {
+    "code": "12443",
+    "prefCode": "12",
+    "name": "御宿町",
+    "pop": 6874,
+    "taxRevenue": 0,
+    "lat": 35.1907,
+    "lng": 140.3494
+  },
+  {
+    "code": "12463",
+    "prefCode": "12",
+    "name": "鋸南町",
+    "pop": 6993,
+    "taxRevenue": 0,
+    "lat": 35.1264,
+    "lng": 139.8498
+  }
+]

@@ -1,0 +1,1177 @@
+[
+  {
+    "code": "01",
+    "name": "北海道",
+    "region": "北海道",
+    "mapCenter": [
+      43.3,
+      142.13
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/01/boundaries.geojson",
+    "municipalityCount": 188,
+    "totalPopulation": 5224614,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 106,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "02",
+    "name": "青森県",
+    "region": "東北",
+    "mapCenter": [
+      40.8,
+      140.88
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/02/boundaries.geojson",
+    "municipalityCount": 40,
+    "totalPopulation": 1237984,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 48,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "03",
+    "name": "岩手県",
+    "region": "東北",
+    "mapCenter": [
+      39.65,
+      141.43
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/03/boundaries.geojson",
+    "municipalityCount": 33,
+    "totalPopulation": 1210534,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 48,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "04",
+    "name": "宮城県",
+    "region": "東北",
+    "mapCenter": [
+      38.32,
+      140.94
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/04/boundaries.geojson",
+    "municipalityCount": 39,
+    "totalPopulation": 2301996,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 59,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "05",
+    "name": "秋田県",
+    "region": "東北",
+    "mapCenter": [
+      39.81,
+      140.29
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/05/boundaries.geojson",
+    "municipalityCount": 25,
+    "totalPopulation": 959502,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 43,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "06",
+    "name": "山形県",
+    "region": "東北",
+    "mapCenter": [
+      38.47,
+      140.18
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/06/boundaries.geojson",
+    "municipalityCount": 35,
+    "totalPopulation": 1068027,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 44,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "07",
+    "name": "福島県",
+    "region": "東北",
+    "mapCenter": [
+      37.39,
+      140.34
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/07/boundaries.geojson",
+    "municipalityCount": 59,
+    "totalPopulation": 1833152,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 58,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "08",
+    "name": "茨城県",
+    "region": "関東",
+    "mapCenter": [
+      36.21,
+      140.27
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/08/boundaries.geojson",
+    "municipalityCount": 44,
+    "totalPopulation": 2867009,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 62,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "09",
+    "name": "栃木県",
+    "region": "関東",
+    "mapCenter": [
+      36.58,
+      139.91
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/09/boundaries.geojson",
+    "municipalityCount": 25,
+    "totalPopulation": 1933146,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 50,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "10",
+    "name": "群馬県",
+    "region": "関東",
+    "mapCenter": [
+      36.39,
+      139.06
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/10/boundaries.geojson",
+    "municipalityCount": 35,
+    "totalPopulation": 1939110,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 50,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "11",
+    "name": "埼玉県",
+    "region": "関東",
+    "mapCenter": [
+      35.97,
+      139.49
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/11/boundaries.geojson",
+    "municipalityCount": 72,
+    "totalPopulation": 7344765,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 93,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "12",
+    "name": "千葉県",
+    "region": "関東",
+    "mapCenter": [
+      35.58,
+      140.21
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/12/boundaries.geojson",
+    "municipalityCount": 59,
+    "totalPopulation": 6284480,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 95,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "13",
+    "name": "東京都",
+    "region": "関東",
+    "mapCenter": [
+      35.33,
+      139.59
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/13/boundaries.geojson",
+    "municipalityCount": 63,
+    "totalPopulation": 14047594,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 127,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "14",
+    "name": "神奈川県",
+    "region": "関東",
+    "mapCenter": [
+      35.42,
+      139.44
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/14/boundaries.geojson",
+    "municipalityCount": 58,
+    "totalPopulation": 9237337,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 105,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "15",
+    "name": "新潟県",
+    "region": "中部",
+    "mapCenter": [
+      37.63,
+      138.94
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/15/boundaries.geojson",
+    "municipalityCount": 37,
+    "totalPopulation": 2201272,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 53,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "16",
+    "name": "富山県",
+    "region": "中部",
+    "mapCenter": [
+      36.75,
+      137.22
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/16/boundaries.geojson",
+    "municipalityCount": 15,
+    "totalPopulation": 1034814,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 40,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "17",
+    "name": "石川県",
+    "region": "中部",
+    "mapCenter": [
+      36.81,
+      136.75
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/17/boundaries.geojson",
+    "municipalityCount": 19,
+    "totalPopulation": 1132526,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 43,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "18",
+    "name": "福井県",
+    "region": "中部",
+    "mapCenter": [
+      35.84,
+      136.1
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/18/boundaries.geojson",
+    "municipalityCount": 17,
+    "totalPopulation": 766863,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 37,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "19",
+    "name": "山梨県",
+    "region": "中部",
+    "mapCenter": [
+      35.58,
+      138.68
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/19/boundaries.geojson",
+    "municipalityCount": 27,
+    "totalPopulation": 809974,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 37,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "20",
+    "name": "長野県",
+    "region": "中部",
+    "mapCenter": [
+      36.11,
+      138.07
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/20/boundaries.geojson",
+    "municipalityCount": 77,
+    "totalPopulation": 2048011,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 57,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "21",
+    "name": "岐阜県",
+    "region": "中部",
+    "mapCenter": [
+      35.5,
+      136.91
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/21/boundaries.geojson",
+    "municipalityCount": 42,
+    "totalPopulation": 1978742,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 46,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "22",
+    "name": "静岡県",
+    "region": "中部",
+    "mapCenter": [
+      34.91,
+      138.42
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/22/boundaries.geojson",
+    "municipalityCount": 43,
+    "totalPopulation": 3633202,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 68,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "23",
+    "name": "愛知県",
+    "region": "中部",
+    "mapCenter": [
+      35.08,
+      137.0
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/23/boundaries.geojson",
+    "municipalityCount": 69,
+    "totalPopulation": 7542415,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 103,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "24",
+    "name": "三重県",
+    "region": "近畿",
+    "mapCenter": [
+      34.58,
+      136.48
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/24/boundaries.geojson",
+    "municipalityCount": 29,
+    "totalPopulation": 1770254,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 51,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "25",
+    "name": "滋賀県",
+    "region": "近畿",
+    "mapCenter": [
+      35.14,
+      136.14
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/25/boundaries.geojson",
+    "municipalityCount": 19,
+    "totalPopulation": 1413610,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 44,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "26",
+    "name": "京都府",
+    "region": "近畿",
+    "mapCenter": [
+      35.04,
+      135.64
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/26/boundaries.geojson",
+    "municipalityCount": 36,
+    "totalPopulation": 2578087,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 60,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "27",
+    "name": "大阪府",
+    "region": "近畿",
+    "mapCenter": [
+      34.63,
+      135.51
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/27/boundaries.geojson",
+    "municipalityCount": 72,
+    "totalPopulation": 8837685,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 88,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "28",
+    "name": "兵庫県",
+    "region": "近畿",
+    "mapCenter": [
+      34.87,
+      134.93
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/28/boundaries.geojson",
+    "municipalityCount": 49,
+    "totalPopulation": 5465002,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 86,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "29",
+    "name": "奈良県",
+    "region": "近畿",
+    "mapCenter": [
+      34.47,
+      135.82
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/29/boundaries.geojson",
+    "municipalityCount": 39,
+    "totalPopulation": 1324473,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 44,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "30",
+    "name": "和歌山県",
+    "region": "近畿",
+    "mapCenter": [
+      33.94,
+      135.43
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/30/boundaries.geojson",
+    "municipalityCount": 30,
+    "totalPopulation": 922584,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 42,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "31",
+    "name": "鳥取県",
+    "region": "中国",
+    "mapCenter": [
+      35.4,
+      133.73
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/31/boundaries.geojson",
+    "municipalityCount": 19,
+    "totalPopulation": 553407,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 35,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "32",
+    "name": "島根県",
+    "region": "中国",
+    "mapCenter": [
+      35.25,
+      132.64
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/32/boundaries.geojson",
+    "municipalityCount": 19,
+    "totalPopulation": 671126,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 37,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "33",
+    "name": "岡山県",
+    "region": "中国",
+    "mapCenter": [
+      34.81,
+      133.87
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/33/boundaries.geojson",
+    "municipalityCount": 30,
+    "totalPopulation": 1888432,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 55,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "34",
+    "name": "広島県",
+    "region": "中国",
+    "mapCenter": [
+      34.45,
+      132.68
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/34/boundaries.geojson",
+    "municipalityCount": 30,
+    "totalPopulation": 2799702,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 66,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "35",
+    "name": "山口県",
+    "region": "中国",
+    "mapCenter": [
+      34.09,
+      131.7
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/35/boundaries.geojson",
+    "municipalityCount": 19,
+    "totalPopulation": 1342059,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 47,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "36",
+    "name": "徳島県",
+    "region": "四国",
+    "mapCenter": [
+      33.99,
+      134.39
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/36/boundaries.geojson",
+    "municipalityCount": 24,
+    "totalPopulation": 719559,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 38,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "37",
+    "name": "香川県",
+    "region": "四国",
+    "mapCenter": [
+      34.28,
+      133.96
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/37/boundaries.geojson",
+    "municipalityCount": 17,
+    "totalPopulation": 950244,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 41,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "38",
+    "name": "愛媛県",
+    "region": "四国",
+    "mapCenter": [
+      33.64,
+      132.8
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/38/boundaries.geojson",
+    "municipalityCount": 20,
+    "totalPopulation": 1334841,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 47,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "39",
+    "name": "高知県",
+    "region": "四国",
+    "mapCenter": [
+      33.42,
+      133.47
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/39/boundaries.geojson",
+    "municipalityCount": 34,
+    "totalPopulation": 691527,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 37,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "40",
+    "name": "福岡県",
+    "region": "九州",
+    "mapCenter": [
+      33.59,
+      130.65
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/40/boundaries.geojson",
+    "municipalityCount": 72,
+    "totalPopulation": 5135214,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 87,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "41",
+    "name": "佐賀県",
+    "region": "九州",
+    "mapCenter": [
+      33.26,
+      130.18
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/41/boundaries.geojson",
+    "municipalityCount": 20,
+    "totalPopulation": 811442,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 37,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "42",
+    "name": "長崎県",
+    "region": "九州",
+    "mapCenter": [
+      33.09,
+      129.73
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/42/boundaries.geojson",
+    "municipalityCount": 21,
+    "totalPopulation": 1312317,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 46,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "43",
+    "name": "熊本県",
+    "region": "九州",
+    "mapCenter": [
+      32.67,
+      130.75
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/43/boundaries.geojson",
+    "municipalityCount": 49,
+    "totalPopulation": 1738301,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 49,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "44",
+    "name": "大分県",
+    "region": "九州",
+    "mapCenter": [
+      33.3,
+      131.49
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/44/boundaries.geojson",
+    "municipalityCount": 18,
+    "totalPopulation": 1123852,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 44,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "45",
+    "name": "宮崎県",
+    "region": "九州",
+    "mapCenter": [
+      32.18,
+      131.32
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/45/boundaries.geojson",
+    "municipalityCount": 26,
+    "totalPopulation": 1069576,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 39,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "46",
+    "name": "鹿児島県",
+    "region": "九州",
+    "mapCenter": [
+      30.41,
+      130.18
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/46/boundaries.geojson",
+    "municipalityCount": 43,
+    "totalPopulation": 1588256,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 53,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  },
+  {
+    "code": "47",
+    "name": "沖縄県",
+    "region": "九州",
+    "mapCenter": [
+      26.16,
+      127.49
+    ],
+    "mapZoom": 9,
+    "targetPop": 400000,
+    "targetRange": [
+      300000,
+      500000
+    ],
+    "geojsonUrl": "geo/data/47/boundaries.geojson",
+    "municipalityCount": 41,
+    "totalPopulation": 1467480,
+    "status": "available",
+    "prefCost": {
+      "governorAnnual": 36000000,
+      "assemblyCount": 48,
+      "assemblyAnnualPerPerson": 17000000,
+      "facilityAnnual": 3000000000
+    }
+  }
+]

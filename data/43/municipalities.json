@@ -1,0 +1,443 @@
+[
+  {
+    "code": "43101",
+    "prefCode": "43",
+    "name": "熊本市中央区",
+    "pop": 187502,
+    "taxRevenue": 0,
+    "lat": 32.7981,
+    "lng": 130.7223
+  },
+  {
+    "code": "43102",
+    "prefCode": "43",
+    "name": "熊本市東区",
+    "pop": 189524,
+    "taxRevenue": 0,
+    "lat": 32.7998,
+    "lng": 130.7671
+  },
+  {
+    "code": "43103",
+    "prefCode": "43",
+    "name": "熊本市西区",
+    "pop": 91177,
+    "taxRevenue": 0,
+    "lat": 32.7999,
+    "lng": 130.6731
+  },
+  {
+    "code": "43104",
+    "prefCode": "43",
+    "name": "熊本市南区",
+    "pop": 130829,
+    "taxRevenue": 0,
+    "lat": 32.7463,
+    "lng": 130.6952
+  },
+  {
+    "code": "43105",
+    "prefCode": "43",
+    "name": "熊本市北区",
+    "pop": 139833,
+    "taxRevenue": 0,
+    "lat": 32.8603,
+    "lng": 130.7268
+  },
+  {
+    "code": "43202",
+    "prefCode": "43",
+    "name": "八代市",
+    "pop": 123067,
+    "taxRevenue": 0,
+    "lat": 32.5137,
+    "lng": 130.6149
+  },
+  {
+    "code": "43203",
+    "prefCode": "43",
+    "name": "人吉市",
+    "pop": 31108,
+    "taxRevenue": 0,
+    "lat": 32.2128,
+    "lng": 130.7559
+  },
+  {
+    "code": "43204",
+    "prefCode": "43",
+    "name": "荒尾市",
+    "pop": 50832,
+    "taxRevenue": 0,
+    "lat": 32.9801,
+    "lng": 130.458
+  },
+  {
+    "code": "43205",
+    "prefCode": "43",
+    "name": "水俣市",
+    "pop": 23557,
+    "taxRevenue": 0,
+    "lat": 32.1994,
+    "lng": 130.4105
+  },
+  {
+    "code": "43206",
+    "prefCode": "43",
+    "name": "玉名市",
+    "pop": 64292,
+    "taxRevenue": 0,
+    "lat": 32.9182,
+    "lng": 130.5505
+  },
+  {
+    "code": "43208",
+    "prefCode": "43",
+    "name": "山鹿市",
+    "pop": 49025,
+    "taxRevenue": 0,
+    "lat": 33.0221,
+    "lng": 130.7115
+  },
+  {
+    "code": "43210",
+    "prefCode": "43",
+    "name": "菊池市",
+    "pop": 46416,
+    "taxRevenue": 0,
+    "lat": 32.9597,
+    "lng": 130.8033
+  },
+  {
+    "code": "43211",
+    "prefCode": "43",
+    "name": "宇土市",
+    "pop": 36122,
+    "taxRevenue": 0,
+    "lat": 32.6843,
+    "lng": 130.6478
+  },
+  {
+    "code": "43212",
+    "prefCode": "43",
+    "name": "上天草市",
+    "pop": 24563,
+    "taxRevenue": 0,
+    "lat": 32.5254,
+    "lng": 130.4204
+  },
+  {
+    "code": "43213",
+    "prefCode": "43",
+    "name": "宇城市",
+    "pop": 57032,
+    "taxRevenue": 0,
+    "lat": 32.6309,
+    "lng": 130.6706
+  },
+  {
+    "code": "43214",
+    "prefCode": "43",
+    "name": "阿蘇市",
+    "pop": 24930,
+    "taxRevenue": 0,
+    "lat": 32.9436,
+    "lng": 131.0852
+  },
+  {
+    "code": "43215",
+    "prefCode": "43",
+    "name": "天草市",
+    "pop": 75783,
+    "taxRevenue": 0,
+    "lat": 32.4093,
+    "lng": 130.1697
+  },
+  {
+    "code": "43216",
+    "prefCode": "43",
+    "name": "合志市",
+    "pop": 61772,
+    "taxRevenue": 0,
+    "lat": 32.8765,
+    "lng": 130.7565
+  },
+  {
+    "code": "43348",
+    "prefCode": "43",
+    "name": "美里町",
+    "pop": 9392,
+    "taxRevenue": 0,
+    "lat": 32.6251,
+    "lng": 130.8454
+  },
+  {
+    "code": "43364",
+    "prefCode": "43",
+    "name": "玉東町",
+    "pop": 5045,
+    "taxRevenue": 0,
+    "lat": 32.9109,
+    "lng": 130.6264
+  },
+  {
+    "code": "43367",
+    "prefCode": "43",
+    "name": "南関町",
+    "pop": 8979,
+    "taxRevenue": 0,
+    "lat": 33.0375,
+    "lng": 130.5504
+  },
+  {
+    "code": "43368",
+    "prefCode": "43",
+    "name": "長洲町",
+    "pop": 15372,
+    "taxRevenue": 0,
+    "lat": 32.9292,
+    "lng": 130.4662
+  },
+  {
+    "code": "43369",
+    "prefCode": "43",
+    "name": "和水町",
+    "pop": 9342,
+    "taxRevenue": 0,
+    "lat": 33.019,
+    "lng": 130.6138
+  },
+  {
+    "code": "43403",
+    "prefCode": "43",
+    "name": "大津町",
+    "pop": 35187,
+    "taxRevenue": 0,
+    "lat": 32.8829,
+    "lng": 130.8759
+  },
+  {
+    "code": "43404",
+    "prefCode": "43",
+    "name": "菊陽町",
+    "pop": 43337,
+    "taxRevenue": 0,
+    "lat": 32.8632,
+    "lng": 130.8005
+  },
+  {
+    "code": "43423",
+    "prefCode": "43",
+    "name": "南小国町",
+    "pop": 3750,
+    "taxRevenue": 0,
+    "lat": 33.0711,
+    "lng": 131.0929
+  },
+  {
+    "code": "43424",
+    "prefCode": "43",
+    "name": "小国町",
+    "pop": 6590,
+    "taxRevenue": 0,
+    "lat": 33.1347,
+    "lng": 131.0667
+  },
+  {
+    "code": "43425",
+    "prefCode": "43",
+    "name": "産山村",
+    "pop": 1382,
+    "taxRevenue": 0,
+    "lat": 33.0078,
+    "lng": 131.2064
+  },
+  {
+    "code": "43428",
+    "prefCode": "43",
+    "name": "高森町",
+    "pop": 5789,
+    "taxRevenue": 0,
+    "lat": 32.8288,
+    "lng": 131.1508
+  },
+  {
+    "code": "43432",
+    "prefCode": "43",
+    "name": "西原村",
+    "pop": 6426,
+    "taxRevenue": 0,
+    "lat": 32.8329,
+    "lng": 130.8977
+  },
+  {
+    "code": "43433",
+    "prefCode": "43",
+    "name": "南阿蘇村",
+    "pop": 9836,
+    "taxRevenue": 0,
+    "lat": 32.8477,
+    "lng": 131.0359
+  },
+  {
+    "code": "43441",
+    "prefCode": "43",
+    "name": "御船町",
+    "pop": 16303,
+    "taxRevenue": 0,
+    "lat": 32.7203,
+    "lng": 130.8049
+  },
+  {
+    "code": "43442",
+    "prefCode": "43",
+    "name": "嘉島町",
+    "pop": 9547,
+    "taxRevenue": 0,
+    "lat": 32.7447,
+    "lng": 130.7522
+  },
+  {
+    "code": "43443",
+    "prefCode": "43",
+    "name": "益城町",
+    "pop": 32510,
+    "taxRevenue": 0,
+    "lat": 32.7882,
+    "lng": 130.8082
+  },
+  {
+    "code": "43444",
+    "prefCode": "43",
+    "name": "甲佐町",
+    "pop": 10132,
+    "taxRevenue": 0,
+    "lat": 32.6731,
+    "lng": 130.8028
+  },
+  {
+    "code": "43447",
+    "prefCode": "43",
+    "name": "山都町",
+    "pop": 13503,
+    "taxRevenue": 0,
+    "lat": 32.7045,
+    "lng": 131.04
+  },
+  {
+    "code": "43468",
+    "prefCode": "43",
+    "name": "氷川町",
+    "pop": 11094,
+    "taxRevenue": 0,
+    "lat": 32.5708,
+    "lng": 130.6773
+  },
+  {
+    "code": "43482",
+    "prefCode": "43",
+    "name": "芦北町",
+    "pop": 15681,
+    "taxRevenue": 0,
+    "lat": 32.3015,
+    "lng": 130.513
+  },
+  {
+    "code": "43484",
+    "prefCode": "43",
+    "name": "津奈木町",
+    "pop": 4254,
+    "taxRevenue": 0,
+    "lat": 32.2402,
+    "lng": 130.4518
+  },
+  {
+    "code": "43501",
+    "prefCode": "43",
+    "name": "錦町",
+    "pop": 10288,
+    "taxRevenue": 0,
+    "lat": 32.2038,
+    "lng": 130.8317
+  },
+  {
+    "code": "43505",
+    "prefCode": "43",
+    "name": "多良木町",
+    "pop": 9076,
+    "taxRevenue": 0,
+    "lat": 32.2898,
+    "lng": 130.9369
+  },
+  {
+    "code": "43506",
+    "prefCode": "43",
+    "name": "湯前町",
+    "pop": 3627,
+    "taxRevenue": 0,
+    "lat": 32.2715,
+    "lng": 131.0115
+  },
+  {
+    "code": "43507",
+    "prefCode": "43",
+    "name": "水上村",
+    "pop": 2033,
+    "taxRevenue": 0,
+    "lat": 32.3188,
+    "lng": 131.0126
+  },
+  {
+    "code": "43510",
+    "prefCode": "43",
+    "name": "相良村",
+    "pop": 4070,
+    "taxRevenue": 0,
+    "lat": 32.2483,
+    "lng": 130.8134
+  },
+  {
+    "code": "43511",
+    "prefCode": "43",
+    "name": "五木村",
+    "pop": 931,
+    "taxRevenue": 0,
+    "lat": 32.42,
+    "lng": 130.8565
+  },
+  {
+    "code": "43512",
+    "prefCode": "43",
+    "name": "山江村",
+    "pop": 3238,
+    "taxRevenue": 0,
+    "lat": 32.2972,
+    "lng": 130.7751
+  },
+  {
+    "code": "43513",
+    "prefCode": "43",
+    "name": "球磨村",
+    "pop": 2433,
+    "taxRevenue": 0,
+    "lat": 32.2521,
+    "lng": 130.6623
+  },
+  {
+    "code": "43514",
+    "prefCode": "43",
+    "name": "あさぎり町",
+    "pop": 14676,
+    "taxRevenue": 0,
+    "lat": 32.2227,
+    "lng": 130.9109
+  },
+  {
+    "code": "43531",
+    "prefCode": "43",
+    "name": "苓北町",
+    "pop": 7114,
+    "taxRevenue": 0,
+    "lat": 32.5016,
+    "lng": 130.0662
+  }
+]

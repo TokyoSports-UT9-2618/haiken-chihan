@@ -1,0 +1,380 @@
+[
+  {
+    "code": "21201",
+    "prefCode": "21",
+    "name": "岐阜市",
+    "pop": 402557,
+    "taxRevenue": 0,
+    "lat": 35.4263,
+    "lng": 136.7598
+  },
+  {
+    "code": "21202",
+    "prefCode": "21",
+    "name": "大垣市",
+    "pop": 158286,
+    "taxRevenue": 0,
+    "lat": 35.3611,
+    "lng": 136.6078
+  },
+  {
+    "code": "21203",
+    "prefCode": "21",
+    "name": "高山市",
+    "pop": 84419,
+    "taxRevenue": 0,
+    "lat": 36.1452,
+    "lng": 137.2577
+  },
+  {
+    "code": "21204",
+    "prefCode": "21",
+    "name": "多治見市",
+    "pop": 106732,
+    "taxRevenue": 0,
+    "lat": 35.338,
+    "lng": 137.119
+  },
+  {
+    "code": "21205",
+    "prefCode": "21",
+    "name": "関市",
+    "pop": 85283,
+    "taxRevenue": 0,
+    "lat": 35.4978,
+    "lng": 136.9076
+  },
+  {
+    "code": "21206",
+    "prefCode": "21",
+    "name": "中津川市",
+    "pop": 76570,
+    "taxRevenue": 0,
+    "lat": 35.5242,
+    "lng": 137.4816
+  },
+  {
+    "code": "21207",
+    "prefCode": "21",
+    "name": "美濃市",
+    "pop": 19247,
+    "taxRevenue": 0,
+    "lat": 35.5492,
+    "lng": 136.9002
+  },
+  {
+    "code": "21208",
+    "prefCode": "21",
+    "name": "瑞浪市",
+    "pop": 37150,
+    "taxRevenue": 0,
+    "lat": 35.3649,
+    "lng": 137.2637
+  },
+  {
+    "code": "21209",
+    "prefCode": "21",
+    "name": "羽島市",
+    "pop": 65649,
+    "taxRevenue": 0,
+    "lat": 35.3196,
+    "lng": 136.7059
+  },
+  {
+    "code": "21210",
+    "prefCode": "21",
+    "name": "恵那市",
+    "pop": 47774,
+    "taxRevenue": 0,
+    "lat": 35.4146,
+    "lng": 137.3976
+  },
+  {
+    "code": "21211",
+    "prefCode": "21",
+    "name": "美濃加茂市",
+    "pop": 56689,
+    "taxRevenue": 0,
+    "lat": 35.457,
+    "lng": 137.0179
+  },
+  {
+    "code": "21212",
+    "prefCode": "21",
+    "name": "土岐市",
+    "pop": 55348,
+    "taxRevenue": 0,
+    "lat": 35.3439,
+    "lng": 137.195
+  },
+  {
+    "code": "21213",
+    "prefCode": "21",
+    "name": "各務原市",
+    "pop": 144521,
+    "taxRevenue": 0,
+    "lat": 35.4012,
+    "lng": 136.8757
+  },
+  {
+    "code": "21214",
+    "prefCode": "21",
+    "name": "可児市",
+    "pop": 99968,
+    "taxRevenue": 0,
+    "lat": 35.4129,
+    "lng": 137.0497
+  },
+  {
+    "code": "21215",
+    "prefCode": "21",
+    "name": "山県市",
+    "pop": 25280,
+    "taxRevenue": 0,
+    "lat": 35.5276,
+    "lng": 136.7755
+  },
+  {
+    "code": "21216",
+    "prefCode": "21",
+    "name": "瑞穂市",
+    "pop": 56388,
+    "taxRevenue": 0,
+    "lat": 35.3951,
+    "lng": 136.6755
+  },
+  {
+    "code": "21217",
+    "prefCode": "21",
+    "name": "飛騨市",
+    "pop": 22538,
+    "taxRevenue": 0,
+    "lat": 36.2745,
+    "lng": 137.2134
+  },
+  {
+    "code": "21218",
+    "prefCode": "21",
+    "name": "本巣市",
+    "pop": 32928,
+    "taxRevenue": 0,
+    "lat": 35.4648,
+    "lng": 136.6646
+  },
+  {
+    "code": "21219",
+    "prefCode": "21",
+    "name": "郡上市",
+    "pop": 38997,
+    "taxRevenue": 0,
+    "lat": 35.8083,
+    "lng": 136.9296
+  },
+  {
+    "code": "21220",
+    "prefCode": "21",
+    "name": "下呂市",
+    "pop": 30428,
+    "taxRevenue": 0,
+    "lat": 35.8165,
+    "lng": 137.2247
+  },
+  {
+    "code": "21221",
+    "prefCode": "21",
+    "name": "海津市",
+    "pop": 32735,
+    "taxRevenue": 0,
+    "lat": 35.2137,
+    "lng": 136.6301
+  },
+  {
+    "code": "21302",
+    "prefCode": "21",
+    "name": "岐南町",
+    "pop": 25881,
+    "taxRevenue": 0,
+    "lat": 35.3869,
+    "lng": 136.7857
+  },
+  {
+    "code": "21303",
+    "prefCode": "21",
+    "name": "笠松町",
+    "pop": 22208,
+    "taxRevenue": 0,
+    "lat": 35.3655,
+    "lng": 136.7648
+  },
+  {
+    "code": "21341",
+    "prefCode": "21",
+    "name": "養老町",
+    "pop": 26882,
+    "taxRevenue": 0,
+    "lat": 35.2972,
+    "lng": 136.5715
+  },
+  {
+    "code": "21361",
+    "prefCode": "21",
+    "name": "垂井町",
+    "pop": 26402,
+    "taxRevenue": 0,
+    "lat": 35.3705,
+    "lng": 136.5298
+  },
+  {
+    "code": "21362",
+    "prefCode": "21",
+    "name": "関ケ原町",
+    "pop": 6610,
+    "taxRevenue": 0,
+    "lat": 35.36,
+    "lng": 136.4618
+  },
+  {
+    "code": "21381",
+    "prefCode": "21",
+    "name": "神戸町",
+    "pop": 18585,
+    "taxRevenue": 0,
+    "lat": 35.4173,
+    "lng": 136.6058
+  },
+  {
+    "code": "21382",
+    "prefCode": "21",
+    "name": "輪之内町",
+    "pop": 9654,
+    "taxRevenue": 0,
+    "lat": 35.2894,
+    "lng": 136.6399
+  },
+  {
+    "code": "21383",
+    "prefCode": "21",
+    "name": "安八町",
+    "pop": 14355,
+    "taxRevenue": 0,
+    "lat": 35.3413,
+    "lng": 136.6641
+  },
+  {
+    "code": "21401",
+    "prefCode": "21",
+    "name": "揖斐川町",
+    "pop": 19529,
+    "taxRevenue": 0,
+    "lat": 35.4959,
+    "lng": 136.5612
+  },
+  {
+    "code": "21403",
+    "prefCode": "21",
+    "name": "大野町",
+    "pop": 22041,
+    "taxRevenue": 0,
+    "lat": 35.4666,
+    "lng": 136.6288
+  },
+  {
+    "code": "21404",
+    "prefCode": "21",
+    "name": "池田町",
+    "pop": 23360,
+    "taxRevenue": 0,
+    "lat": 35.4404,
+    "lng": 136.5699
+  },
+  {
+    "code": "21421",
+    "prefCode": "21",
+    "name": "北方町",
+    "pop": 18139,
+    "taxRevenue": 0,
+    "lat": 35.4317,
+    "lng": 136.69
+  },
+  {
+    "code": "21501",
+    "prefCode": "21",
+    "name": "坂祝町",
+    "pop": 8071,
+    "taxRevenue": 0,
+    "lat": 35.4353,
+    "lng": 136.9838
+  },
+  {
+    "code": "21502",
+    "prefCode": "21",
+    "name": "富加町",
+    "pop": 5626,
+    "taxRevenue": 0,
+    "lat": 35.4856,
+    "lng": 136.9765
+  },
+  {
+    "code": "21503",
+    "prefCode": "21",
+    "name": "川辺町",
+    "pop": 9860,
+    "taxRevenue": 0,
+    "lat": 35.4969,
+    "lng": 137.0734
+  },
+  {
+    "code": "21504",
+    "prefCode": "21",
+    "name": "七宗町",
+    "pop": 3402,
+    "taxRevenue": 0,
+    "lat": 35.5639,
+    "lng": 137.1055
+  },
+  {
+    "code": "21505",
+    "prefCode": "21",
+    "name": "八百津町",
+    "pop": 10195,
+    "taxRevenue": 0,
+    "lat": 35.4838,
+    "lng": 137.1407
+  },
+  {
+    "code": "21506",
+    "prefCode": "21",
+    "name": "白川町",
+    "pop": 7412,
+    "taxRevenue": 0,
+    "lat": 35.5954,
+    "lng": 137.2518
+  },
+  {
+    "code": "21507",
+    "prefCode": "21",
+    "name": "東白川村",
+    "pop": 2016,
+    "taxRevenue": 0,
+    "lat": 35.6462,
+    "lng": 137.3353
+  },
+  {
+    "code": "21521",
+    "prefCode": "21",
+    "name": "御嵩町",
+    "pop": 17516,
+    "taxRevenue": 0,
+    "lat": 35.4363,
+    "lng": 137.1212
+  },
+  {
+    "code": "21604",
+    "prefCode": "21",
+    "name": "白川村",
+    "pop": 1511,
+    "taxRevenue": 0,
+    "lat": 36.2307,
+    "lng": 136.9
+  }
+]

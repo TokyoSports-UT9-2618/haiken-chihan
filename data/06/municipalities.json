@@ -1,0 +1,317 @@
+[
+  {
+    "code": "06201",
+    "prefCode": "06",
+    "name": "山形市",
+    "pop": 247590,
+    "taxRevenue": 0,
+    "lat": 38.2522,
+    "lng": 140.33
+  },
+  {
+    "code": "06202",
+    "prefCode": "06",
+    "name": "米沢市",
+    "pop": 81252,
+    "taxRevenue": 0,
+    "lat": 37.9109,
+    "lng": 140.1138
+  },
+  {
+    "code": "06203",
+    "prefCode": "06",
+    "name": "鶴岡市",
+    "pop": 122347,
+    "taxRevenue": 0,
+    "lat": 38.7178,
+    "lng": 139.8141
+  },
+  {
+    "code": "06204",
+    "prefCode": "06",
+    "name": "酒田市",
+    "pop": 100273,
+    "taxRevenue": 0,
+    "lat": 38.9125,
+    "lng": 139.8623
+  },
+  {
+    "code": "06205",
+    "prefCode": "06",
+    "name": "新庄市",
+    "pop": 34432,
+    "taxRevenue": 0,
+    "lat": 38.7694,
+    "lng": 140.3022
+  },
+  {
+    "code": "06206",
+    "prefCode": "06",
+    "name": "寒河江市",
+    "pop": 40189,
+    "taxRevenue": 0,
+    "lat": 38.3813,
+    "lng": 140.2668
+  },
+  {
+    "code": "06207",
+    "prefCode": "06",
+    "name": "上山市",
+    "pop": 29110,
+    "taxRevenue": 0,
+    "lat": 38.1487,
+    "lng": 140.2846
+  },
+  {
+    "code": "06208",
+    "prefCode": "06",
+    "name": "村山市",
+    "pop": 22516,
+    "taxRevenue": 0,
+    "lat": 38.4922,
+    "lng": 140.3666
+  },
+  {
+    "code": "06209",
+    "prefCode": "06",
+    "name": "長井市",
+    "pop": 26543,
+    "taxRevenue": 0,
+    "lat": 38.1048,
+    "lng": 140.0333
+  },
+  {
+    "code": "06210",
+    "prefCode": "06",
+    "name": "天童市",
+    "pop": 62140,
+    "taxRevenue": 0,
+    "lat": 38.3564,
+    "lng": 140.373
+  },
+  {
+    "code": "06211",
+    "prefCode": "06",
+    "name": "東根市",
+    "pop": 47682,
+    "taxRevenue": 0,
+    "lat": 38.4252,
+    "lng": 140.3884
+  },
+  {
+    "code": "06212",
+    "prefCode": "06",
+    "name": "尾花沢市",
+    "pop": 14971,
+    "taxRevenue": 0,
+    "lat": 38.61,
+    "lng": 140.423
+  },
+  {
+    "code": "06213",
+    "prefCode": "06",
+    "name": "南陽市",
+    "pop": 30420,
+    "taxRevenue": 0,
+    "lat": 38.0575,
+    "lng": 140.1482
+  },
+  {
+    "code": "06301",
+    "prefCode": "06",
+    "name": "山辺町",
+    "pop": 13725,
+    "taxRevenue": 0,
+    "lat": 38.2928,
+    "lng": 140.2639
+  },
+  {
+    "code": "06302",
+    "prefCode": "06",
+    "name": "中山町",
+    "pop": 10746,
+    "taxRevenue": 0,
+    "lat": 38.3366,
+    "lng": 140.2789
+  },
+  {
+    "code": "06321",
+    "prefCode": "06",
+    "name": "河北町",
+    "pop": 17641,
+    "taxRevenue": 0,
+    "lat": 38.4244,
+    "lng": 140.31
+  },
+  {
+    "code": "06322",
+    "prefCode": "06",
+    "name": "西川町",
+    "pop": 4956,
+    "taxRevenue": 0,
+    "lat": 38.4337,
+    "lng": 140.132
+  },
+  {
+    "code": "06323",
+    "prefCode": "06",
+    "name": "朝日町",
+    "pop": 6366,
+    "taxRevenue": 0,
+    "lat": 38.3094,
+    "lng": 140.1476
+  },
+  {
+    "code": "06324",
+    "prefCode": "06",
+    "name": "大江町",
+    "pop": 7646,
+    "taxRevenue": 0,
+    "lat": 38.3764,
+    "lng": 140.1916
+  },
+  {
+    "code": "06341",
+    "prefCode": "06",
+    "name": "大石田町",
+    "pop": 6577,
+    "taxRevenue": 0,
+    "lat": 38.5961,
+    "lng": 140.3653
+  },
+  {
+    "code": "06361",
+    "prefCode": "06",
+    "name": "金山町",
+    "pop": 5071,
+    "taxRevenue": 0,
+    "lat": 38.8822,
+    "lng": 140.3388
+  },
+  {
+    "code": "06362",
+    "prefCode": "06",
+    "name": "最上町",
+    "pop": 8080,
+    "taxRevenue": 0,
+    "lat": 38.7568,
+    "lng": 140.5109
+  },
+  {
+    "code": "06363",
+    "prefCode": "06",
+    "name": "舟形町",
+    "pop": 5007,
+    "taxRevenue": 0,
+    "lat": 38.6919,
+    "lng": 140.3221
+  },
+  {
+    "code": "06364",
+    "prefCode": "06",
+    "name": "真室川町",
+    "pop": 7203,
+    "taxRevenue": 0,
+    "lat": 38.8908,
+    "lng": 140.2523
+  },
+  {
+    "code": "06365",
+    "prefCode": "06",
+    "name": "大蔵村",
+    "pop": 3028,
+    "taxRevenue": 0,
+    "lat": 38.6809,
+    "lng": 140.225
+  },
+  {
+    "code": "06366",
+    "prefCode": "06",
+    "name": "鮭川村",
+    "pop": 3902,
+    "taxRevenue": 0,
+    "lat": 38.8137,
+    "lng": 140.2265
+  },
+  {
+    "code": "06367",
+    "prefCode": "06",
+    "name": "戸沢村",
+    "pop": 4199,
+    "taxRevenue": 0,
+    "lat": 38.7377,
+    "lng": 140.1699
+  },
+  {
+    "code": "06381",
+    "prefCode": "06",
+    "name": "高畠町",
+    "pop": 22463,
+    "taxRevenue": 0,
+    "lat": 37.9946,
+    "lng": 140.1811
+  },
+  {
+    "code": "06382",
+    "prefCode": "06",
+    "name": "川西町",
+    "pop": 14558,
+    "taxRevenue": 0,
+    "lat": 38.0032,
+    "lng": 140.0555
+  },
+  {
+    "code": "06401",
+    "prefCode": "06",
+    "name": "小国町",
+    "pop": 7107,
+    "taxRevenue": 0,
+    "lat": 38.0636,
+    "lng": 139.7541
+  },
+  {
+    "code": "06402",
+    "prefCode": "06",
+    "name": "白鷹町",
+    "pop": 12890,
+    "taxRevenue": 0,
+    "lat": 38.1841,
+    "lng": 140.0862
+  },
+  {
+    "code": "06403",
+    "prefCode": "06",
+    "name": "飯豊町",
+    "pop": 6613,
+    "taxRevenue": 0,
+    "lat": 38.0419,
+    "lng": 139.989
+  },
+  {
+    "code": "06426",
+    "prefCode": "06",
+    "name": "三川町",
+    "pop": 7601,
+    "taxRevenue": 0,
+    "lat": 38.7961,
+    "lng": 139.8496
+  },
+  {
+    "code": "06428",
+    "prefCode": "06",
+    "name": "庄内町",
+    "pop": 20151,
+    "taxRevenue": 0,
+    "lat": 38.8248,
+    "lng": 139.9271
+  },
+  {
+    "code": "06461",
+    "prefCode": "06",
+    "name": "遊佐町",
+    "pop": 13032,
+    "taxRevenue": 0,
+    "lat": 39.0296,
+    "lng": 139.9014
+  }
+]

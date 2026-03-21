@@ -1,0 +1,326 @@
+[
+  {
+    "code": "26101",
+    "prefCode": "26",
+    "name": "京都市北区",
+    "pop": 117165,
+    "taxRevenue": 0,
+    "lat": 35.0484,
+    "lng": 135.744
+  },
+  {
+    "code": "26102",
+    "prefCode": "26",
+    "name": "京都市上京区",
+    "pop": 83832,
+    "taxRevenue": 0,
+    "lat": 35.0268,
+    "lng": 135.7496
+  },
+  {
+    "code": "26103",
+    "prefCode": "26",
+    "name": "京都市左京区",
+    "pop": 166039,
+    "taxRevenue": 0,
+    "lat": 35.0479,
+    "lng": 135.7839
+  },
+  {
+    "code": "26104",
+    "prefCode": "26",
+    "name": "京都市中京区",
+    "pop": 110488,
+    "taxRevenue": 0,
+    "lat": 35.0099,
+    "lng": 135.7469
+  },
+  {
+    "code": "26105",
+    "prefCode": "26",
+    "name": "京都市東山区",
+    "pop": 36602,
+    "taxRevenue": 0,
+    "lat": 34.9922,
+    "lng": 135.7749
+  },
+  {
+    "code": "26106",
+    "prefCode": "26",
+    "name": "京都市下京区",
+    "pop": 82784,
+    "taxRevenue": 0,
+    "lat": 34.9943,
+    "lng": 135.75
+  },
+  {
+    "code": "26107",
+    "prefCode": "26",
+    "name": "京都市南区",
+    "pop": 101970,
+    "taxRevenue": 0,
+    "lat": 34.9716,
+    "lng": 135.7363
+  },
+  {
+    "code": "26108",
+    "prefCode": "26",
+    "name": "京都市右京区",
+    "pop": 202047,
+    "taxRevenue": 0,
+    "lat": 35.014,
+    "lng": 135.7068
+  },
+  {
+    "code": "26109",
+    "prefCode": "26",
+    "name": "京都市伏見区",
+    "pop": 277858,
+    "taxRevenue": 0,
+    "lat": 34.9387,
+    "lng": 135.7671
+  },
+  {
+    "code": "26110",
+    "prefCode": "26",
+    "name": "京都市山科区",
+    "pop": 135101,
+    "taxRevenue": 0,
+    "lat": 34.9811,
+    "lng": 135.8129
+  },
+  {
+    "code": "26111",
+    "prefCode": "26",
+    "name": "京都市西京区",
+    "pop": 149837,
+    "taxRevenue": 0,
+    "lat": 34.9784,
+    "lng": 135.6894
+  },
+  {
+    "code": "26201",
+    "prefCode": "26",
+    "name": "福知山市",
+    "pop": 77306,
+    "taxRevenue": 0,
+    "lat": 35.3005,
+    "lng": 135.1306
+  },
+  {
+    "code": "26202",
+    "prefCode": "26",
+    "name": "舞鶴市",
+    "pop": 80336,
+    "taxRevenue": 0,
+    "lat": 35.4609,
+    "lng": 135.3677
+  },
+  {
+    "code": "26203",
+    "prefCode": "26",
+    "name": "綾部市",
+    "pop": 31846,
+    "taxRevenue": 0,
+    "lat": 35.3169,
+    "lng": 135.2624
+  },
+  {
+    "code": "26204",
+    "prefCode": "26",
+    "name": "宇治市",
+    "pop": 179630,
+    "taxRevenue": 0,
+    "lat": 34.8973,
+    "lng": 135.7914
+  },
+  {
+    "code": "26205",
+    "prefCode": "26",
+    "name": "宮津市",
+    "pop": 16758,
+    "taxRevenue": 0,
+    "lat": 35.5494,
+    "lng": 135.2045
+  },
+  {
+    "code": "26206",
+    "prefCode": "26",
+    "name": "亀岡市",
+    "pop": 86174,
+    "taxRevenue": 0,
+    "lat": 35.0131,
+    "lng": 135.5692
+  },
+  {
+    "code": "26207",
+    "prefCode": "26",
+    "name": "城陽市",
+    "pop": 74607,
+    "taxRevenue": 0,
+    "lat": 34.8531,
+    "lng": 135.7848
+  },
+  {
+    "code": "26208",
+    "prefCode": "26",
+    "name": "向日市",
+    "pop": 56859,
+    "taxRevenue": 0,
+    "lat": 34.95,
+    "lng": 135.7031
+  },
+  {
+    "code": "26209",
+    "prefCode": "26",
+    "name": "長岡京市",
+    "pop": 80608,
+    "taxRevenue": 0,
+    "lat": 34.9258,
+    "lng": 135.6915
+  },
+  {
+    "code": "26210",
+    "prefCode": "26",
+    "name": "八幡市",
+    "pop": 70433,
+    "taxRevenue": 0,
+    "lat": 34.8652,
+    "lng": 135.7031
+  },
+  {
+    "code": "26211",
+    "prefCode": "26",
+    "name": "京田辺市",
+    "pop": 73753,
+    "taxRevenue": 0,
+    "lat": 34.8172,
+    "lng": 135.7609
+  },
+  {
+    "code": "26212",
+    "prefCode": "26",
+    "name": "京丹後市",
+    "pop": 50860,
+    "taxRevenue": 0,
+    "lat": 35.6374,
+    "lng": 135.0445
+  },
+  {
+    "code": "26213",
+    "prefCode": "26",
+    "name": "南丹市",
+    "pop": 31629,
+    "taxRevenue": 0,
+    "lat": 35.1301,
+    "lng": 135.4968
+  },
+  {
+    "code": "26214",
+    "prefCode": "26",
+    "name": "木津川市",
+    "pop": 77907,
+    "taxRevenue": 0,
+    "lat": 34.7359,
+    "lng": 135.8235
+  },
+  {
+    "code": "26303",
+    "prefCode": "26",
+    "name": "大山崎町",
+    "pop": 15953,
+    "taxRevenue": 0,
+    "lat": 34.9041,
+    "lng": 135.6859
+  },
+  {
+    "code": "26322",
+    "prefCode": "26",
+    "name": "久御山町",
+    "pop": 15250,
+    "taxRevenue": 0,
+    "lat": 34.8822,
+    "lng": 135.7482
+  },
+  {
+    "code": "26343",
+    "prefCode": "26",
+    "name": "井手町",
+    "pop": 7406,
+    "taxRevenue": 0,
+    "lat": 34.8044,
+    "lng": 135.8125
+  },
+  {
+    "code": "26344",
+    "prefCode": "26",
+    "name": "宇治田原町",
+    "pop": 8911,
+    "taxRevenue": 0,
+    "lat": 34.8521,
+    "lng": 135.87
+  },
+  {
+    "code": "26364",
+    "prefCode": "26",
+    "name": "笠置町",
+    "pop": 1144,
+    "taxRevenue": 0,
+    "lat": 34.7593,
+    "lng": 135.9435
+  },
+  {
+    "code": "26365",
+    "prefCode": "26",
+    "name": "和束町",
+    "pop": 3478,
+    "taxRevenue": 0,
+    "lat": 34.8007,
+    "lng": 135.9111
+  },
+  {
+    "code": "26366",
+    "prefCode": "26",
+    "name": "精華町",
+    "pop": 36198,
+    "taxRevenue": 0,
+    "lat": 34.7525,
+    "lng": 135.7792
+  },
+  {
+    "code": "26367",
+    "prefCode": "26",
+    "name": "南山城村",
+    "pop": 2391,
+    "taxRevenue": 0,
+    "lat": 34.7608,
+    "lng": 136.0111
+  },
+  {
+    "code": "26407",
+    "prefCode": "26",
+    "name": "京丹波町",
+    "pop": 12907,
+    "taxRevenue": 0,
+    "lat": 35.1965,
+    "lng": 135.3988
+  },
+  {
+    "code": "26463",
+    "prefCode": "26",
+    "name": "伊根町",
+    "pop": 1928,
+    "taxRevenue": 0,
+    "lat": 35.6987,
+    "lng": 135.2748
+  },
+  {
+    "code": "26465",
+    "prefCode": "26",
+    "name": "与謝野町",
+    "pop": 20092,
+    "taxRevenue": 0,
+    "lat": 35.5309,
+    "lng": 135.1136
+  }
+]

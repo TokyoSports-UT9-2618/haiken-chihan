@@ -1,0 +1,308 @@
+[
+  {
+    "code": "39201",
+    "prefCode": "39",
+    "name": "高知市",
+    "pop": 326545,
+    "taxRevenue": 0,
+    "lat": 33.5536,
+    "lng": 133.5369
+  },
+  {
+    "code": "39202",
+    "prefCode": "39",
+    "name": "室戸市",
+    "pop": 11742,
+    "taxRevenue": 0,
+    "lat": 33.3454,
+    "lng": 134.1535
+  },
+  {
+    "code": "39203",
+    "prefCode": "39",
+    "name": "安芸市",
+    "pop": 16243,
+    "taxRevenue": 0,
+    "lat": 33.5126,
+    "lng": 133.9065
+  },
+  {
+    "code": "39204",
+    "prefCode": "39",
+    "name": "南国市",
+    "pop": 46664,
+    "taxRevenue": 0,
+    "lat": 33.5716,
+    "lng": 133.6402
+  },
+  {
+    "code": "39205",
+    "prefCode": "39",
+    "name": "土佐市",
+    "pop": 25732,
+    "taxRevenue": 0,
+    "lat": 33.483,
+    "lng": 133.4182
+  },
+  {
+    "code": "39206",
+    "prefCode": "39",
+    "name": "須崎市",
+    "pop": 20590,
+    "taxRevenue": 0,
+    "lat": 33.4071,
+    "lng": 133.2905
+  },
+  {
+    "code": "39208",
+    "prefCode": "39",
+    "name": "宿毛市",
+    "pop": 19033,
+    "taxRevenue": 0,
+    "lat": 32.9377,
+    "lng": 132.7289
+  },
+  {
+    "code": "39209",
+    "prefCode": "39",
+    "name": "土佐清水市",
+    "pop": 12388,
+    "taxRevenue": 0,
+    "lat": 32.7921,
+    "lng": 132.9429
+  },
+  {
+    "code": "39210",
+    "prefCode": "39",
+    "name": "四万十市",
+    "pop": 32694,
+    "taxRevenue": 0,
+    "lat": 33.0047,
+    "lng": 132.9201
+  },
+  {
+    "code": "39211",
+    "prefCode": "39",
+    "name": "香南市",
+    "pop": 32207,
+    "taxRevenue": 0,
+    "lat": 33.5618,
+    "lng": 133.7202
+  },
+  {
+    "code": "39212",
+    "prefCode": "39",
+    "name": "香美市",
+    "pop": 26513,
+    "taxRevenue": 0,
+    "lat": 33.6225,
+    "lng": 133.7177
+  },
+  {
+    "code": "39301",
+    "prefCode": "39",
+    "name": "東洋町",
+    "pop": 2194,
+    "taxRevenue": 0,
+    "lat": 33.5332,
+    "lng": 134.2665
+  },
+  {
+    "code": "39302",
+    "prefCode": "39",
+    "name": "奈半利町",
+    "pop": 3034,
+    "taxRevenue": 0,
+    "lat": 33.4213,
+    "lng": 134.0266
+  },
+  {
+    "code": "39303",
+    "prefCode": "39",
+    "name": "田野町",
+    "pop": 2498,
+    "taxRevenue": 0,
+    "lat": 33.4309,
+    "lng": 134.0082
+  },
+  {
+    "code": "39304",
+    "prefCode": "39",
+    "name": "安田町",
+    "pop": 2370,
+    "taxRevenue": 0,
+    "lat": 33.4559,
+    "lng": 133.9878
+  },
+  {
+    "code": "39305",
+    "prefCode": "39",
+    "name": "北川村",
+    "pop": 1146,
+    "taxRevenue": 0,
+    "lat": 33.4623,
+    "lng": 134.0505
+  },
+  {
+    "code": "39306",
+    "prefCode": "39",
+    "name": "馬路村",
+    "pop": 745,
+    "taxRevenue": 0,
+    "lat": 33.5703,
+    "lng": 134.0621
+  },
+  {
+    "code": "39307",
+    "prefCode": "39",
+    "name": "芸西村",
+    "pop": 3694,
+    "taxRevenue": 0,
+    "lat": 33.5347,
+    "lng": 133.8173
+  },
+  {
+    "code": "39341",
+    "prefCode": "39",
+    "name": "本山町",
+    "pop": 3261,
+    "taxRevenue": 0,
+    "lat": 33.7599,
+    "lng": 133.5864
+  },
+  {
+    "code": "39344",
+    "prefCode": "39",
+    "name": "大豊町",
+    "pop": 3252,
+    "taxRevenue": 0,
+    "lat": 33.78,
+    "lng": 133.7201
+  },
+  {
+    "code": "39363",
+    "prefCode": "39",
+    "name": "土佐町",
+    "pop": 3753,
+    "taxRevenue": 0,
+    "lat": 33.7235,
+    "lng": 133.5382
+  },
+  {
+    "code": "39364",
+    "prefCode": "39",
+    "name": "大川村",
+    "pop": 366,
+    "taxRevenue": 0,
+    "lat": 33.7953,
+    "lng": 133.4275
+  },
+  {
+    "code": "39386",
+    "prefCode": "39",
+    "name": "いの町",
+    "pop": 21374,
+    "taxRevenue": 0,
+    "lat": 33.559,
+    "lng": 133.4238
+  },
+  {
+    "code": "39387",
+    "prefCode": "39",
+    "name": "仁淀川町",
+    "pop": 4827,
+    "taxRevenue": 0,
+    "lat": 33.568,
+    "lng": 133.1485
+  },
+  {
+    "code": "39401",
+    "prefCode": "39",
+    "name": "中土佐町",
+    "pop": 6002,
+    "taxRevenue": 0,
+    "lat": 33.3286,
+    "lng": 133.1987
+  },
+  {
+    "code": "39402",
+    "prefCode": "39",
+    "name": "佐川町",
+    "pop": 12323,
+    "taxRevenue": 0,
+    "lat": 33.503,
+    "lng": 133.2891
+  },
+  {
+    "code": "39403",
+    "prefCode": "39",
+    "name": "越知町",
+    "pop": 5187,
+    "taxRevenue": 0,
+    "lat": 33.5354,
+    "lng": 133.2479
+  },
+  {
+    "code": "39405",
+    "prefCode": "39",
+    "name": "檮原町",
+    "pop": 3307,
+    "taxRevenue": 0,
+    "lat": 33.4,
+    "lng": 132.9176
+  },
+  {
+    "code": "39410",
+    "prefCode": "39",
+    "name": "日高村",
+    "pop": 4812,
+    "taxRevenue": 0,
+    "lat": 33.5341,
+    "lng": 133.3626
+  },
+  {
+    "code": "39411",
+    "prefCode": "39",
+    "name": "津野町",
+    "pop": 5291,
+    "taxRevenue": 0,
+    "lat": 33.4314,
+    "lng": 133.1362
+  },
+  {
+    "code": "39412",
+    "prefCode": "39",
+    "name": "四万十町",
+    "pop": 15607,
+    "taxRevenue": 0,
+    "lat": 33.2192,
+    "lng": 133.0813
+  },
+  {
+    "code": "39424",
+    "prefCode": "39",
+    "name": "大月町",
+    "pop": 4434,
+    "taxRevenue": 0,
+    "lat": 32.8153,
+    "lng": 132.7021
+  },
+  {
+    "code": "39427",
+    "prefCode": "39",
+    "name": "三原村",
+    "pop": 1437,
+    "taxRevenue": 0,
+    "lat": 32.9106,
+    "lng": 132.8483
+  },
+  {
+    "code": "39428",
+    "prefCode": "39",
+    "name": "黒潮町",
+    "pop": 10262,
+    "taxRevenue": 0,
+    "lat": 33.0498,
+    "lng": 133.0417
+  }
+]

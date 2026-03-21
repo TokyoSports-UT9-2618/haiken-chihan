@@ -3,5 +3,16 @@
   "version": "1.0.0",
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "@turf/turf": "^6.5.0",
+    "jszip": "^3.10.1",
+    "node-fetch": "^2.7.0",
+    "shapefile": "^0.6.6"
+  },
+  "scripts": {
+    "generate": "node scripts/generate-pref-data.js",
+    "generate-all": "node scripts/generate-all.js",
+    "generate-cross": "node scripts/generate-cross-adj.js"
   }
 }

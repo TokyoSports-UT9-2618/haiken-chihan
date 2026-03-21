@@ -1,0 +1,191 @@
+[
+  {
+    "code": "42201",
+    "prefCode": "42",
+    "name": "長崎市",
+    "pop": 409118,
+    "taxRevenue": 0,
+    "lat": 32.7638,
+    "lng": 129.8626
+  },
+  {
+    "code": "42202",
+    "prefCode": "42",
+    "name": "佐世保市",
+    "pop": 243223,
+    "taxRevenue": 0,
+    "lat": 33.1767,
+    "lng": 129.7252
+  },
+  {
+    "code": "42203",
+    "prefCode": "42",
+    "name": "島原市",
+    "pop": 43338,
+    "taxRevenue": 0,
+    "lat": 32.7977,
+    "lng": 130.3529
+  },
+  {
+    "code": "42204",
+    "prefCode": "42",
+    "name": "諫早市",
+    "pop": 133852,
+    "taxRevenue": 0,
+    "lat": 32.8459,
+    "lng": 130.0494
+  },
+  {
+    "code": "42205",
+    "prefCode": "42",
+    "name": "大村市",
+    "pop": 95397,
+    "taxRevenue": 0,
+    "lat": 32.9247,
+    "lng": 129.9597
+  },
+  {
+    "code": "42207",
+    "prefCode": "42",
+    "name": "平戸市",
+    "pop": 29365,
+    "taxRevenue": 0,
+    "lat": 33.3441,
+    "lng": 129.511
+  },
+  {
+    "code": "42208",
+    "prefCode": "42",
+    "name": "松浦市",
+    "pop": 21271,
+    "taxRevenue": 0,
+    "lat": 33.3587,
+    "lng": 129.7253
+  },
+  {
+    "code": "42209",
+    "prefCode": "42",
+    "name": "対馬市",
+    "pop": 28502,
+    "taxRevenue": 0,
+    "lat": 34.3496,
+    "lng": 129.3239
+  },
+  {
+    "code": "42210",
+    "prefCode": "42",
+    "name": "壱岐市",
+    "pop": 24948,
+    "taxRevenue": 0,
+    "lat": 33.7818,
+    "lng": 129.7182
+  },
+  {
+    "code": "42211",
+    "prefCode": "42",
+    "name": "五島市",
+    "pop": 34391,
+    "taxRevenue": 0,
+    "lat": 32.694,
+    "lng": 128.806
+  },
+  {
+    "code": "42212",
+    "prefCode": "42",
+    "name": "西海市",
+    "pop": 26275,
+    "taxRevenue": 0,
+    "lat": 33.0113,
+    "lng": 129.6815
+  },
+  {
+    "code": "42213",
+    "prefCode": "42",
+    "name": "雲仙市",
+    "pop": 41096,
+    "taxRevenue": 0,
+    "lat": 32.7999,
+    "lng": 130.2172
+  },
+  {
+    "code": "42214",
+    "prefCode": "42",
+    "name": "南島原市",
+    "pop": 42330,
+    "taxRevenue": 0,
+    "lat": 32.6671,
+    "lng": 130.2667
+  },
+  {
+    "code": "42307",
+    "prefCode": "42",
+    "name": "長与町",
+    "pop": 40780,
+    "taxRevenue": 0,
+    "lat": 32.8212,
+    "lng": 129.8756
+  },
+  {
+    "code": "42308",
+    "prefCode": "42",
+    "name": "時津町",
+    "pop": 29339,
+    "taxRevenue": 0,
+    "lat": 32.8327,
+    "lng": 129.8428
+  },
+  {
+    "code": "42321",
+    "prefCode": "42",
+    "name": "東彼杵町",
+    "pop": 7721,
+    "taxRevenue": 0,
+    "lat": 33.0361,
+    "lng": 129.9338
+  },
+  {
+    "code": "42322",
+    "prefCode": "42",
+    "name": "川棚町",
+    "pop": 13377,
+    "taxRevenue": 0,
+    "lat": 33.0712,
+    "lng": 129.8553
+  },
+  {
+    "code": "42323",
+    "prefCode": "42",
+    "name": "波佐見町",
+    "pop": 14291,
+    "taxRevenue": 0,
+    "lat": 33.135,
+    "lng": 129.8949
+  },
+  {
+    "code": "42383",
+    "prefCode": "42",
+    "name": "小値賀町",
+    "pop": 2288,
+    "taxRevenue": 0,
+    "lat": 33.1956,
+    "lng": 129.0561
+  },
+  {
+    "code": "42391",
+    "prefCode": "42",
+    "name": "佐々町",
+    "pop": 13912,
+    "taxRevenue": 0,
+    "lat": 33.2372,
+    "lng": 129.657
+  },
+  {
+    "code": "42411",
+    "prefCode": "42",
+    "name": "新上五島町",
+    "pop": 17503,
+    "taxRevenue": 0,
+    "lat": 32.9646,
+    "lng": 129.0786
+  }
+]

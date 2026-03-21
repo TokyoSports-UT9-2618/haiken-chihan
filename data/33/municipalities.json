@@ -1,0 +1,272 @@
+[
+  {
+    "code": "33101",
+    "prefCode": "33",
+    "name": "岡山市北区",
+    "pop": 314523,
+    "taxRevenue": 0,
+    "lat": 34.6754,
+    "lng": 133.8962
+  },
+  {
+    "code": "33102",
+    "prefCode": "33",
+    "name": "岡山市中区",
+    "pop": 149232,
+    "taxRevenue": 0,
+    "lat": 34.6636,
+    "lng": 133.9614
+  },
+  {
+    "code": "33103",
+    "prefCode": "33",
+    "name": "岡山市東区",
+    "pop": 93108,
+    "taxRevenue": 0,
+    "lat": 34.6747,
+    "lng": 134.0321
+  },
+  {
+    "code": "33104",
+    "prefCode": "33",
+    "name": "岡山市南区",
+    "pop": 167828,
+    "taxRevenue": 0,
+    "lat": 34.6071,
+    "lng": 133.9053
+  },
+  {
+    "code": "33202",
+    "prefCode": "33",
+    "name": "倉敷市",
+    "pop": 474592,
+    "taxRevenue": 0,
+    "lat": 34.5652,
+    "lng": 133.7558
+  },
+  {
+    "code": "33203",
+    "prefCode": "33",
+    "name": "津山市",
+    "pop": 99937,
+    "taxRevenue": 0,
+    "lat": 35.0783,
+    "lng": 134.014
+  },
+  {
+    "code": "33204",
+    "prefCode": "33",
+    "name": "玉野市",
+    "pop": 56531,
+    "taxRevenue": 0,
+    "lat": 34.5068,
+    "lng": 133.9318
+  },
+  {
+    "code": "33205",
+    "prefCode": "33",
+    "name": "笠岡市",
+    "pop": 46088,
+    "taxRevenue": 0,
+    "lat": 34.5083,
+    "lng": 133.5117
+  },
+  {
+    "code": "33207",
+    "prefCode": "33",
+    "name": "井原市",
+    "pop": 38384,
+    "taxRevenue": 0,
+    "lat": 34.6077,
+    "lng": 133.4687
+  },
+  {
+    "code": "33208",
+    "prefCode": "33",
+    "name": "総社市",
+    "pop": 69030,
+    "taxRevenue": 0,
+    "lat": 34.6764,
+    "lng": 133.739
+  },
+  {
+    "code": "33209",
+    "prefCode": "33",
+    "name": "高梁市",
+    "pop": 29072,
+    "taxRevenue": 0,
+    "lat": 34.8055,
+    "lng": 133.5737
+  },
+  {
+    "code": "33210",
+    "prefCode": "33",
+    "name": "新見市",
+    "pop": 28079,
+    "taxRevenue": 0,
+    "lat": 34.9891,
+    "lng": 133.4626
+  },
+  {
+    "code": "33211",
+    "prefCode": "33",
+    "name": "備前市",
+    "pop": 32320,
+    "taxRevenue": 0,
+    "lat": 34.7522,
+    "lng": 134.2113
+  },
+  {
+    "code": "33212",
+    "prefCode": "33",
+    "name": "瀬戸内市",
+    "pop": 36048,
+    "taxRevenue": 0,
+    "lat": 34.6725,
+    "lng": 134.1127
+  },
+  {
+    "code": "33213",
+    "prefCode": "33",
+    "name": "赤磐市",
+    "pop": 42661,
+    "taxRevenue": 0,
+    "lat": 34.7842,
+    "lng": 134.0338
+  },
+  {
+    "code": "33214",
+    "prefCode": "33",
+    "name": "真庭市",
+    "pop": 42725,
+    "taxRevenue": 0,
+    "lat": 35.0799,
+    "lng": 133.7144
+  },
+  {
+    "code": "33215",
+    "prefCode": "33",
+    "name": "美作市",
+    "pop": 25939,
+    "taxRevenue": 0,
+    "lat": 35.0289,
+    "lng": 134.2023
+  },
+  {
+    "code": "33216",
+    "prefCode": "33",
+    "name": "浅口市",
+    "pop": 32772,
+    "taxRevenue": 0,
+    "lat": 34.5291,
+    "lng": 133.5964
+  },
+  {
+    "code": "33346",
+    "prefCode": "33",
+    "name": "和気町",
+    "pop": 13623,
+    "taxRevenue": 0,
+    "lat": 34.8176,
+    "lng": 134.1457
+  },
+  {
+    "code": "33423",
+    "prefCode": "33",
+    "name": "早島町",
+    "pop": 12368,
+    "taxRevenue": 0,
+    "lat": 34.6073,
+    "lng": 133.8254
+  },
+  {
+    "code": "33445",
+    "prefCode": "33",
+    "name": "里庄町",
+    "pop": 10950,
+    "taxRevenue": 0,
+    "lat": 34.5124,
+    "lng": 133.5559
+  },
+  {
+    "code": "33461",
+    "prefCode": "33",
+    "name": "矢掛町",
+    "pop": 13414,
+    "taxRevenue": 0,
+    "lat": 34.6205,
+    "lng": 133.5833
+  },
+  {
+    "code": "33586",
+    "prefCode": "33",
+    "name": "新庄村",
+    "pop": 813,
+    "taxRevenue": 0,
+    "lat": 35.1854,
+    "lng": 133.5671
+  },
+  {
+    "code": "33606",
+    "prefCode": "33",
+    "name": "鏡野町",
+    "pop": 12062,
+    "taxRevenue": 0,
+    "lat": 35.1203,
+    "lng": 133.9235
+  },
+  {
+    "code": "33622",
+    "prefCode": "33",
+    "name": "勝央町",
+    "pop": 10888,
+    "taxRevenue": 0,
+    "lat": 35.0514,
+    "lng": 134.1263
+  },
+  {
+    "code": "33623",
+    "prefCode": "33",
+    "name": "奈義町",
+    "pop": 5578,
+    "taxRevenue": 0,
+    "lat": 35.1199,
+    "lng": 134.1738
+  },
+  {
+    "code": "33643",
+    "prefCode": "33",
+    "name": "西粟倉村",
+    "pop": 1398,
+    "taxRevenue": 0,
+    "lat": 35.1806,
+    "lng": 134.3353
+  },
+  {
+    "code": "33663",
+    "prefCode": "33",
+    "name": "久米南町",
+    "pop": 4530,
+    "taxRevenue": 0,
+    "lat": 34.9267,
+    "lng": 133.9528
+  },
+  {
+    "code": "33666",
+    "prefCode": "33",
+    "name": "美咲町",
+    "pop": 13053,
+    "taxRevenue": 0,
+    "lat": 34.9853,
+    "lng": 133.9725
+  },
+  {
+    "code": "33681",
+    "prefCode": "33",
+    "name": "吉備中央町",
+    "pop": 10886,
+    "taxRevenue": 0,
+    "lat": 34.8491,
+    "lng": 133.7392
+  }
+]

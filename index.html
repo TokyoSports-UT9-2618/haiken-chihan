@@ -150,6 +150,30 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 .ai-han-comment { font-size: 12px; color: #777; margin-top: 5px; line-height: 1.6; font-style: italic; padding-top: 4px; border-top: 1px dashed #eee; }
 .ai-loading-text { color: #ccc; font-size: 11px; }
 
+/* Save/Load buttons */
+.save-btn { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.4); padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 12px; margin-right: 4px; }
+.save-btn:hover { background: rgba(255,255,255,0.15); }
+
+/* Save/Load modals */
+.sl-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.65); z-index: 9900; display: none; align-items: center; justify-content: center; }
+.sl-overlay.show { display: flex; }
+.sl-modal { background: #fff; border-radius: 12px; padding: 24px; width: 420px; max-width: 92vw; box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+.sl-modal h3 { font-size: 17px; font-weight: 700; margin-bottom: 16px; color: #2c3e50; }
+.sl-slot { border: 1px solid #ddd; border-radius: 8px; padding: 12px 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 12px; cursor: pointer; transition: background 0.15s; }
+.sl-slot:hover { background: #f0f6ff; border-color: #3498db; }
+.sl-slot.empty { color: #aaa; font-style: italic; font-size: 13px; border-style: dashed; }
+.sl-slot-info { flex: 1; }
+.sl-slot-name { font-weight: 700; font-size: 14px; color: #2c3e50; }
+.sl-slot-meta { font-size: 11px; color: #888; margin-top: 2px; }
+.sl-slot-del { font-size: 11px; color: #e74c3c; border: 1px solid #e74c3c; background: none; border-radius: 4px; padding: 2px 7px; cursor: pointer; }
+.sl-slot-del:hover { background: #fde; }
+.sl-autosave { background: #fffdf0; border-color: #f1c40f; }
+.sl-btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.sl-btn { padding: 8px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; }
+.sl-btn-cancel { background: #eee; color: #555; }
+.sl-btn-cancel:hover { background: #ddd; }
+.sl-name-input { width: 100%; border: 1px solid #ddd; border-radius: 6px; padding: 8px 10px; font-size: 13px; margin-bottom: 12px; box-sizing: border-box; }
+
 /* Help modal */
 .help-btn { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.5); padding: 5px 12px; border-radius: 4px; cursor: pointer; font-size: 13px; margin-right: 8px; }
 .help-btn:hover { background: rgba(255,255,255,0.15); }
@@ -205,6 +229,8 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
   </div>
   <div>
     <button class="help-btn" onclick="openHelp()">？ 遊び方</button>
+    <button class="save-btn" onclick="showSaveModal()">💾 保存</button>
+    <button class="save-btn" onclick="showLoadModal()">📂 再開</button>
     <button class="undo-btn" id="btnUndo" onclick="undoAction()" disabled>↩ 戻る</button>
     <button class="reset-btn" onclick="resetGame()">リセット</button>
   </div>
@@ -307,6 +333,29 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
   <input type="text" id="tokkuCustom" placeholder="特区の理由を入力" style="display:none;">
   <div class="tokku-btn-row">
     <button class="btn btn-confirm" onclick="submitTokku()">確定する</button>
+  </div>
+</div>
+
+<!-- Save modal -->
+<div class="sl-overlay" id="saveOverlay" onclick="if(event.target===this)closeSaveModal()">
+  <div class="sl-modal">
+    <h3>💾 ゲームを保存</h3>
+    <input class="sl-name-input" id="saveNameInput" type="text" placeholder="保存名（省略可）" maxlength="30">
+    <div id="saveSlotList"></div>
+    <div class="sl-btns">
+      <button class="sl-btn sl-btn-cancel" onclick="closeSaveModal()">キャンセル</button>
+    </div>
+  </div>
+</div>
+
+<!-- Load modal -->
+<div class="sl-overlay" id="loadOverlay" onclick="if(event.target===this)closeLoadModal()">
+  <div class="sl-modal">
+    <h3>📂 セーブデータを読み込む</h3>
+    <div id="loadSlotList"></div>
+    <div class="sl-btns">
+      <button class="sl-btn sl-btn-cancel" onclick="closeLoadModal()">キャンセル</button>
+    </div>
   </div>
 </div>
 
@@ -469,137 +518,18 @@ const CONFIG = {
   targetPop: 400000,
   targetRange: [300000, 500000],
   geoJsonUrl: "https://raw.githubusercontent.com/dataofjapan/land/master/fukushima.geojson",
+  geoJsonUrls: [],
 };
 
 // ============================================================
-// MUNICIPALITIES DATA (2020 Census, e-Stat 国勢調査) ※双葉町のみ推計値
+// DYNAMIC DATA (loaded via initGame from JSON files)
 // ============================================================
-const MUNICIPALITIES = [
-  { code: "07201", name: "福島市",    pop: 282802, lat: 37.7608, lng: 140.4747, region: "中通り" },
-  { code: "07202", name: "会津若松市",    pop: 117433, lat: 37.4942, lng: 139.9299, region: "会津" },
-  { code: "07203", name: "郡山市",    pop: 327872, lat: 37.3941, lng: 140.3875, region: "中通り" },
-  { code: "07204", name: "いわき市",    pop: 333202, lat: 37.0534, lng: 140.8873, region: "浜通り" },
-  { code: "07205", name: "白河市",    pop: 59531, lat: 37.1282, lng: 140.1961, region: "中通り" },
-  { code: "07207", name: "須賀川市",  pop: 75039, lat: 37.2909, lng: 140.3865, region: "中通り" },
-  { code: "07208", name: "喜多方市",  pop: 44810, lat: 37.6529, lng: 139.8752, region: "会津" },
-  { code: "07209", name: "相馬市",    pop: 34884, lat: 37.7962, lng: 140.9194, region: "浜通り" },
-  { code: "07210", name: "二本松市",  pop: 53593, lat: 37.5854, lng: 140.4265, region: "中通り" },
-  { code: "07211", name: "田村市",    pop: 35192, lat: 37.3313, lng: 140.5811, region: "中通り" },
-  { code: "07212", name: "南相馬市",  pop: 59053, lat: 37.6437, lng: 140.9877, region: "浜通り" },
-  { code: "07213", name: "伊達市",    pop: 58250, lat: 37.8295, lng: 140.5624, region: "中通り" },
-  { code: "07214", name: "本宮市",    pop: 30240, lat: 37.5104, lng: 140.3883, region: "中通り" },
-  { code: "07301", name: "桑折町",    pop: 11464, lat: 37.8695, lng: 140.5256, region: "中通り" },
-  { code: "07303", name: "国見町",    pop: 8641, lat: 37.9163, lng: 140.5628, region: "中通り" },
-  { code: "07307", name: "川俣町",    pop: 12186, lat: 37.6670, lng: 140.5944, region: "中通り" },
-  { code: "07321", name: "大玉村",    pop: 8904, lat: 37.5281, lng: 140.3456, region: "中通り" },
-  { code: "07341", name: "鏡石町",    pop: 12316, lat: 37.2404, lng: 140.3484, region: "中通り" },
-  { code: "07342", name: "天栄村",    pop: 5198, lat: 37.2020, lng: 140.2078, region: "中通り" },
-  { code: "07362", name: "西郷村",    pop: 20809, lat: 37.1124, lng: 140.1013, region: "中通り" },
-  { code: "07364", name: "泉崎村",    pop: 6214, lat: 37.0771, lng: 140.2477, region: "中通り" },
-  { code: "07365", name: "中島村",    pop: 4889, lat: 37.0528, lng: 140.2847, region: "中通り" },
-  { code: "07366", name: "矢吹町",    pop: 17307, lat: 37.0889, lng: 140.3383, region: "中通り" },
-  { code: "07381", name: "棚倉町",    pop: 13330, lat: 37.0283, lng: 140.3731, region: "中通り" },
-  { code: "07382", name: "矢祭町",    pop: 5404, lat: 36.9553, lng: 140.4163, region: "中通り" },
-  { code: "07383", name: "塙町",      pop: 8321, lat: 36.9836, lng: 140.4082, region: "中通り" },
-  { code: "07384", name: "鮫川村",    pop: 3058, lat: 37.0193, lng: 140.4745, region: "中通り" },
-  { code: "07401", name: "石川町",    pop: 14655, lat: 37.1517, lng: 140.4435, region: "中通り" },
-  { code: "07402", name: "玉川村",    pop: 6403, lat: 37.2087, lng: 140.4784, region: "中通り" },
-  { code: "07403", name: "平田村",    pop: 5830, lat: 37.2230, lng: 140.5573, region: "中通り" },
-  { code: "07404", name: "浅川町",    pop: 6041, lat: 37.0898, lng: 140.4184, region: "中通り" },
-  { code: "07405", name: "古殿町",    pop: 4826, lat: 37.0833, lng: 140.5299, region: "中通り" },
-  { code: "07421", name: "三春町",    pop: 17026, lat: 37.3481, lng: 140.4920, region: "中通り" },
-  { code: "07422", name: "小野町",    pop: 9482, lat: 37.2692, lng: 140.6114, region: "中通り" },
-  { code: "07441", name: "広野町",    pop: 5408, lat: 37.2198, lng: 141.0133, region: "浜通り" },
-  { code: "07442", name: "楢葉町",    pop: 3700, lat: 37.3508, lng: 141.0299, region: "浜通り" },
-  { code: "07443", name: "富岡町",    pop: 2130, lat: 37.4004, lng: 141.0174, region: "浜通り" },
-  { code: "07444", name: "川内村",    pop: 2046, lat: 37.3862, lng: 140.8046, region: "浜通り" },
-  { code: "07445", name: "大熊町",    pop: 847, lat: 37.4156, lng: 141.0345, region: "浜通り" },
-  { code: "07446", name: "双葉町",    pop: 300, lat: 37.4526, lng: 141.0085, region: "浜通り" },
-  { code: "07447", name: "浪江町",    pop: 1896, lat: 37.5068, lng: 140.9830, region: "浜通り" },
-  { code: "07448", name: "葛尾村",    pop: 421, lat: 37.5388, lng: 140.7825, region: "浜通り" },
-  { code: "07461", name: "新地町",    pop: 7910, lat: 37.8680, lng: 140.9161, region: "浜通り" },
-  { code: "07462", name: "飯舘村",    pop: 1319, lat: 37.7090, lng: 140.7466, region: "浜通り" },
-  { code: "07501", name: "北塩原村",  pop: 2554, lat: 37.6814, lng: 139.9505, region: "会津" },
-  { code: "07503", name: "西会津町",  pop: 5765, lat: 37.6312, lng: 139.6597, region: "会津" },
-  { code: "07505", name: "磐梯町",    pop: 3332, lat: 37.5830, lng: 139.9823, region: "会津" },
-  { code: "07506", name: "猪苗代町",  pop: 13559, lat: 37.5621, lng: 140.1133, region: "会津" },
-  { code: "07521", name: "会津坂下町", pop: 15068, lat: 37.5627, lng: 139.8228, region: "会津" },
-  { code: "07522", name: "湯川村",    pop: 3082, lat: 37.5928, lng: 139.8621, region: "会津" },
-  { code: "07523", name: "柳津町",    pop: 3087, lat: 37.5261, lng: 139.8038, region: "会津" },
-  { code: "07531", name: "三島町",    pop: 1457, lat: 37.4830, lng: 139.7561, region: "会津" },
-  { code: "07532", name: "金山町",    pop: 1867, lat: 37.3919, lng: 139.6285, region: "会津" },
-  { code: "07533", name: "昭和村",    pop: 1247, lat: 37.3283, lng: 139.6858, region: "会津" },
-  { code: "07534", name: "会津美里町", pop: 19030, lat: 37.3979, lng: 139.8530, region: "会津" },
-  { code: "07541", name: "下郷町",    pop: 5267, lat: 37.2543, lng: 139.8667, region: "会津" },
-  { code: "07542", name: "檜枝岐村",  pop: 507, lat: 37.0295, lng: 139.3810, region: "会津" },
-  { code: "07544", name: "只見町",    pop: 4041, lat: 37.3441, lng: 139.5236, region: "会津" },
-  { code: "07545", name: "南会津町",  pop: 14453, lat: 37.1980, lng: 139.7766, region: "会津" },
-];
+let MUNICIPALITIES = [];
+let ADJACENCY = {};
+let BEFORE_COST = {};
 
-// ============================================================
-// ADJACENCY DATA
-// ============================================================
-const ADJACENCY = {
-  "07201": ["07210","07213","07301","07307","07506"],                                              // 福島市 (5)
-  "07202": ["07203","07208","07342","07505","07506","07521","07522","07534","07541"],               // 会津若松市 (9)
-  "07203": ["07202","07207","07210","07211","07214","07321","07342","07403","07421","07422","07506"], // 郡山市 (11)
-  "07204": ["07211","07384","07403","07405","07422","07441","07442","07444"],                       // いわき市 (8)
-  "07205": ["07342","07362","07364","07365","07366","07381","07401","07404"],                       // 白河市 (8)
-  "07207": ["07203","07341","07342","07402","07403"],                                              // 須賀川市 (5)
-  "07208": ["07202","07501","07503","07505","07521","07522"],                                      // 喜多方市 (6)
-  "07209": ["07212","07213","07461","07462"],                                                      // 相馬市 (4)
-  "07210": ["07201","07203","07211","07214","07307","07321","07421","07447","07448","07506"],       // 二本松市 (10)
-  "07211": ["07203","07204","07210","07421","07422","07444","07445","07447","07448"],               // 田村市 (9)
-  "07212": ["07209","07447","07462"],                                                              // 南相馬市 (3)
-  "07213": ["07201","07209","07301","07303","07307","07462"],                                      // 伊達市 (6)
-  "07214": ["07203","07210","07321","07421"],                                                      // 本宮市 (4)
-  "07301": ["07201","07213","07303"],                                                              // 桑折町 (3)
-  "07303": ["07213","07301"],                                                                      // 国見町 (2)
-  "07307": ["07201","07210","07213","07447","07462"],                                              // 川俣町 (5)
-  "07321": ["07203","07210","07214"],                                                              // 大玉村 (3)
-  "07341": ["07207","07342","07366","07402"],                                                      // 鏡石町 (4)
-  "07342": ["07202","07203","07205","07207","07341","07362","07366","07541"],                       // 天栄村 (8)
-  "07362": ["07205","07342","07541"],                                                              // 西郷村 (3)
-  "07364": ["07205","07365","07366"],                                                              // 泉崎村 (3)
-  "07365": ["07205","07364","07366","07401"],                                                      // 中島村 (4)
-  "07366": ["07205","07341","07342","07364","07365","07401","07402"],                               // 矢吹町 (7)
-  "07381": ["07205","07382","07383","07384","07404"],                                              // 棚倉町 (5)
-  "07382": ["07381","07383"],                                                                      // 矢祭町 (2)
-  "07383": ["07381","07382","07384"],                                                              // 塙町 (3)
-  "07384": ["07204","07381","07383","07401","07404","07405"],                                      // 鮫川村 (6)
-  "07401": ["07205","07365","07366","07384","07402","07403","07404","07405"],                       // 石川町 (8)
-  "07402": ["07207","07341","07366","07401","07403"],                                              // 玉川村 (5)
-  "07403": ["07203","07204","07207","07401","07402","07405","07422"],                               // 平田村 (7)
-  "07404": ["07205","07381","07384","07401"],                                                      // 浅川町 (4)
-  "07405": ["07204","07384","07401","07403"],                                                      // 古殿町 (4)
-  "07421": ["07203","07210","07211","07214"],                                                      // 三春町 (4)
-  "07422": ["07203","07204","07211","07403"],                                                      // 小野町 (4)
-  "07441": ["07204","07442"],                                                                      // 広野町 (2)
-  "07442": ["07204","07441","07443","07444"],                                                      // 楢葉町 (4)
-  "07443": ["07442","07444","07445"],                                                              // 富岡町 (3)
-  "07444": ["07204","07211","07442","07443","07445"],                                              // 川内村 (5)
-  "07445": ["07211","07443","07444","07446","07447"],                                              // 大熊町 (5)
-  "07446": ["07445","07447"],                                                                      // 双葉町 (2)
-  "07447": ["07210","07211","07212","07307","07445","07446","07448","07462"],                       // 浪江町 (8)
-  "07448": ["07210","07211","07447"],                                                              // 葛尾村 (3)
-  "07461": ["07209"],                                                                              // 新地町 (1)
-  "07462": ["07209","07212","07213","07307","07447"],                                              // 飯舘村 (5)
-  "07501": ["07208","07505","07506"],                                                              // 北塩原村 (3)
-  "07503": ["07208","07521","07523","07532"],                                                      // 西会津町 (4)
-  "07505": ["07202","07208","07501","07506"],                                                      // 磐梯町 (4)
-  "07506": ["07201","07202","07203","07210","07501","07505"],                                      // 猪苗代町 (6)
-  "07521": ["07202","07208","07503","07522","07523","07534"],                                      // 会津坂下町 (6)
-  "07522": ["07202","07208","07521"],                                                              // 湯川村 (3)
-  "07523": ["07503","07521","07531","07532","07533","07534"],                                      // 柳津町 (6)
-  "07531": ["07523","07532","07533"],                                                              // 三島町 (3)
-  "07532": ["07503","07523","07531","07533","07544"],                                              // 金山町 (5)
-  "07533": ["07523","07531","07532","07534","07541","07544","07545"],                               // 昭和村 (7)
-  "07534": ["07202","07521","07523","07533","07541"],                                              // 会津美里町 (5)
-  "07541": ["07202","07342","07362","07533","07534","07545"],                                      // 下郷町 (6)
-  "07542": ["07544","07545"],                                                                      // 檜枝岐村 (2)
-  "07544": ["07532","07533","07542","07545"],                                                      // 只見町 (4)
-  "07545": ["07533","07541","07542","07544"],                                                      // 南会津町 (4)
-};
+
+
 
 // ============================================================
 // COST DATA & CALCULATION
@@ -641,41 +571,7 @@ function calcMunicipalityCost(pop) {
   return { mayorAnnual, memberCount, memberAnnual, facilityAnnual, total: mayorAnnual + memberAnnual + facilityAnnual };
 }
 
-// 2018年度 地方税収入（千円単位、e-Stat 市町村財政状況より）
-const MUNI_TAX = {
-  '福島市':40605070,'会津若松市':15216417,'郡山市':51282388,'いわき市':50587919,
-  '白河市':9154339,'須賀川市':9431334,'喜多方市':4842032,'相馬市':5259724,
-  '二本松市':6397422,'田村市':3800353,'南相馬市':9657675,'伊達市':5567683,
-  '本宮市':4635986,'桑折町':1294702,'国見町':1005827,'川俣町':1267465,
-  '大玉村':946410,'鏡石町':1600504,'天栄村':760268,'下郷町':1049110,
-  '檜枝岐村':433368,'只見町':882446,'南会津町':1572583,'北塩原村':482141,
-  '西会津町':616612,'磐梯町':614316,'猪苗代町':1886282,'会津坂下町':1607178,
-  '湯川村':335276,'柳津町':392943,'三島町':172674,'金山町':529560,
-  '昭和村':92145,'会津美里町':1628320,'西郷村':3902426,'泉崎村':1244745,
-  '中島村':546691,'矢吹町':2294431,'棚倉町':1987704,'矢祭町':996502,
-  '塙町':935342,'鮫川村':284030,'石川町':1656969,'玉川村':724137,
-  '平田村':632075,'浅川町':702161,'古殿町':522279,'三春町':1898805,
-  '小野町':1030593,'広野町':2511210,'楢葉町':1944537,'富岡町':1944943,
-  '川内村':486595,'大熊町':3908509,'双葉町':1097704,'浪江町':669300,
-  '葛尾村':111594,'新地町':2216182,'飯舘村':428642,
-};
 
-// Pre-calculate cost for each municipality
-MUNICIPALITIES.forEach(m => {
-  m.cost = calcMunicipalityCost(m.pop);
-  m.taxRevenue = (MUNI_TAX[m.name] || 0) * 1000; // 千円→円
-});
-
-// Pre-calculate "before" totals (prefecture + all municipalities)
-const BEFORE_COST = {
-  prefGovSalary: PREFECTURE_COST.governorTotal + PREFECTURE_COST.assemblyTotal,
-  prefFacility: PREFECTURE_COST.facilityAnnual,
-  muniSalary: MUNICIPALITIES.reduce((s, m) => s + m.cost.mayorAnnual + m.cost.memberAnnual, 0),
-  muniFacility: MUNICIPALITIES.reduce((s, m) => s + m.cost.facilityAnnual, 0),
-};
-BEFORE_COST.totalSalary = BEFORE_COST.prefGovSalary + BEFORE_COST.muniSalary;
-BEFORE_COST.totalFacility = BEFORE_COST.prefFacility + BEFORE_COST.muniFacility;
-BEFORE_COST.total = BEFORE_COST.totalSalary + BEFORE_COST.totalFacility;
 
 function calcHanCost(hanId, memberReductionRate, facilityClosureRate) {
   const members = getHanMembers(hanId);
@@ -748,6 +644,7 @@ function saveHistory() {
   })));
   if (history.length > 80) history.shift();
   document.getElementById('btnUndo').disabled = false;
+  autoSave();
 }
 
 function undoAction() {
@@ -793,21 +690,40 @@ function initMap() {
 }
 
 function loadGeoJSON() {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 10000);
+  const urls = CONFIG.geoJsonUrls && CONFIG.geoJsonUrls.length > 0
+    ? CONFIG.geoJsonUrls
+    : (CONFIG.geoJsonUrl ? [CONFIG.geoJsonUrl] : []);
 
-  fetch(CONFIG.geoJsonUrl, { signal: controller.signal })
-    .then(r => { clearTimeout(timeout); if (!r.ok) throw new Error('fetch failed'); return r.json(); })
-    .then(data => {
-      geojsonLoaded = true;
-      geojsonCache = data;
-      renderGeoJSON(data);
-    })
-    .catch(() => {
-      clearTimeout(timeout);
+  if (urls.length === 0) {
+    geojsonLoaded = false;
+    renderFallbackMarkers();
+    return;
+  }
+
+  const fetches = urls.map(url => {
+    const controller = new AbortController();
+    setTimeout(() => controller.abort(), 10000);
+    return fetch(url, { signal: controller.signal })
+      .then(r => { if (!r.ok) throw new Error('fetch failed'); return r.json(); })
+      .catch(() => null);
+  });
+
+  Promise.all(fetches).then(results => {
+    const validResults = results.filter(Boolean);
+    if (validResults.length === 0) {
       geojsonLoaded = false;
       renderFallbackMarkers();
-    });
+      return;
+    }
+    // Merge all GeoJSON feature collections into one
+    const merged = {
+      type: 'FeatureCollection',
+      features: validResults.flatMap(d => d.features || []),
+    };
+    geojsonLoaded = true;
+    geojsonCache = merged;
+    renderGeoJSON(merged);
+  });
 }
 
 function renderGeoJSON(data) {
@@ -817,9 +733,10 @@ function renderGeoJSON(data) {
   L.geoJSON(data, {
     style: () => getDefaultStyle(),
     onEachFeature: (feature, layer) => {
-      const code = feature.properties.N03_007 || feature.properties.code;
-      const name = feature.properties.ward_ja || feature.properties.N03_004 || '';
-      // Name-based match first (GeoJSON codes differ from spec codes)
+      // Support both generated format (name/code) and dataofjapan format (N03_004/N03_007/ward_ja)
+      const code = feature.properties.code || feature.properties.N03_007 || '';
+      const name = feature.properties.name || feature.properties.ward_ja || feature.properties.N03_004 || '';
+      // Name-based match first (GeoJSON codes differ from spec codes in some sources)
       let matched = name ? MUNICIPALITIES.find(m => m.name === name) : null;
       if (!matched) matched = findMuniByCode(code);
       if (!matched) return;
@@ -1340,11 +1257,14 @@ async function loadAIComments(confirmedHans, score) {
   confirmedHans.forEach(han => {
     const members = getHanMembers(han.id);
     const pop = getHanPopulation(han.id);
-    const regions = [...new Set(members.map(m => m.region))].join('・');
+    const prefNames = [...new Set(members.map(m => m.prefCode))].map(pc => {
+      const p = (window._prefMeta || []).find(x => x.code === pc);
+      return p ? p.name : pc;
+    }).join('・');
     const tokku = han.tokku ? `、特区: ${han.tokku.label}` : '';
     callAI(
-      '福島県の地理・産業・文化に詳しいアナリストとして、新設される「藩」の特徴を80字程度で端的に説明してください。地形・主要産業・観光資源などの観点を含めてください。',
-      `「${han.name}」の構成市町村: ${members.map(m => m.name).join('、')}\n総人口: ${(pop / 10000).toFixed(1)}万人、地域: ${regions}${tokku}`
+      '日本の地理・産業・文化に詳しいアナリストとして、新設される「藩」の特徴を80字程度で端的に説明してください。地形・主要産業・観光資源などの観点を含めてください。',
+      `「${han.name}」の構成市町村: ${members.map(m => m.name).join('、')}\n総人口: ${(pop / 10000).toFixed(1)}万人、エリア: ${prefNames}${tokku}`
     ).then(text => {
       const el = document.getElementById('ai-han-' + han.id);
       if (el) el.textContent = text;
@@ -1408,8 +1328,21 @@ function renderMapCanvas(w, h) {
 
   if (!geojsonCache) return canvas;
 
-  // Fukushima bounding box (western edge ~139.0°, eastern ~141.0°)
-  const minLng = 138.72, maxLng = 141.18, minLat = 36.72, maxLat = 38.08;
+  // Compute bounding box from municipality lat/lng (with padding)
+  let minLng = Infinity, maxLng = -Infinity, minLat = Infinity, maxLat = -Infinity;
+  MUNICIPALITIES.forEach(m => {
+    if (m.lng && m.lat) {
+      if (m.lng < minLng) minLng = m.lng;
+      if (m.lng > maxLng) maxLng = m.lng;
+      if (m.lat < minLat) minLat = m.lat;
+      if (m.lat > maxLat) maxLat = m.lat;
+    }
+  });
+  // Add padding (roughly 5% of extent)
+  const lngPad = (maxLng - minLng) * 0.05 || 0.5;
+  const latPad = (maxLat - minLat) * 0.05 || 0.5;
+  minLng -= lngPad; maxLng += lngPad;
+  minLat -= latPad; maxLat += latPad;
 
   function project(lat, lng) {
     const x = ((lng - minLng) / (maxLng - minLng)) * w;
@@ -1418,7 +1351,7 @@ function renderMapCanvas(w, h) {
   }
 
   geojsonCache.features.forEach(feature => {
-    const name = feature.properties.ward_ja || feature.properties.N03_004 || '';
+    const name = feature.properties.name || feature.properties.ward_ja || feature.properties.N03_004 || '';
     const muni = MUNICIPALITIES.find(m => m.name === name);
     const hanId = muni ? state.assignments[muni.code] : null;
     const han = hanId ? state.hans.find(h => h.id === hanId) : null;
@@ -1781,6 +1714,138 @@ document.addEventListener('keydown', e => {
 });
 
 // ============================================================
+// SAVE / LOAD
+// ============================================================
+const SAVE_KEY   = 'haiken_saves';
+const AUTOSAVE_KEY = 'haiken_autosave';
+const MAX_SLOTS  = 4; // slots 1-4 (slot 0 = autosave)
+
+function buildSavePayload(name) {
+  return {
+    version: 3,
+    savedAt: new Date().toISOString(),
+    name: name || '',
+    prefCodes: window.CURRENT_PREF_CODES || ['07'],
+    gameState: {
+      hans:         JSON.parse(JSON.stringify(state.hans)),
+      assignments:  JSON.parse(JSON.stringify(state.assignments)),
+      hanCounter:   state.hanCounter,
+      currentHanId: state.currentHanId,
+      phase:        state.phase,
+    },
+  };
+}
+
+function autoSave() {
+  try {
+    localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(buildSavePayload('自動保存')));
+  } catch(e) { /* storage full */ }
+}
+
+function getSlots() {
+  try { return JSON.parse(localStorage.getItem(SAVE_KEY) || '[]'); } catch(e) { return []; }
+}
+function setSlots(slots) {
+  localStorage.setItem(SAVE_KEY, JSON.stringify(slots));
+}
+
+function formatSavedAt(iso) {
+  const d = new Date(iso);
+  return d.toLocaleDateString('ja-JP') + ' ' + d.toLocaleTimeString('ja-JP', {hour:'2-digit', minute:'2-digit'});
+}
+function slotSummary(s) {
+  const confirmed = (s.gameState.hans || []).filter(h => h.confirmed).length;
+  const prefLabel = s.prefCodes ? s.prefCodes.join(',') : (s.prefCode || '07');
+  return `${prefLabel} / 確定${confirmed}藩 / ${formatSavedAt(s.savedAt)}`;
+}
+
+function showSaveModal() {
+  const slots = getSlots();
+  const list  = document.getElementById('saveSlotList');
+  list.innerHTML = '';
+  for (let i = 0; i < MAX_SLOTS; i++) {
+    const s = slots[i];
+    const div = document.createElement('div');
+    div.className = 'sl-slot' + (s ? '' : ' empty');
+    if (s) {
+      div.innerHTML = `<div class="sl-slot-info"><div class="sl-slot-name">${s.name || 'スロット'+(i+1)}</div><div class="sl-slot-meta">${slotSummary(s)}</div></div><button class="sl-slot-del" onclick="deleteSlot(${i},event)">削除</button>`;
+      div.onclick = (e) => { if (!e.target.classList.contains('sl-slot-del')) saveToSlot(i); };
+    } else {
+      div.textContent = `スロット ${i+1}（空き）`;
+      div.onclick = () => saveToSlot(i);
+    }
+    list.appendChild(div);
+  }
+  document.getElementById('saveOverlay').classList.add('show');
+}
+function closeSaveModal() { document.getElementById('saveOverlay').classList.remove('show'); }
+
+function saveToSlot(idx) {
+  const name = document.getElementById('saveNameInput').value.trim() || `スロット${idx+1}`;
+  const slots = getSlots();
+  slots[idx] = buildSavePayload(name);
+  setSlots(slots);
+  closeSaveModal();
+  showToast(`スロット${idx+1}に保存しました`);
+}
+function deleteSlot(idx, e) {
+  e.stopPropagation();
+  const slots = getSlots();
+  slots[idx] = null;
+  setSlots(slots.filter((_,i) => i !== idx || false).map((s,i) => s)); // keep array structure
+  // Re-render
+  const slots2 = getSlots();
+  slots2[idx] = null;
+  setSlots(slots2);
+  showSaveModal();
+}
+
+function showLoadModal() {
+  const slots  = getSlots();
+  const auto   = (() => { try { return JSON.parse(localStorage.getItem(AUTOSAVE_KEY)); } catch(e) { return null; } })();
+  const list   = document.getElementById('loadSlotList');
+  list.innerHTML = '';
+  // Autosave entry
+  if (auto) {
+    const div = document.createElement('div');
+    div.className = 'sl-slot sl-autosave';
+    div.innerHTML = `<div class="sl-slot-info"><div class="sl-slot-name">自動保存</div><div class="sl-slot-meta">${slotSummary(auto)}</div></div>`;
+    div.onclick = () => applyLoadedState(auto);
+    list.appendChild(div);
+  }
+  let hasAny = !!auto;
+  slots.forEach((s, i) => {
+    if (!s) return;
+    hasAny = true;
+    const div = document.createElement('div');
+    div.className = 'sl-slot';
+    div.innerHTML = `<div class="sl-slot-info"><div class="sl-slot-name">${s.name || 'スロット'+(i+1)}</div><div class="sl-slot-meta">${slotSummary(s)}</div></div>`;
+    div.onclick = () => applyLoadedState(s);
+    list.appendChild(div);
+  });
+  if (!hasAny) {
+    list.innerHTML = '<div class="sl-slot empty">セーブデータがありません</div>';
+  }
+  document.getElementById('loadOverlay').classList.add('show');
+}
+function closeLoadModal() { document.getElementById('loadOverlay').classList.remove('show'); }
+
+function applyLoadedState(saveData) {
+  closeLoadModal();
+  const gs = saveData.gameState;
+  state.hans         = gs.hans         || [];
+  state.assignments  = gs.assignments  || {};
+  state.hanCounter   = gs.hanCounter   || 0;
+  state.currentHanId = gs.currentHanId || null;
+  state.phase        = gs.phase        || 'playing';
+  history.length = 0;
+  document.getElementById('btnUndo').disabled = true;
+  updateAllStyles();
+  updateSidebar();
+  showToast('セーブデータを読み込みました');
+}
+
+// ============================================================
 // INIT
 // ============================================================
 function openHelp() {
@@ -1792,12 +1857,99 @@ function closeHelp(e) {
   document.getElementById('helpOverlay').classList.remove('show');
 }
 
-initMap();
-updateSidebar();
-// Ensure Leaflet recalculates size after flex layout settles
-setTimeout(() => map.invalidateSize(), 100);
-// Show help on every page load
-setTimeout(() => openHelp(), 600);
+// ============================================================
+// GAME INITIALIZATION
+// ============================================================
+async function initGame() {
+  const params = new URLSearchParams(location.search);
+  // Support ?prefs=04,07 (multi-pref) and ?pref=07 (legacy single)
+  const prefsParam = params.get('prefs') || params.get('pref') || '07';
+  const prefCodes = [...new Set(prefsParam.split(',').map(c => c.trim().padStart(2, '0')))];
+  window.CURRENT_PREF_CODES = prefCodes;
+
+  // Load prefectures.json + all pref data in parallel
+  const prefMetaFetch = fetch('data/prefectures.json').then(r => r.json()).catch(() => []);
+  const muniAndAdjFetches = prefCodes.flatMap(pc => [
+    fetch(`data/${pc}/municipalities.json`).then(r => r.json()).catch(() => []),
+    fetch(`data/${pc}/adjacency.json`).then(r => r.json()).catch(() => []),
+  ]);
+  const [prefMetaAll, ...muniAndAdj] = await Promise.all([prefMetaFetch, ...muniAndAdjFetches]);
+  window._prefMeta = prefMetaAll;
+
+  // Merge municipalities and intra-pref adjacency pairs
+  let allMunis = [];
+  let allAdjPairs = [];
+  for (let i = 0; i < prefCodes.length; i++) {
+    allMunis = allMunis.concat(muniAndAdj[i * 2] || []);
+    allAdjPairs = allAdjPairs.concat(muniAndAdj[i * 2 + 1] || []);
+  }
+
+  // Load cross-border adjacency for all pref pairs
+  const crossPairs = [];
+  for (let i = 0; i < prefCodes.length; i++) {
+    for (let j = i + 1; j < prefCodes.length; j++) {
+      const a = prefCodes[i] < prefCodes[j] ? prefCodes[i] : prefCodes[j];
+      const b = prefCodes[i] < prefCodes[j] ? prefCodes[j] : prefCodes[i];
+      crossPairs.push(fetch(`data/cross/${a}_${b}.json`).then(r => r.json()).catch(() => []));
+    }
+  }
+  if (crossPairs.length > 0) {
+    const crossResults = await Promise.all(crossPairs);
+    crossResults.forEach(pairs => { allAdjPairs = allAdjPairs.concat(pairs); });
+  }
+
+  // Populate MUNICIPALITIES
+  MUNICIPALITIES = allMunis;
+  MUNICIPALITIES.forEach(m => { m.cost = calcMunicipalityCost(m.pop); });
+
+  // Build ADJACENCY lookup
+  ADJACENCY = {};
+  allAdjPairs.forEach(pair => {
+    const [a, b] = pair.split('_');
+    (ADJACENCY[a] = ADJACENCY[a] || []).push(b);
+    (ADJACENCY[b] = ADJACENCY[b] || []).push(a);
+  });
+
+  // Update CONFIG from selected pref metadata
+  const selectedPrefs = prefMetaAll.filter(p => prefCodes.includes(p.code));
+  if (selectedPrefs.length > 0) {
+    const avgLat = selectedPrefs.reduce((s, p) => s + p.mapCenter[0], 0) / selectedPrefs.length;
+    const avgLng = selectedPrefs.reduce((s, p) => s + p.mapCenter[1], 0) / selectedPrefs.length;
+    CONFIG.mapCenter = [avgLat, avgLng];
+    CONFIG.mapZoom = prefCodes.length > 1 ? 7 : (selectedPrefs[0].mapZoom || 9);
+    CONFIG.prefecture = selectedPrefs.map(p => p.name).join('・');
+    CONFIG.geoJsonUrls = selectedPrefs.map(p => p.geojsonUrl).filter(Boolean);
+    CONFIG.geoJsonUrl = CONFIG.geoJsonUrls[0] || '';
+  }
+
+  // Compute BEFORE_COST (sum across all selected prefectures)
+  BEFORE_COST.prefGovSalary = 0;
+  BEFORE_COST.prefFacility = 0;
+  if (selectedPrefs.length > 0) {
+    selectedPrefs.forEach(p => {
+      if (p.prefCost) {
+        BEFORE_COST.prefGovSalary += p.prefCost.governorAnnual + p.prefCost.assemblyAnnualPerPerson * p.prefCost.assemblyCount;
+        BEFORE_COST.prefFacility += p.prefCost.facilityAnnual;
+      }
+    });
+  } else {
+    // Fallback to hardcoded constants
+    BEFORE_COST.prefGovSalary = PREFECTURE_COST.governorTotal + PREFECTURE_COST.assemblyTotal;
+    BEFORE_COST.prefFacility  = PREFECTURE_COST.facilityAnnual;
+  }
+  BEFORE_COST.muniSalary    = MUNICIPALITIES.reduce((s, m) => s + m.cost.mayorAnnual + m.cost.memberAnnual, 0);
+  BEFORE_COST.muniFacility  = MUNICIPALITIES.reduce((s, m) => s + m.cost.facilityAnnual, 0);
+  BEFORE_COST.totalSalary   = BEFORE_COST.prefGovSalary + BEFORE_COST.muniSalary;
+  BEFORE_COST.totalFacility = BEFORE_COST.prefFacility  + BEFORE_COST.muniFacility;
+  BEFORE_COST.total         = BEFORE_COST.totalSalary   + BEFORE_COST.totalFacility;
+
+  initMap();
+  updateSidebar();
+  setTimeout(() => map.invalidateSize(), 100);
+  setTimeout(() => openHelp(), 600);
+}
+
+initGame();
 </script>
 </body>
 </html>

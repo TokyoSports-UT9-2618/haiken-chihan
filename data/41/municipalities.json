@@ -1,0 +1,182 @@
+[
+  {
+    "code": "41201",
+    "prefCode": "41",
+    "name": "佐賀市",
+    "pop": 233301,
+    "taxRevenue": 0,
+    "lat": 33.2617,
+    "lng": 130.2942
+  },
+  {
+    "code": "41202",
+    "prefCode": "41",
+    "name": "唐津市",
+    "pop": 117373,
+    "taxRevenue": 0,
+    "lat": 33.4361,
+    "lng": 129.9721
+  },
+  {
+    "code": "41203",
+    "prefCode": "41",
+    "name": "鳥栖市",
+    "pop": 74196,
+    "taxRevenue": 0,
+    "lat": 33.3764,
+    "lng": 130.5063
+  },
+  {
+    "code": "41204",
+    "prefCode": "41",
+    "name": "多久市",
+    "pop": 18295,
+    "taxRevenue": 0,
+    "lat": 33.2809,
+    "lng": 130.1149
+  },
+  {
+    "code": "41205",
+    "prefCode": "41",
+    "name": "伊万里市",
+    "pop": 52629,
+    "taxRevenue": 0,
+    "lat": 33.2849,
+    "lng": 129.8767
+  },
+  {
+    "code": "41206",
+    "prefCode": "41",
+    "name": "武雄市",
+    "pop": 47914,
+    "taxRevenue": 0,
+    "lat": 33.2003,
+    "lng": 130.0119
+  },
+  {
+    "code": "41207",
+    "prefCode": "41",
+    "name": "鹿島市",
+    "pop": 27892,
+    "taxRevenue": 0,
+    "lat": 33.094,
+    "lng": 130.1018
+  },
+  {
+    "code": "41208",
+    "prefCode": "41",
+    "name": "小城市",
+    "pop": 43952,
+    "taxRevenue": 0,
+    "lat": 33.2716,
+    "lng": 130.2042
+  },
+  {
+    "code": "41209",
+    "prefCode": "41",
+    "name": "嬉野市",
+    "pop": 25848,
+    "taxRevenue": 0,
+    "lat": 33.1097,
+    "lng": 130.0148
+  },
+  {
+    "code": "41210",
+    "prefCode": "41",
+    "name": "神埼市",
+    "pop": 31022,
+    "taxRevenue": 0,
+    "lat": 33.3016,
+    "lng": 130.3678
+  },
+  {
+    "code": "41327",
+    "prefCode": "41",
+    "name": "吉野ヶ里町",
+    "pop": 16323,
+    "taxRevenue": 0,
+    "lat": 33.3313,
+    "lng": 130.401
+  },
+  {
+    "code": "41341",
+    "prefCode": "41",
+    "name": "基山町",
+    "pop": 17250,
+    "taxRevenue": 0,
+    "lat": 33.4241,
+    "lng": 130.5258
+  },
+  {
+    "code": "41345",
+    "prefCode": "41",
+    "name": "上峰町",
+    "pop": 9286,
+    "taxRevenue": 0,
+    "lat": 33.3237,
+    "lng": 130.4211
+  },
+  {
+    "code": "41346",
+    "prefCode": "41",
+    "name": "みやき町",
+    "pop": 25511,
+    "taxRevenue": 0,
+    "lat": 33.3238,
+    "lng": 130.4488
+  },
+  {
+    "code": "41387",
+    "prefCode": "41",
+    "name": "玄海町",
+    "pop": 5609,
+    "taxRevenue": 0,
+    "lat": 33.4843,
+    "lng": 129.8597
+  },
+  {
+    "code": "41401",
+    "prefCode": "41",
+    "name": "有田町",
+    "pop": 19010,
+    "taxRevenue": 0,
+    "lat": 33.1947,
+    "lng": 129.8678
+  },
+  {
+    "code": "41423",
+    "prefCode": "41",
+    "name": "大町町",
+    "pop": 6293,
+    "taxRevenue": 0,
+    "lat": 33.216,
+    "lng": 130.111
+  },
+  {
+    "code": "41424",
+    "prefCode": "41",
+    "name": "江北町",
+    "pop": 9566,
+    "taxRevenue": 0,
+    "lat": 33.2167,
+    "lng": 130.1588
+  },
+  {
+    "code": "41425",
+    "prefCode": "41",
+    "name": "白石町",
+    "pop": 22051,
+    "taxRevenue": 0,
+    "lat": 33.17,
+    "lng": 130.1446
+  },
+  {
+    "code": "41441",
+    "prefCode": "41",
+    "name": "太良町",
+    "pop": 8121,
+    "taxRevenue": 0,
+    "lat": 32.998,
+    "lng": 130.1831
+  }
+]

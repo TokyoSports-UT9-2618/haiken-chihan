@@ -1,0 +1,569 @@
+[
+  {
+    "code": "13101",
+    "prefCode": "13",
+    "name": "千代田区",
+    "pop": 66680,
+    "taxRevenue": 0,
+    "lat": 35.6933,
+    "lng": 139.7552
+  },
+  {
+    "code": "13102",
+    "prefCode": "13",
+    "name": "中央区",
+    "pop": 169179,
+    "taxRevenue": 0,
+    "lat": 35.6709,
+    "lng": 139.7805
+  },
+  {
+    "code": "13103",
+    "prefCode": "13",
+    "name": "港区",
+    "pop": 260486,
+    "taxRevenue": 0,
+    "lat": 35.6494,
+    "lng": 139.7389
+  },
+  {
+    "code": "13104",
+    "prefCode": "13",
+    "name": "新宿区",
+    "pop": 349385,
+    "taxRevenue": 0,
+    "lat": 35.7033,
+    "lng": 139.7088
+  },
+  {
+    "code": "13105",
+    "prefCode": "13",
+    "name": "文京区",
+    "pop": 240069,
+    "taxRevenue": 0,
+    "lat": 35.7183,
+    "lng": 139.7476
+  },
+  {
+    "code": "13106",
+    "prefCode": "13",
+    "name": "台東区",
+    "pop": 211444,
+    "taxRevenue": 0,
+    "lat": 35.7159,
+    "lng": 139.7881
+  },
+  {
+    "code": "13107",
+    "prefCode": "13",
+    "name": "墨田区",
+    "pop": 272085,
+    "taxRevenue": 0,
+    "lat": 35.7094,
+    "lng": 139.8139
+  },
+  {
+    "code": "13108",
+    "prefCode": "13",
+    "name": "江東区",
+    "pop": 524310,
+    "taxRevenue": 0,
+    "lat": 35.6755,
+    "lng": 139.8172
+  },
+  {
+    "code": "13109",
+    "prefCode": "13",
+    "name": "品川区",
+    "pop": 422488,
+    "taxRevenue": 0,
+    "lat": 35.6112,
+    "lng": 139.725
+  },
+  {
+    "code": "13110",
+    "prefCode": "13",
+    "name": "目黒区",
+    "pop": 288088,
+    "taxRevenue": 0,
+    "lat": 35.6296,
+    "lng": 139.6898
+  },
+  {
+    "code": "13111",
+    "prefCode": "13",
+    "name": "大田区",
+    "pop": 748081,
+    "taxRevenue": 0,
+    "lat": 35.5732,
+    "lng": 139.7104
+  },
+  {
+    "code": "13112",
+    "prefCode": "13",
+    "name": "世田谷区",
+    "pop": 943664,
+    "taxRevenue": 0,
+    "lat": 35.6421,
+    "lng": 139.6388
+  },
+  {
+    "code": "13113",
+    "prefCode": "13",
+    "name": "渋谷区",
+    "pop": 243883,
+    "taxRevenue": 0,
+    "lat": 35.6684,
+    "lng": 139.6928
+  },
+  {
+    "code": "13114",
+    "prefCode": "13",
+    "name": "中野区",
+    "pop": 344880,
+    "taxRevenue": 0,
+    "lat": 35.7093,
+    "lng": 139.664
+  },
+  {
+    "code": "13115",
+    "prefCode": "13",
+    "name": "杉並区",
+    "pop": 591108,
+    "taxRevenue": 0,
+    "lat": 35.6975,
+    "lng": 139.6274
+  },
+  {
+    "code": "13116",
+    "prefCode": "13",
+    "name": "豊島区",
+    "pop": 301599,
+    "taxRevenue": 0,
+    "lat": 35.7321,
+    "lng": 139.7125
+  },
+  {
+    "code": "13117",
+    "prefCode": "13",
+    "name": "北区",
+    "pop": 355213,
+    "taxRevenue": 0,
+    "lat": 35.7634,
+    "lng": 139.7306
+  },
+  {
+    "code": "13118",
+    "prefCode": "13",
+    "name": "荒川区",
+    "pop": 217475,
+    "taxRevenue": 0,
+    "lat": 35.7395,
+    "lng": 139.7803
+  },
+  {
+    "code": "13119",
+    "prefCode": "13",
+    "name": "板橋区",
+    "pop": 584483,
+    "taxRevenue": 0,
+    "lat": 35.7684,
+    "lng": 139.6798
+  },
+  {
+    "code": "13120",
+    "prefCode": "13",
+    "name": "練馬区",
+    "pop": 752608,
+    "taxRevenue": 0,
+    "lat": 35.7463,
+    "lng": 139.6216
+  },
+  {
+    "code": "13121",
+    "prefCode": "13",
+    "name": "足立区",
+    "pop": 695043,
+    "taxRevenue": 0,
+    "lat": 35.7773,
+    "lng": 139.7996
+  },
+  {
+    "code": "13122",
+    "prefCode": "13",
+    "name": "葛飾区",
+    "pop": 453093,
+    "taxRevenue": 0,
+    "lat": 35.7508,
+    "lng": 139.8544
+  },
+  {
+    "code": "13123",
+    "prefCode": "13",
+    "name": "江戸川区",
+    "pop": 697932,
+    "taxRevenue": 0,
+    "lat": 35.6925,
+    "lng": 139.876
+  },
+  {
+    "code": "13199",
+    "prefCode": "13",
+    "name": "",
+    "pop": 0,
+    "taxRevenue": 0,
+    "lat": 35.5921,
+    "lng": 139.8133
+  },
+  {
+    "code": "13201",
+    "prefCode": "13",
+    "name": "八王子市",
+    "pop": 579355,
+    "taxRevenue": 0,
+    "lat": 35.6506,
+    "lng": 139.3321
+  },
+  {
+    "code": "13202",
+    "prefCode": "13",
+    "name": "立川市",
+    "pop": 183581,
+    "taxRevenue": 0,
+    "lat": 35.7117,
+    "lng": 139.4087
+  },
+  {
+    "code": "13203",
+    "prefCode": "13",
+    "name": "武蔵野市",
+    "pop": 150149,
+    "taxRevenue": 0,
+    "lat": 35.7076,
+    "lng": 139.5617
+  },
+  {
+    "code": "13204",
+    "prefCode": "13",
+    "name": "三鷹市",
+    "pop": 195391,
+    "taxRevenue": 0,
+    "lat": 35.6865,
+    "lng": 139.5631
+  },
+  {
+    "code": "13205",
+    "prefCode": "13",
+    "name": "青梅市",
+    "pop": 133535,
+    "taxRevenue": 0,
+    "lat": 35.7907,
+    "lng": 139.2795
+  },
+  {
+    "code": "13206",
+    "prefCode": "13",
+    "name": "府中市",
+    "pop": 262790,
+    "taxRevenue": 0,
+    "lat": 35.6712,
+    "lng": 139.4826
+  },
+  {
+    "code": "13207",
+    "prefCode": "13",
+    "name": "昭島市",
+    "pop": 113949,
+    "taxRevenue": 0,
+    "lat": 35.7092,
+    "lng": 139.365
+  },
+  {
+    "code": "13208",
+    "prefCode": "13",
+    "name": "調布市",
+    "pop": 242614,
+    "taxRevenue": 0,
+    "lat": 35.6556,
+    "lng": 139.5548
+  },
+  {
+    "code": "13209",
+    "prefCode": "13",
+    "name": "町田市",
+    "pop": 431079,
+    "taxRevenue": 0,
+    "lat": 35.5644,
+    "lng": 139.4434
+  },
+  {
+    "code": "13210",
+    "prefCode": "13",
+    "name": "小金井市",
+    "pop": 126074,
+    "taxRevenue": 0,
+    "lat": 35.7007,
+    "lng": 139.5108
+  },
+  {
+    "code": "13211",
+    "prefCode": "13",
+    "name": "小平市",
+    "pop": 198739,
+    "taxRevenue": 0,
+    "lat": 35.7268,
+    "lng": 139.483
+  },
+  {
+    "code": "13212",
+    "prefCode": "13",
+    "name": "日野市",
+    "pop": 190435,
+    "taxRevenue": 0,
+    "lat": 35.6638,
+    "lng": 139.3968
+  },
+  {
+    "code": "13213",
+    "prefCode": "13",
+    "name": "東村山市",
+    "pop": 151815,
+    "taxRevenue": 0,
+    "lat": 35.7576,
+    "lng": 139.472
+  },
+  {
+    "code": "13214",
+    "prefCode": "13",
+    "name": "国分寺市",
+    "pop": 129242,
+    "taxRevenue": 0,
+    "lat": 35.7046,
+    "lng": 139.464
+  },
+  {
+    "code": "13215",
+    "prefCode": "13",
+    "name": "国立市",
+    "pop": 77130,
+    "taxRevenue": 0,
+    "lat": 35.6892,
+    "lng": 139.4395
+  },
+  {
+    "code": "13218",
+    "prefCode": "13",
+    "name": "福生市",
+    "pop": 56414,
+    "taxRevenue": 0,
+    "lat": 35.7356,
+    "lng": 139.3309
+  },
+  {
+    "code": "13219",
+    "prefCode": "13",
+    "name": "狛江市",
+    "pop": 84772,
+    "taxRevenue": 0,
+    "lat": 35.6358,
+    "lng": 139.5779
+  },
+  {
+    "code": "13220",
+    "prefCode": "13",
+    "name": "東大和市",
+    "pop": 83901,
+    "taxRevenue": 0,
+    "lat": 35.7436,
+    "lng": 139.4297
+  },
+  {
+    "code": "13221",
+    "prefCode": "13",
+    "name": "清瀬市",
+    "pop": 76208,
+    "taxRevenue": 0,
+    "lat": 35.7788,
+    "lng": 139.5193
+  },
+  {
+    "code": "13222",
+    "prefCode": "13",
+    "name": "東久留米市",
+    "pop": 115271,
+    "taxRevenue": 0,
+    "lat": 35.7543,
+    "lng": 139.5211
+  },
+  {
+    "code": "13223",
+    "prefCode": "13",
+    "name": "武蔵村山市",
+    "pop": 70829,
+    "taxRevenue": 0,
+    "lat": 35.7482,
+    "lng": 139.3891
+  },
+  {
+    "code": "13224",
+    "prefCode": "13",
+    "name": "多摩市",
+    "pop": 146951,
+    "taxRevenue": 0,
+    "lat": 35.6302,
+    "lng": 139.4389
+  },
+  {
+    "code": "13225",
+    "prefCode": "13",
+    "name": "稲城市",
+    "pop": 93151,
+    "taxRevenue": 0,
+    "lat": 35.6332,
+    "lng": 139.4955
+  },
+  {
+    "code": "13227",
+    "prefCode": "13",
+    "name": "羽村市",
+    "pop": 54326,
+    "taxRevenue": 0,
+    "lat": 35.7644,
+    "lng": 139.3141
+  },
+  {
+    "code": "13228",
+    "prefCode": "13",
+    "name": "あきる野市",
+    "pop": 79292,
+    "taxRevenue": 0,
+    "lat": 35.7289,
+    "lng": 139.2815
+  },
+  {
+    "code": "13229",
+    "prefCode": "13",
+    "name": "西東京市",
+    "pop": 207388,
+    "taxRevenue": 0,
+    "lat": 35.7346,
+    "lng": 139.5459
+  },
+  {
+    "code": "13303",
+    "prefCode": "13",
+    "name": "瑞穂町",
+    "pop": 31765,
+    "taxRevenue": 0,
+    "lat": 35.7735,
+    "lng": 139.3476
+  },
+  {
+    "code": "13305",
+    "prefCode": "13",
+    "name": "日の出町",
+    "pop": 16958,
+    "taxRevenue": 0,
+    "lat": 35.7423,
+    "lng": 139.2556
+  },
+  {
+    "code": "13307",
+    "prefCode": "13",
+    "name": "檜原村",
+    "pop": 2003,
+    "taxRevenue": 0,
+    "lat": 35.7241,
+    "lng": 139.1237
+  },
+  {
+    "code": "13308",
+    "prefCode": "13",
+    "name": "奥多摩町",
+    "pop": 4750,
+    "taxRevenue": 0,
+    "lat": 35.8146,
+    "lng": 139.1176
+  },
+  {
+    "code": "13361",
+    "prefCode": "13",
+    "name": "大島町",
+    "pop": 7102,
+    "taxRevenue": 0,
+    "lat": 34.7417,
+    "lng": 139.3845
+  },
+  {
+    "code": "13362",
+    "prefCode": "13",
+    "name": "利島村",
+    "pop": 327,
+    "taxRevenue": 0,
+    "lat": 34.5223,
+    "lng": 139.2791
+  },
+  {
+    "code": "13363",
+    "prefCode": "13",
+    "name": "新島村",
+    "pop": 2441,
+    "taxRevenue": 0,
+    "lat": 34.3694,
+    "lng": 139.2505
+  },
+  {
+    "code": "13364",
+    "prefCode": "13",
+    "name": "神津島村",
+    "pop": 1855,
+    "taxRevenue": 0,
+    "lat": 34.2065,
+    "lng": 139.137
+  },
+  {
+    "code": "13381",
+    "prefCode": "13",
+    "name": "三宅村",
+    "pop": 2273,
+    "taxRevenue": 0,
+    "lat": 34.0851,
+    "lng": 139.5172
+  },
+  {
+    "code": "13382",
+    "prefCode": "13",
+    "name": "御蔵島村",
+    "pop": 323,
+    "taxRevenue": 0,
+    "lat": 33.8748,
+    "lng": 139.6032
+  },
+  {
+    "code": "13401",
+    "prefCode": "13",
+    "name": "八丈町",
+    "pop": 7042,
+    "taxRevenue": 0,
+    "lat": 33.114,
+    "lng": 139.791
+  },
+  {
+    "code": "13402",
+    "prefCode": "13",
+    "name": "青ヶ島村",
+    "pop": 169,
+    "taxRevenue": 0,
+    "lat": 32.4574,
+    "lng": 139.7664
+  },
+  {
+    "code": "13421",
+    "prefCode": "13",
+    "name": "小笠原村",
+    "pop": 2929,
+    "taxRevenue": 0,
+    "lat": 26.7342,
+    "lng": 142.1209
+  }
+]

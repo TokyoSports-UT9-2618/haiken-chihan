@@ -1,0 +1,155 @@
+[
+  {
+    "code": "18201",
+    "prefCode": "18",
+    "name": "福井市",
+    "pop": 262328,
+    "taxRevenue": 0,
+    "lat": 36.0641,
+    "lng": 136.214
+  },
+  {
+    "code": "18202",
+    "prefCode": "18",
+    "name": "敦賀市",
+    "pop": 64264,
+    "taxRevenue": 0,
+    "lat": 35.6392,
+    "lng": 136.0583
+  },
+  {
+    "code": "18204",
+    "prefCode": "18",
+    "name": "小浜市",
+    "pop": 28991,
+    "taxRevenue": 0,
+    "lat": 35.4898,
+    "lng": 135.7528
+  },
+  {
+    "code": "18205",
+    "prefCode": "18",
+    "name": "大野市",
+    "pop": 31286,
+    "taxRevenue": 0,
+    "lat": 35.9796,
+    "lng": 136.5067
+  },
+  {
+    "code": "18206",
+    "prefCode": "18",
+    "name": "勝山市",
+    "pop": 22150,
+    "taxRevenue": 0,
+    "lat": 36.0634,
+    "lng": 136.4946
+  },
+  {
+    "code": "18207",
+    "prefCode": "18",
+    "name": "鯖江市",
+    "pop": 68302,
+    "taxRevenue": 0,
+    "lat": 35.9602,
+    "lng": 136.188
+  },
+  {
+    "code": "18208",
+    "prefCode": "18",
+    "name": "あわら市",
+    "pop": 27524,
+    "taxRevenue": 0,
+    "lat": 36.2218,
+    "lng": 136.2255
+  },
+  {
+    "code": "18209",
+    "prefCode": "18",
+    "name": "越前市",
+    "pop": 80611,
+    "taxRevenue": 0,
+    "lat": 35.903,
+    "lng": 136.1792
+  },
+  {
+    "code": "18210",
+    "prefCode": "18",
+    "name": "坂井市",
+    "pop": 88481,
+    "taxRevenue": 0,
+    "lat": 36.1605,
+    "lng": 136.2197
+  },
+  {
+    "code": "18322",
+    "prefCode": "18",
+    "name": "永平寺町",
+    "pop": 18965,
+    "taxRevenue": 0,
+    "lat": 36.09,
+    "lng": 136.3216
+  },
+  {
+    "code": "18382",
+    "prefCode": "18",
+    "name": "池田町",
+    "pop": 2423,
+    "taxRevenue": 0,
+    "lat": 35.882,
+    "lng": 136.3444
+  },
+  {
+    "code": "18404",
+    "prefCode": "18",
+    "name": "南越前町",
+    "pop": 10002,
+    "taxRevenue": 0,
+    "lat": 35.8153,
+    "lng": 136.1809
+  },
+  {
+    "code": "18423",
+    "prefCode": "18",
+    "name": "越前町",
+    "pop": 20118,
+    "taxRevenue": 0,
+    "lat": 35.9578,
+    "lng": 136.0773
+  },
+  {
+    "code": "18442",
+    "prefCode": "18",
+    "name": "美浜町",
+    "pop": 9179,
+    "taxRevenue": 0,
+    "lat": 35.6136,
+    "lng": 135.9474
+  },
+  {
+    "code": "18481",
+    "prefCode": "18",
+    "name": "高浜町",
+    "pop": 10326,
+    "taxRevenue": 0,
+    "lat": 35.4889,
+    "lng": 135.5431
+  },
+  {
+    "code": "18483",
+    "prefCode": "18",
+    "name": "おおい町",
+    "pop": 7910,
+    "taxRevenue": 0,
+    "lat": 35.4539,
+    "lng": 135.6235
+  },
+  {
+    "code": "18501",
+    "prefCode": "18",
+    "name": "若狭町",
+    "pop": 14003,
+    "taxRevenue": 0,
+    "lat": 35.5131,
+    "lng": 135.8787
+  }
+]

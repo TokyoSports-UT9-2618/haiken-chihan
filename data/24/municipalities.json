@@ -1,0 +1,263 @@
+[
+  {
+    "code": "24201",
+    "prefCode": "24",
+    "name": "津市",
+    "pop": 274537,
+    "taxRevenue": 0,
+    "lat": 34.7156,
+    "lng": 136.479
+  },
+  {
+    "code": "24202",
+    "prefCode": "24",
+    "name": "四日市市",
+    "pop": 305424,
+    "taxRevenue": 0,
+    "lat": 34.9783,
+    "lng": 136.6008
+  },
+  {
+    "code": "24203",
+    "prefCode": "24",
+    "name": "伊勢市",
+    "pop": 122765,
+    "taxRevenue": 0,
+    "lat": 34.4984,
+    "lng": 136.7051
+  },
+  {
+    "code": "24204",
+    "prefCode": "24",
+    "name": "松阪市",
+    "pop": 159145,
+    "taxRevenue": 0,
+    "lat": 34.5711,
+    "lng": 136.513
+  },
+  {
+    "code": "24205",
+    "prefCode": "24",
+    "name": "桑名市",
+    "pop": 138613,
+    "taxRevenue": 0,
+    "lat": 35.0749,
+    "lng": 136.6627
+  },
+  {
+    "code": "24207",
+    "prefCode": "24",
+    "name": "鈴鹿市",
+    "pop": 195670,
+    "taxRevenue": 0,
+    "lat": 34.8665,
+    "lng": 136.5638
+  },
+  {
+    "code": "24208",
+    "prefCode": "24",
+    "name": "名張市",
+    "pop": 76387,
+    "taxRevenue": 0,
+    "lat": 34.6282,
+    "lng": 136.1125
+  },
+  {
+    "code": "24209",
+    "prefCode": "24",
+    "name": "尾鷲市",
+    "pop": 16252,
+    "taxRevenue": 0,
+    "lat": 34.0582,
+    "lng": 136.1966
+  },
+  {
+    "code": "24210",
+    "prefCode": "24",
+    "name": "亀山市",
+    "pop": 49835,
+    "taxRevenue": 0,
+    "lat": 34.8646,
+    "lng": 136.4518
+  },
+  {
+    "code": "24211",
+    "prefCode": "24",
+    "name": "鳥羽市",
+    "pop": 17525,
+    "taxRevenue": 0,
+    "lat": 34.4655,
+    "lng": 136.8603
+  },
+  {
+    "code": "24212",
+    "prefCode": "24",
+    "name": "熊野市",
+    "pop": 15965,
+    "taxRevenue": 0,
+    "lat": 33.9031,
+    "lng": 136.0686
+  },
+  {
+    "code": "24214",
+    "prefCode": "24",
+    "name": "いなべ市",
+    "pop": 44973,
+    "taxRevenue": 0,
+    "lat": 35.1288,
+    "lng": 136.5285
+  },
+  {
+    "code": "24215",
+    "prefCode": "24",
+    "name": "志摩市",
+    "pop": 46057,
+    "taxRevenue": 0,
+    "lat": 34.3138,
+    "lng": 136.8275
+  },
+  {
+    "code": "24216",
+    "prefCode": "24",
+    "name": "伊賀市",
+    "pop": 88766,
+    "taxRevenue": 0,
+    "lat": 34.7605,
+    "lng": 136.159
+  },
+  {
+    "code": "24303",
+    "prefCode": "24",
+    "name": "木曽岬町",
+    "pop": 6023,
+    "taxRevenue": 0,
+    "lat": 35.0737,
+    "lng": 136.7394
+  },
+  {
+    "code": "24324",
+    "prefCode": "24",
+    "name": "東員町",
+    "pop": 25784,
+    "taxRevenue": 0,
+    "lat": 35.0873,
+    "lng": 136.5936
+  },
+  {
+    "code": "24341",
+    "prefCode": "24",
+    "name": "菰野町",
+    "pop": 40559,
+    "taxRevenue": 0,
+    "lat": 35.0329,
+    "lng": 136.51
+  },
+  {
+    "code": "24343",
+    "prefCode": "24",
+    "name": "朝日町",
+    "pop": 11021,
+    "taxRevenue": 0,
+    "lat": 35.0369,
+    "lng": 136.6622
+  },
+  {
+    "code": "24344",
+    "prefCode": "24",
+    "name": "川越町",
+    "pop": 15123,
+    "taxRevenue": 0,
+    "lat": 35.0221,
+    "lng": 136.6728
+  },
+  {
+    "code": "24441",
+    "prefCode": "24",
+    "name": "多気町",
+    "pop": 14021,
+    "taxRevenue": 0,
+    "lat": 34.4855,
+    "lng": 136.5232
+  },
+  {
+    "code": "24442",
+    "prefCode": "24",
+    "name": "明和町",
+    "pop": 22445,
+    "taxRevenue": 0,
+    "lat": 34.5456,
+    "lng": 136.6274
+  },
+  {
+    "code": "24443",
+    "prefCode": "24",
+    "name": "大台町",
+    "pop": 8668,
+    "taxRevenue": 0,
+    "lat": 34.3947,
+    "lng": 136.4077
+  },
+  {
+    "code": "24461",
+    "prefCode": "24",
+    "name": "玉城町",
+    "pop": 15041,
+    "taxRevenue": 0,
+    "lat": 34.4868,
+    "lng": 136.6261
+  },
+  {
+    "code": "24470",
+    "prefCode": "24",
+    "name": "度会町",
+    "pop": 7847,
+    "taxRevenue": 0,
+    "lat": 34.4259,
+    "lng": 136.6043
+  },
+  {
+    "code": "24471",
+    "prefCode": "24",
+    "name": "大紀町",
+    "pop": 7815,
+    "taxRevenue": 0,
+    "lat": 34.3173,
+    "lng": 136.4215
+  },
+  {
+    "code": "24472",
+    "prefCode": "24",
+    "name": "南伊勢町",
+    "pop": 10989,
+    "taxRevenue": 0,
+    "lat": 34.313,
+    "lng": 136.6199
+  },
+  {
+    "code": "24543",
+    "prefCode": "24",
+    "name": "紀北町",
+    "pop": 14604,
+    "taxRevenue": 0,
+    "lat": 34.1638,
+    "lng": 136.2817
+  },
+  {
+    "code": "24561",
+    "prefCode": "24",
+    "name": "御浜町",
+    "pop": 8079,
+    "taxRevenue": 0,
+    "lat": 33.829,
+    "lng": 136.0338
+  },
+  {
+    "code": "24562",
+    "prefCode": "24",
+    "name": "紀宝町",
+    "pop": 10321,
+    "taxRevenue": 0,
+    "lat": 33.7549,
+    "lng": 135.9971
+  }
+]

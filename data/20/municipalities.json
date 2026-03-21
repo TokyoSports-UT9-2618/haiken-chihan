@@ -1,0 +1,695 @@
+[
+  {
+    "code": "20201",
+    "prefCode": "20",
+    "name": "長野市",
+    "pop": 372760,
+    "taxRevenue": 0,
+    "lat": 36.6331,
+    "lng": 138.1926
+  },
+  {
+    "code": "20202",
+    "prefCode": "20",
+    "name": "松本市",
+    "pop": 241145,
+    "taxRevenue": 0,
+    "lat": 36.2198,
+    "lng": 137.9524
+  },
+  {
+    "code": "20203",
+    "prefCode": "20",
+    "name": "上田市",
+    "pop": 154055,
+    "taxRevenue": 0,
+    "lat": 36.3858,
+    "lng": 138.2485
+  },
+  {
+    "code": "20204",
+    "prefCode": "20",
+    "name": "岡谷市",
+    "pop": 47790,
+    "taxRevenue": 0,
+    "lat": 36.0671,
+    "lng": 138.0513
+  },
+  {
+    "code": "20205",
+    "prefCode": "20",
+    "name": "飯田市",
+    "pop": 98164,
+    "taxRevenue": 0,
+    "lat": 35.4982,
+    "lng": 137.824
+  },
+  {
+    "code": "20206",
+    "prefCode": "20",
+    "name": "諏訪市",
+    "pop": 48729,
+    "taxRevenue": 0,
+    "lat": 36.0262,
+    "lng": 138.1153
+  },
+  {
+    "code": "20207",
+    "prefCode": "20",
+    "name": "須坂市",
+    "pop": 49559,
+    "taxRevenue": 0,
+    "lat": 36.6507,
+    "lng": 138.3101
+  },
+  {
+    "code": "20208",
+    "prefCode": "20",
+    "name": "小諸市",
+    "pop": 40991,
+    "taxRevenue": 0,
+    "lat": 36.3205,
+    "lng": 138.4371
+  },
+  {
+    "code": "20209",
+    "prefCode": "20",
+    "name": "伊那市",
+    "pop": 66125,
+    "taxRevenue": 0,
+    "lat": 35.8383,
+    "lng": 137.979
+  },
+  {
+    "code": "20210",
+    "prefCode": "20",
+    "name": "駒ヶ根市",
+    "pop": 32202,
+    "taxRevenue": 0,
+    "lat": 35.7299,
+    "lng": 137.935
+  },
+  {
+    "code": "20211",
+    "prefCode": "20",
+    "name": "中野市",
+    "pop": 42338,
+    "taxRevenue": 0,
+    "lat": 36.7517,
+    "lng": 138.3568
+  },
+  {
+    "code": "20212",
+    "prefCode": "20",
+    "name": "大町市",
+    "pop": 26029,
+    "taxRevenue": 0,
+    "lat": 36.4928,
+    "lng": 137.8331
+  },
+  {
+    "code": "20213",
+    "prefCode": "20",
+    "name": "飯山市",
+    "pop": 19539,
+    "taxRevenue": 0,
+    "lat": 36.8729,
+    "lng": 138.3739
+  },
+  {
+    "code": "20214",
+    "prefCode": "20",
+    "name": "茅野市",
+    "pop": 56400,
+    "taxRevenue": 0,
+    "lat": 36.0016,
+    "lng": 138.1858
+  },
+  {
+    "code": "20215",
+    "prefCode": "20",
+    "name": "塩尻市",
+    "pop": 67241,
+    "taxRevenue": 0,
+    "lat": 36.121,
+    "lng": 137.949
+  },
+  {
+    "code": "20217",
+    "prefCode": "20",
+    "name": "佐久市",
+    "pop": 98199,
+    "taxRevenue": 0,
+    "lat": 36.244,
+    "lng": 138.4609
+  },
+  {
+    "code": "20218",
+    "prefCode": "20",
+    "name": "千曲市",
+    "pop": 58852,
+    "taxRevenue": 0,
+    "lat": 36.5132,
+    "lng": 138.1289
+  },
+  {
+    "code": "20219",
+    "prefCode": "20",
+    "name": "東御市",
+    "pop": 30122,
+    "taxRevenue": 0,
+    "lat": 36.357,
+    "lng": 138.3429
+  },
+  {
+    "code": "20220",
+    "prefCode": "20",
+    "name": "安曇野市",
+    "pop": 94222,
+    "taxRevenue": 0,
+    "lat": 36.309,
+    "lng": 137.8891
+  },
+  {
+    "code": "20303",
+    "prefCode": "20",
+    "name": "小海町",
+    "pop": 4353,
+    "taxRevenue": 0,
+    "lat": 36.078,
+    "lng": 138.4793
+  },
+  {
+    "code": "20304",
+    "prefCode": "20",
+    "name": "川上村",
+    "pop": 4344,
+    "taxRevenue": 0,
+    "lat": 35.9505,
+    "lng": 138.5851
+  },
+  {
+    "code": "20305",
+    "prefCode": "20",
+    "name": "南牧村",
+    "pop": 3242,
+    "taxRevenue": 0,
+    "lat": 35.9773,
+    "lng": 138.4654
+  },
+  {
+    "code": "20306",
+    "prefCode": "20",
+    "name": "南相木村",
+    "pop": 962,
+    "taxRevenue": 0,
+    "lat": 36.031,
+    "lng": 138.5435
+  },
+  {
+    "code": "20307",
+    "prefCode": "20",
+    "name": "北相木村",
+    "pop": 752,
+    "taxRevenue": 0,
+    "lat": 36.0612,
+    "lng": 138.5527
+  },
+  {
+    "code": "20309",
+    "prefCode": "20",
+    "name": "佐久穂町",
+    "pop": 10218,
+    "taxRevenue": 0,
+    "lat": 36.14,
+    "lng": 138.4761
+  },
+  {
+    "code": "20321",
+    "prefCode": "20",
+    "name": "軽井沢町",
+    "pop": 19188,
+    "taxRevenue": 0,
+    "lat": 36.3426,
+    "lng": 138.5892
+  },
+  {
+    "code": "20323",
+    "prefCode": "20",
+    "name": "御代田町",
+    "pop": 15555,
+    "taxRevenue": 0,
+    "lat": 36.3197,
+    "lng": 138.5101
+  },
+  {
+    "code": "20324",
+    "prefCode": "20",
+    "name": "立科町",
+    "pop": 6612,
+    "taxRevenue": 0,
+    "lat": 36.2732,
+    "lng": 138.3127
+  },
+  {
+    "code": "20349",
+    "prefCode": "20",
+    "name": "青木村",
+    "pop": 4121,
+    "taxRevenue": 0,
+    "lat": 36.3717,
+    "lng": 138.1224
+  },
+  {
+    "code": "20350",
+    "prefCode": "20",
+    "name": "長和町",
+    "pop": 5600,
+    "taxRevenue": 0,
+    "lat": 36.226,
+    "lng": 138.2474
+  },
+  {
+    "code": "20361",
+    "prefCode": "20",
+    "name": "下諏訪町",
+    "pop": 19155,
+    "taxRevenue": 0,
+    "lat": 36.0756,
+    "lng": 138.0866
+  },
+  {
+    "code": "20362",
+    "prefCode": "20",
+    "name": "富士見町",
+    "pop": 14084,
+    "taxRevenue": 0,
+    "lat": 35.9106,
+    "lng": 138.2491
+  },
+  {
+    "code": "20363",
+    "prefCode": "20",
+    "name": "原村",
+    "pop": 7680,
+    "taxRevenue": 0,
+    "lat": 35.9629,
+    "lng": 138.2336
+  },
+  {
+    "code": "20382",
+    "prefCode": "20",
+    "name": "辰野町",
+    "pop": 18555,
+    "taxRevenue": 0,
+    "lat": 35.9833,
+    "lng": 137.9888
+  },
+  {
+    "code": "20383",
+    "prefCode": "20",
+    "name": "箕輪町",
+    "pop": 24989,
+    "taxRevenue": 0,
+    "lat": 35.9213,
+    "lng": 137.9787
+  },
+  {
+    "code": "20384",
+    "prefCode": "20",
+    "name": "飯島町",
+    "pop": 9004,
+    "taxRevenue": 0,
+    "lat": 35.6737,
+    "lng": 137.9201
+  },
+  {
+    "code": "20385",
+    "prefCode": "20",
+    "name": "南箕輪村",
+    "pop": 15797,
+    "taxRevenue": 0,
+    "lat": 35.8734,
+    "lng": 137.9617
+  },
+  {
+    "code": "20386",
+    "prefCode": "20",
+    "name": "中川村",
+    "pop": 4651,
+    "taxRevenue": 0,
+    "lat": 35.6348,
+    "lng": 137.94
+  },
+  {
+    "code": "20388",
+    "prefCode": "20",
+    "name": "宮田村",
+    "pop": 8569,
+    "taxRevenue": 0,
+    "lat": 35.7636,
+    "lng": 137.934
+  },
+  {
+    "code": "20402",
+    "prefCode": "20",
+    "name": "松川町",
+    "pop": 12530,
+    "taxRevenue": 0,
+    "lat": 35.6037,
+    "lng": 137.9006
+  },
+  {
+    "code": "20403",
+    "prefCode": "20",
+    "name": "高森町",
+    "pop": 12811,
+    "taxRevenue": 0,
+    "lat": 35.5579,
+    "lng": 137.8746
+  },
+  {
+    "code": "20404",
+    "prefCode": "20",
+    "name": "阿南町",
+    "pop": 4299,
+    "taxRevenue": 0,
+    "lat": 35.3202,
+    "lng": 137.7926
+  },
+  {
+    "code": "20407",
+    "prefCode": "20",
+    "name": "阿智村",
+    "pop": 6068,
+    "taxRevenue": 0,
+    "lat": 35.4433,
+    "lng": 137.7209
+  },
+  {
+    "code": "20409",
+    "prefCode": "20",
+    "name": "平谷村",
+    "pop": 387,
+    "taxRevenue": 0,
+    "lat": 35.3334,
+    "lng": 137.6347
+  },
+  {
+    "code": "20410",
+    "prefCode": "20",
+    "name": "根羽村",
+    "pop": 852,
+    "taxRevenue": 0,
+    "lat": 35.2562,
+    "lng": 137.5912
+  },
+  {
+    "code": "20411",
+    "prefCode": "20",
+    "name": "下條村",
+    "pop": 3545,
+    "taxRevenue": 0,
+    "lat": 35.3924,
+    "lng": 137.7751
+  },
+  {
+    "code": "20412",
+    "prefCode": "20",
+    "name": "売木村",
+    "pop": 548,
+    "taxRevenue": 0,
+    "lat": 35.2677,
+    "lng": 137.6961
+  },
+  {
+    "code": "20413",
+    "prefCode": "20",
+    "name": "天龍村",
+    "pop": 1178,
+    "taxRevenue": 0,
+    "lat": 35.2577,
+    "lng": 137.8464
+  },
+  {
+    "code": "20414",
+    "prefCode": "20",
+    "name": "泰阜村",
+    "pop": 1542,
+    "taxRevenue": 0,
+    "lat": 35.3706,
+    "lng": 137.8538
+  },
+  {
+    "code": "20415",
+    "prefCode": "20",
+    "name": "喬木村",
+    "pop": 5973,
+    "taxRevenue": 0,
+    "lat": 35.5064,
+    "lng": 137.8867
+  },
+  {
+    "code": "20416",
+    "prefCode": "20",
+    "name": "豊丘村",
+    "pop": 6426,
+    "taxRevenue": 0,
+    "lat": 35.5393,
+    "lng": 137.9501
+  },
+  {
+    "code": "20417",
+    "prefCode": "20",
+    "name": "大鹿村",
+    "pop": 1023,
+    "taxRevenue": 0,
+    "lat": 35.5543,
+    "lng": 138.0768
+  },
+  {
+    "code": "20422",
+    "prefCode": "20",
+    "name": "上松町",
+    "pop": 4131,
+    "taxRevenue": 0,
+    "lat": 35.7763,
+    "lng": 137.6964
+  },
+  {
+    "code": "20423",
+    "prefCode": "20",
+    "name": "南木曽町",
+    "pop": 3915,
+    "taxRevenue": 0,
+    "lat": 35.5989,
+    "lng": 137.6009
+  },
+  {
+    "code": "20425",
+    "prefCode": "20",
+    "name": "木祖村",
+    "pop": 2692,
+    "taxRevenue": 0,
+    "lat": 35.9806,
+    "lng": 137.7719
+  },
+  {
+    "code": "20429",
+    "prefCode": "20",
+    "name": "王滝村",
+    "pop": 715,
+    "taxRevenue": 0,
+    "lat": 35.8192,
+    "lng": 137.5411
+  },
+  {
+    "code": "20430",
+    "prefCode": "20",
+    "name": "大桑村",
+    "pop": 3439,
+    "taxRevenue": 0,
+    "lat": 35.6959,
+    "lng": 137.6639
+  },
+  {
+    "code": "20432",
+    "prefCode": "20",
+    "name": "木曽町",
+    "pop": 10584,
+    "taxRevenue": 0,
+    "lat": 35.8702,
+    "lng": 137.6904
+  },
+  {
+    "code": "20446",
+    "prefCode": "20",
+    "name": "麻績村",
+    "pop": 2593,
+    "taxRevenue": 0,
+    "lat": 36.4629,
+    "lng": 138.0391
+  },
+  {
+    "code": "20448",
+    "prefCode": "20",
+    "name": "生坂村",
+    "pop": 1639,
+    "taxRevenue": 0,
+    "lat": 36.4281,
+    "lng": 137.9337
+  },
+  {
+    "code": "20450",
+    "prefCode": "20",
+    "name": "山形村",
+    "pop": 8400,
+    "taxRevenue": 0,
+    "lat": 36.167,
+    "lng": 137.8759
+  },
+  {
+    "code": "20451",
+    "prefCode": "20",
+    "name": "朝日村",
+    "pop": 4279,
+    "taxRevenue": 0,
+    "lat": 36.1073,
+    "lng": 137.8447
+  },
+  {
+    "code": "20452",
+    "prefCode": "20",
+    "name": "筑北村",
+    "pop": 4149,
+    "taxRevenue": 0,
+    "lat": 36.4217,
+    "lng": 138.0244
+  },
+  {
+    "code": "20481",
+    "prefCode": "20",
+    "name": "池田町",
+    "pop": 9382,
+    "taxRevenue": 0,
+    "lat": 36.4072,
+    "lng": 137.8851
+  },
+  {
+    "code": "20482",
+    "prefCode": "20",
+    "name": "松川村",
+    "pop": 9599,
+    "taxRevenue": 0,
+    "lat": 36.415,
+    "lng": 137.8567
+  },
+  {
+    "code": "20485",
+    "prefCode": "20",
+    "name": "白馬村",
+    "pop": 8575,
+    "taxRevenue": 0,
+    "lat": 36.6869,
+    "lng": 137.8454
+  },
+  {
+    "code": "20486",
+    "prefCode": "20",
+    "name": "小谷村",
+    "pop": 2647,
+    "taxRevenue": 0,
+    "lat": 36.7926,
+    "lng": 137.8928
+  },
+  {
+    "code": "20521",
+    "prefCode": "20",
+    "name": "坂城町",
+    "pop": 14004,
+    "taxRevenue": 0,
+    "lat": 36.4504,
+    "lng": 138.1884
+  },
+  {
+    "code": "20541",
+    "prefCode": "20",
+    "name": "小布施町",
+    "pop": 10660,
+    "taxRevenue": 0,
+    "lat": 36.6971,
+    "lng": 138.3169
+  },
+  {
+    "code": "20543",
+    "prefCode": "20",
+    "name": "高山村",
+    "pop": 6617,
+    "taxRevenue": 0,
+    "lat": 36.675,
+    "lng": 138.3658
+  },
+  {
+    "code": "20561",
+    "prefCode": "20",
+    "name": "山ノ内町",
+    "pop": 11352,
+    "taxRevenue": 0,
+    "lat": 36.7452,
+    "lng": 138.4261
+  },
+  {
+    "code": "20562",
+    "prefCode": "20",
+    "name": "木島平村",
+    "pop": 4375,
+    "taxRevenue": 0,
+    "lat": 36.8484,
+    "lng": 138.4531
+  },
+  {
+    "code": "20563",
+    "prefCode": "20",
+    "name": "野沢温泉村",
+    "pop": 3279,
+    "taxRevenue": 0,
+    "lat": 36.9203,
+    "lng": 138.4643
+  },
+  {
+    "code": "20583",
+    "prefCode": "20",
+    "name": "信濃町",
+    "pop": 7739,
+    "taxRevenue": 0,
+    "lat": 36.8042,
+    "lng": 138.1846
+  },
+  {
+    "code": "20588",
+    "prefCode": "20",
+    "name": "小川村",
+    "pop": 2215,
+    "taxRevenue": 0,
+    "lat": 36.6207,
+    "lng": 137.9731
+  },
+  {
+    "code": "20590",
+    "prefCode": "20",
+    "name": "飯綱町",
+    "pop": 10296,
+    "taxRevenue": 0,
+    "lat": 36.7514,
+    "lng": 138.2449
+  },
+  {
+    "code": "20602",
+    "prefCode": "20",
+    "name": "栄村",
+    "pop": 1660,
+    "taxRevenue": 0,
+    "lat": 36.9463,
+    "lng": 138.5492
+  }
+]

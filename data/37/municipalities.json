@@ -1,0 +1,155 @@
+[
+  {
+    "code": "37201",
+    "prefCode": "37",
+    "name": "高松市",
+    "pop": 417496,
+    "taxRevenue": 0,
+    "lat": 34.3114,
+    "lng": 134.0515
+  },
+  {
+    "code": "37202",
+    "prefCode": "37",
+    "name": "丸亀市",
+    "pop": 109513,
+    "taxRevenue": 0,
+    "lat": 34.267,
+    "lng": 133.8209
+  },
+  {
+    "code": "37203",
+    "prefCode": "37",
+    "name": "坂出市",
+    "pop": 50624,
+    "taxRevenue": 0,
+    "lat": 34.315,
+    "lng": 133.8751
+  },
+  {
+    "code": "37204",
+    "prefCode": "37",
+    "name": "善通寺市",
+    "pop": 31631,
+    "taxRevenue": 0,
+    "lat": 34.2307,
+    "lng": 133.7805
+  },
+  {
+    "code": "37205",
+    "prefCode": "37",
+    "name": "観音寺市",
+    "pop": 57438,
+    "taxRevenue": 0,
+    "lat": 34.1073,
+    "lng": 133.6651
+  },
+  {
+    "code": "37206",
+    "prefCode": "37",
+    "name": "さぬき市",
+    "pop": 47003,
+    "taxRevenue": 0,
+    "lat": 34.2887,
+    "lng": 134.2025
+  },
+  {
+    "code": "37207",
+    "prefCode": "37",
+    "name": "東かがわ市",
+    "pop": 28279,
+    "taxRevenue": 0,
+    "lat": 34.2386,
+    "lng": 134.3477
+  },
+  {
+    "code": "37208",
+    "prefCode": "37",
+    "name": "三豊市",
+    "pop": 61857,
+    "taxRevenue": 0,
+    "lat": 34.1792,
+    "lng": 133.7042
+  },
+  {
+    "code": "37322",
+    "prefCode": "37",
+    "name": "土庄町",
+    "pop": 12846,
+    "taxRevenue": 0,
+    "lat": 34.4972,
+    "lng": 134.1871
+  },
+  {
+    "code": "37324",
+    "prefCode": "37",
+    "name": "小豆島町",
+    "pop": 13870,
+    "taxRevenue": 0,
+    "lat": 34.4855,
+    "lng": 134.2917
+  },
+  {
+    "code": "37341",
+    "prefCode": "37",
+    "name": "三木町",
+    "pop": 26878,
+    "taxRevenue": 0,
+    "lat": 34.2674,
+    "lng": 134.1368
+  },
+  {
+    "code": "37364",
+    "prefCode": "37",
+    "name": "直島町",
+    "pop": 3103,
+    "taxRevenue": 0,
+    "lat": 34.4593,
+    "lng": 133.9853
+  },
+  {
+    "code": "37386",
+    "prefCode": "37",
+    "name": "宇多津町",
+    "pop": 18699,
+    "taxRevenue": 0,
+    "lat": 34.308,
+    "lng": 133.8235
+  },
+  {
+    "code": "37387",
+    "prefCode": "37",
+    "name": "綾川町",
+    "pop": 22693,
+    "taxRevenue": 0,
+    "lat": 34.2419,
+    "lng": 133.9476
+  },
+  {
+    "code": "37403",
+    "prefCode": "37",
+    "name": "琴平町",
+    "pop": 8468,
+    "taxRevenue": 0,
+    "lat": 34.1944,
+    "lng": 133.82
+  },
+  {
+    "code": "37404",
+    "prefCode": "37",
+    "name": "多度津町",
+    "pop": 22445,
+    "taxRevenue": 0,
+    "lat": 34.2639,
+    "lng": 133.7538
+  },
+  {
+    "code": "37406",
+    "prefCode": "37",
+    "name": "まんのう町",
+    "pop": 17401,
+    "taxRevenue": 0,
+    "lat": 34.1762,
+    "lng": 133.8611
+  }
+]

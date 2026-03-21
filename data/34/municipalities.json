@@ -1,0 +1,272 @@
+[
+  {
+    "code": "34101",
+    "prefCode": "34",
+    "name": "広島市中区",
+    "pop": 142699,
+    "taxRevenue": 0,
+    "lat": 34.3853,
+    "lng": 132.4513
+  },
+  {
+    "code": "34102",
+    "prefCode": "34",
+    "name": "広島市東区",
+    "pop": 119353,
+    "taxRevenue": 0,
+    "lat": 34.4179,
+    "lng": 132.4934
+  },
+  {
+    "code": "34103",
+    "prefCode": "34",
+    "name": "広島市南区",
+    "pop": 145805,
+    "taxRevenue": 0,
+    "lat": 34.3737,
+    "lng": 132.4792
+  },
+  {
+    "code": "34104",
+    "prefCode": "34",
+    "name": "広島市西区",
+    "pop": 190232,
+    "taxRevenue": 0,
+    "lat": 34.3932,
+    "lng": 132.4205
+  },
+  {
+    "code": "34105",
+    "prefCode": "34",
+    "name": "広島市安佐南区",
+    "pop": 247020,
+    "taxRevenue": 0,
+    "lat": 34.4577,
+    "lng": 132.4544
+  },
+  {
+    "code": "34106",
+    "prefCode": "34",
+    "name": "広島市安佐北区",
+    "pop": 138979,
+    "taxRevenue": 0,
+    "lat": 34.5047,
+    "lng": 132.5102
+  },
+  {
+    "code": "34107",
+    "prefCode": "34",
+    "name": "広島市安芸区",
+    "pop": 77103,
+    "taxRevenue": 0,
+    "lat": 34.3809,
+    "lng": 132.5568
+  },
+  {
+    "code": "34108",
+    "prefCode": "34",
+    "name": "広島市佐伯区",
+    "pop": 139563,
+    "taxRevenue": 0,
+    "lat": 34.3882,
+    "lng": 132.359
+  },
+  {
+    "code": "34202",
+    "prefCode": "34",
+    "name": "呉市",
+    "pop": 214592,
+    "taxRevenue": 0,
+    "lat": 34.2446,
+    "lng": 132.5948
+  },
+  {
+    "code": "34203",
+    "prefCode": "34",
+    "name": "竹原市",
+    "pop": 23993,
+    "taxRevenue": 0,
+    "lat": 34.3455,
+    "lng": 132.9111
+  },
+  {
+    "code": "34204",
+    "prefCode": "34",
+    "name": "三原市",
+    "pop": 90573,
+    "taxRevenue": 0,
+    "lat": 34.4081,
+    "lng": 133.0463
+  },
+  {
+    "code": "34205",
+    "prefCode": "34",
+    "name": "尾道市",
+    "pop": 131170,
+    "taxRevenue": 0,
+    "lat": 34.3976,
+    "lng": 133.1866
+  },
+  {
+    "code": "34207",
+    "prefCode": "34",
+    "name": "福山市",
+    "pop": 460930,
+    "taxRevenue": 0,
+    "lat": 34.4983,
+    "lng": 133.36
+  },
+  {
+    "code": "34208",
+    "prefCode": "34",
+    "name": "府中市",
+    "pop": 37655,
+    "taxRevenue": 0,
+    "lat": 34.5835,
+    "lng": 133.2226
+  },
+  {
+    "code": "34209",
+    "prefCode": "34",
+    "name": "三次市",
+    "pop": 50681,
+    "taxRevenue": 0,
+    "lat": 34.7855,
+    "lng": 132.8808
+  },
+  {
+    "code": "34210",
+    "prefCode": "34",
+    "name": "庄原市",
+    "pop": 33633,
+    "taxRevenue": 0,
+    "lat": 34.8922,
+    "lng": 133.0654
+  },
+  {
+    "code": "34211",
+    "prefCode": "34",
+    "name": "大竹市",
+    "pop": 26319,
+    "taxRevenue": 0,
+    "lat": 34.2292,
+    "lng": 132.2206
+  },
+  {
+    "code": "34212",
+    "prefCode": "34",
+    "name": "東広島市",
+    "pop": 196608,
+    "taxRevenue": 0,
+    "lat": 34.4186,
+    "lng": 132.7373
+  },
+  {
+    "code": "34213",
+    "prefCode": "34",
+    "name": "廿日市市",
+    "pop": 114173,
+    "taxRevenue": 0,
+    "lat": 34.338,
+    "lng": 132.2976
+  },
+  {
+    "code": "34214",
+    "prefCode": "34",
+    "name": "安芸高田市",
+    "pop": 26448,
+    "taxRevenue": 0,
+    "lat": 34.6713,
+    "lng": 132.6896
+  },
+  {
+    "code": "34215",
+    "prefCode": "34",
+    "name": "江田島市",
+    "pop": 21930,
+    "taxRevenue": 0,
+    "lat": 34.2198,
+    "lng": 132.4551
+  },
+  {
+    "code": "34302",
+    "prefCode": "34",
+    "name": "府中町",
+    "pop": 51155,
+    "taxRevenue": 0,
+    "lat": 34.3902,
+    "lng": 132.5101
+  },
+  {
+    "code": "34304",
+    "prefCode": "34",
+    "name": "海田町",
+    "pop": 29636,
+    "taxRevenue": 0,
+    "lat": 34.3692,
+    "lng": 132.5429
+  },
+  {
+    "code": "34307",
+    "prefCode": "34",
+    "name": "熊野町",
+    "pop": 22834,
+    "taxRevenue": 0,
+    "lat": 34.3368,
+    "lng": 132.5812
+  },
+  {
+    "code": "34309",
+    "prefCode": "34",
+    "name": "坂町",
+    "pop": 12582,
+    "taxRevenue": 0,
+    "lat": 34.334,
+    "lng": 132.5113
+  },
+  {
+    "code": "34368",
+    "prefCode": "34",
+    "name": "安芸太田町",
+    "pop": 5740,
+    "taxRevenue": 0,
+    "lat": 34.5872,
+    "lng": 132.2873
+  },
+  {
+    "code": "34369",
+    "prefCode": "34",
+    "name": "北広島町",
+    "pop": 17763,
+    "taxRevenue": 0,
+    "lat": 34.6916,
+    "lng": 132.4778
+  },
+  {
+    "code": "34431",
+    "prefCode": "34",
+    "name": "大崎上島町",
+    "pop": 7158,
+    "taxRevenue": 0,
+    "lat": 34.2459,
+    "lng": 132.8964
+  },
+  {
+    "code": "34462",
+    "prefCode": "34",
+    "name": "世羅町",
+    "pop": 15125,
+    "taxRevenue": 0,
+    "lat": 34.6045,
+    "lng": 133.0221
+  },
+  {
+    "code": "34545",
+    "prefCode": "34",
+    "name": "神石高原町",
+    "pop": 8250,
+    "taxRevenue": 0,
+    "lat": 34.746,
+    "lng": 133.2592
+  }
+]
