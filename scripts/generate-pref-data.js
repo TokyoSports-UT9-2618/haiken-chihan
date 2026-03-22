@@ -284,6 +284,9 @@ function buildMuniBoundaryGeoJSON(muniMap, prefCode) {
       simplified = merged;
     }
 
+    // 内部リング（穴）を除去 — dissolveで生じた穴がLeafletで虫食い表示になるため
+    stripHoles(simplified);
+
     simplified.properties = { code, name: city.cityName, pop: city.population };
     features.push(simplified);
   }
@@ -374,6 +377,19 @@ function getAllCoordinates(feature) {
   };
   collect(feature.geometry?.coordinates || []);
   return coords;
+}
+
+// ============================================================
+// 内部リング（穴）除去 — dissolveで生じた穴を取り除く
+// ============================================================
+function stripHoles(feature) {
+  const geom = feature.geometry;
+  if (!geom) return;
+  if (geom.type === 'Polygon') {
+    geom.coordinates = [geom.coordinates[0]];
+  } else if (geom.type === 'MultiPolygon') {
+    geom.coordinates = geom.coordinates.map(poly => [poly[0]]);
+  }
 }
 
 // ============================================================
