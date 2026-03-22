@@ -787,7 +787,7 @@ function addFallbackMarker(m) {
 }
 
 function getDefaultStyle() {
-  return { fillColor: '#f0ece3', color: '#888', weight: 1.5, fillOpacity: 0.35, opacity: 1 };
+  return { fillColor: '#f0ece3', color: '#888', weight: 1.5, fillOpacity: 0.35, opacity: 1, fillRule: 'nonzero' };
 }
 
 // ============================================================
@@ -805,17 +805,17 @@ function updateAllStyles() {
 
     if (han && han.confirmed) {
       // Confirmed han
-      layer.setStyle({ fillColor: han.color, color: '#444', weight: 2, fillOpacity: 0.55, opacity: 1, dashArray: null });
+      layer.setStyle({ fillColor: han.color, color: '#444', weight: 2, fillOpacity: 0.55, opacity: 1, dashArray: null, fillRule: 'nonzero' });
     } else if (assignment === state.currentHanId) {
       // In current editing han
-      layer.setStyle({ fillColor: '#FFD700', color: '#b8860b', weight: 2.5, fillOpacity: 0.65, opacity: 1, dashArray: null });
+      layer.setStyle({ fillColor: '#FFD700', color: '#b8860b', weight: 2.5, fillOpacity: 0.65, opacity: 1, dashArray: null, fillRule: 'nonzero' });
     } else if (!assignment && state.currentHanId) {
       if (clickable.has(m.code)) {
         // Clickable (adjacent) — pulsing border hint
-        layer.setStyle({ fillColor: '#fefcf0', color: '#DAA520', weight: 2, fillOpacity: 0.45, opacity: 1, dashArray: '5,4' });
+        layer.setStyle({ fillColor: '#fefcf0', color: '#DAA520', weight: 2, fillOpacity: 0.45, opacity: 1, dashArray: '5,4', fillRule: 'nonzero' });
       } else {
         // Not clickable (not adjacent)
-        layer.setStyle({ fillColor: '#e8e8e8', color: '#ccc', weight: 0.5, fillOpacity: 0.15, opacity: 0.5, dashArray: null });
+        layer.setStyle({ fillColor: '#e8e8e8', color: '#ccc', weight: 0.5, fillOpacity: 0.15, opacity: 0.5, dashArray: null, fillRule: 'nonzero' });
       }
     } else {
       // Default unassigned, no current han
