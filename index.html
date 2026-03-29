@@ -225,7 +225,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
 <header>
   <div>
     <h1>廃県置藩シミュレーター</h1>
-    <div class="subtitle">福島県 59市町村 → 新しい藩へ</div>
+    <div class="subtitle" id="headerSubtitle">福島県 59市町村 → 新しい藩へ</div>
   </div>
   <div>
     <button class="help-btn" onclick="openHelp()">？ 遊び方</button>
@@ -364,7 +364,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
   <div class="help-modal">
     <div class="help-modal-header" style="position:relative;">
       <h2>廃県置藩シミュレーター　遊び方</h2>
-      <p>福島県59市町村を「藩」に再編成するシミュレーターです。<br>江戸時代の廃藩置県を逆転させ、藩＝スマートシュリンクシティのシミュレーションを体感しましょう。</p>
+      <p id="helpDescription">福島県59市町村を「藩」に再編成するシミュレーターです。<br>江戸時代の廃藩置県を逆転させ、藩＝スマートシュリンクシティのシミュレーションを体感しましょう。</p>
       <button class="help-modal-close" onclick="closeHelp()">✕</button>
     </div>
     <div class="help-modal-body">
@@ -404,7 +404,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
           <div class="help-step">
             <div class="help-step-num">5</div>
             <div class="help-step-body">
-              <h4>全59市町村を割り当ててゴール！</h4>
+              <h4 id="helpGoalTitle">全59市町村を割り当ててゴール！</h4>
               <p>1〜4を繰り返し、全ての市町村を藩に割り当てるとゲームクリアです。AIが藩編成を講評し、PDFレポートが生成できます。</p>
             </div>
           </div>
@@ -463,7 +463,7 @@ header .subtitle { font-size: 12px; opacity: 0.7; }
     <div class="cost-comparison" id="costComparison">
       <h3>行政コスト比較</h3>
       <div class="cost-block">
-        <div class="cost-block-title">【廃県置藩 前】福島県 + 59市町村</div>
+        <div class="cost-block-title" id="beforeCostTitle">【廃県置藩 前】福島県 + 59市町村</div>
         <div class="cost-line"><span>首長・議員報酬</span><span id="beforeSalary">-</span></div>
         <div class="cost-line"><span>施設維持費</span><span id="beforeFacility">-</span></div>
         <div class="cost-line cost-line-total"><span>合計</span><span id="beforeTotal">-</span></div>
@@ -1436,12 +1436,12 @@ function buildPDFReport(el) {
   el.innerHTML = `
     <div style="background:#2c3e50;color:#fff;padding:18px 28px 14px;">
       <div style="font-size:20px;font-weight:bold;letter-spacing:0.05em;">廃県置藩シミュレーター</div>
-      <div style="font-size:12px;opacity:0.8;margin-top:3px;">福島県 藩編成レポート ／ ${now}</div>
+      <div style="font-size:12px;opacity:0.8;margin-top:3px;">${CONFIG.prefecture} 藩編成レポート ／ ${now}</div>
     </div>
     <div style="padding:20px 28px;">
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px;">
         <div style="font-size:28px;font-weight:bold;color:#e67e22;">${score.toLocaleString()}<span style="font-size:14px;margin-left:2px;">点</span></div>
-        <div style="font-size:12px;color:#555;">${confirmedHans.length}藩編成 ／ 福島県59市町村</div>
+        <div style="font-size:12px;color:#555;">${confirmedHans.length}藩編成 ／ ${CONFIG.prefecture}${MUNICIPALITIES.length}市町村</div>
       </div>
       ${aiReviewText ? `<div style="background:#f8f4e8;border-left:4px solid #e67e22;padding:10px 14px;border-radius:0 4px 4px 0;font-size:12px;color:#444;line-height:1.7;margin-bottom:14px;">${aiReviewText}</div>` : ''}
       <div style="display:flex;gap:16px;align-items:flex-start;">
@@ -1942,6 +1942,14 @@ async function initGame() {
   BEFORE_COST.totalSalary   = BEFORE_COST.prefGovSalary + BEFORE_COST.muniSalary;
   BEFORE_COST.totalFacility = BEFORE_COST.prefFacility  + BEFORE_COST.muniFacility;
   BEFORE_COST.total         = BEFORE_COST.totalSalary   + BEFORE_COST.totalFacility;
+
+  // Update dynamic text based on selected prefectures
+  const muniCount = MUNICIPALITIES.length;
+  const prefName = CONFIG.prefecture;
+  document.getElementById('headerSubtitle').textContent = `${prefName} ${muniCount}市町村 → 新しい藩へ`;
+  document.getElementById('helpDescription').innerHTML = `${prefName}${muniCount}市町村を「藩」に再編成するシミュレーターです。<br>江戸時代の廃藩置県を逆転させ、藩＝スマートシュリンクシティのシミュレーションを体感しましょう。`;
+  document.getElementById('helpGoalTitle').textContent = `全${muniCount}市町村を割り当ててゴール！`;
+  document.getElementById('beforeCostTitle').textContent = `【廃県置藩 前】${prefName} + ${muniCount}市町村`;
 
   initMap();
   updateSidebar();
