@@ -85,8 +85,8 @@ header::after {
 h1 {
   font-family: 'Shippori Mincho', serif;
   font-weight: 800;
-  font-size: clamp(28px, 5vw, 52px);
-  letter-spacing: 0.15em;
+  font-size: clamp(24px, 5vw, 52px);
+  letter-spacing: 0.08em;
   color: transparent;
   background: linear-gradient(180deg, var(--brass-light) 0%, var(--brass) 40%, var(--copper) 100%);
   -webkit-background-clip: text;
@@ -525,9 +525,20 @@ footer a { color: var(--copper-light); text-decoration: none; }
     width: 100%;
     border-left: none;
     border-top: 2px solid var(--brass-dark);
+    padding: 20px 16px;
   }
-  .map-panel { padding: 20px; }
-  .map-container { max-width: 400px; }
+  .side-panel::before { display: none; }
+  .map-panel { padding: 16px 10px; }
+  .map-container { max-width: 360px; }
+  header { padding: 24px 16px 16px; }
+  .start-btn {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    border-radius: 0;
+    margin: 0 -16px;
+    width: calc(100% + 32px);
+  }
 }
 
 /* ── Decorative rivets ── */
@@ -863,8 +874,10 @@ function showTooltip(e, code) {
 
 function moveTooltip(e) {
   const tt = document.getElementById('tooltip');
-  tt.style.left = (e.clientX + 16) + 'px';
-  tt.style.top = (e.clientY - 10) + 'px';
+  const x = Math.min(e.clientX + 16, window.innerWidth - 200);
+  const y = Math.max(e.clientY - 10, 10);
+  tt.style.left = x + 'px';
+  tt.style.top = y + 'px';
 }
 
 function hideTooltip() {
