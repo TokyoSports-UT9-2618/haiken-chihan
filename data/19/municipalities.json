@@ -4,7 +4,7 @@
     "prefCode": "19",
     "name": "甲府市",
     "pop": 189591,
-    "taxRevenue": 0,
+    "taxRevenue": 26545746000,
     "lat": 35.6533,
     "lng": 138.5687
   },
@@ -13,7 +13,7 @@
     "prefCode": "19",
     "name": "富士吉田市",
     "pop": 46530,
-    "taxRevenue": 0,
+    "taxRevenue": 4935422000,
     "lat": 35.4808,
     "lng": 138.8031
   },
@@ -22,7 +22,7 @@
     "prefCode": "19",
     "name": "都留市",
     "pop": 31016,
-    "taxRevenue": 0,
+    "taxRevenue": 2498986000,
     "lat": 35.5526,
     "lng": 138.9062
   },
@@ -31,7 +31,7 @@
     "prefCode": "19",
     "name": "山梨市",
     "pop": 33435,
-    "taxRevenue": 0,
+    "taxRevenue": 2276887000,
     "lat": 35.6992,
     "lng": 138.6897
   },
@@ -40,7 +40,7 @@
     "prefCode": "19",
     "name": "大月市",
     "pop": 22512,
-    "taxRevenue": 0,
+    "taxRevenue": 2744081000,
     "lat": 35.62,
     "lng": 138.9495
   },
@@ -49,7 +49,7 @@
     "prefCode": "19",
     "name": "韮崎市",
     "pop": 29067,
-    "taxRevenue": 0,
+    "taxRevenue": 2649885000,
     "lat": 35.7118,
     "lng": 138.4439
   },
@@ -58,7 +58,7 @@
     "prefCode": "19",
     "name": "南アルプス市",
     "pop": 69459,
-    "taxRevenue": 0,
+    "taxRevenue": 7319643000,
     "lat": 35.623,
     "lng": 138.4712
   },
@@ -67,7 +67,7 @@
     "prefCode": "19",
     "name": "北杜市",
     "pop": 44053,
-    "taxRevenue": 0,
+    "taxRevenue": 6790263000,
     "lat": 35.8345,
     "lng": 138.3854
   },
@@ -76,7 +76,7 @@
     "prefCode": "19",
     "name": "甲斐市",
     "pop": 75313,
-    "taxRevenue": 0,
+    "taxRevenue": 7542314000,
     "lat": 35.6695,
     "lng": 138.516
   },
@@ -85,7 +85,7 @@
     "prefCode": "19",
     "name": "笛吹市",
     "pop": 66947,
-    "taxRevenue": 0,
+    "taxRevenue": 7866907000,
     "lat": 35.636,
     "lng": 138.6474
   },
@@ -94,7 +94,7 @@
     "prefCode": "19",
     "name": "上野原市",
     "pop": 22669,
-    "taxRevenue": 0,
+    "taxRevenue": 3198816000,
     "lat": 35.629,
     "lng": 139.0941
   },
@@ -103,7 +103,7 @@
     "prefCode": "19",
     "name": "甲州市",
     "pop": 29237,
-    "taxRevenue": 0,
+    "taxRevenue": 4409263000,
     "lat": 35.6966,
     "lng": 138.734
   },
@@ -112,7 +112,7 @@
     "prefCode": "19",
     "name": "中央市",
     "pop": 31216,
-    "taxRevenue": 0,
+    "taxRevenue": 4762088000,
     "lat": 35.5983,
     "lng": 138.5311
   },
@@ -121,7 +121,7 @@
     "prefCode": "19",
     "name": "市川三郷町",
     "pop": 14700,
-    "taxRevenue": 0,
+    "taxRevenue": 1650086000,
     "lat": 35.5487,
     "lng": 138.4969
   },
@@ -130,7 +130,7 @@
     "prefCode": "19",
     "name": "早川町",
     "pop": 1098,
-    "taxRevenue": 0,
+    "taxRevenue": 412761000,
     "lat": 35.4449,
     "lng": 138.3435
   },
@@ -139,7 +139,7 @@
     "prefCode": "19",
     "name": "身延町",
     "pop": 10663,
-    "taxRevenue": 0,
+    "taxRevenue": 696275000,
     "lat": 35.418,
     "lng": 138.452
   },
@@ -148,7 +148,7 @@
     "prefCode": "19",
     "name": "南部町",
     "pop": 7156,
-    "taxRevenue": 0,
+    "taxRevenue": 539322000,
     "lat": 35.2653,
     "lng": 138.4648
   },
@@ -157,7 +157,7 @@
     "prefCode": "19",
     "name": "富士川町",
     "pop": 14219,
-    "taxRevenue": 0,
+    "taxRevenue": 1575113000,
     "lat": 35.5589,
     "lng": 138.4551
   },
@@ -166,7 +166,7 @@
     "prefCode": "19",
     "name": "昭和町",
     "pop": 20909,
-    "taxRevenue": 0,
+    "taxRevenue": 2736658000,
     "lat": 35.6281,
     "lng": 138.5349
   },
@@ -175,7 +175,7 @@
     "prefCode": "19",
     "name": "道志村",
     "pop": 1607,
-    "taxRevenue": 0,
+    "taxRevenue": 127048000,
     "lat": 35.5066,
     "lng": 139.0094
   },
@@ -184,7 +184,7 @@
     "prefCode": "19",
     "name": "西桂町",
     "pop": 4041,
-    "taxRevenue": 0,
+    "taxRevenue": 281129000,
     "lat": 35.5239,
     "lng": 138.8447
   },
@@ -193,7 +193,7 @@
     "prefCode": "19",
     "name": "忍野村",
     "pop": 9237,
-    "taxRevenue": 0,
+    "taxRevenue": 2092134000,
     "lat": 35.4595,
     "lng": 138.8451
   },
@@ -202,7 +202,7 @@
     "prefCode": "19",
     "name": "山中湖村",
     "pop": 5179,
-    "taxRevenue": 0,
+    "taxRevenue": 1678786000,
     "lat": 35.4266,
     "lng": 138.8651
   },
@@ -211,7 +211,7 @@
     "prefCode": "19",
     "name": "鳴沢村",
     "pop": 2824,
-    "taxRevenue": 0,
+    "taxRevenue": 597571000,
     "lat": 35.4455,
     "lng": 138.7055
   },
@@ -220,7 +220,7 @@
     "prefCode": "19",
     "name": "富士河口湖町",
     "pop": 26082,
-    "taxRevenue": 0,
+    "taxRevenue": 3299125000,
     "lat": 35.4895,
     "lng": 138.747
   },
@@ -229,7 +229,7 @@
     "prefCode": "19",
     "name": "小菅村",
     "pop": 684,
-    "taxRevenue": 0,
+    "taxRevenue": 57978000,
     "lat": 35.7494,
     "lng": 138.9358
   },
@@ -238,7 +238,7 @@
     "prefCode": "19",
     "name": "丹波山村",
     "pop": 530,
-    "taxRevenue": 0,
+    "taxRevenue": 50451000,
     "lat": 35.7865,
     "lng": 138.9242
   }

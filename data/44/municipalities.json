@@ -4,7 +4,7 @@
     "prefCode": "44",
     "name": "大分市",
     "pop": 475614,
-    "taxRevenue": 0,
+    "taxRevenue": 47339509000,
     "lat": 33.2164,
     "lng": 131.6374
   },
@@ -13,7 +13,7 @@
     "prefCode": "44",
     "name": "別府市",
     "pop": 115321,
-    "taxRevenue": 0,
+    "taxRevenue": 11319112000,
     "lat": 33.2988,
     "lng": 131.4868
   },
@@ -22,7 +22,7 @@
     "prefCode": "44",
     "name": "中津市",
     "pop": 82863,
-    "taxRevenue": 0,
+    "taxRevenue": 5725305000,
     "lat": 33.5697,
     "lng": 131.2001
   },
@@ -31,7 +31,7 @@
     "prefCode": "44",
     "name": "日田市",
     "pop": 62657,
-    "taxRevenue": 0,
+    "taxRevenue": 5322608000,
     "lat": 33.3115,
     "lng": 130.942
   },
@@ -40,7 +40,7 @@
     "prefCode": "44",
     "name": "佐伯市",
     "pop": 66851,
-    "taxRevenue": 0,
+    "taxRevenue": 4275448000,
     "lat": 32.9407,
     "lng": 131.8838
   },
@@ -49,7 +49,7 @@
     "prefCode": "44",
     "name": "臼杵市",
     "pop": 36158,
-    "taxRevenue": 0,
+    "taxRevenue": 2728231000,
     "lat": 33.1077,
     "lng": 131.7734
   },
@@ -58,7 +58,7 @@
     "prefCode": "44",
     "name": "津久見市",
     "pop": 16100,
-    "taxRevenue": 0,
+    "taxRevenue": 2614157000,
     "lat": 33.0734,
     "lng": 131.8731
   },
@@ -67,7 +67,7 @@
     "prefCode": "44",
     "name": "竹田市",
     "pop": 20332,
-    "taxRevenue": 0,
+    "taxRevenue": 1193192000,
     "lat": 32.984,
     "lng": 131.3445
   },
@@ -76,7 +76,7 @@
     "prefCode": "44",
     "name": "豊後高田市",
     "pop": 22112,
-    "taxRevenue": 0,
+    "taxRevenue": 1236860000,
     "lat": 33.5747,
     "lng": 131.4685
   },
@@ -85,7 +85,7 @@
     "prefCode": "44",
     "name": "杵築市",
     "pop": 27999,
-    "taxRevenue": 0,
+    "taxRevenue": 1346430000,
     "lat": 33.4289,
     "lng": 131.5896
   },
@@ -94,7 +94,7 @@
     "prefCode": "44",
     "name": "宇佐市",
     "pop": 52771,
-    "taxRevenue": 0,
+    "taxRevenue": 3557833000,
     "lat": 33.5213,
     "lng": 131.3438
   },
@@ -103,7 +103,7 @@
     "prefCode": "44",
     "name": "豊後大野市",
     "pop": 33695,
-    "taxRevenue": 0,
+    "taxRevenue": 2934842000,
     "lat": 32.9979,
     "lng": 131.5549
   },
@@ -112,7 +112,7 @@
     "prefCode": "44",
     "name": "由布市",
     "pop": 32772,
-    "taxRevenue": 0,
+    "taxRevenue": 3583244000,
     "lat": 33.2179,
     "lng": 131.4483
   },
@@ -121,7 +121,7 @@
     "prefCode": "44",
     "name": "国東市",
     "pop": 26232,
-    "taxRevenue": 0,
+    "taxRevenue": 3143092000,
     "lat": 33.5427,
     "lng": 131.6875
   },
@@ -130,7 +130,7 @@
     "prefCode": "44",
     "name": "姫島村",
     "pop": 1725,
-    "taxRevenue": 0,
+    "taxRevenue": 150401000,
     "lat": 33.728,
     "lng": 131.6639
   },
@@ -139,7 +139,7 @@
     "prefCode": "44",
     "name": "日出町",
     "pop": 27723,
-    "taxRevenue": 0,
+    "taxRevenue": 1695403000,
     "lat": 33.3747,
     "lng": 131.5348
   },
@@ -148,7 +148,7 @@
     "prefCode": "44",
     "name": "九重町",
     "pop": 8541,
-    "taxRevenue": 0,
+    "taxRevenue": 897343000,
     "lat": 33.2127,
     "lng": 131.2014
   },
@@ -157,7 +157,7 @@
     "prefCode": "44",
     "name": "玖珠町",
     "pop": 14386,
-    "taxRevenue": 0,
+    "taxRevenue": 1201688000,
     "lat": 33.2913,
     "lng": 131.1439
   }

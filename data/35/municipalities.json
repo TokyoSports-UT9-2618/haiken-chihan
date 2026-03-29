@@ -4,7 +4,7 @@
     "prefCode": "35",
     "name": "下関市",
     "pop": 255051,
-    "taxRevenue": 0,
+    "taxRevenue": 27375894000,
     "lat": 34.0236,
     "lng": 130.9512
   },
@@ -13,7 +13,7 @@
     "prefCode": "35",
     "name": "宇部市",
     "pop": 162570,
-    "taxRevenue": 0,
+    "taxRevenue": 18741718000,
     "lat": 33.9733,
     "lng": 131.261
   },
@@ -22,7 +22,7 @@
     "prefCode": "35",
     "name": "山口市",
     "pop": 193966,
-    "taxRevenue": 0,
+    "taxRevenue": 12617709000,
     "lat": 34.1417,
     "lng": 131.46
   },
@@ -31,7 +31,7 @@
     "prefCode": "35",
     "name": "萩市",
     "pop": 44626,
-    "taxRevenue": 0,
+    "taxRevenue": 3965017000,
     "lat": 34.4332,
     "lng": 131.4351
   },
@@ -40,7 +40,7 @@
     "prefCode": "35",
     "name": "防府市",
     "pop": 113979,
-    "taxRevenue": 0,
+    "taxRevenue": 13339789000,
     "lat": 34.0501,
     "lng": 131.5645
   },
@@ -49,7 +49,7 @@
     "prefCode": "35",
     "name": "下松市",
     "pop": 55887,
-    "taxRevenue": 0,
+    "taxRevenue": 6536441000,
     "lat": 34.0232,
     "lng": 131.8732
   },
@@ -58,7 +58,7 @@
     "prefCode": "35",
     "name": "岩国市",
     "pop": 129125,
-    "taxRevenue": 0,
+    "taxRevenue": 14413214000,
     "lat": 34.1398,
     "lng": 132.1685
   },
@@ -67,7 +67,7 @@
     "prefCode": "35",
     "name": "光市",
     "pop": 49798,
-    "taxRevenue": 0,
+    "taxRevenue": 6758577000,
     "lat": 33.9716,
     "lng": 131.9519
   },
@@ -76,7 +76,7 @@
     "prefCode": "35",
     "name": "長門市",
     "pop": 32519,
-    "taxRevenue": 0,
+    "taxRevenue": 2439515000,
     "lat": 34.372,
     "lng": 131.1616
   },
@@ -85,7 +85,7 @@
     "prefCode": "35",
     "name": "柳井市",
     "pop": 30799,
-    "taxRevenue": 0,
+    "taxRevenue": 3265703000,
     "lat": 33.9721,
     "lng": 132.1131
   },
@@ -94,7 +94,7 @@
     "prefCode": "35",
     "name": "美祢市",
     "pop": 23247,
-    "taxRevenue": 0,
+    "taxRevenue": 2057615000,
     "lat": 34.1963,
     "lng": 131.2427
   },
@@ -103,7 +103,7 @@
     "prefCode": "35",
     "name": "周南市",
     "pop": 137540,
-    "taxRevenue": 0,
+    "taxRevenue": 23717292000,
     "lat": 34.066,
     "lng": 131.8161
   },
@@ -112,7 +112,7 @@
     "prefCode": "35",
     "name": "山陽小野田市",
     "pop": 60326,
-    "taxRevenue": 0,
+    "taxRevenue": 8745701000,
     "lat": 34.0113,
     "lng": 131.1692
   },
@@ -121,7 +121,7 @@
     "prefCode": "35",
     "name": "周防大島町",
     "pop": 14798,
-    "taxRevenue": 0,
+    "taxRevenue": 1369718000,
     "lat": 33.9194,
     "lng": 132.2694
   },
@@ -130,7 +130,7 @@
     "prefCode": "35",
     "name": "和木町",
     "pop": 6034,
-    "taxRevenue": 0,
+    "taxRevenue": 2048918000,
     "lat": 34.2036,
     "lng": 132.2207
   },
@@ -139,7 +139,7 @@
     "prefCode": "35",
     "name": "上関町",
     "pop": 2342,
-    "taxRevenue": 0,
+    "taxRevenue": 247846000,
     "lat": 33.8279,
     "lng": 132.089
   },
@@ -148,7 +148,7 @@
     "prefCode": "35",
     "name": "田布施町",
     "pop": 14483,
-    "taxRevenue": 0,
+    "taxRevenue": 1139353000,
     "lat": 33.952,
     "lng": 132.0373
   },
@@ -157,7 +157,7 @@
     "prefCode": "35",
     "name": "平生町",
     "pop": 11914,
-    "taxRevenue": 0,
+    "taxRevenue": 1156486000,
     "lat": 33.9292,
     "lng": 132.0818
   },
@@ -166,7 +166,7 @@
     "prefCode": "35",
     "name": "阿武町",
     "pop": 3055,
-    "taxRevenue": 0,
+    "taxRevenue": 292608000,
     "lat": 34.525,
     "lng": 131.5243
   }

@@ -4,7 +4,7 @@
     "prefCode": "27",
     "name": "大阪市都島区",
     "pop": 107904,
-    "taxRevenue": 0,
+    "taxRevenue": 136366038442,
     "lat": 34.7111,
     "lng": 135.5281
   },
@@ -13,7 +13,7 @@
     "prefCode": "27",
     "name": "大阪市福島区",
     "pop": 79328,
-    "taxRevenue": 0,
+    "taxRevenue": 100252493861,
     "lat": 34.6936,
     "lng": 135.477
   },
@@ -22,7 +22,7 @@
     "prefCode": "27",
     "name": "大阪市此花区",
     "pop": 65251,
-    "taxRevenue": 0,
+    "taxRevenue": 82462377432,
     "lat": 34.6841,
     "lng": 135.4526
   },
@@ -31,7 +31,7 @@
     "prefCode": "27",
     "name": "大阪市西区",
     "pop": 105862,
-    "taxRevenue": 0,
+    "taxRevenue": 133785416310,
     "lat": 34.6777,
     "lng": 135.4849
   },
@@ -40,7 +40,7 @@
     "prefCode": "27",
     "name": "大阪市港区",
     "pop": 80948,
-    "taxRevenue": 0,
+    "taxRevenue": 102299804269,
     "lat": 34.6635,
     "lng": 135.4551
   },
@@ -49,7 +49,7 @@
     "prefCode": "27",
     "name": "大阪市大正区",
     "pop": 62083,
-    "taxRevenue": 0,
+    "taxRevenue": 78458748189,
     "lat": 34.6512,
     "lng": 135.4706
   },
@@ -58,7 +58,7 @@
     "prefCode": "27",
     "name": "大阪市天王寺区",
     "pop": 82148,
-    "taxRevenue": 0,
+    "taxRevenue": 103816330497,
     "lat": 34.6613,
     "lng": 135.5218
   },
@@ -67,7 +67,7 @@
     "prefCode": "27",
     "name": "大阪市浪速区",
     "pop": 75504,
-    "taxRevenue": 0,
+    "taxRevenue": 95419830280,
     "lat": 34.66,
     "lng": 135.4963
   },
@@ -76,7 +76,7 @@
     "prefCode": "27",
     "name": "大阪市西淀川区",
     "pop": 95864,
-    "taxRevenue": 0,
+    "taxRevenue": 121150225286,
     "lat": 34.7091,
     "lng": 135.4514
   },
@@ -85,7 +85,7 @@
     "prefCode": "27",
     "name": "大阪市東淀川区",
     "pop": 177120,
-    "taxRevenue": 0,
+    "taxRevenue": 223839271286,
     "lat": 34.7451,
     "lng": 135.5313
   },
@@ -94,7 +94,7 @@
     "prefCode": "27",
     "name": "大阪市東成区",
     "pop": 84906,
-    "taxRevenue": 0,
+    "taxRevenue": 107301813278,
     "lat": 34.673,
     "lng": 135.5458
   },
@@ -103,7 +103,7 @@
     "prefCode": "27",
     "name": "大阪市生野区",
     "pop": 127309,
-    "taxRevenue": 0,
+    "taxRevenue": 160889531324,
     "lat": 34.6535,
     "lng": 135.5439
   },
@@ -112,7 +112,7 @@
     "prefCode": "27",
     "name": "大阪市旭区",
     "pop": 89670,
-    "taxRevenue": 0,
+    "taxRevenue": 113322422404,
     "lat": 34.7234,
     "lng": 135.548
   },
@@ -121,7 +121,7 @@
     "prefCode": "27",
     "name": "大阪市城東区",
     "pop": 169043,
-    "taxRevenue": 0,
+    "taxRevenue": 213631785998,
     "lat": 34.6983,
     "lng": 135.5487
   },
@@ -130,7 +130,7 @@
     "prefCode": "27",
     "name": "大阪市阿倍野区",
     "pop": 110995,
-    "taxRevenue": 0,
+    "taxRevenue": 140272357252,
     "lat": 34.6335,
     "lng": 135.5137
   },
@@ -139,7 +139,7 @@
     "prefCode": "27",
     "name": "大阪市住吉区",
     "pop": 153056,
-    "taxRevenue": 0,
+    "taxRevenue": 193427865323,
     "lat": 34.6056,
     "lng": 135.5054
   },
@@ -148,7 +148,7 @@
     "prefCode": "27",
     "name": "大阪市東住吉区",
     "pop": 127849,
-    "taxRevenue": 0,
+    "taxRevenue": 161571968127,
     "lat": 34.6211,
     "lng": 135.5314
   },
@@ -157,7 +157,7 @@
     "prefCode": "27",
     "name": "大阪市西成区",
     "pop": 106111,
-    "taxRevenue": 0,
+    "taxRevenue": 134100095503,
     "lat": 34.6386,
     "lng": 135.4936
   },
@@ -166,7 +166,7 @@
     "prefCode": "27",
     "name": "大阪市淀川区",
     "pop": 183444,
-    "taxRevenue": 0,
+    "taxRevenue": 231831364509,
     "lat": 34.7306,
     "lng": 135.4838
   },
@@ -175,7 +175,7 @@
     "prefCode": "27",
     "name": "大阪市鶴見区",
     "pop": 112691,
-    "taxRevenue": 0,
+    "taxRevenue": 142415714321,
     "lat": 34.7016,
     "lng": 135.5739
   },
@@ -184,7 +184,7 @@
     "prefCode": "27",
     "name": "大阪市住之江区",
     "pop": 120072,
-    "taxRevenue": 0,
+    "taxRevenue": 151743614396,
     "lat": 34.6158,
     "lng": 135.4672
   },
@@ -193,7 +193,7 @@
     "prefCode": "27",
     "name": "大阪市平野区",
     "pop": 192152,
-    "taxRevenue": 0,
+    "taxRevenue": 242836289838,
     "lat": 34.6163,
     "lng": 135.5597
   },
@@ -202,7 +202,7 @@
     "prefCode": "27",
     "name": "大阪市北区",
     "pop": 139376,
-    "taxRevenue": 0,
+    "taxRevenue": 176139466321,
     "lat": 34.7064,
     "lng": 135.5063
   },
@@ -211,7 +211,7 @@
     "prefCode": "27",
     "name": "大阪市中央区",
     "pop": 103726,
-    "taxRevenue": 0,
+    "taxRevenue": 131085999624,
     "lat": 34.6774,
     "lng": 135.5139
   },
@@ -220,7 +220,7 @@
     "prefCode": "27",
     "name": "堺市堺区",
     "pop": 148682,
-    "taxRevenue": 0,
+    "taxRevenue": 26584978540,
     "lat": 34.5756,
     "lng": 135.4787
   },
@@ -229,7 +229,7 @@
     "prefCode": "27",
     "name": "堺市中区",
     "pop": 121236,
-    "taxRevenue": 0,
+    "taxRevenue": 21677516164,
     "lat": 34.5268,
     "lng": 135.5023
   },
@@ -238,7 +238,7 @@
     "prefCode": "27",
     "name": "堺市東区",
     "pop": 85043,
-    "taxRevenue": 0,
+    "taxRevenue": 15206052717,
     "lat": 34.5339,
     "lng": 135.534
   },
@@ -247,7 +247,7 @@
     "prefCode": "27",
     "name": "堺市西区",
     "pop": 135375,
-    "taxRevenue": 0,
+    "taxRevenue": 24205629934,
     "lat": 34.5371,
     "lng": 135.4636
   },
@@ -256,7 +256,7 @@
     "prefCode": "27",
     "name": "堺市南区",
     "pop": 138464,
-    "taxRevenue": 0,
+    "taxRevenue": 24757956367,
     "lat": 34.486,
     "lng": 135.5009
   },
@@ -265,7 +265,7 @@
     "prefCode": "27",
     "name": "堺市北区",
     "pop": 159757,
-    "taxRevenue": 0,
+    "taxRevenue": 28565235985,
     "lat": 34.5655,
     "lng": 135.509
   },
@@ -274,7 +274,7 @@
     "prefCode": "27",
     "name": "堺市美原区",
     "pop": 37604,
-    "taxRevenue": 0,
+    "taxRevenue": 6723756292,
     "lat": 34.5384,
     "lng": 135.5594
   },
@@ -283,7 +283,7 @@
     "prefCode": "27",
     "name": "岸和田市",
     "pop": 190658,
-    "taxRevenue": 0,
+    "taxRevenue": 19552643000,
     "lat": 34.4593,
     "lng": 135.3971
   },
@@ -292,7 +292,7 @@
     "prefCode": "27",
     "name": "豊中市",
     "pop": 401558,
-    "taxRevenue": 0,
+    "taxRevenue": 57450850000,
     "lat": 34.7835,
     "lng": 135.4752
   },
@@ -301,7 +301,7 @@
     "prefCode": "27",
     "name": "池田市",
     "pop": 104993,
-    "taxRevenue": 0,
+    "taxRevenue": 14511159000,
     "lat": 34.8202,
     "lng": 135.4361
   },
@@ -310,7 +310,7 @@
     "prefCode": "27",
     "name": "吹田市",
     "pop": 385567,
-    "taxRevenue": 0,
+    "taxRevenue": 49188041000,
     "lat": 34.7815,
     "lng": 135.5176
   },
@@ -319,7 +319,7 @@
     "prefCode": "27",
     "name": "泉大津市",
     "pop": 74412,
-    "taxRevenue": 0,
+    "taxRevenue": 8149944000,
     "lat": 34.5024,
     "lng": 135.4142
   },
@@ -328,7 +328,7 @@
     "prefCode": "27",
     "name": "高槻市",
     "pop": 352698,
-    "taxRevenue": 0,
+    "taxRevenue": 42606681000,
     "lat": 34.8466,
     "lng": 135.6116
   },
@@ -337,7 +337,7 @@
     "prefCode": "27",
     "name": "貝塚市",
     "pop": 84443,
-    "taxRevenue": 0,
+    "taxRevenue": 7038319000,
     "lat": 34.4312,
     "lng": 135.3652
   },
@@ -346,7 +346,7 @@
     "prefCode": "27",
     "name": "守口市",
     "pop": 143096,
-    "taxRevenue": 0,
+    "taxRevenue": 21665985000,
     "lat": 34.742,
     "lng": 135.5776
   },
@@ -355,7 +355,7 @@
     "prefCode": "27",
     "name": "枚方市",
     "pop": 397289,
-    "taxRevenue": 0,
+    "taxRevenue": 45922584000,
     "lat": 34.8199,
     "lng": 135.6711
   },
@@ -364,7 +364,7 @@
     "prefCode": "27",
     "name": "茨木市",
     "pop": 287730,
-    "taxRevenue": 0,
+    "taxRevenue": 36312002000,
     "lat": 34.8211,
     "lng": 135.5666
   },
@@ -373,7 +373,7 @@
     "prefCode": "27",
     "name": "八尾市",
     "pop": 264642,
-    "taxRevenue": 0,
+    "taxRevenue": 32501737000,
     "lat": 34.6207,
     "lng": 135.6078
   },
@@ -382,7 +382,7 @@
     "prefCode": "27",
     "name": "泉佐野市",
     "pop": 100131,
-    "taxRevenue": 0,
+    "taxRevenue": 10295545000,
     "lat": 34.4026,
     "lng": 135.3241
   },
@@ -391,7 +391,7 @@
     "prefCode": "27",
     "name": "富田林市",
     "pop": 108699,
-    "taxRevenue": 0,
+    "taxRevenue": 9905111000,
     "lat": 34.4994,
     "lng": 135.5879
   },
@@ -400,7 +400,7 @@
     "prefCode": "27",
     "name": "寝屋川市",
     "pop": 229733,
-    "taxRevenue": 0,
+    "taxRevenue": 23979254000,
     "lat": 34.7666,
     "lng": 135.6247
   },
@@ -409,7 +409,7 @@
     "prefCode": "27",
     "name": "河内長野市",
     "pop": 101692,
-    "taxRevenue": 0,
+    "taxRevenue": 10660962000,
     "lat": 34.4452,
     "lng": 135.5651
   },
@@ -418,7 +418,7 @@
     "prefCode": "27",
     "name": "松原市",
     "pop": 117641,
-    "taxRevenue": 0,
+    "taxRevenue": 11796187000,
     "lat": 34.5791,
     "lng": 135.5486
   },
@@ -427,7 +427,7 @@
     "prefCode": "27",
     "name": "大東市",
     "pop": 119367,
-    "taxRevenue": 0,
+    "taxRevenue": 14433128000,
     "lat": 34.7123,
     "lng": 135.6258
   },
@@ -436,7 +436,7 @@
     "prefCode": "27",
     "name": "和泉市",
     "pop": 184495,
-    "taxRevenue": 0,
+    "taxRevenue": 12271277000,
     "lat": 34.4723,
     "lng": 135.4514
   },
@@ -445,7 +445,7 @@
     "prefCode": "27",
     "name": "箕面市",
     "pop": 136868,
-    "taxRevenue": 0,
+    "taxRevenue": 17049483000,
     "lat": 34.8329,
     "lng": 135.4842
   },
@@ -454,7 +454,7 @@
     "prefCode": "27",
     "name": "柏原市",
     "pop": 68775,
-    "taxRevenue": 0,
+    "taxRevenue": 7649562000,
     "lat": 34.5776,
     "lng": 135.6317
   },
@@ -463,7 +463,7 @@
     "prefCode": "27",
     "name": "羽曳野市",
     "pop": 108736,
-    "taxRevenue": 0,
+    "taxRevenue": 10233126000,
     "lat": 34.5557,
     "lng": 135.592
   },
@@ -472,7 +472,7 @@
     "prefCode": "27",
     "name": "門真市",
     "pop": 119764,
-    "taxRevenue": 0,
+    "taxRevenue": 21248948000,
     "lat": 34.7346,
     "lng": 135.5996
   },
@@ -481,7 +481,7 @@
     "prefCode": "27",
     "name": "摂津市",
     "pop": 87456,
-    "taxRevenue": 0,
+    "taxRevenue": 13187419000,
     "lat": 34.7776,
     "lng": 135.5621
   },
@@ -490,7 +490,7 @@
     "prefCode": "27",
     "name": "高石市",
     "pop": 55635,
-    "taxRevenue": 0,
+    "taxRevenue": 11747933000,
     "lat": 34.5237,
     "lng": 135.4394
   },
@@ -499,7 +499,7 @@
     "prefCode": "27",
     "name": "藤井寺市",
     "pop": 63688,
-    "taxRevenue": 0,
+    "taxRevenue": 7005280000,
     "lat": 34.5729,
     "lng": 135.604
   },
@@ -508,7 +508,7 @@
     "prefCode": "27",
     "name": "東大阪市",
     "pop": 493940,
-    "taxRevenue": 0,
+    "taxRevenue": 67553116000,
     "lat": 34.6687,
     "lng": 135.6056
   },
@@ -517,7 +517,7 @@
     "prefCode": "27",
     "name": "泉南市",
     "pop": 60102,
-    "taxRevenue": 0,
+    "taxRevenue": 5233202000,
     "lat": 34.3679,
     "lng": 135.2807
   },
@@ -526,7 +526,7 @@
     "prefCode": "27",
     "name": "四條畷市",
     "pop": 55177,
-    "taxRevenue": 0,
+    "taxRevenue": 4275692000,
     "lat": 34.7375,
     "lng": 135.6496
   },
@@ -535,7 +535,7 @@
     "prefCode": "27",
     "name": "交野市",
     "pop": 75033,
-    "taxRevenue": 0,
+    "taxRevenue": 6205660000,
     "lat": 34.7796,
     "lng": 135.679
   },
@@ -544,7 +544,7 @@
     "prefCode": "27",
     "name": "大阪狭山市",
     "pop": 58435,
-    "taxRevenue": 0,
+    "taxRevenue": 5803664000,
     "lat": 34.4962,
     "lng": 135.5488
   },
@@ -553,7 +553,7 @@
     "prefCode": "27",
     "name": "阪南市",
     "pop": 51254,
-    "taxRevenue": 0,
+    "taxRevenue": 5632759000,
     "lat": 34.3463,
     "lng": 135.2378
   },
@@ -562,7 +562,7 @@
     "prefCode": "27",
     "name": "島本町",
     "pop": 30927,
-    "taxRevenue": 0,
+    "taxRevenue": 4176613000,
     "lat": 34.8833,
     "lng": 135.6672
   },
@@ -571,7 +571,7 @@
     "prefCode": "27",
     "name": "豊能町",
     "pop": 18279,
-    "taxRevenue": 0,
+    "taxRevenue": 1920759000,
     "lat": 34.9057,
     "lng": 135.4543
   },
@@ -580,7 +580,7 @@
     "prefCode": "27",
     "name": "能勢町",
     "pop": 9079,
-    "taxRevenue": 0,
+    "taxRevenue": 693619000,
     "lat": 34.9703,
     "lng": 135.4196
   },
@@ -589,7 +589,7 @@
     "prefCode": "27",
     "name": "忠岡町",
     "pop": 16567,
-    "taxRevenue": 0,
+    "taxRevenue": 1984394000,
     "lat": 34.488,
     "lng": 135.4012
   },
@@ -598,7 +598,7 @@
     "prefCode": "27",
     "name": "熊取町",
     "pop": 43763,
-    "taxRevenue": 0,
+    "taxRevenue": 3447868000,
     "lat": 34.3981,
     "lng": 135.3563
   },
@@ -607,7 +607,7 @@
     "prefCode": "27",
     "name": "田尻町",
     "pop": 8434,
-    "taxRevenue": 0,
+    "taxRevenue": 567990000,
     "lat": 34.3929,
     "lng": 135.2901
   },
@@ -616,7 +616,7 @@
     "prefCode": "27",
     "name": "岬町",
     "pop": 14741,
-    "taxRevenue": 0,
+    "taxRevenue": 2478061000,
     "lat": 34.3227,
     "lng": 135.1593
   },
@@ -625,7 +625,7 @@
     "prefCode": "27",
     "name": "太子町",
     "pop": 13009,
-    "taxRevenue": 0,
+    "taxRevenue": 767442000,
     "lat": 34.5221,
     "lng": 135.6499
   },
@@ -634,7 +634,7 @@
     "prefCode": "27",
     "name": "河南町",
     "pop": 15697,
-    "taxRevenue": 0,
+    "taxRevenue": 1231602000,
     "lat": 34.4922,
     "lng": 135.6353
   },
@@ -643,7 +643,7 @@
     "prefCode": "27",
     "name": "千早赤阪村",
     "pop": 4909,
-    "taxRevenue": 0,
+    "taxRevenue": 554921000,
     "lat": 34.4461,
     "lng": 135.6238
   }

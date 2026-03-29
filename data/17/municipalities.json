@@ -4,7 +4,7 @@
     "prefCode": "17",
     "name": "金沢市",
     "pop": 463254,
-    "taxRevenue": 0,
+    "taxRevenue": 55894923000,
     "lat": 36.5665,
     "lng": 136.6463
   },
@@ -13,7 +13,7 @@
     "prefCode": "17",
     "name": "七尾市",
     "pop": 50300,
-    "taxRevenue": 0,
+    "taxRevenue": 5211798000,
     "lat": 37.0565,
     "lng": 136.9444
   },
@@ -22,7 +22,7 @@
     "prefCode": "17",
     "name": "小松市",
     "pop": 106216,
-    "taxRevenue": 0,
+    "taxRevenue": 11926579000,
     "lat": 36.3884,
     "lng": 136.4551
   },
@@ -31,7 +31,7 @@
     "prefCode": "17",
     "name": "輪島市",
     "pop": 24608,
-    "taxRevenue": 0,
+    "taxRevenue": 2180119000,
     "lat": 37.3645,
     "lng": 136.8935
   },
@@ -40,7 +40,7 @@
     "prefCode": "17",
     "name": "珠洲市",
     "pop": 12929,
-    "taxRevenue": 0,
+    "taxRevenue": 1713285000,
     "lat": 37.4497,
     "lng": 137.2515
   },
@@ -49,7 +49,7 @@
     "prefCode": "17",
     "name": "加賀市",
     "pop": 63220,
-    "taxRevenue": 0,
+    "taxRevenue": 8221452000,
     "lat": 36.3075,
     "lng": 136.3492
   },
@@ -58,7 +58,7 @@
     "prefCode": "17",
     "name": "羽咋市",
     "pop": 20407,
-    "taxRevenue": 0,
+    "taxRevenue": 2457519000,
     "lat": 36.9044,
     "lng": 136.7944
   },
@@ -67,7 +67,7 @@
     "prefCode": "17",
     "name": "かほく市",
     "pop": 34889,
-    "taxRevenue": 0,
+    "taxRevenue": 3332464000,
     "lat": 36.7389,
     "lng": 136.7099
   },
@@ -76,7 +76,7 @@
     "prefCode": "17",
     "name": "白山市",
     "pop": 110408,
-    "taxRevenue": 0,
+    "taxRevenue": 14585286000,
     "lat": 36.4972,
     "lng": 136.5658
   },
@@ -85,7 +85,7 @@
     "prefCode": "17",
     "name": "能美市",
     "pop": 48523,
-    "taxRevenue": 0,
+    "taxRevenue": 5910721000,
     "lat": 36.4435,
     "lng": 136.505
   },
@@ -94,7 +94,7 @@
     "prefCode": "17",
     "name": "野々市市",
     "pop": 57238,
-    "taxRevenue": 0,
+    "taxRevenue": 6616543000,
     "lat": 36.5284,
     "lng": 136.6083
   },
@@ -103,7 +103,7 @@
     "prefCode": "17",
     "name": "川北町",
     "pop": 6135,
-    "taxRevenue": 0,
+    "taxRevenue": 499771000,
     "lat": 36.4713,
     "lng": 136.5389
   },
@@ -112,7 +112,7 @@
     "prefCode": "17",
     "name": "津幡町",
     "pop": 36957,
-    "taxRevenue": 0,
+    "taxRevenue": 1814215000,
     "lat": 36.6695,
     "lng": 136.7328
   },
@@ -121,7 +121,7 @@
     "prefCode": "17",
     "name": "内灘町",
     "pop": 26574,
-    "taxRevenue": 0,
+    "taxRevenue": 1669736000,
     "lat": 36.6478,
     "lng": 136.6424
   },
@@ -130,7 +130,7 @@
     "prefCode": "17",
     "name": "志賀町",
     "pop": 18630,
-    "taxRevenue": 0,
+    "taxRevenue": 1513818000,
     "lat": 37.0586,
     "lng": 136.7662
   },
@@ -139,7 +139,7 @@
     "prefCode": "17",
     "name": "宝達志水町",
     "pop": 12121,
-    "taxRevenue": 0,
+    "taxRevenue": 1606013000,
     "lat": 36.8356,
     "lng": 136.7736
   },
@@ -148,7 +148,7 @@
     "prefCode": "17",
     "name": "中能登町",
     "pop": 16540,
-    "taxRevenue": 0,
+    "taxRevenue": 1568981000,
     "lat": 36.9724,
     "lng": 136.8929
   },
@@ -157,7 +157,7 @@
     "prefCode": "17",
     "name": "穴水町",
     "pop": 7890,
-    "taxRevenue": 0,
+    "taxRevenue": 1080011000,
     "lat": 37.2294,
     "lng": 136.9376
   },
@@ -166,7 +166,7 @@
     "prefCode": "17",
     "name": "能登町",
     "pop": 15687,
-    "taxRevenue": 0,
+    "taxRevenue": 1603884000,
     "lat": 37.3205,
     "lng": 137.1559
   }

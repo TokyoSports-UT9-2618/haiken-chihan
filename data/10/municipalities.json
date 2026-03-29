@@ -4,7 +4,7 @@
     "prefCode": "10",
     "name": "前橋市",
     "pop": 332149,
-    "taxRevenue": 0,
+    "taxRevenue": 35222058000,
     "lat": 36.3947,
     "lng": 139.0928
   },
@@ -13,7 +13,7 @@
     "prefCode": "10",
     "name": "高崎市",
     "pop": 372973,
-    "taxRevenue": 0,
+    "taxRevenue": 30279050000,
     "lat": 36.3373,
     "lng": 139.0036
   },
@@ -22,7 +22,7 @@
     "prefCode": "10",
     "name": "桐生市",
     "pop": 106445,
-    "taxRevenue": 0,
+    "taxRevenue": 12770218000,
     "lat": 36.4134,
     "lng": 139.319
   },
@@ -31,7 +31,7 @@
     "prefCode": "10",
     "name": "伊勢崎市",
     "pop": 211850,
-    "taxRevenue": 0,
+    "taxRevenue": 13275740000,
     "lat": 36.3197,
     "lng": 139.2109
   },
@@ -40,7 +40,7 @@
     "prefCode": "10",
     "name": "太田市",
     "pop": 223014,
-    "taxRevenue": 0,
+    "taxRevenue": 16563721000,
     "lat": 36.2981,
     "lng": 139.3519
   },
@@ -49,7 +49,7 @@
     "prefCode": "10",
     "name": "沼田市",
     "pop": 45337,
-    "taxRevenue": 0,
+    "taxRevenue": 4453080000,
     "lat": 36.6553,
     "lng": 139.0706
   },
@@ -58,7 +58,7 @@
     "prefCode": "10",
     "name": "館林市",
     "pop": 75309,
-    "taxRevenue": 0,
+    "taxRevenue": 8227043000,
     "lat": 36.2447,
     "lng": 139.5293
   },
@@ -67,7 +67,7 @@
     "prefCode": "10",
     "name": "渋川市",
     "pop": 74581,
-    "taxRevenue": 0,
+    "taxRevenue": 5131786000,
     "lat": 36.5024,
     "lng": 139.0067
   },
@@ -76,7 +76,7 @@
     "prefCode": "10",
     "name": "藤岡市",
     "pop": 63261,
-    "taxRevenue": 0,
+    "taxRevenue": 5807924000,
     "lat": 36.245,
     "lng": 139.0691
   },
@@ -85,7 +85,7 @@
     "prefCode": "10",
     "name": "富岡市",
     "pop": 47446,
-    "taxRevenue": 0,
+    "taxRevenue": 4555141000,
     "lat": 36.2573,
     "lng": 138.8728
   },
@@ -94,7 +94,7 @@
     "prefCode": "10",
     "name": "安中市",
     "pop": 54907,
-    "taxRevenue": 0,
+    "taxRevenue": 4589629000,
     "lat": 36.3217,
     "lng": 138.8596
   },
@@ -103,7 +103,7 @@
     "prefCode": "10",
     "name": "みどり市",
     "pop": 49648,
-    "taxRevenue": 0,
+    "taxRevenue": 5603220000,
     "lat": 36.4112,
     "lng": 139.2852
   },
@@ -112,7 +112,7 @@
     "prefCode": "10",
     "name": "榛東村",
     "pop": 14216,
-    "taxRevenue": 0,
+    "taxRevenue": 620150000,
     "lat": 36.4414,
     "lng": 138.9625
   },
@@ -121,7 +121,7 @@
     "prefCode": "10",
     "name": "吉岡町",
     "pop": 21792,
-    "taxRevenue": 0,
+    "taxRevenue": 772070000,
     "lat": 36.443,
     "lng": 139.0111
   },
@@ -130,7 +130,7 @@
     "prefCode": "10",
     "name": "上野村",
     "pop": 1128,
-    "taxRevenue": 0,
+    "taxRevenue": 112094000,
     "lat": 36.0723,
     "lng": 138.7508
   },
@@ -139,7 +139,7 @@
     "prefCode": "10",
     "name": "神流町",
     "pop": 1645,
-    "taxRevenue": 0,
+    "taxRevenue": 206885000,
     "lat": 36.1127,
     "lng": 138.886
   },
@@ -148,7 +148,7 @@
     "prefCode": "10",
     "name": "下仁田町",
     "pop": 6576,
-    "taxRevenue": 0,
+    "taxRevenue": 874153000,
     "lat": 36.2204,
     "lng": 138.7712
   },
@@ -157,7 +157,7 @@
     "prefCode": "10",
     "name": "南牧村",
     "pop": 1611,
-    "taxRevenue": 0,
+    "taxRevenue": 182891000,
     "lat": 36.1667,
     "lng": 138.7141
   },
@@ -166,7 +166,7 @@
     "prefCode": "10",
     "name": "甘楽町",
     "pop": 12491,
-    "taxRevenue": 0,
+    "taxRevenue": 938765000,
     "lat": 36.2376,
     "lng": 138.9275
   },
@@ -175,7 +175,7 @@
     "prefCode": "10",
     "name": "中之条町",
     "pop": 15386,
-    "taxRevenue": 0,
+    "taxRevenue": 1626368000,
     "lat": 36.6035,
     "lng": 138.8203
   },
@@ -184,7 +184,7 @@
     "prefCode": "10",
     "name": "長野原町",
     "pop": 5095,
-    "taxRevenue": 0,
+    "taxRevenue": 764721000,
     "lat": 36.5177,
     "lng": 138.6201
   },
@@ -193,7 +193,7 @@
     "prefCode": "10",
     "name": "嬬恋村",
     "pop": 8850,
-    "taxRevenue": 0,
+    "taxRevenue": 1635603000,
     "lat": 36.5018,
     "lng": 138.5082
   },
@@ -202,7 +202,7 @@
     "prefCode": "10",
     "name": "草津町",
     "pop": 6049,
-    "taxRevenue": 0,
+    "taxRevenue": 1567573000,
     "lat": 36.6236,
     "lng": 138.5768
   },
@@ -211,7 +211,7 @@
     "prefCode": "10",
     "name": "高山村",
     "pop": 3511,
-    "taxRevenue": 0,
+    "taxRevenue": 223135000,
     "lat": 36.6212,
     "lng": 138.9462
   },
@@ -220,7 +220,7 @@
     "prefCode": "10",
     "name": "東吾妻町",
     "pop": 12728,
-    "taxRevenue": 0,
+    "taxRevenue": 1778783000,
     "lat": 36.5493,
     "lng": 138.8182
   },
@@ -229,7 +229,7 @@
     "prefCode": "10",
     "name": "片品村",
     "pop": 3993,
-    "taxRevenue": 0,
+    "taxRevenue": 541169000,
     "lat": 36.7883,
     "lng": 139.2388
   },
@@ -238,7 +238,7 @@
     "prefCode": "10",
     "name": "川場村",
     "pop": 3480,
-    "taxRevenue": 0,
+    "taxRevenue": 194401000,
     "lat": 36.7006,
     "lng": 139.1041
   },
@@ -247,7 +247,7 @@
     "prefCode": "10",
     "name": "昭和村",
     "pop": 6953,
-    "taxRevenue": 0,
+    "taxRevenue": 329712000,
     "lat": 36.6196,
     "lng": 139.081
   },
@@ -256,7 +256,7 @@
     "prefCode": "10",
     "name": "みなかみ町",
     "pop": 17195,
-    "taxRevenue": 0,
+    "taxRevenue": 3884436000,
     "lat": 36.7131,
     "lng": 138.9661
   },
@@ -265,7 +265,7 @@
     "prefCode": "10",
     "name": "玉村町",
     "pop": 36054,
-    "taxRevenue": 0,
+    "taxRevenue": 2013634000,
     "lat": 36.3038,
     "lng": 139.1234
   },
@@ -274,7 +274,7 @@
     "prefCode": "10",
     "name": "板倉町",
     "pop": 14083,
-    "taxRevenue": 0,
+    "taxRevenue": 1158604000,
     "lat": 36.227,
     "lng": 139.6205
   },
@@ -283,7 +283,7 @@
     "prefCode": "10",
     "name": "明和町",
     "pop": 10882,
-    "taxRevenue": 0,
+    "taxRevenue": 935154000,
     "lat": 36.2074,
     "lng": 139.5327
   },
@@ -292,7 +292,7 @@
     "prefCode": "10",
     "name": "千代田町",
     "pop": 10861,
-    "taxRevenue": 0,
+    "taxRevenue": 1324137000,
     "lat": 36.2129,
     "lng": 139.4476
   },
@@ -301,7 +301,7 @@
     "prefCode": "10",
     "name": "大泉町",
     "pop": 42089,
-    "taxRevenue": 0,
+    "taxRevenue": 5813725000,
     "lat": 36.2522,
     "lng": 139.4071
   },
@@ -310,7 +310,7 @@
     "prefCode": "10",
     "name": "邑楽町",
     "pop": 25522,
-    "taxRevenue": 0,
+    "taxRevenue": 2602053000,
     "lat": 36.2568,
     "lng": 139.4627
   }

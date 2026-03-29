@@ -4,7 +4,7 @@
     "prefCode": "37",
     "name": "高松市",
     "pop": 417496,
-    "taxRevenue": 0,
+    "taxRevenue": 47954045000,
     "lat": 34.3114,
     "lng": 134.0515
   },
@@ -13,7 +13,7 @@
     "prefCode": "37",
     "name": "丸亀市",
     "pop": 109513,
-    "taxRevenue": 0,
+    "taxRevenue": 9070104000,
     "lat": 34.267,
     "lng": 133.8209
   },
@@ -22,7 +22,7 @@
     "prefCode": "37",
     "name": "坂出市",
     "pop": 50624,
-    "taxRevenue": 0,
+    "taxRevenue": 9771672000,
     "lat": 34.315,
     "lng": 133.8751
   },
@@ -31,7 +31,7 @@
     "prefCode": "37",
     "name": "善通寺市",
     "pop": 31631,
-    "taxRevenue": 0,
+    "taxRevenue": 2961014000,
     "lat": 34.2307,
     "lng": 133.7805
   },
@@ -40,7 +40,7 @@
     "prefCode": "37",
     "name": "観音寺市",
     "pop": 57438,
-    "taxRevenue": 0,
+    "taxRevenue": 4523319000,
     "lat": 34.1073,
     "lng": 133.6651
   },
@@ -49,7 +49,7 @@
     "prefCode": "37",
     "name": "さぬき市",
     "pop": 47003,
-    "taxRevenue": 0,
+    "taxRevenue": 5487796000,
     "lat": 34.2887,
     "lng": 134.2025
   },
@@ -58,7 +58,7 @@
     "prefCode": "37",
     "name": "東かがわ市",
     "pop": 28279,
-    "taxRevenue": 0,
+    "taxRevenue": 3551660000,
     "lat": 34.2386,
     "lng": 134.3477
   },
@@ -67,7 +67,7 @@
     "prefCode": "37",
     "name": "三豊市",
     "pop": 61857,
-    "taxRevenue": 0,
+    "taxRevenue": 7176518000,
     "lat": 34.1792,
     "lng": 133.7042
   },
@@ -76,7 +76,7 @@
     "prefCode": "37",
     "name": "土庄町",
     "pop": 12846,
-    "taxRevenue": 0,
+    "taxRevenue": 1611842000,
     "lat": 34.4972,
     "lng": 134.1871
   },
@@ -85,7 +85,7 @@
     "prefCode": "37",
     "name": "小豆島町",
     "pop": 13870,
-    "taxRevenue": 0,
+    "taxRevenue": 1543614000,
     "lat": 34.4855,
     "lng": 134.2917
   },
@@ -94,7 +94,7 @@
     "prefCode": "37",
     "name": "三木町",
     "pop": 26878,
-    "taxRevenue": 0,
+    "taxRevenue": 1446582000,
     "lat": 34.2674,
     "lng": 134.1368
   },
@@ -103,7 +103,7 @@
     "prefCode": "37",
     "name": "直島町",
     "pop": 3103,
-    "taxRevenue": 0,
+    "taxRevenue": 635176000,
     "lat": 34.4593,
     "lng": 133.9853
   },
@@ -112,7 +112,7 @@
     "prefCode": "37",
     "name": "宇多津町",
     "pop": 18699,
-    "taxRevenue": 0,
+    "taxRevenue": 1305638000,
     "lat": 34.308,
     "lng": 133.8235
   },
@@ -121,7 +121,7 @@
     "prefCode": "37",
     "name": "綾川町",
     "pop": 22693,
-    "taxRevenue": 0,
+    "taxRevenue": 2662162000,
     "lat": 34.2419,
     "lng": 133.9476
   },
@@ -130,7 +130,7 @@
     "prefCode": "37",
     "name": "琴平町",
     "pop": 8468,
-    "taxRevenue": 0,
+    "taxRevenue": 1177370000,
     "lat": 34.1944,
     "lng": 133.82
   },
@@ -139,7 +139,7 @@
     "prefCode": "37",
     "name": "多度津町",
     "pop": 22445,
-    "taxRevenue": 0,
+    "taxRevenue": 2660280000,
     "lat": 34.2639,
     "lng": 133.7538
   },
@@ -148,7 +148,7 @@
     "prefCode": "37",
     "name": "まんのう町",
     "pop": 17401,
-    "taxRevenue": 0,
+    "taxRevenue": 1762212000,
     "lat": 34.1762,
     "lng": 133.8611
   }

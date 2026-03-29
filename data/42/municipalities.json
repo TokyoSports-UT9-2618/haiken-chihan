@@ -4,7 +4,7 @@
     "prefCode": "42",
     "name": "長崎市",
     "pop": 409118,
-    "taxRevenue": 0,
+    "taxRevenue": 41581579000,
     "lat": 32.7638,
     "lng": 129.8626
   },
@@ -13,7 +13,7 @@
     "prefCode": "42",
     "name": "佐世保市",
     "pop": 243223,
-    "taxRevenue": 0,
+    "taxRevenue": 18665442000,
     "lat": 33.1767,
     "lng": 129.7252
   },
@@ -22,7 +22,7 @@
     "prefCode": "42",
     "name": "島原市",
     "pop": 43338,
-    "taxRevenue": 0,
+    "taxRevenue": 3021931000,
     "lat": 32.7977,
     "lng": 130.3529
   },
@@ -31,7 +31,7 @@
     "prefCode": "42",
     "name": "諫早市",
     "pop": 133852,
-    "taxRevenue": 0,
+    "taxRevenue": 7527011000,
     "lat": 32.8459,
     "lng": 130.0494
   },
@@ -40,7 +40,7 @@
     "prefCode": "42",
     "name": "大村市",
     "pop": 95397,
-    "taxRevenue": 0,
+    "taxRevenue": 5233836000,
     "lat": 32.9247,
     "lng": 129.9597
   },
@@ -49,7 +49,7 @@
     "prefCode": "42",
     "name": "平戸市",
     "pop": 29365,
-    "taxRevenue": 0,
+    "taxRevenue": 1300022000,
     "lat": 33.3441,
     "lng": 129.511
   },
@@ -58,7 +58,7 @@
     "prefCode": "42",
     "name": "松浦市",
     "pop": 21271,
-    "taxRevenue": 0,
+    "taxRevenue": 1599017000,
     "lat": 33.3587,
     "lng": 129.7253
   },
@@ -67,7 +67,7 @@
     "prefCode": "42",
     "name": "対馬市",
     "pop": 28502,
-    "taxRevenue": 0,
+    "taxRevenue": 2951084000,
     "lat": 34.3496,
     "lng": 129.3239
   },
@@ -76,7 +76,7 @@
     "prefCode": "42",
     "name": "壱岐市",
     "pop": 24948,
-    "taxRevenue": 0,
+    "taxRevenue": 2143386000,
     "lat": 33.7818,
     "lng": 129.7182
   },
@@ -85,7 +85,7 @@
     "prefCode": "42",
     "name": "五島市",
     "pop": 34391,
-    "taxRevenue": 0,
+    "taxRevenue": 3165787000,
     "lat": 32.694,
     "lng": 128.806
   },
@@ -94,7 +94,7 @@
     "prefCode": "42",
     "name": "西海市",
     "pop": 26275,
-    "taxRevenue": 0,
+    "taxRevenue": 3001138000,
     "lat": 33.0113,
     "lng": 129.6815
   },
@@ -103,7 +103,7 @@
     "prefCode": "42",
     "name": "雲仙市",
     "pop": 41096,
-    "taxRevenue": 0,
+    "taxRevenue": 3417643000,
     "lat": 32.7999,
     "lng": 130.2172
   },
@@ -112,7 +112,7 @@
     "prefCode": "42",
     "name": "南島原市",
     "pop": 42330,
-    "taxRevenue": 0,
+    "taxRevenue": 3390892000,
     "lat": 32.6671,
     "lng": 130.2667
   },
@@ -121,7 +121,7 @@
     "prefCode": "42",
     "name": "長与町",
     "pop": 40780,
-    "taxRevenue": 0,
+    "taxRevenue": 2231585000,
     "lat": 32.8212,
     "lng": 129.8756
   },
@@ -130,7 +130,7 @@
     "prefCode": "42",
     "name": "時津町",
     "pop": 29339,
-    "taxRevenue": 0,
+    "taxRevenue": 1933489000,
     "lat": 32.8327,
     "lng": 129.8428
   },
@@ -139,7 +139,7 @@
     "prefCode": "42",
     "name": "東彼杵町",
     "pop": 7721,
-    "taxRevenue": 0,
+    "taxRevenue": 456436000,
     "lat": 33.0361,
     "lng": 129.9338
   },
@@ -148,7 +148,7 @@
     "prefCode": "42",
     "name": "川棚町",
     "pop": 13377,
-    "taxRevenue": 0,
+    "taxRevenue": 915445000,
     "lat": 33.0712,
     "lng": 129.8553
   },
@@ -157,7 +157,7 @@
     "prefCode": "42",
     "name": "波佐見町",
     "pop": 14291,
-    "taxRevenue": 0,
+    "taxRevenue": 931330000,
     "lat": 33.135,
     "lng": 129.8949
   },
@@ -166,7 +166,7 @@
     "prefCode": "42",
     "name": "小値賀町",
     "pop": 2288,
-    "taxRevenue": 0,
+    "taxRevenue": 175883000,
     "lat": 33.1956,
     "lng": 129.0561
   },
@@ -175,7 +175,7 @@
     "prefCode": "42",
     "name": "佐々町",
     "pop": 13912,
-    "taxRevenue": 0,
+    "taxRevenue": 668976000,
     "lat": 33.2372,
     "lng": 129.657
   },
@@ -184,7 +184,7 @@
     "prefCode": "42",
     "name": "新上五島町",
     "pop": 17503,
-    "taxRevenue": 0,
+    "taxRevenue": 2381531000,
     "lat": 32.9646,
     "lng": 129.0786
   }

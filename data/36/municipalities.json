@@ -4,7 +4,7 @@
     "prefCode": "36",
     "name": "徳島市",
     "pop": 252391,
-    "taxRevenue": 0,
+    "taxRevenue": 31557100000,
     "lat": 34.0667,
     "lng": 134.5399
   },
@@ -13,7 +13,7 @@
     "prefCode": "36",
     "name": "鳴門市",
     "pop": 54622,
-    "taxRevenue": 0,
+    "taxRevenue": 6780886000,
     "lat": 34.1804,
     "lng": 134.5839
   },
@@ -22,7 +22,7 @@
     "prefCode": "36",
     "name": "小松島市",
     "pop": 36149,
-    "taxRevenue": 0,
+    "taxRevenue": 3441870000,
     "lat": 33.9968,
     "lng": 134.5961
   },
@@ -31,7 +31,7 @@
     "prefCode": "36",
     "name": "阿南市",
     "pop": 69470,
-    "taxRevenue": 0,
+    "taxRevenue": 5865799000,
     "lat": 33.916,
     "lng": 134.6371
   },
@@ -40,7 +40,7 @@
     "prefCode": "36",
     "name": "吉野川市",
     "pop": 38772,
-    "taxRevenue": 0,
+    "taxRevenue": 3787256000,
     "lat": 34.0609,
     "lng": 134.3199
   },
@@ -49,7 +49,7 @@
     "prefCode": "36",
     "name": "阿波市",
     "pop": 34713,
-    "taxRevenue": 0,
+    "taxRevenue": 3215848000,
     "lat": 34.0977,
     "lng": 134.2959
   },
@@ -58,7 +58,7 @@
     "prefCode": "36",
     "name": "美馬市",
     "pop": 28055,
-    "taxRevenue": 0,
+    "taxRevenue": 2580731000,
     "lat": 34.066,
     "lng": 134.124
   },
@@ -67,7 +67,7 @@
     "prefCode": "36",
     "name": "三好市",
     "pop": 23605,
-    "taxRevenue": 0,
+    "taxRevenue": 2784763000,
     "lat": 34.0058,
     "lng": 133.8355
   },
@@ -76,7 +76,7 @@
     "prefCode": "36",
     "name": "勝浦町",
     "pop": 4837,
-    "taxRevenue": 0,
+    "taxRevenue": 377472000,
     "lat": 33.9345,
     "lng": 134.5054
   },
@@ -85,7 +85,7 @@
     "prefCode": "36",
     "name": "上勝町",
     "pop": 1380,
-    "taxRevenue": 0,
+    "taxRevenue": 102201000,
     "lat": 33.9072,
     "lng": 134.4004
   },
@@ -94,7 +94,7 @@
     "prefCode": "36",
     "name": "佐那河内村",
     "pop": 2058,
-    "taxRevenue": 0,
+    "taxRevenue": 121654000,
     "lat": 33.9823,
     "lng": 134.452
   },
@@ -103,7 +103,7 @@
     "prefCode": "36",
     "name": "石井町",
     "pop": 24833,
-    "taxRevenue": 0,
+    "taxRevenue": 1604088000,
     "lat": 34.0744,
     "lng": 134.438
   },
@@ -112,7 +112,7 @@
     "prefCode": "36",
     "name": "神山町",
     "pop": 4647,
-    "taxRevenue": 0,
+    "taxRevenue": 394676000,
     "lat": 33.9851,
     "lng": 134.358
   },
@@ -121,7 +121,7 @@
     "prefCode": "36",
     "name": "那賀町",
     "pop": 7367,
-    "taxRevenue": 0,
+    "taxRevenue": 882665000,
     "lat": 33.821,
     "lng": 134.4034
   },
@@ -130,7 +130,7 @@
     "prefCode": "36",
     "name": "牟岐町",
     "pop": 3743,
-    "taxRevenue": 0,
+    "taxRevenue": 370531000,
     "lat": 33.6756,
     "lng": 134.4208
   },
@@ -139,7 +139,7 @@
     "prefCode": "36",
     "name": "美波町",
     "pop": 6222,
-    "taxRevenue": 0,
+    "taxRevenue": 527834000,
     "lat": 33.751,
     "lng": 134.5477
   },
@@ -148,7 +148,7 @@
     "prefCode": "36",
     "name": "海陽町",
     "pop": 8358,
-    "taxRevenue": 0,
+    "taxRevenue": 698756000,
     "lat": 33.6032,
     "lng": 134.3308
   },
@@ -157,7 +157,7 @@
     "prefCode": "36",
     "name": "松茂町",
     "pop": 14583,
-    "taxRevenue": 0,
+    "taxRevenue": 1387778000,
     "lat": 34.1355,
     "lng": 134.585
   },
@@ -166,7 +166,7 @@
     "prefCode": "36",
     "name": "北島町",
     "pop": 22745,
-    "taxRevenue": 0,
+    "taxRevenue": 1759302000,
     "lat": 34.1259,
     "lng": 134.5512
   },
@@ -175,7 +175,7 @@
     "prefCode": "36",
     "name": "藍住町",
     "pop": 35246,
-    "taxRevenue": 0,
+    "taxRevenue": 2210051000,
     "lat": 34.1284,
     "lng": 134.4974
   },
@@ -184,7 +184,7 @@
     "prefCode": "36",
     "name": "板野町",
     "pop": 13042,
-    "taxRevenue": 0,
+    "taxRevenue": 749879000,
     "lat": 34.14,
     "lng": 134.4582
   },
@@ -193,7 +193,7 @@
     "prefCode": "36",
     "name": "上板町",
     "pop": 11384,
-    "taxRevenue": 0,
+    "taxRevenue": 716536000,
     "lat": 34.1221,
     "lng": 134.4132
   },
@@ -202,7 +202,7 @@
     "prefCode": "36",
     "name": "つるぎ町",
     "pop": 7715,
-    "taxRevenue": 0,
+    "taxRevenue": 828800000,
     "lat": 34.0227,
     "lng": 134.0516
   },
@@ -211,7 +211,7 @@
     "prefCode": "36",
     "name": "東みよし町",
     "pop": 13622,
-    "taxRevenue": 0,
+    "taxRevenue": 1130730000,
     "lat": 34.0334,
     "lng": 133.9142
   }

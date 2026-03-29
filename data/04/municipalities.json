@@ -4,7 +4,7 @@
     "prefCode": "04",
     "name": "仙台市青葉区",
     "pop": 311590,
-    "taxRevenue": 0,
+    "taxRevenue": 60819479460,
     "lat": 38.2788,
     "lng": 140.8429
   },
@@ -13,7 +13,7 @@
     "prefCode": "04",
     "name": "仙台市宮城野区",
     "pop": 196732,
-    "taxRevenue": 0,
+    "taxRevenue": 38400262631,
     "lat": 38.2759,
     "lng": 140.9291
   },
@@ -22,7 +22,7 @@
     "prefCode": "04",
     "name": "仙台市若林区",
     "pop": 141475,
-    "taxRevenue": 0,
+    "taxRevenue": 27614608481,
     "lat": 38.2396,
     "lng": 140.913
   },
@@ -31,7 +31,7 @@
     "prefCode": "04",
     "name": "仙台市太白区",
     "pop": 234758,
-    "taxRevenue": 0,
+    "taxRevenue": 45822585318,
     "lat": 38.2193,
     "lng": 140.865
   },
@@ -40,7 +40,7 @@
     "prefCode": "04",
     "name": "仙台市泉区",
     "pop": 212149,
-    "taxRevenue": 0,
+    "taxRevenue": 41409518110,
     "lat": 38.3225,
     "lng": 140.8688
   },
@@ -49,7 +49,7 @@
     "prefCode": "04",
     "name": "石巻市",
     "pop": 140151,
-    "taxRevenue": 0,
+    "taxRevenue": 12373798000,
     "lat": 38.4548,
     "lng": 141.2992
   },
@@ -58,7 +58,7 @@
     "prefCode": "04",
     "name": "塩竈市",
     "pop": 52203,
-    "taxRevenue": 0,
+    "taxRevenue": 5846536000,
     "lat": 38.3215,
     "lng": 141.0181
   },
@@ -67,7 +67,7 @@
     "prefCode": "04",
     "name": "気仙沼市",
     "pop": 61147,
-    "taxRevenue": 0,
+    "taxRevenue": 5059975000,
     "lat": 38.876,
     "lng": 141.5662
   },
@@ -76,7 +76,7 @@
     "prefCode": "04",
     "name": "白石市",
     "pop": 32758,
-    "taxRevenue": 0,
+    "taxRevenue": 3043656000,
     "lat": 37.9999,
     "lng": 140.624
   },
@@ -85,7 +85,7 @@
     "prefCode": "04",
     "name": "名取市",
     "pop": 78718,
-    "taxRevenue": 0,
+    "taxRevenue": 5021345000,
     "lat": 38.1717,
     "lng": 140.8724
   },
@@ -94,7 +94,7 @@
     "prefCode": "04",
     "name": "角田市",
     "pop": 27976,
-    "taxRevenue": 0,
+    "taxRevenue": 2649525000,
     "lat": 37.9847,
     "lng": 140.7837
   },
@@ -103,7 +103,7 @@
     "prefCode": "04",
     "name": "多賀城市",
     "pop": 62827,
-    "taxRevenue": 0,
+    "taxRevenue": 5283062000,
     "lat": 38.2954,
     "lng": 141.0024
   },
@@ -112,7 +112,7 @@
     "prefCode": "04",
     "name": "岩沼市",
     "pop": 44068,
-    "taxRevenue": 0,
+    "taxRevenue": 4258493000,
     "lat": 38.1097,
     "lng": 140.868
   },
@@ -121,7 +121,7 @@
     "prefCode": "04",
     "name": "登米市",
     "pop": 76037,
-    "taxRevenue": 0,
+    "taxRevenue": 6595622000,
     "lat": 38.6784,
     "lng": 141.2171
   },
@@ -130,7 +130,7 @@
     "prefCode": "04",
     "name": "栗原市",
     "pop": 64637,
-    "taxRevenue": 0,
+    "taxRevenue": 6620434000,
     "lat": 38.7609,
     "lng": 141.031
   },
@@ -139,7 +139,7 @@
     "prefCode": "04",
     "name": "東松島市",
     "pop": 39098,
-    "taxRevenue": 0,
+    "taxRevenue": 3168115000,
     "lat": 38.4211,
     "lng": 141.206
   },
@@ -148,7 +148,7 @@
     "prefCode": "04",
     "name": "大崎市",
     "pop": 127330,
-    "taxRevenue": 0,
+    "taxRevenue": 13721881000,
     "lat": 38.5786,
     "lng": 140.9636
   },
@@ -157,7 +157,7 @@
     "prefCode": "04",
     "name": "富谷市",
     "pop": 51651,
-    "taxRevenue": 0,
+    "taxRevenue": 5885417000,
     "lat": 38.3702,
     "lng": 140.885
   },
@@ -166,7 +166,7 @@
     "prefCode": "04",
     "name": "蔵王町",
     "pop": 11418,
-    "taxRevenue": 0,
+    "taxRevenue": 1373631000,
     "lat": 38.0923,
     "lng": 140.6357
   },
@@ -175,7 +175,7 @@
     "prefCode": "04",
     "name": "七ヶ宿町",
     "pop": 1262,
-    "taxRevenue": 0,
+    "taxRevenue": 152395000,
     "lat": 38.022,
     "lng": 140.4227
   },
@@ -184,7 +184,7 @@
     "prefCode": "04",
     "name": "大河原町",
     "pop": 23571,
-    "taxRevenue": 0,
+    "taxRevenue": 1649468000,
     "lat": 38.0483,
     "lng": 140.7317
   },
@@ -193,7 +193,7 @@
     "prefCode": "04",
     "name": "村田町",
     "pop": 10666,
-    "taxRevenue": 0,
+    "taxRevenue": 936263000,
     "lat": 38.1097,
     "lng": 140.7275
   },
@@ -202,7 +202,7 @@
     "prefCode": "04",
     "name": "柴田町",
     "pop": 38271,
-    "taxRevenue": 0,
+    "taxRevenue": 3072406000,
     "lat": 38.0661,
     "lng": 140.7833
   },
@@ -211,7 +211,7 @@
     "prefCode": "04",
     "name": "川崎町",
     "pop": 8345,
-    "taxRevenue": 0,
+    "taxRevenue": 849407000,
     "lat": 38.1875,
     "lng": 140.6418
   },
@@ -220,7 +220,7 @@
     "prefCode": "04",
     "name": "丸森町",
     "pop": 12262,
-    "taxRevenue": 0,
+    "taxRevenue": 1058456000,
     "lat": 37.9004,
     "lng": 140.7631
   },
@@ -229,7 +229,7 @@
     "prefCode": "04",
     "name": "亘理町",
     "pop": 33087,
-    "taxRevenue": 0,
+    "taxRevenue": 1978963000,
     "lat": 38.0445,
     "lng": 140.8672
   },
@@ -238,7 +238,7 @@
     "prefCode": "04",
     "name": "山元町",
     "pop": 12046,
-    "taxRevenue": 0,
+    "taxRevenue": 1046168000,
     "lat": 37.9558,
     "lng": 140.8806
   },
@@ -247,7 +247,7 @@
     "prefCode": "04",
     "name": "松島町",
     "pop": 13323,
-    "taxRevenue": 0,
+    "taxRevenue": 1411238000,
     "lat": 38.392,
     "lng": 141.0727
   },
@@ -256,7 +256,7 @@
     "prefCode": "04",
     "name": "七ヶ浜町",
     "pop": 18132,
-    "taxRevenue": 0,
+    "taxRevenue": 1686076000,
     "lat": 38.2983,
     "lng": 141.0533
   },
@@ -265,7 +265,7 @@
     "prefCode": "04",
     "name": "利府町",
     "pop": 35182,
-    "taxRevenue": 0,
+    "taxRevenue": 1624949000,
     "lat": 38.3341,
     "lng": 140.9752
   },
@@ -274,7 +274,7 @@
     "prefCode": "04",
     "name": "大和町",
     "pop": 28786,
-    "taxRevenue": 0,
+    "taxRevenue": 1261547000,
     "lat": 38.4229,
     "lng": 140.8712
   },
@@ -283,7 +283,7 @@
     "prefCode": "04",
     "name": "大郷町",
     "pop": 7813,
-    "taxRevenue": 0,
+    "taxRevenue": 554532000,
     "lat": 38.4332,
     "lng": 141.0057
   },
@@ -292,7 +292,7 @@
     "prefCode": "04",
     "name": "大衡村",
     "pop": 5849,
-    "taxRevenue": 0,
+    "taxRevenue": 458990000,
     "lat": 38.4746,
     "lng": 140.8828
   },
@@ -301,7 +301,7 @@
     "prefCode": "04",
     "name": "色麻町",
     "pop": 6698,
-    "taxRevenue": 0,
+    "taxRevenue": 471147000,
     "lat": 38.5388,
     "lng": 140.835
   },
@@ -310,7 +310,7 @@
     "prefCode": "04",
     "name": "加美町",
     "pop": 21943,
-    "taxRevenue": 0,
+    "taxRevenue": 2412285000,
     "lat": 38.582,
     "lng": 140.8169
   },
@@ -319,7 +319,7 @@
     "prefCode": "04",
     "name": "涌谷町",
     "pop": 15388,
-    "taxRevenue": 0,
+    "taxRevenue": 1248690000,
     "lat": 38.5473,
     "lng": 141.1377
   },
@@ -328,7 +328,7 @@
     "prefCode": "04",
     "name": "美里町",
     "pop": 23994,
-    "taxRevenue": 0,
+    "taxRevenue": 2147983000,
     "lat": 38.5351,
     "lng": 141.0714
   },
@@ -337,7 +337,7 @@
     "prefCode": "04",
     "name": "女川町",
     "pop": 6430,
-    "taxRevenue": 0,
+    "taxRevenue": 3084742000,
     "lat": 38.4396,
     "lng": 141.4436
   },
@@ -346,7 +346,7 @@
     "prefCode": "04",
     "name": "南三陸町",
     "pop": 12225,
-    "taxRevenue": 0,
+    "taxRevenue": 1215403000,
     "lat": 38.6949,
     "lng": 141.4744
   }

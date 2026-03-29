@@ -4,7 +4,7 @@
     "prefCode": "45",
     "name": "宮崎市",
     "pop": 401339,
-    "taxRevenue": 0,
+    "taxRevenue": 24389221000,
     "lat": 31.918,
     "lng": 131.4157
   },
@@ -13,7 +13,7 @@
     "prefCode": "45",
     "name": "都城市",
     "pop": 160640,
-    "taxRevenue": 0,
+    "taxRevenue": 9652905000,
     "lat": 31.7533,
     "lng": 131.0738
   },
@@ -22,7 +22,7 @@
     "prefCode": "45",
     "name": "延岡市",
     "pop": 118394,
-    "taxRevenue": 0,
+    "taxRevenue": 12911691000,
     "lat": 32.5796,
     "lng": 131.6691
   },
@@ -31,7 +31,7 @@
     "prefCode": "45",
     "name": "日南市",
     "pop": 50848,
-    "taxRevenue": 0,
+    "taxRevenue": 4030693000,
     "lat": 31.5993,
     "lng": 131.3743
   },
@@ -40,7 +40,7 @@
     "prefCode": "45",
     "name": "小林市",
     "pop": 43670,
-    "taxRevenue": 0,
+    "taxRevenue": 2666011000,
     "lat": 31.9891,
     "lng": 130.9917
   },
@@ -49,7 +49,7 @@
     "prefCode": "45",
     "name": "日向市",
     "pop": 59629,
-    "taxRevenue": 0,
+    "taxRevenue": 5081515000,
     "lat": 32.4127,
     "lng": 131.6224
   },
@@ -58,7 +58,7 @@
     "prefCode": "45",
     "name": "串間市",
     "pop": 16822,
-    "taxRevenue": 0,
+    "taxRevenue": 1464580000,
     "lat": 31.471,
     "lng": 131.2412
   },
@@ -67,7 +67,7 @@
     "prefCode": "45",
     "name": "西都市",
     "pop": 28610,
-    "taxRevenue": 0,
+    "taxRevenue": 2179228000,
     "lat": 32.1082,
     "lng": 131.3804
   },
@@ -76,7 +76,7 @@
     "prefCode": "45",
     "name": "えびの市",
     "pop": 17638,
-    "taxRevenue": 0,
+    "taxRevenue": 1385566000,
     "lat": 32.0438,
     "lng": 130.8308
   },
@@ -85,7 +85,7 @@
     "prefCode": "45",
     "name": "三股町",
     "pop": 25591,
-    "taxRevenue": 0,
+    "taxRevenue": 1005041000,
     "lat": 31.7331,
     "lng": 131.1238
   },
@@ -94,7 +94,7 @@
     "prefCode": "45",
     "name": "高原町",
     "pop": 8639,
-    "taxRevenue": 0,
+    "taxRevenue": 549253000,
     "lat": 31.9291,
     "lng": 131.0026
   },
@@ -103,7 +103,7 @@
     "prefCode": "45",
     "name": "国富町",
     "pop": 18398,
-    "taxRevenue": 0,
+    "taxRevenue": 929490000,
     "lat": 32.0045,
     "lng": 131.3222
   },
@@ -112,7 +112,7 @@
     "prefCode": "45",
     "name": "綾町",
     "pop": 6934,
-    "taxRevenue": 0,
+    "taxRevenue": 330926000,
     "lat": 32.0018,
     "lng": 131.2529
   },
@@ -121,7 +121,7 @@
     "prefCode": "45",
     "name": "高鍋町",
     "pop": 19922,
-    "taxRevenue": 0,
+    "taxRevenue": 1644252000,
     "lat": 32.1312,
     "lng": 131.5095
   },
@@ -130,7 +130,7 @@
     "prefCode": "45",
     "name": "新富町",
     "pop": 16564,
-    "taxRevenue": 0,
+    "taxRevenue": 1073841000,
     "lat": 32.0738,
     "lng": 131.4724
   },
@@ -139,7 +139,7 @@
     "prefCode": "45",
     "name": "西米良村",
     "pop": 1000,
-    "taxRevenue": 0,
+    "taxRevenue": 129814000,
     "lat": 32.2201,
     "lng": 131.1535
   },
@@ -148,7 +148,7 @@
     "prefCode": "45",
     "name": "木城町",
     "pop": 4895,
-    "taxRevenue": 0,
+    "taxRevenue": 324000000,
     "lat": 32.1665,
     "lng": 131.4503
   },
@@ -157,7 +157,7 @@
     "prefCode": "45",
     "name": "川南町",
     "pop": 15194,
-    "taxRevenue": 0,
+    "taxRevenue": 964791000,
     "lat": 32.2027,
     "lng": 131.5216
   },
@@ -166,7 +166,7 @@
     "prefCode": "45",
     "name": "都農町",
     "pop": 9906,
-    "taxRevenue": 0,
+    "taxRevenue": 651262000,
     "lat": 32.261,
     "lng": 131.557
   },
@@ -175,7 +175,7 @@
     "prefCode": "45",
     "name": "門川町",
     "pop": 17379,
-    "taxRevenue": 0,
+    "taxRevenue": 995431000,
     "lat": 32.4828,
     "lng": 131.6468
   },
@@ -184,7 +184,7 @@
     "prefCode": "45",
     "name": "諸塚村",
     "pop": 1486,
-    "taxRevenue": 0,
+    "taxRevenue": 203207000,
     "lat": 32.5381,
     "lng": 131.323
   },
@@ -193,7 +193,7 @@
     "prefCode": "45",
     "name": "椎葉村",
     "pop": 2503,
-    "taxRevenue": 0,
+    "taxRevenue": 444959000,
     "lat": 32.468,
     "lng": 131.1532
   },
@@ -202,7 +202,7 @@
     "prefCode": "45",
     "name": "美郷町",
     "pop": 4826,
-    "taxRevenue": 0,
+    "taxRevenue": 592032000,
     "lat": 32.4466,
     "lng": 131.3997
   },
@@ -211,7 +211,7 @@
     "prefCode": "45",
     "name": "高千穂町",
     "pop": 11642,
-    "taxRevenue": 0,
+    "taxRevenue": 849979000,
     "lat": 32.7322,
     "lng": 131.3132
   },
@@ -220,7 +220,7 @@
     "prefCode": "45",
     "name": "日之影町",
     "pop": 3635,
-    "taxRevenue": 0,
+    "taxRevenue": 285300000,
     "lat": 32.6642,
     "lng": 131.3961
   },
@@ -229,7 +229,7 @@
     "prefCode": "45",
     "name": "五ヶ瀬町",
     "pop": 3472,
-    "taxRevenue": 0,
+    "taxRevenue": 204766000,
     "lat": 32.6704,
     "lng": 131.1965
   }

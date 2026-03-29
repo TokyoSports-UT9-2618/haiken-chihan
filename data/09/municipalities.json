@@ -4,7 +4,7 @@
     "prefCode": "09",
     "name": "宇都宮市",
     "pop": 518757,
-    "taxRevenue": 0,
+    "taxRevenue": 59307322000,
     "lat": 36.5604,
     "lng": 139.8907
   },
@@ -13,7 +13,7 @@
     "prefCode": "09",
     "name": "足利市",
     "pop": 144746,
-    "taxRevenue": 0,
+    "taxRevenue": 16587310000,
     "lat": 36.3363,
     "lng": 139.4497
   },
@@ -22,7 +22,7 @@
     "prefCode": "09",
     "name": "栃木市",
     "pop": 155549,
-    "taxRevenue": 0,
+    "taxRevenue": 8849517000,
     "lat": 36.3659,
     "lng": 139.714
   },
@@ -31,7 +31,7 @@
     "prefCode": "09",
     "name": "佐野市",
     "pop": 116228,
-    "taxRevenue": 0,
+    "taxRevenue": 8487944000,
     "lat": 36.3388,
     "lng": 139.5764
   },
@@ -40,7 +40,7 @@
     "prefCode": "09",
     "name": "鹿沼市",
     "pop": 94033,
-    "taxRevenue": 0,
+    "taxRevenue": 9870134000,
     "lat": 36.5547,
     "lng": 139.7468
   },
@@ -49,7 +49,7 @@
     "prefCode": "09",
     "name": "日光市",
     "pop": 77661,
-    "taxRevenue": 0,
+    "taxRevenue": 2927827000,
     "lat": 36.729,
     "lng": 139.6957
   },
@@ -58,7 +58,7 @@
     "prefCode": "09",
     "name": "小山市",
     "pop": 166666,
-    "taxRevenue": 0,
+    "taxRevenue": 18859500000,
     "lat": 36.3042,
     "lng": 139.8059
   },
@@ -67,7 +67,7 @@
     "prefCode": "09",
     "name": "真岡市",
     "pop": 78190,
-    "taxRevenue": 0,
+    "taxRevenue": 8278570000,
     "lat": 36.4319,
     "lng": 139.9931
   },
@@ -76,7 +76,7 @@
     "prefCode": "09",
     "name": "大田原市",
     "pop": 72087,
-    "taxRevenue": 0,
+    "taxRevenue": 5499549000,
     "lat": 36.859,
     "lng": 140.0439
   },
@@ -85,7 +85,7 @@
     "prefCode": "09",
     "name": "矢板市",
     "pop": 31165,
-    "taxRevenue": 0,
+    "taxRevenue": 3840499000,
     "lat": 36.7979,
     "lng": 139.9326
   },
@@ -94,7 +94,7 @@
     "prefCode": "09",
     "name": "那須塩原市",
     "pop": 115210,
-    "taxRevenue": 0,
+    "taxRevenue": 16788003000,
     "lat": 36.9307,
     "lng": 140.0002
   },
@@ -103,7 +103,7 @@
     "prefCode": "09",
     "name": "さくら市",
     "pop": 44513,
-    "taxRevenue": 0,
+    "taxRevenue": 5133163000,
     "lat": 36.6978,
     "lng": 139.9812
   },
@@ -112,7 +112,7 @@
     "prefCode": "09",
     "name": "那須烏山市",
     "pop": 24875,
-    "taxRevenue": 0,
+    "taxRevenue": 2811565000,
     "lat": 36.6626,
     "lng": 140.1301
   },
@@ -121,7 +121,7 @@
     "prefCode": "09",
     "name": "下野市",
     "pop": 59507,
-    "taxRevenue": 0,
+    "taxRevenue": 7933193000,
     "lat": 36.4053,
     "lng": 139.8566
   },
@@ -130,7 +130,7 @@
     "prefCode": "09",
     "name": "上三川町",
     "pop": 30806,
-    "taxRevenue": 0,
+    "taxRevenue": 4948276000,
     "lat": 36.4458,
     "lng": 139.9083
   },
@@ -139,7 +139,7 @@
     "prefCode": "09",
     "name": "益子町",
     "pop": 21898,
-    "taxRevenue": 0,
+    "taxRevenue": 1512208000,
     "lat": 36.466,
     "lng": 140.0977
   },
@@ -148,7 +148,7 @@
     "prefCode": "09",
     "name": "茂木町",
     "pop": 11891,
-    "taxRevenue": 0,
+    "taxRevenue": 1217091000,
     "lat": 36.533,
     "lng": 140.1876
   },
@@ -157,7 +157,7 @@
     "prefCode": "09",
     "name": "市貝町",
     "pop": 11262,
-    "taxRevenue": 0,
+    "taxRevenue": 1473697000,
     "lat": 36.5385,
     "lng": 140.0901
   },
@@ -166,7 +166,7 @@
     "prefCode": "09",
     "name": "芳賀町",
     "pop": 14961,
-    "taxRevenue": 0,
+    "taxRevenue": 1902490000,
     "lat": 36.5521,
     "lng": 140.0432
   },
@@ -175,7 +175,7 @@
     "prefCode": "09",
     "name": "壬生町",
     "pop": 39474,
-    "taxRevenue": 0,
+    "taxRevenue": 3443398000,
     "lat": 36.4548,
     "lng": 139.816
   },
@@ -184,7 +184,7 @@
     "prefCode": "09",
     "name": "野木町",
     "pop": 24913,
-    "taxRevenue": 0,
+    "taxRevenue": 2380141000,
     "lat": 36.2327,
     "lng": 139.7356
   },
@@ -193,7 +193,7 @@
     "prefCode": "09",
     "name": "塩谷町",
     "pop": 10354,
-    "taxRevenue": 0,
+    "taxRevenue": 1040539000,
     "lat": 36.771,
     "lng": 139.8405
   },
@@ -202,7 +202,7 @@
     "prefCode": "09",
     "name": "高根沢町",
     "pop": 29229,
-    "taxRevenue": 0,
+    "taxRevenue": 2010314000,
     "lat": 36.6264,
     "lng": 139.9979
   },
@@ -211,7 +211,7 @@
     "prefCode": "09",
     "name": "那須町",
     "pop": 23956,
-    "taxRevenue": 0,
+    "taxRevenue": 3200659000,
     "lat": 37.0305,
     "lng": 140.0864
   },
@@ -220,7 +220,7 @@
     "prefCode": "09",
     "name": "那珂川町",
     "pop": 15215,
-    "taxRevenue": 0,
+    "taxRevenue": 1779822000,
     "lat": 36.754,
     "lng": 140.1615
   }

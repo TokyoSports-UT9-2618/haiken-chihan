@@ -4,7 +4,7 @@
     "prefCode": "23",
     "name": "名古屋市千種区",
     "pop": 165245,
-    "taxRevenue": 0,
+    "taxRevenue": 89388088325,
     "lat": 35.1711,
     "lng": 136.9572
   },
@@ -13,7 +13,7 @@
     "prefCode": "23",
     "name": "名古屋市東区",
     "pop": 84392,
-    "taxRevenue": 0,
+    "taxRevenue": 45651242397,
     "lat": 35.1819,
     "lng": 136.9301
   },
@@ -22,7 +22,7 @@
     "prefCode": "23",
     "name": "名古屋市北区",
     "pop": 162956,
-    "taxRevenue": 0,
+    "taxRevenue": 88149870320,
     "lat": 35.2077,
     "lng": 136.9197
   },
@@ -31,7 +31,7 @@
     "prefCode": "23",
     "name": "名古屋市西区",
     "pop": 151082,
-    "taxRevenue": 0,
+    "taxRevenue": 81726715848,
     "lat": 35.2046,
     "lng": 136.885
   },
@@ -40,7 +40,7 @@
     "prefCode": "23",
     "name": "名古屋市中村区",
     "pop": 138599,
-    "taxRevenue": 0,
+    "taxRevenue": 74974127228,
     "lat": 35.167,
     "lng": 136.8608
   },
@@ -49,7 +49,7 @@
     "prefCode": "23",
     "name": "名古屋市中区",
     "pop": 93100,
-    "taxRevenue": 0,
+    "taxRevenue": 50361772054,
     "lat": 35.1594,
     "lng": 136.9068
   },
@@ -58,7 +58,7 @@
     "prefCode": "23",
     "name": "名古屋市昭和区",
     "pop": 107599,
-    "taxRevenue": 0,
+    "taxRevenue": 58204901302,
     "lat": 35.1481,
     "lng": 136.9417
   },
@@ -67,7 +67,7 @@
     "prefCode": "23",
     "name": "名古屋市瑞穂区",
     "pop": 108332,
-    "taxRevenue": 0,
+    "taxRevenue": 58601412354,
     "lat": 35.1256,
     "lng": 136.9367
   },
@@ -76,7 +76,7 @@
     "prefCode": "23",
     "name": "名古屋市熱田区",
     "pop": 66957,
-    "taxRevenue": 0,
+    "taxRevenue": 36219905171,
     "lat": 35.1282,
     "lng": 136.8986
   },
@@ -85,7 +85,7 @@
     "prefCode": "23",
     "name": "名古屋市中川区",
     "pop": 220728,
-    "taxRevenue": 0,
+    "taxRevenue": 119401216132,
     "lat": 35.1397,
     "lng": 136.8487
   },
@@ -94,7 +94,7 @@
     "prefCode": "23",
     "name": "名古屋市港区",
     "pop": 143715,
-    "taxRevenue": 0,
+    "taxRevenue": 77741590448,
     "lat": 35.1055,
     "lng": 136.8568
   },
@@ -103,7 +103,7 @@
     "prefCode": "23",
     "name": "名古屋市南区",
     "pop": 134510,
-    "taxRevenue": 0,
+    "taxRevenue": 72762212234,
     "lat": 35.0977,
     "lng": 136.9247
   },
@@ -112,7 +112,7 @@
     "prefCode": "23",
     "name": "名古屋市守山区",
     "pop": 176587,
-    "taxRevenue": 0,
+    "taxRevenue": 95523461243,
     "lat": 35.211,
     "lng": 136.9858
   },
@@ -121,7 +121,7 @@
     "prefCode": "23",
     "name": "名古屋市緑区",
     "pop": 248802,
-    "taxRevenue": 0,
+    "taxRevenue": 134587643508,
     "lat": 35.0805,
     "lng": 136.9724
   },
@@ -130,7 +130,7 @@
     "prefCode": "23",
     "name": "名古屋市名東区",
     "pop": 164755,
-    "taxRevenue": 0,
+    "taxRevenue": 89123026367,
     "lat": 35.1699,
     "lng": 137.0045
   },
@@ -139,7 +139,7 @@
     "prefCode": "23",
     "name": "名古屋市天白区",
     "pop": 164817,
-    "taxRevenue": 0,
+    "taxRevenue": 89156564819,
     "lat": 35.1229,
     "lng": 136.9851
   },
@@ -148,7 +148,7 @@
     "prefCode": "23",
     "name": "豊橋市",
     "pop": 371920,
-    "taxRevenue": 0,
+    "taxRevenue": 41611738000,
     "lat": 34.7449,
     "lng": 137.3979
   },
@@ -157,7 +157,7 @@
     "prefCode": "23",
     "name": "岡崎市",
     "pop": 384654,
-    "taxRevenue": 0,
+    "taxRevenue": 36880866000,
     "lat": 34.9478,
     "lng": 137.1689
   },
@@ -166,7 +166,7 @@
     "prefCode": "23",
     "name": "一宮市",
     "pop": 380073,
-    "taxRevenue": 0,
+    "taxRevenue": 24729751000,
     "lat": 35.3107,
     "lng": 136.7945
   },
@@ -175,7 +175,7 @@
     "prefCode": "23",
     "name": "瀬戸市",
     "pop": 127792,
-    "taxRevenue": 0,
+    "taxRevenue": 12876126000,
     "lat": 35.223,
     "lng": 137.0876
   },
@@ -184,7 +184,7 @@
     "prefCode": "23",
     "name": "半田市",
     "pop": 117884,
-    "taxRevenue": 0,
+    "taxRevenue": 13117040000,
     "lat": 34.9002,
     "lng": 136.9298
   },
@@ -193,7 +193,7 @@
     "prefCode": "23",
     "name": "春日井市",
     "pop": 308681,
-    "taxRevenue": 0,
+    "taxRevenue": 28849203000,
     "lat": 35.2584,
     "lng": 136.9887
   },
@@ -202,7 +202,7 @@
     "prefCode": "23",
     "name": "豊川市",
     "pop": 184661,
-    "taxRevenue": 0,
+    "taxRevenue": 11320376000,
     "lat": 34.8304,
     "lng": 137.3642
   },
@@ -211,7 +211,7 @@
     "prefCode": "23",
     "name": "津島市",
     "pop": 60942,
-    "taxRevenue": 0,
+    "taxRevenue": 6302615000,
     "lat": 35.1725,
     "lng": 136.7446
   },
@@ -220,7 +220,7 @@
     "prefCode": "23",
     "name": "碧南市",
     "pop": 72458,
-    "taxRevenue": 0,
+    "taxRevenue": 12305804000,
     "lat": 34.8879,
     "lng": 136.9971
   },
@@ -229,7 +229,7 @@
     "prefCode": "23",
     "name": "刈谷市",
     "pop": 153834,
-    "taxRevenue": 0,
+    "taxRevenue": 21234844000,
     "lat": 34.9978,
     "lng": 137.0159
   },
@@ -238,7 +238,7 @@
     "prefCode": "23",
     "name": "豊田市",
     "pop": 422330,
-    "taxRevenue": 0,
+    "taxRevenue": 71580409000,
     "lat": 35.0826,
     "lng": 137.1584
   },
@@ -247,7 +247,7 @@
     "prefCode": "23",
     "name": "安城市",
     "pop": 187990,
-    "taxRevenue": 0,
+    "taxRevenue": 22536315000,
     "lat": 34.9561,
     "lng": 137.0767
   },
@@ -256,7 +256,7 @@
     "prefCode": "23",
     "name": "西尾市",
     "pop": 169046,
-    "taxRevenue": 0,
+    "taxRevenue": 13302705000,
     "lat": 34.8458,
     "lng": 137.0559
   },
@@ -265,7 +265,7 @@
     "prefCode": "23",
     "name": "蒲郡市",
     "pop": 79538,
-    "taxRevenue": 0,
+    "taxRevenue": 9742639000,
     "lat": 34.8181,
     "lng": 137.2225
   },
@@ -274,7 +274,7 @@
     "prefCode": "23",
     "name": "犬山市",
     "pop": 73090,
-    "taxRevenue": 0,
+    "taxRevenue": 8581362000,
     "lat": 35.3637,
     "lng": 136.9553
   },
@@ -283,7 +283,7 @@
     "prefCode": "23",
     "name": "常滑市",
     "pop": 58710,
-    "taxRevenue": 0,
+    "taxRevenue": 5694445000,
     "lat": 34.895,
     "lng": 136.845
   },
@@ -292,7 +292,7 @@
     "prefCode": "23",
     "name": "江南市",
     "pop": 98255,
-    "taxRevenue": 0,
+    "taxRevenue": 8122296000,
     "lat": 35.3406,
     "lng": 136.8692
   },
@@ -301,7 +301,7 @@
     "prefCode": "23",
     "name": "小牧市",
     "pop": 148831,
-    "taxRevenue": 0,
+    "taxRevenue": 18330331000,
     "lat": 35.2949,
     "lng": 136.937
   },
@@ -310,7 +310,7 @@
     "prefCode": "23",
     "name": "稲沢市",
     "pop": 134751,
-    "taxRevenue": 0,
+    "taxRevenue": 10700362000,
     "lat": 35.2427,
     "lng": 136.7831
   },
@@ -319,7 +319,7 @@
     "prefCode": "23",
     "name": "新城市",
     "pop": 44355,
-    "taxRevenue": 0,
+    "taxRevenue": 3485218000,
     "lat": 34.914,
     "lng": 137.5148
   },
@@ -328,7 +328,7 @@
     "prefCode": "23",
     "name": "東海市",
     "pop": 113787,
-    "taxRevenue": 0,
+    "taxRevenue": 17486732000,
     "lat": 35.0197,
     "lng": 136.9097
   },
@@ -337,7 +337,7 @@
     "prefCode": "23",
     "name": "大府市",
     "pop": 93123,
-    "taxRevenue": 0,
+    "taxRevenue": 9502414000,
     "lat": 35.0205,
     "lng": 136.9563
   },
@@ -346,7 +346,7 @@
     "prefCode": "23",
     "name": "知多市",
     "pop": 84364,
-    "taxRevenue": 0,
+    "taxRevenue": 12394931000,
     "lat": 34.9713,
     "lng": 136.869
   },
@@ -355,7 +355,7 @@
     "prefCode": "23",
     "name": "知立市",
     "pop": 72193,
-    "taxRevenue": 0,
+    "taxRevenue": 5997972000,
     "lat": 35.0001,
     "lng": 137.0503
   },
@@ -364,7 +364,7 @@
     "prefCode": "23",
     "name": "尾張旭市",
     "pop": 83144,
-    "taxRevenue": 0,
+    "taxRevenue": 7138175000,
     "lat": 35.2128,
     "lng": 137.0345
   },
@@ -373,7 +373,7 @@
     "prefCode": "23",
     "name": "高浜市",
     "pop": 46106,
-    "taxRevenue": 0,
+    "taxRevenue": 4804528000,
     "lat": 34.9316,
     "lng": 136.9939
   },
@@ -382,7 +382,7 @@
     "prefCode": "23",
     "name": "岩倉市",
     "pop": 47983,
-    "taxRevenue": 0,
+    "taxRevenue": 3812911000,
     "lat": 35.2793,
     "lng": 136.8726
   },
@@ -391,7 +391,7 @@
     "prefCode": "23",
     "name": "豊明市",
     "pop": 69295,
-    "taxRevenue": 0,
+    "taxRevenue": 6418455000,
     "lat": 35.057,
     "lng": 137.0031
   },
@@ -400,7 +400,7 @@
     "prefCode": "23",
     "name": "日進市",
     "pop": 91520,
-    "taxRevenue": 0,
+    "taxRevenue": 10224766000,
     "lat": 35.1333,
     "lng": 137.0397
   },
@@ -409,7 +409,7 @@
     "prefCode": "23",
     "name": "田原市",
     "pop": 59360,
-    "taxRevenue": 0,
+    "taxRevenue": 12521097000,
     "lat": 34.6519,
     "lng": 137.2114
   },
@@ -418,7 +418,7 @@
     "prefCode": "23",
     "name": "愛西市",
     "pop": 60829,
-    "taxRevenue": 0,
+    "taxRevenue": 6740596000,
     "lat": 35.1715,
     "lng": 136.7267
   },
@@ -427,7 +427,7 @@
     "prefCode": "23",
     "name": "清須市",
     "pop": 67352,
-    "taxRevenue": 0,
+    "taxRevenue": 8322300000,
     "lat": 35.2104,
     "lng": 136.8484
   },
@@ -436,7 +436,7 @@
     "prefCode": "23",
     "name": "北名古屋市",
     "pop": 86385,
-    "taxRevenue": 0,
+    "taxRevenue": 10820724000,
     "lat": 35.2475,
     "lng": 136.8762
   },
@@ -445,7 +445,7 @@
     "prefCode": "23",
     "name": "弥富市",
     "pop": 43025,
-    "taxRevenue": 0,
+    "taxRevenue": 6036834000,
     "lat": 35.1087,
     "lng": 136.7389
   },
@@ -454,7 +454,7 @@
     "prefCode": "23",
     "name": "みよし市",
     "pop": 61952,
-    "taxRevenue": 0,
+    "taxRevenue": 11618497000,
     "lat": 35.1013,
     "lng": 137.0936
   },
@@ -463,7 +463,7 @@
     "prefCode": "23",
     "name": "あま市",
     "pop": 86126,
-    "taxRevenue": 0,
+    "taxRevenue": 10305254000,
     "lat": 35.1883,
     "lng": 136.8077
   },
@@ -472,7 +472,7 @@
     "prefCode": "23",
     "name": "長久手市",
     "pop": 60162,
-    "taxRevenue": 0,
+    "taxRevenue": 8343253000,
     "lat": 35.1761,
     "lng": 137.0387
   },
@@ -481,7 +481,7 @@
     "prefCode": "23",
     "name": "東郷町",
     "pop": 43903,
-    "taxRevenue": 0,
+    "taxRevenue": 3550974000,
     "lat": 35.101,
     "lng": 137.0465
   },
@@ -490,7 +490,7 @@
     "prefCode": "23",
     "name": "豊山町",
     "pop": 15613,
-    "taxRevenue": 0,
+    "taxRevenue": 2677038000,
     "lat": 35.2468,
     "lng": 136.9139
   },
@@ -499,7 +499,7 @@
     "prefCode": "23",
     "name": "大口町",
     "pop": 24305,
-    "taxRevenue": 0,
+    "taxRevenue": 3524218000,
     "lat": 35.3362,
     "lng": 136.9102
   },
@@ -508,7 +508,7 @@
     "prefCode": "23",
     "name": "扶桑町",
     "pop": 34133,
-    "taxRevenue": 0,
+    "taxRevenue": 2958637000,
     "lat": 35.3584,
     "lng": 136.9126
   },
@@ -517,7 +517,7 @@
     "prefCode": "23",
     "name": "大治町",
     "pop": 32399,
-    "taxRevenue": 0,
+    "taxRevenue": 2333333000,
     "lat": 35.1737,
     "lng": 136.8216
   },
@@ -526,7 +526,7 @@
     "prefCode": "23",
     "name": "蟹江町",
     "pop": 37338,
-    "taxRevenue": 0,
+    "taxRevenue": 3343799000,
     "lat": 35.133,
     "lng": 136.7867
   },
@@ -535,7 +535,7 @@
     "prefCode": "23",
     "name": "飛島村",
     "pop": 4575,
-    "taxRevenue": 0,
+    "taxRevenue": 2915956000,
     "lat": 35.0812,
     "lng": 136.7931
   },
@@ -544,7 +544,7 @@
     "prefCode": "23",
     "name": "阿久比町",
     "pop": 28383,
-    "taxRevenue": 0,
+    "taxRevenue": 1968519000,
     "lat": 34.9366,
     "lng": 136.9153
   },
@@ -553,7 +553,7 @@
     "prefCode": "23",
     "name": "東浦町",
     "pop": 49596,
-    "taxRevenue": 0,
+    "taxRevenue": 3967334000,
     "lat": 34.9673,
     "lng": 136.9556
   },
@@ -562,7 +562,7 @@
     "prefCode": "23",
     "name": "南知多町",
     "pop": 16617,
-    "taxRevenue": 0,
+    "taxRevenue": 2328726000,
     "lat": 34.7188,
     "lng": 136.9409
   },
@@ -571,7 +571,7 @@
     "prefCode": "23",
     "name": "美浜町",
     "pop": 22496,
-    "taxRevenue": 0,
+    "taxRevenue": 2645840000,
     "lat": 34.7805,
     "lng": 136.8882
   },
@@ -580,7 +580,7 @@
     "prefCode": "23",
     "name": "武豊町",
     "pop": 43535,
-    "taxRevenue": 0,
+    "taxRevenue": 5530484000,
     "lat": 34.8499,
     "lng": 136.9098
   },
@@ -589,7 +589,7 @@
     "prefCode": "23",
     "name": "幸田町",
     "pop": 42449,
-    "taxRevenue": 0,
+    "taxRevenue": 4733522000,
     "lat": 34.8673,
     "lng": 137.1699
   },
@@ -598,7 +598,7 @@
     "prefCode": "23",
     "name": "設楽町",
     "pop": 4437,
-    "taxRevenue": 0,
+    "taxRevenue": 531407000,
     "lat": 35.1248,
     "lng": 137.574
   },
@@ -607,7 +607,7 @@
     "prefCode": "23",
     "name": "東栄町",
     "pop": 2942,
-    "taxRevenue": 0,
+    "taxRevenue": 399986000,
     "lat": 35.0733,
     "lng": 137.6943
   },
@@ -616,7 +616,7 @@
     "prefCode": "23",
     "name": "豊根村",
     "pop": 1017,
-    "taxRevenue": 0,
+    "taxRevenue": 446242000,
     "lat": 35.1723,
     "lng": 137.7062
   }

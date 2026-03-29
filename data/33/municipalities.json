@@ -4,7 +4,7 @@
     "prefCode": "33",
     "name": "岡山市北区",
     "pop": 314523,
-    "taxRevenue": 0,
+    "taxRevenue": 55393424490,
     "lat": 34.6754,
     "lng": 133.8962
   },
@@ -13,7 +13,7 @@
     "prefCode": "33",
     "name": "岡山市中区",
     "pop": 149232,
-    "taxRevenue": 0,
+    "taxRevenue": 26282566056,
     "lat": 34.6636,
     "lng": 133.9614
   },
@@ -22,7 +22,7 @@
     "prefCode": "33",
     "name": "岡山市東区",
     "pop": 93108,
-    "taxRevenue": 0,
+    "taxRevenue": 16398072534,
     "lat": 34.6747,
     "lng": 134.0321
   },
@@ -31,7 +31,7 @@
     "prefCode": "33",
     "name": "岡山市南区",
     "pop": 167828,
-    "taxRevenue": 0,
+    "taxRevenue": 29557671920,
     "lat": 34.6071,
     "lng": 133.9053
   },
@@ -40,7 +40,7 @@
     "prefCode": "33",
     "name": "倉敷市",
     "pop": 474592,
-    "taxRevenue": 0,
+    "taxRevenue": 62687043000,
     "lat": 34.5652,
     "lng": 133.7558
   },
@@ -49,7 +49,7 @@
     "prefCode": "33",
     "name": "津山市",
     "pop": 99937,
-    "taxRevenue": 0,
+    "taxRevenue": 8738553000,
     "lat": 35.0783,
     "lng": 134.014
   },
@@ -58,7 +58,7 @@
     "prefCode": "33",
     "name": "玉野市",
     "pop": 56531,
-    "taxRevenue": 0,
+    "taxRevenue": 6356972000,
     "lat": 34.5068,
     "lng": 133.9318
   },
@@ -67,7 +67,7 @@
     "prefCode": "33",
     "name": "笠岡市",
     "pop": 46088,
-    "taxRevenue": 0,
+    "taxRevenue": 5968052000,
     "lat": 34.5083,
     "lng": 133.5117
   },
@@ -76,7 +76,7 @@
     "prefCode": "33",
     "name": "井原市",
     "pop": 38384,
-    "taxRevenue": 0,
+    "taxRevenue": 3261614000,
     "lat": 34.6077,
     "lng": 133.4687
   },
@@ -85,7 +85,7 @@
     "prefCode": "33",
     "name": "総社市",
     "pop": 69030,
-    "taxRevenue": 0,
+    "taxRevenue": 4836971000,
     "lat": 34.6764,
     "lng": 133.739
   },
@@ -94,7 +94,7 @@
     "prefCode": "33",
     "name": "高梁市",
     "pop": 29072,
-    "taxRevenue": 0,
+    "taxRevenue": 2133228000,
     "lat": 34.8055,
     "lng": 133.5737
   },
@@ -103,7 +103,7 @@
     "prefCode": "33",
     "name": "新見市",
     "pop": 28079,
-    "taxRevenue": 0,
+    "taxRevenue": 2182352000,
     "lat": 34.9891,
     "lng": 133.4626
   },
@@ -112,7 +112,7 @@
     "prefCode": "33",
     "name": "備前市",
     "pop": 32320,
-    "taxRevenue": 0,
+    "taxRevenue": 3712208000,
     "lat": 34.7522,
     "lng": 134.2113
   },
@@ -121,7 +121,7 @@
     "prefCode": "33",
     "name": "瀬戸内市",
     "pop": 36048,
-    "taxRevenue": 0,
+    "taxRevenue": 4176099000,
     "lat": 34.6725,
     "lng": 134.1127
   },
@@ -130,7 +130,7 @@
     "prefCode": "33",
     "name": "赤磐市",
     "pop": 42661,
-    "taxRevenue": 0,
+    "taxRevenue": 4134908000,
     "lat": 34.7842,
     "lng": 134.0338
   },
@@ -139,7 +139,7 @@
     "prefCode": "33",
     "name": "真庭市",
     "pop": 42725,
-    "taxRevenue": 0,
+    "taxRevenue": 5114530000,
     "lat": 35.0799,
     "lng": 133.7144
   },
@@ -148,7 +148,7 @@
     "prefCode": "33",
     "name": "美作市",
     "pop": 25939,
-    "taxRevenue": 0,
+    "taxRevenue": 2898345000,
     "lat": 35.0289,
     "lng": 134.2023
   },
@@ -157,7 +157,7 @@
     "prefCode": "33",
     "name": "浅口市",
     "pop": 32772,
-    "taxRevenue": 0,
+    "taxRevenue": 3097422000,
     "lat": 34.5291,
     "lng": 133.5964
   },
@@ -166,7 +166,7 @@
     "prefCode": "33",
     "name": "和気町",
     "pop": 13623,
-    "taxRevenue": 0,
+    "taxRevenue": 835800000,
     "lat": 34.8176,
     "lng": 134.1457
   },
@@ -175,7 +175,7 @@
     "prefCode": "33",
     "name": "早島町",
     "pop": 12368,
-    "taxRevenue": 0,
+    "taxRevenue": 1024678000,
     "lat": 34.6073,
     "lng": 133.8254
   },
@@ -184,7 +184,7 @@
     "prefCode": "33",
     "name": "里庄町",
     "pop": 10950,
-    "taxRevenue": 0,
+    "taxRevenue": 1126546000,
     "lat": 34.5124,
     "lng": 133.5559
   },
@@ -193,7 +193,7 @@
     "prefCode": "33",
     "name": "矢掛町",
     "pop": 13414,
-    "taxRevenue": 0,
+    "taxRevenue": 1161117000,
     "lat": 34.6205,
     "lng": 133.5833
   },
@@ -202,7 +202,7 @@
     "prefCode": "33",
     "name": "新庄村",
     "pop": 813,
-    "taxRevenue": 0,
+    "taxRevenue": 497501000,
     "lat": 35.1854,
     "lng": 133.5671
   },
@@ -211,7 +211,7 @@
     "prefCode": "33",
     "name": "鏡野町",
     "pop": 12062,
-    "taxRevenue": 0,
+    "taxRevenue": 604928000,
     "lat": 35.1203,
     "lng": 133.9235
   },
@@ -220,7 +220,7 @@
     "prefCode": "33",
     "name": "勝央町",
     "pop": 10888,
-    "taxRevenue": 0,
+    "taxRevenue": 1133376000,
     "lat": 35.0514,
     "lng": 134.1263
   },
@@ -229,7 +229,7 @@
     "prefCode": "33",
     "name": "奈義町",
     "pop": 5578,
-    "taxRevenue": 0,
+    "taxRevenue": 417088000,
     "lat": 35.1199,
     "lng": 134.1738
   },
@@ -238,7 +238,7 @@
     "prefCode": "33",
     "name": "西粟倉村",
     "pop": 1398,
-    "taxRevenue": 0,
+    "taxRevenue": 92809000,
     "lat": 35.1806,
     "lng": 134.3353
   },
@@ -247,7 +247,7 @@
     "prefCode": "33",
     "name": "久米南町",
     "pop": 4530,
-    "taxRevenue": 0,
+    "taxRevenue": 342185000,
     "lat": 34.9267,
     "lng": 133.9528
   },
@@ -256,7 +256,7 @@
     "prefCode": "33",
     "name": "美咲町",
     "pop": 13053,
-    "taxRevenue": 0,
+    "taxRevenue": 1221971000,
     "lat": 34.9853,
     "lng": 133.9725
   },
@@ -265,7 +265,7 @@
     "prefCode": "33",
     "name": "吉備中央町",
     "pop": 10886,
-    "taxRevenue": 0,
+    "taxRevenue": 1153437000,
     "lat": 34.8491,
     "lng": 133.7392
   }

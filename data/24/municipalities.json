@@ -4,7 +4,7 @@
     "prefCode": "24",
     "name": "津市",
     "pop": 274537,
-    "taxRevenue": 0,
+    "taxRevenue": 19333761000,
     "lat": 34.7156,
     "lng": 136.479
   },
@@ -13,7 +13,7 @@
     "prefCode": "24",
     "name": "四日市市",
     "pop": 305424,
-    "taxRevenue": 0,
+    "taxRevenue": 40736440000,
     "lat": 34.9783,
     "lng": 136.6008
   },
@@ -22,7 +22,7 @@
     "prefCode": "24",
     "name": "伊勢市",
     "pop": 122765,
-    "taxRevenue": 0,
+    "taxRevenue": 9318507000,
     "lat": 34.4984,
     "lng": 136.7051
   },
@@ -31,7 +31,7 @@
     "prefCode": "24",
     "name": "松阪市",
     "pop": 159145,
-    "taxRevenue": 0,
+    "taxRevenue": 11631481000,
     "lat": 34.5711,
     "lng": 136.513
   },
@@ -40,7 +40,7 @@
     "prefCode": "24",
     "name": "桑名市",
     "pop": 138613,
-    "taxRevenue": 0,
+    "taxRevenue": 9785601000,
     "lat": 35.0749,
     "lng": 136.6627
   },
@@ -49,7 +49,7 @@
     "prefCode": "24",
     "name": "鈴鹿市",
     "pop": 195670,
-    "taxRevenue": 0,
+    "taxRevenue": 19038996000,
     "lat": 34.8665,
     "lng": 136.5638
   },
@@ -58,7 +58,7 @@
     "prefCode": "24",
     "name": "名張市",
     "pop": 76387,
-    "taxRevenue": 0,
+    "taxRevenue": 6000832000,
     "lat": 34.6282,
     "lng": 136.1125
   },
@@ -67,7 +67,7 @@
     "prefCode": "24",
     "name": "尾鷲市",
     "pop": 16252,
-    "taxRevenue": 0,
+    "taxRevenue": 3266297000,
     "lat": 34.0582,
     "lng": 136.1966
   },
@@ -76,7 +76,7 @@
     "prefCode": "24",
     "name": "亀山市",
     "pop": 49835,
-    "taxRevenue": 0,
+    "taxRevenue": 3878681000,
     "lat": 34.8646,
     "lng": 136.4518
   },
@@ -85,7 +85,7 @@
     "prefCode": "24",
     "name": "鳥羽市",
     "pop": 17525,
-    "taxRevenue": 0,
+    "taxRevenue": 2788618000,
     "lat": 34.4655,
     "lng": 136.8603
   },
@@ -94,7 +94,7 @@
     "prefCode": "24",
     "name": "熊野市",
     "pop": 15965,
-    "taxRevenue": 0,
+    "taxRevenue": 1471663000,
     "lat": 33.9031,
     "lng": 136.0686
   },
@@ -103,7 +103,7 @@
     "prefCode": "24",
     "name": "いなべ市",
     "pop": 44973,
-    "taxRevenue": 0,
+    "taxRevenue": 7726923000,
     "lat": 35.1288,
     "lng": 136.5285
   },
@@ -112,7 +112,7 @@
     "prefCode": "24",
     "name": "志摩市",
     "pop": 46057,
-    "taxRevenue": 0,
+    "taxRevenue": 5728942000,
     "lat": 34.3138,
     "lng": 136.8275
   },
@@ -121,7 +121,7 @@
     "prefCode": "24",
     "name": "伊賀市",
     "pop": 88766,
-    "taxRevenue": 0,
+    "taxRevenue": 12799208000,
     "lat": 34.7605,
     "lng": 136.159
   },
@@ -130,7 +130,7 @@
     "prefCode": "24",
     "name": "木曽岬町",
     "pop": 6023,
-    "taxRevenue": 0,
+    "taxRevenue": 610912000,
     "lat": 35.0737,
     "lng": 136.7394
   },
@@ -139,7 +139,7 @@
     "prefCode": "24",
     "name": "東員町",
     "pop": 25784,
-    "taxRevenue": 0,
+    "taxRevenue": 1809412000,
     "lat": 35.0873,
     "lng": 136.5936
   },
@@ -148,7 +148,7 @@
     "prefCode": "24",
     "name": "菰野町",
     "pop": 40559,
-    "taxRevenue": 0,
+    "taxRevenue": 2722689000,
     "lat": 35.0329,
     "lng": 136.51
   },
@@ -157,7 +157,7 @@
     "prefCode": "24",
     "name": "朝日町",
     "pop": 11021,
-    "taxRevenue": 0,
+    "taxRevenue": 1342297000,
     "lat": 35.0369,
     "lng": 136.6622
   },
@@ -166,7 +166,7 @@
     "prefCode": "24",
     "name": "川越町",
     "pop": 15123,
-    "taxRevenue": 0,
+    "taxRevenue": 1757157000,
     "lat": 35.0221,
     "lng": 136.6728
   },
@@ -175,7 +175,7 @@
     "prefCode": "24",
     "name": "多気町",
     "pop": 14021,
-    "taxRevenue": 0,
+    "taxRevenue": 622352000,
     "lat": 34.4855,
     "lng": 136.5232
   },
@@ -184,7 +184,7 @@
     "prefCode": "24",
     "name": "明和町",
     "pop": 22445,
-    "taxRevenue": 0,
+    "taxRevenue": 1359181000,
     "lat": 34.5456,
     "lng": 136.6274
   },
@@ -193,7 +193,7 @@
     "prefCode": "24",
     "name": "大台町",
     "pop": 8668,
-    "taxRevenue": 0,
+    "taxRevenue": 545011000,
     "lat": 34.3947,
     "lng": 136.4077
   },
@@ -202,7 +202,7 @@
     "prefCode": "24",
     "name": "玉城町",
     "pop": 15041,
-    "taxRevenue": 0,
+    "taxRevenue": 1157960000,
     "lat": 34.4868,
     "lng": 136.6261
   },
@@ -211,7 +211,7 @@
     "prefCode": "24",
     "name": "度会町",
     "pop": 7847,
-    "taxRevenue": 0,
+    "taxRevenue": 395859000,
     "lat": 34.4259,
     "lng": 136.6043
   },
@@ -220,7 +220,7 @@
     "prefCode": "24",
     "name": "大紀町",
     "pop": 7815,
-    "taxRevenue": 0,
+    "taxRevenue": 678589000,
     "lat": 34.3173,
     "lng": 136.4215
   },
@@ -229,7 +229,7 @@
     "prefCode": "24",
     "name": "南伊勢町",
     "pop": 10989,
-    "taxRevenue": 0,
+    "taxRevenue": 1044173000,
     "lat": 34.313,
     "lng": 136.6199
   },
@@ -238,7 +238,7 @@
     "prefCode": "24",
     "name": "紀北町",
     "pop": 14604,
-    "taxRevenue": 0,
+    "taxRevenue": 1384311000,
     "lat": 34.1638,
     "lng": 136.2817
   },
@@ -247,7 +247,7 @@
     "prefCode": "24",
     "name": "御浜町",
     "pop": 8079,
-    "taxRevenue": 0,
+    "taxRevenue": 480023000,
     "lat": 33.829,
     "lng": 136.0338
   },
@@ -256,7 +256,7 @@
     "prefCode": "24",
     "name": "紀宝町",
     "pop": 10321,
-    "taxRevenue": 0,
+    "taxRevenue": 404367000,
     "lat": 33.7549,
     "lng": 135.9971
   }

@@ -4,7 +4,7 @@
     "prefCode": "32",
     "name": "松江市",
     "pop": 203616,
-    "taxRevenue": 0,
+    "taxRevenue": 15615282000,
     "lat": 35.4619,
     "lng": 133.0669
   },
@@ -13,7 +13,7 @@
     "prefCode": "32",
     "name": "浜田市",
     "pop": 54592,
-    "taxRevenue": 0,
+    "taxRevenue": 4612395000,
     "lat": 34.8721,
     "lng": 132.0856
   },
@@ -22,7 +22,7 @@
     "prefCode": "32",
     "name": "出雲市",
     "pop": 172775,
-    "taxRevenue": 0,
+    "taxRevenue": 7941376000,
     "lat": 35.3744,
     "lng": 132.7629
   },
@@ -31,7 +31,7 @@
     "prefCode": "32",
     "name": "益田市",
     "pop": 45003,
-    "taxRevenue": 0,
+    "taxRevenue": 4636538000,
     "lat": 34.6752,
     "lng": 131.8449
   },
@@ -40,7 +40,7 @@
     "prefCode": "32",
     "name": "大田市",
     "pop": 32846,
-    "taxRevenue": 0,
+    "taxRevenue": 2769066000,
     "lat": 35.1738,
     "lng": 132.4893
   },
@@ -49,7 +49,7 @@
     "prefCode": "32",
     "name": "安来市",
     "pop": 37062,
-    "taxRevenue": 0,
+    "taxRevenue": 3123602000,
     "lat": 35.3952,
     "lng": 133.2305
   },
@@ -58,7 +58,7 @@
     "prefCode": "32",
     "name": "江津市",
     "pop": 22959,
-    "taxRevenue": 0,
+    "taxRevenue": 2343204000,
     "lat": 34.9915,
     "lng": 132.2305
   },
@@ -67,7 +67,7 @@
     "prefCode": "32",
     "name": "雲南市",
     "pop": 36007,
-    "taxRevenue": 0,
+    "taxRevenue": 3618030000,
     "lat": 35.2956,
     "lng": 132.9124
   },
@@ -76,7 +76,7 @@
     "prefCode": "32",
     "name": "奥出雲町",
     "pop": 11849,
-    "taxRevenue": 0,
+    "taxRevenue": 1187122000,
     "lat": 35.1743,
     "lng": 133.0437
   },
@@ -85,7 +85,7 @@
     "prefCode": "32",
     "name": "飯南町",
     "pop": 4577,
-    "taxRevenue": 0,
+    "taxRevenue": 515587000,
     "lat": 35.048,
     "lng": 132.749
   },
@@ -94,7 +94,7 @@
     "prefCode": "32",
     "name": "川本町",
     "pop": 3248,
-    "taxRevenue": 0,
+    "taxRevenue": 401106000,
     "lat": 34.9819,
     "lng": 132.4882
   },
@@ -103,7 +103,7 @@
     "prefCode": "32",
     "name": "美郷町",
     "pop": 4355,
-    "taxRevenue": 0,
+    "taxRevenue": 505651000,
     "lat": 35.034,
     "lng": 132.6011
   },
@@ -112,7 +112,7 @@
     "prefCode": "32",
     "name": "邑南町",
     "pop": 10163,
-    "taxRevenue": 0,
+    "taxRevenue": 1065231000,
     "lat": 34.881,
     "lng": 132.4916
   },
@@ -121,7 +121,7 @@
     "prefCode": "32",
     "name": "津和野町",
     "pop": 6875,
-    "taxRevenue": 0,
+    "taxRevenue": 476654000,
     "lat": 34.5061,
     "lng": 131.7911
   },
@@ -130,7 +130,7 @@
     "prefCode": "32",
     "name": "吉賀町",
     "pop": 6077,
-    "taxRevenue": 0,
+    "taxRevenue": 512841000,
     "lat": 34.3923,
     "lng": 131.9186
   },
@@ -139,7 +139,7 @@
     "prefCode": "32",
     "name": "海士町",
     "pop": 2267,
-    "taxRevenue": 0,
+    "taxRevenue": 211675000,
     "lat": 36.0924,
     "lng": 133.0952
   },
@@ -148,7 +148,7 @@
     "prefCode": "32",
     "name": "西ノ島町",
     "pop": 2788,
-    "taxRevenue": 0,
+    "taxRevenue": 283655000,
     "lat": 36.0921,
     "lng": 133.0073
   },
@@ -157,7 +157,7 @@
     "prefCode": "32",
     "name": "知夫村",
     "pop": 634,
-    "taxRevenue": 0,
+    "taxRevenue": 42876000,
     "lat": 36.0151,
     "lng": 133.0308
   },
@@ -166,7 +166,7 @@
     "prefCode": "32",
     "name": "隠岐の島町",
     "pop": 13433,
-    "taxRevenue": 0,
+    "taxRevenue": 1455735000,
     "lat": 36.2282,
     "lng": 133.3014
   }

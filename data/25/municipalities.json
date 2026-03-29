@@ -4,7 +4,7 @@
     "prefCode": "25",
     "name": "大津市",
     "pop": 345070,
-    "taxRevenue": 0,
+    "taxRevenue": 30761831000,
     "lat": 35.027,
     "lng": 135.898
   },
@@ -13,7 +13,7 @@
     "prefCode": "25",
     "name": "彦根市",
     "pop": 113647,
-    "taxRevenue": 0,
+    "taxRevenue": 11129029000,
     "lat": 35.2497,
     "lng": 136.2405
   },
@@ -22,7 +22,7 @@
     "prefCode": "25",
     "name": "長浜市",
     "pop": 113636,
-    "taxRevenue": 0,
+    "taxRevenue": 5796686000,
     "lat": 35.4199,
     "lng": 136.2644
   },
@@ -31,7 +31,7 @@
     "prefCode": "25",
     "name": "近江八幡市",
     "pop": 81122,
-    "taxRevenue": 0,
+    "taxRevenue": 5750792000,
     "lat": 35.1265,
     "lng": 136.0995
   },
@@ -40,7 +40,7 @@
     "prefCode": "25",
     "name": "草津市",
     "pop": 143913,
-    "taxRevenue": 0,
+    "taxRevenue": 12023734000,
     "lat": 35.0125,
     "lng": 135.9526
   },
@@ -49,7 +49,7 @@
     "prefCode": "25",
     "name": "守山市",
     "pop": 83236,
-    "taxRevenue": 0,
+    "taxRevenue": 6654927000,
     "lat": 35.0681,
     "lng": 135.9828
   },
@@ -58,7 +58,7 @@
     "prefCode": "25",
     "name": "栗東市",
     "pop": 68820,
-    "taxRevenue": 0,
+    "taxRevenue": 13929526000,
     "lat": 35.0246,
     "lng": 135.9922
   },
@@ -67,7 +67,7 @@
     "prefCode": "25",
     "name": "甲賀市",
     "pop": 88358,
-    "taxRevenue": 0,
+    "taxRevenue": 11896390000,
     "lat": 34.9427,
     "lng": 136.1689
   },
@@ -76,7 +76,7 @@
     "prefCode": "25",
     "name": "野洲市",
     "pop": 50513,
-    "taxRevenue": 0,
+    "taxRevenue": 7213627000,
     "lat": 35.0799,
     "lng": 136.0273
   },
@@ -85,7 +85,7 @@
     "prefCode": "25",
     "name": "湖南市",
     "pop": 54460,
-    "taxRevenue": 0,
+    "taxRevenue": 7869991000,
     "lat": 35.0093,
     "lng": 136.0863
   },
@@ -94,7 +94,7 @@
     "prefCode": "25",
     "name": "高島市",
     "pop": 46377,
-    "taxRevenue": 0,
+    "taxRevenue": 5478004000,
     "lat": 35.3686,
     "lng": 136.0206
   },
@@ -103,7 +103,7 @@
     "prefCode": "25",
     "name": "東近江市",
     "pop": 112819,
-    "taxRevenue": 0,
+    "taxRevenue": 13814782000,
     "lat": 35.1193,
     "lng": 136.1985
   },
@@ -112,7 +112,7 @@
     "prefCode": "25",
     "name": "米原市",
     "pop": 37225,
-    "taxRevenue": 0,
+    "taxRevenue": 5388648000,
     "lat": 35.3474,
     "lng": 136.3311
   },
@@ -121,7 +121,7 @@
     "prefCode": "25",
     "name": "日野町",
     "pop": 20964,
-    "taxRevenue": 0,
+    "taxRevenue": 2190534000,
     "lat": 35.0158,
     "lng": 136.2429
   },
@@ -130,7 +130,7 @@
     "prefCode": "25",
     "name": "竜王町",
     "pop": 11789,
-    "taxRevenue": 0,
+    "taxRevenue": 1876002000,
     "lat": 35.063,
     "lng": 136.1132
   },
@@ -139,7 +139,7 @@
     "prefCode": "25",
     "name": "愛荘町",
     "pop": 20893,
-    "taxRevenue": 0,
+    "taxRevenue": 2660336000,
     "lat": 35.173,
     "lng": 136.2241
   },
@@ -148,7 +148,7 @@
     "prefCode": "25",
     "name": "豊郷町",
     "pop": 7132,
-    "taxRevenue": 0,
+    "taxRevenue": 496420000,
     "lat": 35.199,
     "lng": 136.2287
   },
@@ -157,7 +157,7 @@
     "prefCode": "25",
     "name": "甲良町",
     "pop": 6362,
-    "taxRevenue": 0,
+    "taxRevenue": 449497000,
     "lat": 35.2044,
     "lng": 136.2606
   },
@@ -166,7 +166,7 @@
     "prefCode": "25",
     "name": "多賀町",
     "pop": 7274,
-    "taxRevenue": 0,
+    "taxRevenue": 1108014000,
     "lat": 35.2174,
     "lng": 136.2985
   }

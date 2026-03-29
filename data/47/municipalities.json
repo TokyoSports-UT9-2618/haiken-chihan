@@ -4,7 +4,7 @@
     "prefCode": "47",
     "name": "那覇市",
     "pop": 317625,
-    "taxRevenue": 0,
+    "taxRevenue": 25625766000,
     "lat": 26.2123,
     "lng": 127.6944
   },
@@ -13,7 +13,7 @@
     "prefCode": "47",
     "name": "宜野湾市",
     "pop": 100125,
-    "taxRevenue": 0,
+    "taxRevenue": 4355278000,
     "lat": 26.2704,
     "lng": 127.755
   },
@@ -22,7 +22,7 @@
     "prefCode": "47",
     "name": "石垣市",
     "pop": 47637,
-    "taxRevenue": 0,
+    "taxRevenue": 2381784000,
     "lat": 24.3707,
     "lng": 124.1736
   },
@@ -31,7 +31,7 @@
     "prefCode": "47",
     "name": "浦添市",
     "pop": 115690,
-    "taxRevenue": 0,
+    "taxRevenue": 6648713000,
     "lat": 26.249,
     "lng": 127.7175
   },
@@ -40,7 +40,7 @@
     "prefCode": "47",
     "name": "名護市",
     "pop": 63554,
-    "taxRevenue": 0,
+    "taxRevenue": 2758019000,
     "lat": 26.5994,
     "lng": 127.9849
   },
@@ -49,7 +49,7 @@
     "prefCode": "47",
     "name": "糸満市",
     "pop": 61007,
-    "taxRevenue": 0,
+    "taxRevenue": 1810068000,
     "lat": 26.1338,
     "lng": 127.6783
   },
@@ -58,7 +58,7 @@
     "prefCode": "47",
     "name": "沖縄市",
     "pop": 142752,
-    "taxRevenue": 0,
+    "taxRevenue": 5790541000,
     "lat": 26.3357,
     "lng": 127.8148
   },
@@ -67,7 +67,7 @@
     "prefCode": "47",
     "name": "豊見城市",
     "pop": 64612,
-    "taxRevenue": 0,
+    "taxRevenue": 3265651000,
     "lat": 26.1763,
     "lng": 127.6809
   },
@@ -76,7 +76,7 @@
     "prefCode": "47",
     "name": "うるま市",
     "pop": 125303,
-    "taxRevenue": 0,
+    "taxRevenue": 8245334000,
     "lat": 26.3676,
     "lng": 127.8552
   },
@@ -85,7 +85,7 @@
     "prefCode": "47",
     "name": "宮古島市",
     "pop": 52931,
-    "taxRevenue": 0,
+    "taxRevenue": 4100539000,
     "lat": 24.7897,
     "lng": 125.295
   },
@@ -94,7 +94,7 @@
     "prefCode": "47",
     "name": "南城市",
     "pop": 44043,
-    "taxRevenue": 0,
+    "taxRevenue": 2083234000,
     "lat": 26.1669,
     "lng": 127.7688
   },
@@ -103,7 +103,7 @@
     "prefCode": "47",
     "name": "国頭村",
     "pop": 4517,
-    "taxRevenue": 0,
+    "taxRevenue": 386499000,
     "lat": 26.7426,
     "lng": 128.2077
   },
@@ -112,7 +112,7 @@
     "prefCode": "47",
     "name": "大宜味村",
     "pop": 3092,
-    "taxRevenue": 0,
+    "taxRevenue": 129612000,
     "lat": 26.6758,
     "lng": 128.1244
   },
@@ -121,7 +121,7 @@
     "prefCode": "47",
     "name": "東村",
     "pop": 1598,
-    "taxRevenue": 0,
+    "taxRevenue": 192644000,
     "lat": 26.6333,
     "lng": 128.1578
   },
@@ -130,7 +130,7 @@
     "prefCode": "47",
     "name": "今帰仁村",
     "pop": 8894,
-    "taxRevenue": 0,
+    "taxRevenue": 334989000,
     "lat": 26.6815,
     "lng": 127.9668
   },
@@ -139,7 +139,7 @@
     "prefCode": "47",
     "name": "本部町",
     "pop": 12530,
-    "taxRevenue": 0,
+    "taxRevenue": 585865000,
     "lat": 26.664,
     "lng": 127.8963
   },
@@ -148,7 +148,7 @@
     "prefCode": "47",
     "name": "恩納村",
     "pop": 10869,
-    "taxRevenue": 0,
+    "taxRevenue": 759979000,
     "lat": 26.4676,
     "lng": 127.8385
   },
@@ -157,7 +157,7 @@
     "prefCode": "47",
     "name": "宜野座村",
     "pop": 5833,
-    "taxRevenue": 0,
+    "taxRevenue": 178031000,
     "lat": 26.4853,
     "lng": 127.9668
   },
@@ -166,7 +166,7 @@
     "prefCode": "47",
     "name": "金武町",
     "pop": 10806,
-    "taxRevenue": 0,
+    "taxRevenue": 385248000,
     "lat": 26.4535,
     "lng": 127.9076
   },
@@ -175,7 +175,7 @@
     "prefCode": "47",
     "name": "伊江村",
     "pop": 4118,
-    "taxRevenue": 0,
+    "taxRevenue": 188065000,
     "lat": 26.7184,
     "lng": 127.7949
   },
@@ -184,7 +184,7 @@
     "prefCode": "47",
     "name": "読谷村",
     "pop": 41206,
-    "taxRevenue": 0,
+    "taxRevenue": 1164608000,
     "lat": 26.3944,
     "lng": 127.7412
   },
@@ -193,7 +193,7 @@
     "prefCode": "47",
     "name": "嘉手納町",
     "pop": 13521,
-    "taxRevenue": 0,
+    "taxRevenue": 877703000,
     "lat": 26.3624,
     "lng": 127.7529
   },
@@ -202,7 +202,7 @@
     "prefCode": "47",
     "name": "北谷町",
     "pop": 28201,
-    "taxRevenue": 0,
+    "taxRevenue": 1207503000,
     "lat": 26.321,
     "lng": 127.7647
   },
@@ -211,7 +211,7 @@
     "prefCode": "47",
     "name": "北中城村",
     "pop": 17969,
-    "taxRevenue": 0,
+    "taxRevenue": 726142000,
     "lat": 26.3068,
     "lng": 127.7993
   },
@@ -220,7 +220,7 @@
     "prefCode": "47",
     "name": "中城村",
     "pop": 22157,
-    "taxRevenue": 0,
+    "taxRevenue": 567504000,
     "lat": 26.2588,
     "lng": 127.782
   },
@@ -229,7 +229,7 @@
     "prefCode": "47",
     "name": "西原町",
     "pop": 34984,
-    "taxRevenue": 0,
+    "taxRevenue": 1574400000,
     "lat": 26.2303,
     "lng": 127.7583
   },
@@ -238,7 +238,7 @@
     "prefCode": "47",
     "name": "与那原町",
     "pop": 19695,
-    "taxRevenue": 0,
+    "taxRevenue": 649713000,
     "lat": 26.2024,
     "lng": 127.7587
   },
@@ -247,7 +247,7 @@
     "prefCode": "47",
     "name": "南風原町",
     "pop": 40440,
-    "taxRevenue": 0,
+    "taxRevenue": 1284508000,
     "lat": 26.1942,
     "lng": 127.7269
   },
@@ -256,7 +256,7 @@
     "prefCode": "47",
     "name": "渡嘉敷村",
     "pop": 718,
-    "taxRevenue": 0,
+    "taxRevenue": 36635000,
     "lat": 26.1915,
     "lng": 127.3569
   },
@@ -265,7 +265,7 @@
     "prefCode": "47",
     "name": "座間味村",
     "pop": 892,
-    "taxRevenue": 0,
+    "taxRevenue": 36431000,
     "lat": 26.2162,
     "lng": 127.297
   },
@@ -274,7 +274,7 @@
     "prefCode": "47",
     "name": "粟国村",
     "pop": 683,
-    "taxRevenue": 0,
+    "taxRevenue": 28459000,
     "lat": 26.5879,
     "lng": 127.2319
   },
@@ -283,7 +283,7 @@
     "prefCode": "47",
     "name": "渡名喜村",
     "pop": 346,
-    "taxRevenue": 0,
+    "taxRevenue": 19778000,
     "lat": 26.3647,
     "lng": 127.1469
   },
@@ -292,7 +292,7 @@
     "prefCode": "47",
     "name": "南大東村",
     "pop": 1285,
-    "taxRevenue": 0,
+    "taxRevenue": 89292000,
     "lat": 25.8374,
     "lng": 131.2374
   },
@@ -301,7 +301,7 @@
     "prefCode": "47",
     "name": "北大東村",
     "pop": 590,
-    "taxRevenue": 0,
+    "taxRevenue": 44826000,
     "lat": 25.9461,
     "lng": 131.3036
   },
@@ -310,7 +310,7 @@
     "prefCode": "47",
     "name": "伊平屋村",
     "pop": 1126,
-    "taxRevenue": 0,
+    "taxRevenue": 51957000,
     "lat": 27.0407,
     "lng": 127.9638
   },
@@ -319,7 +319,7 @@
     "prefCode": "47",
     "name": "伊是名村",
     "pop": 1322,
-    "taxRevenue": 0,
+    "taxRevenue": 79043000,
     "lat": 26.9325,
     "lng": 127.9421
   },
@@ -328,7 +328,7 @@
     "prefCode": "47",
     "name": "久米島町",
     "pop": 7192,
-    "taxRevenue": 0,
+    "taxRevenue": 544033000,
     "lat": 26.3484,
     "lng": 126.775
   },
@@ -337,7 +337,7 @@
     "prefCode": "47",
     "name": "八重瀬町",
     "pop": 30941,
-    "taxRevenue": 0,
+    "taxRevenue": 1335610000,
     "lat": 26.1487,
     "lng": 127.7258
   },
@@ -346,7 +346,7 @@
     "prefCode": "47",
     "name": "多良間村",
     "pop": 1058,
-    "taxRevenue": 0,
+    "taxRevenue": 50240000,
     "lat": 24.6569,
     "lng": 124.7041
   },
@@ -355,7 +355,7 @@
     "prefCode": "47",
     "name": "竹富町",
     "pop": 3942,
-    "taxRevenue": 0,
+    "taxRevenue": 227316000,
     "lat": 24.3057,
     "lng": 123.8717
   },
@@ -364,7 +364,7 @@
     "prefCode": "47",
     "name": "与那国町",
     "pop": 1676,
-    "taxRevenue": 0,
+    "taxRevenue": 86117000,
     "lat": 24.4554,
     "lng": 122.9889
   }
