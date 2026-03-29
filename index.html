@@ -609,8 +609,8 @@ function formatOku(yen) {
 // HAN COLORS
 // ============================================================
 const HAN_COLORS = [
-  "#4A90D9", "#E8834A", "#5CB85C", "#9B59B6", "#E74C3C", "#1ABC9C",
-  "#8E44AD", "#D35400", "#16A085", "#2980B9"
+  "#2E86C1", "#D35400", "#1E8449", "#8E44AD", "#C0392B", "#117A65",
+  "#6C3483", "#CA6F1E", "#148F77", "#2471A3", "#B03A2E", "#1F618D"
 ];
 
 // ============================================================
@@ -787,7 +787,7 @@ function addFallbackMarker(m) {
 }
 
 function getDefaultStyle() {
-  return { fillColor: '#f0ece3', color: '#888', weight: 1.5, fillOpacity: 0.35, opacity: 1, fillRule: 'nonzero' };
+  return { fillColor: '#f5f0e6', color: '#aaa', weight: 1, fillOpacity: 0.2, opacity: 0.8, fillRule: 'nonzero' };
 }
 
 // ============================================================
@@ -805,7 +805,7 @@ function updateAllStyles() {
 
     if (han && han.confirmed) {
       // Confirmed han
-      layer.setStyle({ fillColor: han.color, color: '#444', weight: 2, fillOpacity: 0.55, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+      layer.setStyle({ fillColor: han.color, color: '#333', weight: 2, fillOpacity: 0.7, opacity: 1, dashArray: null, fillRule: 'nonzero' });
     } else if (assignment === state.currentHanId) {
       // In current editing han
       layer.setStyle({ fillColor: '#FFD700', color: '#b8860b', weight: 2.5, fillOpacity: 0.65, opacity: 1, dashArray: null, fillRule: 'nonzero' });
