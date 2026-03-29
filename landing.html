@@ -180,7 +180,21 @@ main {
   cursor: not-allowed;
 }
 
-/* Adjacent (selectable) */
+/* Included (adjacent to selected = auto-included in game) */
+.map-container svg g.prefecture.state-included polygon,
+.map-container svg g.prefecture.state-included path {
+  fill: var(--copper);
+  stroke: var(--copper-light);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 4px rgba(184,115,51,0.4));
+}
+.map-container svg g.prefecture.state-included:hover polygon,
+.map-container svg g.prefecture.state-included:hover path {
+  fill: var(--copper-light);
+  filter: drop-shadow(0 0 8px rgba(218,138,71,0.6));
+}
+
+/* Adjacent (selectable — neighbors of included) */
 .map-container svg g.prefecture.state-adjacent polygon,
 .map-container svg g.prefecture.state-adjacent path {
   fill: var(--adjacent);
@@ -591,8 +605,8 @@ footer a { color: var(--copper-light); text-decoration: none; }
     </div>
     <div class="legend">
       <div class="legend-item"><div class="legend-dot" style="background:var(--selected)"></div>選択中</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--copper)"></div>自動参戦</div>
       <div class="legend-item"><div class="legend-dot" style="background:var(--adjacent)"></div>追加可能</div>
-      <div class="legend-item"><div class="legend-dot" style="background:var(--unavailable)"></div>選択不可</div>
     </div>
   </div>
 
@@ -723,10 +737,18 @@ function handlePrefClick(code) {
     if (!isConnected(testSet)) return; // Would create disconnected selection
     selectedCodes.delete(code);
   } else {
-    // Select — must be adjacent to existing selection (or first pick)
+    // Select — must be adjacent or included (or first pick)
     if (selectedCodes.size > 0) {
-      const adj = getAdjacentCodes();
-      if (!adj.has(code)) return;
+      const adj = getAdjacentCodes(); // included = 隣接県
+      // included県のさらに隣接も選択可能
+      const expandable = new Set();
+      for (const c of adj) {
+        const pr = prefData.find(p => p.code === c);
+        if (pr && pr.adjacent) pr.adjacent.forEach(a => {
+          if (!selectedCodes.has(a) && !adj.has(a)) expandable.add(a);
+        });
+      }
+      if (!adj.has(code) && !expandable.has(code)) return;
     }
     selectedCodes.add(code);
   }
@@ -783,18 +805,30 @@ function updateUI() {
 }
 
 function updateMapStyles() {
-  const adj = getAdjacentCodes();
-  const groups = document.querySelectorAll('g[data-pref-code]');
+  const includedCodes = getAdjacentCodes(); // 隣接県 = ゲームに自動含まれる
+  // 追加選択可能 = included県のさらに隣接
+  const expandable = new Set();
+  for (const code of includedCodes) {
+    const pref = prefData.find(p => p.code === code);
+    if (pref && pref.adjacent) {
+      pref.adjacent.forEach(a => {
+        if (!selectedCodes.has(a) && !includedCodes.has(a)) expandable.add(a);
+      });
+    }
+  }
 
+  const groups = document.querySelectorAll('g[data-pref-code]');
   groups.forEach(g => {
     const code = g.dataset.prefCode;
-    g.classList.remove('state-default', 'state-selected', 'state-adjacent', 'state-unavailable');
+    g.classList.remove('state-default', 'state-selected', 'state-included', 'state-adjacent', 'state-unavailable');
 
     if (selectedCodes.has(code)) {
       g.classList.add('state-selected');
     } else if (selectedCodes.size === 0) {
       g.classList.add('state-default');
-    } else if (adj.has(code)) {
+    } else if (includedCodes.has(code)) {
+      g.classList.add('state-included');
+    } else if (expandable.has(code)) {
       g.classList.add('state-adjacent');
     } else {
       g.classList.add('state-unavailable');
@@ -821,9 +855,22 @@ function updateSelectedList() {
   }).join('');
 }
 
-function updateStats() {
-  let totalMuni = 0, totalPop = 0;
+function getGameCodes() {
+  // 選択県 + 隣接県 = 実際にゲームに含まれる全県
+  const all = new Set(selectedCodes);
   for (const code of selectedCodes) {
+    const pref = prefData.find(p => p.code === code);
+    if (pref && pref.adjacent) {
+      pref.adjacent.forEach(a => all.add(a));
+    }
+  }
+  return all;
+}
+
+function updateStats() {
+  const gameCodes = getGameCodes();
+  let totalMuni = 0, totalPop = 0;
+  for (const code of gameCodes) {
     const pref = prefData.find(p => p.code === code);
     if (pref) {
       totalMuni += pref.municipalityCount;
@@ -836,7 +883,7 @@ function updateStats() {
   document.getElementById('statMuni').textContent = totalMuni;
   document.getElementById('statPop').textContent = Number(popMan).toLocaleString();
   document.getElementById('statHan').textContent = hanCount;
-  document.getElementById('statPref').textContent = selectedCodes.size;
+  document.getElementById('statPref').textContent = gameCodes.size;
 }
 
 function updateStartButton() {
@@ -908,7 +955,15 @@ function applyPreset(index) {
 // ============================================================
 document.getElementById('startBtn').addEventListener('click', () => {
   if (selectedCodes.size === 0) return;
-  const prefs = [...selectedCodes].sort().join(',');
+  // 選択県 + その隣接県をすべてゲームに含める
+  const allCodes = new Set(selectedCodes);
+  for (const code of selectedCodes) {
+    const pref = prefData.find(p => p.code === code);
+    if (pref && pref.adjacent) {
+      pref.adjacent.forEach(a => allCodes.add(a));
+    }
+  }
+  const prefs = [...allCodes].sort().join(',');
   window.location.href = `index.html?prefs=${prefs}`;
 });
 
