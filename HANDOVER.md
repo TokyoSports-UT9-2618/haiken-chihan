@@ -1,7 +1,8 @@
 # 廃県置藩シミュレーター — ハンドオーバー
 
-**作成日**: 2026-03-22
-**ステータス**: ポリゴン表示バグ修正中、Phase C（ランディングページ）未着手
+**作成日**: 2026-03-29
+**前回**: 2026-03-22
+**ステータス**: Phase C（LP）実装済み、Phase D（範囲拡張）未着手
 
 ---
 
@@ -10,6 +11,7 @@
 - **ゲーム内容**: 都道府県の市区町村を「藩＝スマートシュリンクシティ」にグループ化するブラウザゲーム
 - **目標人口**: 1藩あたり30〜50万人
 - **本番URL**: https://haiken-chihan.pages.dev/
+- **ランディングページ**: https://haiken-chihan.pages.dev/landing.html
 - **GitHub**: https://github.com/TokyoSports-UT9-2618/haiken-chihan
 - **ローカル確認**: `python3 -m http.server 8765`
 
@@ -19,11 +21,11 @@
 
 | レイヤー | 技術 |
 |---|---|
-| フロントエンド | index.html 単一ファイル（Leaflet.js CDN、vanilla JS） |
-| ホスティング | Cloudflare Pages |
+| フロントエンド | index.html / landing.html（Leaflet.js CDN、vanilla JS） |
+| ホスティング | Cloudflare Pages（GitHub main pushで自動デプロイ） |
 | AI API プロキシ | Cloudflare Pages Functions（`functions/api/ai.js`） |
-| GeoJSON配信 | Pages CDN（`data/XX/boundaries.geojson` を静的配信） |
-| 旧ホスティング | Netlify（移行済み、まだ削除していない） |
+| GeoJSONソース | smartnews-smri/japan-topography（国土数値情報ベース） |
+| 旧ホスティング | Netlify（移行済み、未削除） |
 
 ---
 
@@ -31,60 +33,97 @@
 
 ```
 /
-├── index.html                  # メインゲームファイル（全機能含む）
+├── index.html                  # ゲーム本体（全機能含む）
+├── landing.html                # ランディングページ（都道府県選択UI、スチームパンク風）
 ├── wrangler.toml               # Cloudflare設定
+├── .env.local                  # e-Stat APIキー（gitignore済み）
 ├── functions/
 │   ├── api/ai.js               # AI講評プロキシ（Claude Haiku）
 │   └── geo/[[path]].js         # R2プロキシ（現在未使用）
 ├── data/
-│   ├── prefectures.json        # 47都道府県メタ情報
-│   ├── _japan_cache.geojson    # dataofjapan DLキャッシュ（gitignore推奨）
+│   ├── prefectures.json        # 47都道府県メタ情報（adjacent[]フィールド含む）
+│   ├── japan-prefectures.svg   # 都道府県選択用SVG（Geolonia提供）
 │   ├── 01〜47/
-│   │   ├── municipalities.json # 市区町村リスト（コード/名前/人口/緯度経度）
-│   │   ├── adjacency.json      # 県内隣接ペア
-│   │   └── boundaries.geojson  # 市区町村ポリゴン（Leaflet表示用）
+│   │   ├── municipalities.json # 市区町村リスト（コード/名前/人口/税収/緯度経度）
+│   │   ├── adjacency.json      # 県内隣接ペア（turf.booleanIntersectsで生成）
+│   │   └── boundaries.geojson  # 市区町村ポリゴン（smartnews-smriから取得）
 │   └── cross/
 │       └── XX_YY.json          # 県境隣接ペア（120ファイル）
 └── scripts/
-    ├── generate-pref-data.js   # 都道府県データ生成（e-Stat GIS）
-    ├── generate-all.js         # 全47県を順次生成
+    ├── generate-pref-data.js   # 都道府県データ生成（e-Stat GIS、旧方式）
+    ├── generate-all.js         # 全47県を順次生成（旧方式）
+    ├── download-smri-geojson.js # ★ smartnews-smriからGeoJSON取得（推奨）
+    ├── rebuild-adjacency.js    # ★ boundaries.geojsonから隣接データ再生成
+    ├── fix-gaps.js             # ポリゴン虫食い修正（旧方式、今は不要）
+    ├── fetch-tax.js            # ★ e-Stat APIから税収データ取得
+    ├── split-seirei-tax.js     # ★ 政令指定都市の区に税収を人口按分
     ├── generate-cross-adj.js   # 県境隣接リスト生成
-    ├── download-boundaries.js  # dataofjapan からGeoJSON生成（試作）
-    ├── strip-holes.js          # 内部リング除去バッチ
-    ├── verify.js               # データ検証
-    └── upload-r2.sh            # R2アップロード（現在未使用）
+    ├── strip-holes.js          # 内部リング除去（旧方式）
+    └── verify.js               # データ検証
 ```
+
+---
+
+## 2026-03-29 の作業内容
+
+### 解決した問題
+
+| # | 内容 | コミット |
+|---|---|---|
+| 1 | **ポリゴン虫食い根本解決**: smartnews-smri/japan-topographyのGeoJSONに差し替え | 2fc0fa9 |
+| 2 | **隣接データ修復**: 宮城・福島が0ペアだった問題を修正、全県再生成 | 6ffd5a1 |
+| 3 | **税収データ取得**: e-Stat APIから全1896市区町村の税収を取得 | 8ad8bcd |
+| 4 | **ヘッダー動的化**: 県名・市町村数を選択県に応じて動的更新（6箇所） | 8b6c536 |
+| 5 | **LP実装（Phase C）**: スチームパンク風ランディングページ | c93c63d |
+| 6 | **隣接県自動参戦**: LP選択県の隣接県がゲームに自動含まれる | b7c5800 |
+| 7 | **藩色コントラスト改善**: 確定藩を濃く、未割当を薄くして区別しやすく | 59a19b2 |
+
+### GeoJSONデータソース変更（重要）
+
+**旧方式（廃止）**: e-Stat GIS小地域 → turf.union → simplify → バッファ修正
+- 虫食い・隙間が多発、修正に手間がかかる
+
+**新方式（現行）**: smartnews-smri/japan-topography から直接取得
+- `node scripts/download-smri-geojson.js --all` で全県取得
+- simplify済み・虫食いなし・軽量（全県合計6.5MB）
+- ソース: https://github.com/smartnews-smri/japan-topography
+- ライセンス: 国土数値情報利用規約（出典表記必要）
+
+### 税収データ
+
+- e-Stat API statsDataId=0003173281（2018年度地方税）
+- 全1896/1896市区町村に税収データあり
+- 政令指定都市の区は市全体を人口按分
+- `.env.local` に `ESTAT_APPID` が必要（gitignore済み）
 
 ---
 
 ## 現在の状態
 
 ### 完成している機能
-- 59市区町村ゲームロジック（藩作成・確定・undo・やり直し）
-- 全47都道府県データ（municipalities.json / adjacency.json）
-- 全47都道府県のGeoJSONポリゴン（`data/XX/boundaries.geojson`）
-- 県境隣接データ（`data/cross/`、120ファイル）
-- 多県同時プレイ（`?prefs=04,07` などURLパラメータ）
+- 全47都道府県・1896市区町村のゲームロジック
+- ランディングページ（都道府県選択→ゲーム遷移）
+- 選択県の隣接県が自動でゲームに含まれる
+- GeoJSONポリゴン（smartnews-smri、虫食いなし）
+- 県内隣接データ（turf.booleanIntersectsで生成）
+- 県境隣接データ（data/cross/、120ファイル）
+- 税収データ（全1896市区町村）
 - スコア計算・コスト試算・税収表示
-- AI講評（Cloudflare Functions経由、Claude Haiku）
+- AI講評（Cloudflare Functions経由、Claude Haiku）※API KEY要確認
 - PDFレポート生成
 - 遊び方モーダル
+- ヘッダー・モーダル・コスト・PDFの県名/市町村数が動的
 
-### 直近のバグ修正履歴（2026-03-22）
-
-| コミット | 内容 |
-|---|---|
-| aa11534 | **バッファ+union で断片統合**（78,575→2,616サブポリゴン） |
-| e373c50 | 極小アーティファクトポリゴン除去（4,624個） |
-| 6201b25 | `fillRule: 'nonzero'` で自己交差ポリゴン対策 |
-| fa89726 | 内部リング（穴）除去（2,025個） |
-| 46d95fe | geojsonUrlを静的パスに変更（R2 Function不要に） |
-
-### 現在のポリゴン品質
-
-- **福島（07）**: MultiPolygon 0件。全59市区町村が単一Polygon
-- **宮城（04）**: 利府町・仙台市各区など内陸部は単一Polygon。石巻市(18島)・松島町(7島)等は本物の島嶼でMultiPolygon
-- **未確認**: ユーザーが「まだ虫食いが多い」と言っていたが最新修正後は未検証
+### ランディングページ（landing.html）
+- スチームパンク風デザイン（真鍮・銅・鉄のテクスチャ）
+- 日本地図SVG（Geolonia）で都道府県クリック選択
+- 3段階表示: 選択中(金) → 自動参戦(銅) → 追加可能(緑)
+- 飛び地防止の連結性チェック
+- プリセット（東北6県、南関東4県、近畿5県 等8種）
+- 戦況パネル（市区町村数・総人口・推奨藩数）
+- 「出陣せよ」ボタンで `index.html?prefs=...` に遷移
+- レスポンシブ対応（スマホ: 出陣ボタンsticky）
+- 都道府県隣接データは prefectures.json の adjacent[] にハードコード
 
 ---
 
@@ -92,94 +131,50 @@
 
 ### 優先度: 高
 
-#### 1. ポリゴン虫食いの最終確認
-最新デプロイ（aa11534）後のポリゴン表示をユーザーに確認してもらう必要がある。
-改善方法: ハードリフレッシュ（Cmd+Shift+R）後に `https://haiken-chihan.pages.dev/` と `?pref=04` で確認。
-
-#### 2. ANTHROPIC_API_KEY の再設定
-AI講評機能が動くかどうか未確認。Cloudflare Pagesの環境変数に設定されているか要確認。
+#### 1. ANTHROPIC_API_KEY の設定確認
+AI講評・PDFレポートが動かない。Cloudflare Pagesの環境変数に設定が必要。
 - Dashboard → Pages → haiken-chihan → Settings → Environment variables
+- `ANTHROPIC_API_KEY` を設定
 
 ### 優先度: 中
 
-#### 3. Phase C: ランディングページ（`landing.html`）
-都道府県選択UIが未着手。現状は手動で `?pref=04` と打つ必要がある。
+#### 2. Phase D: ゲーム中の範囲拡張
+ゲームプレイ中に「＋ 範囲を広げる」ボタンで隣接県を追加する機能。
+design.md のセクション5-3に設計あり。
 
-設計方針（`design.md` 参照）:
-- 日本地図（SVGまたはLeaflet）で都道府県をクリック選択
-- 選んだ県の隣接県を自動でハイライト・推奨
-- プリセット（東北6県・近畿2府4県等）
-- 「プレイ開始」ボタンで `index.html?prefs=04,06,07,03,...` に遷移
+#### 3. セーブ/ロード改善
+- 現在はlocalStorageの3スロットのみ
+- ブラウザを変えると消える
+- URLシェアやサーバーサイド保存の要望あり（ユーザーからの明確な要望）
 
-#### 4. Phase D: ゲーム中の範囲拡張
-ゲームプレイ中に「＋ 隣接県を追加」ボタンで範囲を広げる機能。
-
-#### 5. ヘッダーのサブタイトル修正
-現在「福島県 59市町村 → 新しい藩へ」と固定表示されている。多県対応時に動的に更新されているか確認が必要。
+#### 4. index.htmlのデフォルトURLをlanding.htmlに変更
+現在 `/` にアクセスすると index.html（福島デフォルト）が開く。
+landing.html をデフォルトにするリダイレクト or 統合が必要。
 
 ### 優先度: 低
 
-#### 6. 市区町村コード不整合（23件）
-仕様書由来のコードがJIS標準コードと異なる。名前マッチングで回避済みのため実害なし。
+#### 5. Netlify削除
+Cloudflare移行後も旧Netlifyサイトが残っている。
 
-#### 7. Netlify削除
-Cloudflare移行後も旧Netlifyサイトが残っている。削除で良い。
-
----
-
-## ゲームロジック重要ポイント
-
-### URLパラメータ
-```
-?pref=07          # 福島県のみ（デフォルト）
-?prefs=04,07      # 宮城・福島の2県
-?prefs=01,02,03   # 北海道・青森・岩手
-```
-
-### データロードの流れ（index.html の `initGame()`）
-1. `data/prefectures.json` → 都道府県メタ情報
-2. `data/XX/municipalities.json` × 県数 → 市区町村リスト（MUNICIPALITIES配列）
-3. `data/XX/adjacency.json` × 県数 → 隣接ペア
-4. `data/cross/XX_YY.json` × 組み合わせ数 → 県境隣接
-5. `initMap()` → Leaflet地図初期化 → `loadGeoJSON()` → GeoJSONポリゴン描画
-
-### GeoJSONマッチング（`renderGeoJSON()`）
-- **名前優先**: `feature.properties.name === m.name`
-- **コードフォールバック**: `findMuniByCode(feature.properties.code)`
-- マッチしない場合は `addFallbackMarker()` でCircleMarker
+#### 6. LP外観の追加調整
+- スチームパンクテーマの細部磨き込み（ユーザーは方向性を気に入っている）
+- 地図のホバーエフェクト強化
+- 蒸気パーティクルアニメーション（CSSは定義済み、未使用）
 
 ---
 
-## Cloudflare設定
-
-### Pages設定（`wrangler.toml`）
-```toml
-name = "haiken-chihan"
-pages_build_output_dir = "."
-[[r2_buckets]]
-binding = "GEOJSON"
-bucket_name = "haiken-geojson"
-```
-
-### 環境変数（Pages Dashboard で設定）
-- `ANTHROPIC_API_KEY` — Claude API キー（AI講評に必要）
-
-### デプロイ
-GitHub の `main` ブランチへのpushで自動デプロイ。
-
----
-
-## データ生成スクリプトの使い方
+## スクリプト使い方（現行版）
 
 ```bash
-# 特定の都道府県を再生成（e-Stat APIキーが必要）
-ESTAT_APPID=xxxxx node scripts/generate-pref-data.js 07
+# GeoJSONを取得（smartnews-smriから）
+node scripts/download-smri-geojson.js --all
 
-# 全47都道府県を再生成
-ESTAT_APPID=xxxxx node scripts/generate-all.js --skip-cross
+# 隣接データを再生成
+node scripts/rebuild-adjacency.js --all
 
-# 穴除去のみ（再生成不要）
-node scripts/strip-holes.js
+# 税収データを取得（.env.localにESTAT_APPIDが必要）
+node scripts/fetch-tax.js --all
+node scripts/split-seirei-tax.js
 
 # 県境隣接データの再生成
 node scripts/generate-cross-adj.js
@@ -187,27 +182,17 @@ node scripts/generate-cross-adj.js
 
 ---
 
-## GeoJSONポリゴン品質の技術的背景
+## 技術メモ
 
-### 問題の経緯
-e-Stat GISのシェープファイルは**小地域（丁目・大字）レベル**のデータ。これを市区町村レベルに集約する際に以下の問題が発生していた：
-
-1. **内部リング（穴）**: turf.union の副作用 → `strip-holes.js` で解決
-2. **極小アーティファクト**: 面積ほぼゼロのポリゴン → 0.000001deg²未満を除去
-3. **断片化（最大の問題）**: 小地域間の微小な隙間でunionが失敗 → **80mバッファ+union** で解決
-
-### 現在のデータ生成フロー（`generate-pref-data.js`）
-```
-e-Stat shapefile ダウンロード
-  → 小地域ポリゴンを市区町村コードでグループ化
-  → ≤50個: turf.union で結合
-  → >50個: MultiPolygonとして収集
-  → turf.simplify（tolerance=0.0002）
-  → stripHoles()（内部リング除去）
-  → 保存
-```
-
-その後 `strip-holes.js` と バッファ統合スクリプト（スタンドアロン）でポストプロセス済み。
+- **GeoJSONソース**: smartnews-smri/japan-topography（N03-21、2021年データ）
+- **色割り当て**: `state.hanCounter % HAN_COLORS.length`（12色ローテ）
+- **藩の色**: fillOpacity 0.70（濃め）、未割当は 0.20（薄め）
+- **HAN_COLORS**: 12色、彩度高めのパレット
+- **Leaflet fillRule**: `'nonzero'` で自己交差ポリゴン対策
+- **都道府県隣接**: prefectures.json の adjacent[] にハードコード（cross/ファイルからの自動生成は不正確だったため）
+- **e-Stat API (税収)**: statsDataId=0003173281、2018年度、政令指定都市の区は人口按分
+- **e-Stat API (人口)**: statsDataId=0003433219、2020年国勢調査
+- **LP SVG**: Geolonia提供、data-code属性でゼロパディングなし（"1"〜"47"）
 
 ---
 
@@ -215,5 +200,6 @@ e-Stat shapefile ダウンロード
 
 - `design.md` — UI/UX設計書（Phase A〜E のロードマップ含む）
 - `haiken-chihan-spec.md` — 元の仕様書
+- smartnews-smri/japan-topography: https://github.com/smartnews-smri/japan-topography
+- Geolonia SVG: https://github.com/geolonia/japanese-prefectures
 - e-Stat API: statsDataId=0003433219（人口）、0003173281（税収）
-- dataofjapan/land: fukushima.geojson と tokyo.geojson のみ（全国版は都道府県レベル）
