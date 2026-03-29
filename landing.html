@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>廃県置藩シミュレーター</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   STEAMPUNK LANDING PAGE
+   ============================================================ */
+:root {
+  --brass: #b8860b;
+  --brass-light: #d4a832;
+  --brass-dark: #8b6508;
+  --copper: #b87333;
+  --copper-light: #da8a47;
+  --iron: #2c2c2c;
+  --iron-light: #444;
+  --parchment: #f4e8c1;
+  --parchment-dark: #d4c89a;
+  --ink: #1a0e05;
+  --steam: rgba(255,255,255,0.08);
+  --glow: #e8a020;
+  --selected: #c9a030;
+  --adjacent: #7a9a6a;
+  --unavailable: #5a5046;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--iron);
+  color: var(--parchment);
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── Texture overlays ── */
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(184,115,51,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Header ── */
+header {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 24px;
+  background: linear-gradient(180deg, #1a1410 0%, var(--iron) 100%);
+  border-bottom: 3px solid var(--brass-dark);
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brass-light), var(--brass), var(--brass-light), transparent);
+}
+
+.header-ornament {
+  font-size: 22px;
+  color: var(--brass);
+  letter-spacing: 12px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 52px);
+  letter-spacing: 0.15em;
+  color: transparent;
+  background: linear-gradient(180deg, var(--brass-light) 0%, var(--brass) 40%, var(--copper) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(10px, 1.8vw, 14px);
+  letter-spacing: 0.4em;
+  color: var(--copper-light);
+  margin-top: 8px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.tagline {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(12px, 2vw, 16px);
+  color: var(--parchment-dark);
+  margin-top: 12px;
+  opacity: 0.7;
+}
+
+/* ── Main layout ── */
+main {
+  display: flex;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Map panel ── */
+.map-panel {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1;
+}
+
+.map-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container svg line {
+  display: none;
+}
+
+/* SVG prefecture styles */
+.map-container svg g.prefecture {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.map-container svg g.prefecture polygon,
+.map-container svg g.prefecture path {
+  transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+}
+
+/* Default state */
+.map-container svg g.prefecture.state-default polygon,
+.map-container svg g.prefecture.state-default path {
+  fill: var(--unavailable);
+  stroke: #3a3530;
+  stroke-width: 0.8;
+}
+
+/* Unavailable */
+.map-container svg g.prefecture.state-unavailable polygon,
+.map-container svg g.prefecture.state-unavailable path {
+  fill: #3a342e;
+  stroke: #4a4540;
+  stroke-width: 0.5;
+  cursor: not-allowed;
+}
+
+/* Adjacent (selectable) */
+.map-container svg g.prefecture.state-adjacent polygon,
+.map-container svg g.prefecture.state-adjacent path {
+  fill: var(--adjacent);
+  stroke: #8ab87a;
+  stroke-width: 1;
+  filter: drop-shadow(0 0 3px rgba(122,154,106,0.4));
+}
+.map-container svg g.prefecture.state-adjacent:hover polygon,
+.map-container svg g.prefecture.state-adjacent:hover path {
+  fill: #8ab87a;
+  filter: drop-shadow(0 0 8px rgba(122,180,106,0.6));
+}
+
+/* Selected */
+.map-container svg g.prefecture.state-selected polygon,
+.map-container svg g.prefecture.state-selected path {
+  fill: var(--selected);
+  stroke: var(--brass-light);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px rgba(200,160,48,0.5));
+}
+.map-container svg g.prefecture.state-selected:hover polygon,
+.map-container svg g.prefecture.state-selected:hover path {
+  fill: var(--brass-light);
+  filter: drop-shadow(0 0 10px rgba(212,168,50,0.7));
+}
+
+.map-instruction {
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 14px;
+  color: var(--parchment-dark);
+  opacity: 0.8;
+}
+
+/* ── Side panel ── */
+.side-panel {
+  width: 380px;
+  background: linear-gradient(180deg, #1e1a14 0%, #161210 100%);
+  border-left: 2px solid var(--brass-dark);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.side-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; width: 2px; height: 100%;
+  background: linear-gradient(180deg, transparent, var(--brass-light) 30%, var(--brass) 70%, transparent);
+}
+
+/* Panel sections */
+.panel-section {
+  background: rgba(244,232,193,0.04);
+  border: 1px solid rgba(184,134,11,0.2);
+  border-radius: 4px;
+  padding: 16px;
+  position: relative;
+}
+
+.panel-section::before {
+  content: '';
+  position: absolute; top: -1px; left: 20px; right: 20px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass-light), transparent);
+}
+
+.section-title {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brass-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .gear {
+  display: inline-block;
+  animation: spin 8s linear infinite;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Selected area list */
+.selected-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.selected-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: rgba(184,134,11,0.08);
+  border: 1px solid rgba(184,134,11,0.15);
+  border-radius: 3px;
+  font-size: 13px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.selected-item .name {
+  color: var(--parchment);
+  font-weight: 700;
+}
+
+.selected-item .pop {
+  color: var(--copper-light);
+  font-size: 11px;
+}
+
+.selected-item .remove {
+  background: none;
+  border: 1px solid rgba(184,134,11,0.3);
+  color: var(--brass);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  transition: all 0.2s;
+}
+
+.selected-item .remove:hover {
+  background: rgba(184,134,11,0.2);
+  color: var(--parchment);
+}
+
+.empty-msg {
+  color: var(--parchment-dark);
+  opacity: 0.5;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Shippori Mincho', serif;
+}
+
+/* Stats gauges */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-gauge {
+  text-align: center;
+  padding: 10px 6px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(184,134,11,0.15);
+  border-radius: 4px;
+}
+
+.stat-gauge .label {
+  font-size: 10px;
+  color: var(--copper-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.stat-gauge .value {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px;
+  color: var(--brass-light);
+  text-shadow: 0 0 8px rgba(232,160,32,0.3);
+}
+
+.stat-gauge .unit {
+  font-size: 10px;
+  color: var(--parchment-dark);
+  opacity: 0.6;
+}
+
+/* Presets */
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.preset-btn {
+  background: rgba(184,134,11,0.06);
+  border: 1px solid rgba(184,134,11,0.2);
+  color: var(--parchment);
+  padding: 8px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.preset-btn:hover {
+  background: rgba(184,134,11,0.15);
+  border-color: var(--brass);
+  transform: translateY(-1px);
+}
+
+.preset-btn .icon {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Start button */
+.start-btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(180deg, var(--brass) 0%, var(--brass-dark) 100%);
+  border: 2px solid var(--brass-light);
+  border-radius: 4px;
+  color: var(--ink);
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s;
+}
+
+.start-btn:hover::before {
+  left: 100%;
+}
+
+.start-btn:hover {
+  background: linear-gradient(180deg, var(--brass-light) 0%, var(--brass) 100%);
+  box-shadow: 0 6px 20px rgba(184,134,11,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.start-btn:disabled {
+  background: linear-gradient(180deg, #4a4540 0%, #3a3530 100%);
+  border-color: #5a5550;
+  color: #7a7570;
+  cursor: not-allowed;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.start-btn:disabled::before { display: none; }
+
+/* Tooltip */
+.map-tooltip {
+  position: fixed;
+  background: rgba(26,14,5,0.95);
+  border: 1px solid var(--brass);
+  color: var(--parchment);
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  font-family: 'Shippori Mincho', serif;
+}
+
+.map-tooltip .tt-name {
+  font-weight: 700;
+  color: var(--brass-light);
+}
+
+.map-tooltip .tt-pop {
+  font-size: 11px;
+  color: var(--copper-light);
+  margin-top: 2px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 10px;
+  color: var(--parchment-dark);
+  opacity: 0.4;
+  border-top: 1px solid rgba(184,134,11,0.1);
+}
+
+footer a { color: var(--copper-light); text-decoration: none; }
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--parchment-dark);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  main {
+    flex-direction: column;
+  }
+  .side-panel {
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid var(--brass-dark);
+  }
+  .map-panel { padding: 20px; }
+  .map-container { max-width: 400px; }
+}
+
+/* ── Decorative rivets ── */
+.rivet {
+  width: 8px; height: 8px;
+  background: radial-gradient(circle at 35% 35%, var(--brass-light), var(--brass-dark));
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1);
+  position: absolute;
+}
+
+.side-panel .rivet-tl { top: 8px; left: 8px; }
+.side-panel .rivet-tr { top: 8px; right: 8px; }
+.side-panel .rivet-bl { bottom: 8px; left: 8px; }
+.side-panel .rivet-br { bottom: 8px; right: 8px; }
+
+/* ── Steam animation ── */
+@keyframes steamRise {
+  0% { transform: translateY(0) scale(1); opacity: 0.3; }
+  100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+}
+
+.steam-particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+  border-radius: 50%;
+  animation: steamRise 3s ease-out infinite;
+  pointer-events: none;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-ornament">⚙ ⚙ ⚙</div>
+  <h1>廃県置藩シミュレーター</h1>
+  <div class="subtitle">Haiken-Chihan Simulator</div>
+  <div class="tagline">― 江戸の叡智を、令和の地図に刻め ―</div>
+</header>
+
+<main>
+  <div class="map-panel">
+    <div class="map-container" id="mapContainer">
+      <!-- SVG will be loaded here -->
+    </div>
+    <div class="map-instruction" id="mapInstruction">
+      地図から最初の都道府県を選んでください
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--selected)"></div>選択中</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--adjacent)"></div>追加可能</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--unavailable)"></div>選択不可</div>
+    </div>
+  </div>
+
+  <div class="side-panel">
+    <div class="rivet rivet-tl"></div>
+    <div class="rivet rivet-tr"></div>
+    <div class="rivet rivet-bl"></div>
+    <div class="rivet rivet-br"></div>
+
+    <div class="panel-section">
+      <div class="section-title"><span class="gear">⚙</span> 選択エリア</div>
+      <ul class="selected-list" id="selectedList">
+        <li class="empty-msg">未選択</li>
+      </ul>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title"><span class="gear">⚙</span> 戦況</div>
+      <div class="stats-grid">
+        <div class="stat-gauge">
+          <div class="label">市区町村</div>
+          <div class="value" id="statMuni">0</div>
+        </div>
+        <div class="stat-gauge">
+          <div class="label">総人口</div>
+          <div class="value" id="statPop">0</div>
+          <div class="unit">万人</div>
+        </div>
+        <div class="stat-gauge">
+          <div class="label">推奨藩数</div>
+          <div class="value" id="statHan">0</div>
+        </div>
+        <div class="stat-gauge">
+          <div class="label">選択県数</div>
+          <div class="value" id="statPref">0</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title"><span class="gear">⚙</span> 早見表</div>
+      <div class="preset-grid" id="presetGrid"></div>
+    </div>
+
+    <button class="start-btn" id="startBtn" disabled>
+      出陣せよ →
+    </button>
+  </div>
+</main>
+
+<div class="map-tooltip" id="tooltip">
+  <div class="tt-name"></div>
+  <div class="tt-pop"></div>
+</div>
+
+<footer>
+  地図データ: <a href="https://github.com/geolonia/japanese-prefectures" target="_blank">Geolonia</a>
+  ／ 統計: 国土数値情報・e-Stat
+</footer>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const PRESETS = [
+  { name: "東北6県",   prefs: ["02","03","04","05","06","07"], icon: "🌲" },
+  { name: "北関東3県", prefs: ["08","09","10"],                icon: "⛰" },
+  { name: "南関東4県", prefs: ["11","12","13","14"],           icon: "🏙" },
+  { name: "近畿5県",   prefs: ["24","25","26","27","28"],      icon: "🏯" },
+  { name: "瀬戸内5県", prefs: ["33","34","35","37","38"],      icon: "⛵" },
+  { name: "九州7県",   prefs: ["40","41","42","43","44","45","46"], icon: "🌋" },
+  { name: "北陸3県",   prefs: ["15","16","17"],                icon: "🌊" },
+  { name: "中部山岳",  prefs: ["15","16","17","18","19","20"], icon: "🏔" },
+];
+
+let prefData = []; // from prefectures.json
+let selectedCodes = new Set();
+
+// ============================================================
+// INIT
+// ============================================================
+async function init() {
+  // Load prefectures.json
+  prefData = await fetch('data/prefectures.json').then(r => r.json());
+
+  // Load SVG map
+  const svgRes = await fetch('data/japan-prefectures.svg');
+  const svgText = await svgRes.text();
+  document.getElementById('mapContainer').innerHTML = svgText;
+
+  // Setup SVG interactions
+  setupMap();
+  renderPresets();
+  updateUI();
+}
+
+// ============================================================
+// MAP SETUP
+// ============================================================
+function setupMap() {
+  const container = document.getElementById('mapContainer');
+  const groups = container.querySelectorAll('g[data-code]');
+
+  groups.forEach(g => {
+    const code = String(g.dataset.code).padStart(2, '0');
+    g.dataset.prefCode = code;
+    g.classList.add('state-default');
+
+    g.addEventListener('click', () => handlePrefClick(code));
+    g.addEventListener('mouseenter', (e) => showTooltip(e, code));
+    g.addEventListener('mousemove', (e) => moveTooltip(e));
+    g.addEventListener('mouseleave', hideTooltip);
+  });
+}
+
+// ============================================================
+// CLICK HANDLER
+// ============================================================
+function handlePrefClick(code) {
+  const pref = prefData.find(p => p.code === code);
+  if (!pref) return;
+
+  if (selectedCodes.has(code)) {
+    // Deselect — but only if it won't break connectivity
+    if (selectedCodes.size === 1) return; // Can't remove last one
+    const testSet = new Set(selectedCodes);
+    testSet.delete(code);
+    if (!isConnected(testSet)) return; // Would create disconnected selection
+    selectedCodes.delete(code);
+  } else {
+    // Select — must be adjacent to existing selection (or first pick)
+    if (selectedCodes.size > 0) {
+      const adj = getAdjacentCodes();
+      if (!adj.has(code)) return;
+    }
+    selectedCodes.add(code);
+  }
+
+  updateUI();
+}
+
+// ============================================================
+// ADJACENCY & CONNECTIVITY
+// ============================================================
+function getAdjacentCodes() {
+  const adj = new Set();
+  for (const code of selectedCodes) {
+    const pref = prefData.find(p => p.code === code);
+    if (pref && pref.adjacent) {
+      pref.adjacent.forEach(a => {
+        if (!selectedCodes.has(a)) adj.add(a);
+      });
+    }
+  }
+  return adj;
+}
+
+function isConnected(codeSet) {
+  if (codeSet.size <= 1) return true;
+  const codes = [...codeSet];
+  const visited = new Set();
+  const queue = [codes[0]];
+  visited.add(codes[0]);
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    const pref = prefData.find(p => p.code === current);
+    if (!pref || !pref.adjacent) continue;
+    for (const neighbor of pref.adjacent) {
+      if (codeSet.has(neighbor) && !visited.has(neighbor)) {
+        visited.add(neighbor);
+        queue.push(neighbor);
+      }
+    }
+  }
+  return visited.size === codeSet.size;
+}
+
+// ============================================================
+// UI UPDATE
+// ============================================================
+function updateUI() {
+  updateMapStyles();
+  updateSelectedList();
+  updateStats();
+  updateStartButton();
+  updateInstruction();
+}
+
+function updateMapStyles() {
+  const adj = getAdjacentCodes();
+  const groups = document.querySelectorAll('g[data-pref-code]');
+
+  groups.forEach(g => {
+    const code = g.dataset.prefCode;
+    g.classList.remove('state-default', 'state-selected', 'state-adjacent', 'state-unavailable');
+
+    if (selectedCodes.has(code)) {
+      g.classList.add('state-selected');
+    } else if (selectedCodes.size === 0) {
+      g.classList.add('state-default');
+    } else if (adj.has(code)) {
+      g.classList.add('state-adjacent');
+    } else {
+      g.classList.add('state-unavailable');
+    }
+  });
+}
+
+function updateSelectedList() {
+  const list = document.getElementById('selectedList');
+  if (selectedCodes.size === 0) {
+    list.innerHTML = '<li class="empty-msg">未選択</li>';
+    return;
+  }
+
+  list.innerHTML = [...selectedCodes].map(code => {
+    const pref = prefData.find(p => p.code === code);
+    if (!pref) return '';
+    const pop = (pref.totalPopulation / 10000).toFixed(0);
+    return `<li class="selected-item">
+      <span class="name">${pref.name}</span>
+      <span class="pop">${Number(pop).toLocaleString()}万人 / ${pref.municipalityCount}市町村</span>
+      <button class="remove" onclick="handlePrefClick('${code}')" title="除外">✕</button>
+    </li>`;
+  }).join('');
+}
+
+function updateStats() {
+  let totalMuni = 0, totalPop = 0;
+  for (const code of selectedCodes) {
+    const pref = prefData.find(p => p.code === code);
+    if (pref) {
+      totalMuni += pref.municipalityCount;
+      totalPop += pref.totalPopulation;
+    }
+  }
+  const hanCount = Math.max(0, Math.round(totalPop / 400000));
+  const popMan = (totalPop / 10000).toFixed(0);
+
+  document.getElementById('statMuni').textContent = totalMuni;
+  document.getElementById('statPop').textContent = Number(popMan).toLocaleString();
+  document.getElementById('statHan').textContent = hanCount;
+  document.getElementById('statPref').textContent = selectedCodes.size;
+}
+
+function updateStartButton() {
+  const btn = document.getElementById('startBtn');
+  btn.disabled = selectedCodes.size === 0;
+}
+
+function updateInstruction() {
+  const el = document.getElementById('mapInstruction');
+  if (selectedCodes.size === 0) {
+    el.textContent = '地図から最初の都道府県を選んでください';
+  } else {
+    const adj = getAdjacentCodes();
+    if (adj.size > 0) {
+      el.textContent = '隣接する都道府県を追加するか、出陣してください';
+    } else {
+      el.textContent = '出陣の準備が整いました';
+    }
+  }
+}
+
+// ============================================================
+// TOOLTIP
+// ============================================================
+function showTooltip(e, code) {
+  const pref = prefData.find(p => p.code === code);
+  if (!pref) return;
+  const tt = document.getElementById('tooltip');
+  tt.querySelector('.tt-name').textContent = pref.name;
+  const pop = (pref.totalPopulation / 10000).toFixed(0);
+  tt.querySelector('.tt-pop').textContent = `${Number(pop).toLocaleString()}万人 ／ ${pref.municipalityCount}市区町村`;
+  tt.style.display = 'block';
+  moveTooltip(e);
+}
+
+function moveTooltip(e) {
+  const tt = document.getElementById('tooltip');
+  tt.style.left = (e.clientX + 16) + 'px';
+  tt.style.top = (e.clientY - 10) + 'px';
+}
+
+function hideTooltip() {
+  document.getElementById('tooltip').style.display = 'none';
+}
+
+// ============================================================
+// PRESETS
+// ============================================================
+function renderPresets() {
+  const grid = document.getElementById('presetGrid');
+  grid.innerHTML = PRESETS.map((p, i) => `
+    <button class="preset-btn" onclick="applyPreset(${i})">
+      <span class="icon">${p.icon}</span>${p.name}
+    </button>
+  `).join('');
+}
+
+function applyPreset(index) {
+  const preset = PRESETS[index];
+  selectedCodes.clear();
+  preset.prefs.forEach(c => selectedCodes.add(c));
+  updateUI();
+}
+
+// ============================================================
+// START GAME
+// ============================================================
+document.getElementById('startBtn').addEventListener('click', () => {
+  if (selectedCodes.size === 0) return;
+  const prefs = [...selectedCodes].sort().join(',');
+  window.location.href = `index.html?prefs=${prefs}`;
+});
+
+// ============================================================
+// BOOT
+// ============================================================
+init();
+</script>
+</body>
+</html>

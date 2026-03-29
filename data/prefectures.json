@@ -22,7 +22,11 @@
       "assemblyCount": 106,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "02",
+      "03"
+    ]
   },
   {
     "code": "02",
@@ -47,7 +51,12 @@
       "assemblyCount": 48,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "01",
+      "03",
+      "05"
+    ]
   },
   {
     "code": "03",
@@ -72,7 +81,13 @@
       "assemblyCount": 48,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "01",
+      "02",
+      "04",
+      "05"
+    ]
   },
   {
     "code": "04",
@@ -97,7 +112,12 @@
       "assemblyCount": 59,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "03",
+      "06",
+      "07"
+    ]
   },
   {
     "code": "05",
@@ -122,7 +142,12 @@
       "assemblyCount": 43,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "02",
+      "03",
+      "06"
+    ]
   },
   {
     "code": "06",
@@ -147,7 +172,13 @@
       "assemblyCount": 44,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "04",
+      "05",
+      "07",
+      "15"
+    ]
   },
   {
     "code": "07",
@@ -172,7 +203,15 @@
       "assemblyCount": 58,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "04",
+      "06",
+      "08",
+      "09",
+      "14",
+      "15"
+    ]
   },
   {
     "code": "08",
@@ -197,7 +236,13 @@
       "assemblyCount": 62,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "07",
+      "09",
+      "11",
+      "12"
+    ]
   },
   {
     "code": "09",
@@ -222,7 +267,13 @@
       "assemblyCount": 50,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "07",
+      "08",
+      "10",
+      "11"
+    ]
   },
   {
     "code": "10",
@@ -247,7 +298,13 @@
       "assemblyCount": 50,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "09",
+      "11",
+      "15",
+      "20"
+    ]
   },
   {
     "code": "11",
@@ -272,7 +329,16 @@
       "assemblyCount": 93,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "08",
+      "09",
+      "10",
+      "12",
+      "13",
+      "14",
+      "20"
+    ]
   },
   {
     "code": "12",
@@ -297,7 +363,13 @@
       "assemblyCount": 95,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "08",
+      "11",
+      "13",
+      "14"
+    ]
   },
   {
     "code": "13",
@@ -322,7 +394,13 @@
       "assemblyCount": 127,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "11",
+      "12",
+      "14",
+      "19"
+    ]
   },
   {
     "code": "14",
@@ -347,7 +425,15 @@
       "assemblyCount": 105,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "07",
+      "11",
+      "12",
+      "13",
+      "19",
+      "22"
+    ]
   },
   {
     "code": "15",
@@ -372,7 +458,14 @@
       "assemblyCount": 53,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "06",
+      "07",
+      "10",
+      "16",
+      "20"
+    ]
   },
   {
     "code": "16",
@@ -397,7 +490,13 @@
       "assemblyCount": 40,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "15",
+      "17",
+      "20",
+      "21"
+    ]
   },
   {
     "code": "17",
@@ -422,7 +521,13 @@
       "assemblyCount": 43,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "16",
+      "18",
+      "20",
+      "21"
+    ]
   },
   {
     "code": "18",
@@ -447,7 +552,12 @@
       "assemblyCount": 37,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "17",
+      "21",
+      "26"
+    ]
   },
   {
     "code": "19",
@@ -472,7 +582,13 @@
       "assemblyCount": 37,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "13",
+      "14",
+      "20",
+      "22"
+    ]
   },
   {
     "code": "20",
@@ -497,7 +613,17 @@
       "assemblyCount": 57,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "10",
+      "11",
+      "15",
+      "16",
+      "17",
+      "19",
+      "21",
+      "22"
+    ]
   },
   {
     "code": "21",
@@ -522,7 +648,18 @@
       "assemblyCount": 46,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "16",
+      "17",
+      "18",
+      "20",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26"
+    ]
   },
   {
     "code": "22",
@@ -547,7 +684,14 @@
       "assemblyCount": 68,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "14",
+      "19",
+      "20",
+      "21",
+      "23"
+    ]
   },
   {
     "code": "23",
@@ -572,7 +716,14 @@
       "assemblyCount": 103,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "21",
+      "22",
+      "24",
+      "25",
+      "26"
+    ]
   },
   {
     "code": "24",
@@ -597,7 +748,15 @@
       "assemblyCount": 51,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "21",
+      "23",
+      "25",
+      "26",
+      "29",
+      "30"
+    ]
   },
   {
     "code": "25",
@@ -622,7 +781,16 @@
       "assemblyCount": 44,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "21",
+      "23",
+      "24",
+      "26",
+      "27",
+      "28",
+      "29"
+    ]
   },
   {
     "code": "26",
@@ -647,7 +815,17 @@
       "assemblyCount": 60,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "18",
+      "21",
+      "23",
+      "24",
+      "25",
+      "27",
+      "28",
+      "29"
+    ]
   },
   {
     "code": "27",
@@ -672,7 +850,14 @@
       "assemblyCount": 88,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "25",
+      "26",
+      "28",
+      "29",
+      "30"
+    ]
   },
   {
     "code": "28",
@@ -697,7 +882,16 @@
       "assemblyCount": 86,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "25",
+      "26",
+      "27",
+      "29",
+      "31",
+      "33",
+      "34"
+    ]
   },
   {
     "code": "29",
@@ -722,7 +916,15 @@
       "assemblyCount": 44,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "30"
+    ]
   },
   {
     "code": "30",
@@ -747,7 +949,12 @@
       "assemblyCount": 42,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "24",
+      "27",
+      "29"
+    ]
   },
   {
     "code": "31",
@@ -772,7 +979,13 @@
       "assemblyCount": 35,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "28",
+      "32",
+      "33",
+      "35"
+    ]
   },
   {
     "code": "32",
@@ -797,7 +1010,13 @@
       "assemblyCount": 37,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "31",
+      "33",
+      "34",
+      "35"
+    ]
   },
   {
     "code": "33",
@@ -822,7 +1041,15 @@
       "assemblyCount": 55,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "28",
+      "31",
+      "32",
+      "34",
+      "35",
+      "37"
+    ]
   },
   {
     "code": "34",
@@ -847,7 +1074,15 @@
       "assemblyCount": 66,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "28",
+      "32",
+      "33",
+      "35",
+      "38",
+      "39"
+    ]
   },
   {
     "code": "35",
@@ -872,7 +1107,14 @@
       "assemblyCount": 47,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "31",
+      "32",
+      "33",
+      "34",
+      "38"
+    ]
   },
   {
     "code": "36",
@@ -897,7 +1139,12 @@
       "assemblyCount": 38,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "37",
+      "38",
+      "39"
+    ]
   },
   {
     "code": "37",
@@ -922,7 +1169,13 @@
       "assemblyCount": 41,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "33",
+      "36",
+      "38",
+      "39"
+    ]
   },
   {
     "code": "38",
@@ -947,7 +1200,15 @@
       "assemblyCount": 47,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "34",
+      "35",
+      "36",
+      "37",
+      "39",
+      "40"
+    ]
   },
   {
     "code": "39",
@@ -972,7 +1233,14 @@
       "assemblyCount": 37,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "34",
+      "36",
+      "37",
+      "38",
+      "40"
+    ]
   },
   {
     "code": "40",
@@ -997,7 +1265,15 @@
       "assemblyCount": 87,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "38",
+      "39",
+      "41",
+      "42",
+      "43",
+      "44"
+    ]
   },
   {
     "code": "41",
@@ -1022,7 +1298,12 @@
       "assemblyCount": 37,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "40",
+      "42",
+      "43"
+    ]
   },
   {
     "code": "42",
@@ -1047,7 +1328,14 @@
       "assemblyCount": 46,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "40",
+      "41",
+      "43",
+      "44",
+      "46"
+    ]
   },
   {
     "code": "43",
@@ -1072,7 +1360,15 @@
       "assemblyCount": 49,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "40",
+      "41",
+      "42",
+      "44",
+      "45",
+      "46"
+    ]
   },
   {
     "code": "44",
@@ -1097,7 +1393,14 @@
       "assemblyCount": 44,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "40",
+      "42",
+      "43",
+      "45",
+      "46"
+    ]
   },
   {
     "code": "45",
@@ -1122,7 +1425,12 @@
       "assemblyCount": 39,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "43",
+      "44",
+      "46"
+    ]
   },
   {
     "code": "46",
@@ -1147,7 +1455,13 @@
       "assemblyCount": 53,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": [
+      "42",
+      "43",
+      "44",
+      "45"
+    ]
   },
   {
     "code": "47",
@@ -1172,6 +1486,7 @@
       "assemblyCount": 48,
       "assemblyAnnualPerPerson": 17000000,
       "facilityAnnual": 3000000000
-    }
+    },
+    "adjacent": []
   }
 ]
