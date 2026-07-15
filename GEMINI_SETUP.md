@@ -16,7 +16,7 @@ AI講評は Google の Gemini（無料枠あり・クレカ登録不要）で動
    **コピーしてメモ帳などに一時保存**（この画面を閉じると再表示できないことがある）
 
 > 💡 このキーは「Googleに対する自分の身分証」。他人に見せない・SNSに貼らない。
-> 無料枠は 1日あたり数百リクエスト程度（gemini-2.5-flash）。このゲームの用途なら十分。
+> 無料枠は 1日あたり数百〜1500リクエスト程度（Flash系モデル）。このゲームの用途なら十分。
 
 ## ② Cloudflare Pagesにキーを登録する
 
@@ -46,7 +46,7 @@ AI講評は Google の Gemini（無料枠あり・クレカ登録不要）で動
 
 ## 補足（読まなくてもOK）
 
-- 使用モデルは `gemini-2.5-flash`（無料枠あり）。変えたい場合は Cloudflare の変数に
+- 使用モデルは `gemini-flash-latest`（常に最新のFlash・無料枠あり）。変えたい場合は Cloudflare の変数に
   `GEMINI_MODEL` を追加して `gemini-3-flash-preview` などのモデル名を入れる
 - 以前の `ANTHROPIC_API_KEY` はもう使いません。設定済みなら削除してOK
 - 仕組み: ブラウザ → `/api/ai`（Cloudflare上の中継役）→ Gemini API。

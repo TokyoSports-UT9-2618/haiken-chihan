@@ -1,7 +1,7 @@
 // AI講評プロキシ（Google Gemini API 版）
 // フロントからの { system, prompt } を受け取り { text } を返す。
 // 必要な環境変数: GEMINI_API_KEY（Cloudflare Pages の設定画面で登録）
-// モデルは GEMINI_MODEL で上書き可能（省略時は無料枠のある gemini-2.5-flash）
+// モデルは GEMINI_MODEL で上書き可能（省略時は gemini-flash-latest = 常に最新のFlash）
 
 export async function onRequestPost(context) {
   const apiKey = context.env.GEMINI_API_KEY;
@@ -20,7 +20,7 @@ export async function onRequestPost(context) {
     return Response.json({ error: 'Invalid payload' }, { status: 400 });
   }
 
-  const model = context.env.GEMINI_MODEL || 'gemini-2.5-flash';
+  const model = context.env.GEMINI_MODEL || 'gemini-flash-latest';
 
   try {
     const res = await fetch(
