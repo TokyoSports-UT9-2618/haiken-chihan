@@ -4,15 +4,26 @@
 // ============================================================
 import { getHanPopulation, getHanMembers, PREF_META } from './state.js';
 
-export async function callAI(system, prompt) {
-  const res = await fetch('/api/ai', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ system, prompt }),
-  });
-  if (!res.ok) throw new Error('AI API error');
-  const data = await res.json();
-  return data.text;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// Gemini無料枠はRPM制限があるため、429/503は待って再試行する
+export async function callAI(system, prompt, retries = 3) {
+  for (let attempt = 0; ; attempt++) {
+    const res = await fetch('/api/ai', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ system, prompt }),
+    });
+    if (res.ok) {
+      const data = await res.json();
+      return data.text;
+    }
+    if ((res.status === 429 || res.status === 503) && attempt < retries) {
+      await sleep(15000 * (attempt + 1)); // 15s, 30s, 45s
+      continue;
+    }
+    throw new Error('AI API error ' + res.status);
+  }
 }
 
 // ---- プロンプトテンプレート ---------------------------------
@@ -38,27 +49,31 @@ export function loadAIComments(confirmedHans, score) {
     return `・${han.name}: ${members.map(m => m.name).join('・')} 計${(pop / 10000).toFixed(1)}万人${tokku}`;
   }).join('\n');
 
-  callAI(overallReviewSystem(), overallReviewPrompt(score, hanList)).then(text => {
-    document.getElementById('aiReview').textContent = text;
-  }).catch(() => {
-    document.getElementById('aiReview').style.display = 'none';
-  });
+  // レート制限（無料枠は毎分10リクエスト程度）を踏まないよう、
+  // 全体講評 → 各藩コメントの順に1件ずつ直列で取得する
+  (async () => {
+    try {
+      const text = await callAI(overallReviewSystem(), overallReviewPrompt(score, hanList));
+      document.getElementById('aiReview').textContent = text;
+    } catch {
+      document.getElementById('aiReview').style.display = 'none';
+    }
 
-  // Per-han comments (parallel)
-  confirmedHans.forEach(han => {
-    const members = getHanMembers(han.id);
-    const pop = getHanPopulation(han.id);
-    const prefNames = [...new Set(members.map(m => m.prefCode))].map(pc => {
-      const p = PREF_META.find(x => x.code === pc);
-      return p ? p.name : pc;
-    }).join('・');
-    const tokku = han.tokku ? `、特区: ${han.tokku.label}` : '';
-    callAI(hanCommentSystem(), hanCommentPrompt(han, members, pop, prefNames, tokku)).then(text => {
+    for (const han of confirmedHans) {
       const el = document.getElementById('ai-han-' + han.id);
-      if (el) el.textContent = text;
-    }).catch(() => {
-      const el = document.getElementById('ai-han-' + han.id);
-      if (el) el.style.display = 'none';
-    });
-  });
+      const members = getHanMembers(han.id);
+      const pop = getHanPopulation(han.id);
+      const prefNames = [...new Set(members.map(m => m.prefCode))].map(pc => {
+        const p = PREF_META.find(x => x.code === pc);
+        return p ? p.name : pc;
+      }).join('・');
+      const tokku = han.tokku ? `、特区: ${han.tokku.label}` : '';
+      try {
+        const text = await callAI(hanCommentSystem(), hanCommentPrompt(han, members, pop, prefNames, tokku));
+        if (el) el.textContent = text;
+      } catch {
+        if (el) el.textContent = '（コメントを取得できませんでした）';
+      }
+    }
+  })();
 }
