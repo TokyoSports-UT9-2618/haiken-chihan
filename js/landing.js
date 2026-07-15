@@ -1,6 +1,8 @@
 // ============================================================
 // landing.js — ランディングページ（都道府県選択）のロジック
-// 選択県 + 隣接県（自動参戦）を index.html?prefs=... に渡す
+// 選択した県だけをプレイエリアとして index.html?prefs=... に渡す。
+// 隣接県は「追加可能」としてハイライトされ、クリックで任意追加できる
+// （自動参戦はしない。1県だけでも遊べる）
 // ============================================================
 import { TARGET_POP } from './config.js';
 import { isConnected } from './geo.js';
@@ -72,19 +74,8 @@ function handlePrefClick(code) {
     if (!isConnected(testSet, prefNeighbors)) return; // Would create disconnected selection
     selectedCodes.delete(code);
   } else {
-    // Select — must be adjacent or included (or first pick)
-    if (selectedCodes.size > 0) {
-      const adj = getAdjacentCodes(); // included = 隣接県
-      // included県のさらに隣接も選択可能
-      const expandable = new Set();
-      for (const c of adj) {
-        const pr = prefData.find(p => p.code === c);
-        if (pr && pr.adjacent) pr.adjacent.forEach(a => {
-          if (!selectedCodes.has(a) && !adj.has(a)) expandable.add(a);
-        });
-      }
-      if (!adj.has(code) && !expandable.has(code)) return;
-    }
+    // Select — 最初の1県は自由、以降は選択済みに隣接する県のみ
+    if (selectedCodes.size > 0 && !getAdjacentCodes().has(code)) return;
     selectedCodes.add(code);
   }
 
@@ -115,17 +106,7 @@ function updateUI() {
 }
 
 function updateMapStyles() {
-  const includedCodes = getAdjacentCodes(); // 隣接県 = ゲームに自動含まれる
-  // 追加選択可能 = included県のさらに隣接
-  const expandable = new Set();
-  for (const code of includedCodes) {
-    const pref = prefData.find(p => p.code === code);
-    if (pref && pref.adjacent) {
-      pref.adjacent.forEach(a => {
-        if (!selectedCodes.has(a) && !includedCodes.has(a)) expandable.add(a);
-      });
-    }
-  }
+  const adjacentCodes = getAdjacentCodes(); // 隣接県 = クリックで追加できる候補
 
   const groups = document.querySelectorAll('g[data-pref-code]');
   groups.forEach(g => {
@@ -136,9 +117,7 @@ function updateMapStyles() {
       g.classList.add('state-selected');
     } else if (selectedCodes.size === 0) {
       g.classList.add('state-default');
-    } else if (includedCodes.has(code)) {
-      g.classList.add('state-included');
-    } else if (expandable.has(code)) {
+    } else if (adjacentCodes.has(code)) {
       g.classList.add('state-adjacent');
     } else {
       g.classList.add('state-unavailable');
@@ -166,15 +145,8 @@ function updateSelectedList() {
 }
 
 function getGameCodes() {
-  // 選択県 + 隣接県 = 実際にゲームに含まれる全県
-  const all = new Set(selectedCodes);
-  for (const code of selectedCodes) {
-    const pref = prefData.find(p => p.code === code);
-    if (pref && pref.adjacent) {
-      pref.adjacent.forEach(a => all.add(a));
-    }
-  }
-  return all;
+  // 選択した県だけがゲームに含まれる（隣接県の自動参戦は廃止）
+  return new Set(selectedCodes);
 }
 
 function updateStats() {
@@ -208,7 +180,7 @@ function updateInstruction() {
   } else {
     const adj = getAdjacentCodes();
     if (adj.size > 0) {
-      el.textContent = '隣接する都道府県を追加するか、出陣してください';
+      el.textContent = 'このまま出陣するか、緑の隣接県をクリックして追加できます';
     } else {
       el.textContent = '出陣の準備が整いました';
     }
@@ -270,15 +242,7 @@ document.getElementById('presetGrid').addEventListener('click', e => {
 // ---- START GAME ---------------------------------------------
 document.getElementById('startBtn').addEventListener('click', () => {
   if (selectedCodes.size === 0) return;
-  // 選択県 + その隣接県をすべてゲームに含める
-  const allCodes = new Set(selectedCodes);
-  for (const code of selectedCodes) {
-    const pref = prefData.find(p => p.code === code);
-    if (pref && pref.adjacent) {
-      pref.adjacent.forEach(a => allCodes.add(a));
-    }
-  }
-  const prefs = [...allCodes].sort().join(',');
+  const prefs = [...selectedCodes].sort().join(',');
   window.location.href = `index.html?prefs=${prefs}`;
 });
 
