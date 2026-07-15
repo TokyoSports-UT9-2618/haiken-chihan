@@ -14,6 +14,39 @@ export let geojsonCache = null;
 let onMuniClick = () => {};
 export function setMuniClickHandler(fn) { onMuniClick = fn; }
 
+// ---- テーマ（paper=従来 / night=夜景グロー） -----------------
+// タイルなしの暗色背景 + ポリゴン発光。localStorage に永続化。
+export let mapTheme = localStorage.getItem('haiken_theme') || 'paper';
+let tilePale = null;
+let tileLayerControl = null;
+
+export function toggleMapTheme() {
+  setMapTheme(mapTheme === 'night' ? 'paper' : 'night');
+  return mapTheme;
+}
+
+export function setMapTheme(theme) {
+  mapTheme = theme;
+  localStorage.setItem('haiken_theme', theme);
+  const container = document.getElementById('map');
+  container.classList.toggle('night', theme === 'night');
+  if (map && tilePale) {
+    if (theme === 'night') {
+      map.eachLayer(l => { if (l instanceof L.TileLayer) map.removeLayer(l); });
+    } else if (!map.hasLayer(tilePale)) {
+      tilePale.addTo(map);
+    }
+  }
+  updateAllStyles();
+}
+
+// 発光はSVGパスのCSS filterで実現（タイル不要なので軽い）
+function setGlow(layer, color) {
+  const el = layer._path;
+  if (!el) return;
+  el.style.filter = color ? `drop-shadow(0 0 6px ${color})` : '';
+}
+
 // ---- 初期化 -------------------------------------------------
 export function initMap() {
   map = L.map('map', {
@@ -23,7 +56,7 @@ export function initMap() {
     attributionControl: true,
   });
 
-  const tileGsiPale = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
+  tilePale = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', {
     attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>',
     maxZoom: 18,
   });
@@ -31,10 +64,11 @@ export function initMap() {
     attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">国土地理院</a>',
     maxZoom: 18,
   });
-  tileGsiPale.addTo(map);
-  L.control.layers({ '淡色地図': tileGsiPale, '標準地図': tileGsiStd }, {}, { position: 'topleft' }).addTo(map);
+  tilePale.addTo(map);
+  tileLayerControl = L.control.layers({ '淡色地図': tilePale, '標準地図': tileGsiStd }, {}, { position: 'topleft' }).addTo(map);
 
   loadGeoJSON();
+  if (mapTheme === 'night') setMapTheme('night');
 }
 
 function loadGeoJSON() {
@@ -132,12 +166,16 @@ function addFallbackMarker(m) {
 }
 
 function getDefaultStyle() {
+  if (mapTheme === 'night') {
+    return { fillColor: '#1c2536', color: '#3d4a66', weight: 1, fillOpacity: 0.9, opacity: 0.9, fillRule: 'nonzero' };
+  }
   return { fillColor: '#f5f0e6', color: '#aaa', weight: 1, fillOpacity: 0.2, opacity: 0.8, fillRule: 'nonzero' };
 }
 
 // ---- スタイル更新 -------------------------------------------
 export function updateAllStyles() {
   const clickable = state.currentHanId ? new Set(getClickableMunicipalities(state.currentHanId)) : new Set();
+  const night = mapTheme === 'night';
 
   MUNICIPALITIES.forEach(m => {
     const layer = municipalityLayers[m.code];
@@ -148,21 +186,44 @@ export function updateAllStyles() {
 
     if (han && han.confirmed) {
       // Confirmed han
-      layer.setStyle({ fillColor: han.color, color: '#333', weight: 2, fillOpacity: 0.7, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+      if (night) {
+        layer.setStyle({ fillColor: han.color, color: '#0a0e17', weight: 1.5, fillOpacity: 0.95, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+        setGlow(layer, han.color);
+      } else {
+        layer.setStyle({ fillColor: han.color, color: '#333', weight: 2, fillOpacity: 0.7, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+        setGlow(layer, null);
+      }
     } else if (assignment === state.currentHanId) {
       // In current editing han
-      layer.setStyle({ fillColor: '#FFD700', color: '#b8860b', weight: 2.5, fillOpacity: 0.65, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+      if (night) {
+        layer.setStyle({ fillColor: '#f5c542', color: '#ffe9a8', weight: 1.5, fillOpacity: 0.95, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+        setGlow(layer, '#f5c542');
+      } else {
+        layer.setStyle({ fillColor: '#FFD700', color: '#b8860b', weight: 2.5, fillOpacity: 0.65, opacity: 1, dashArray: null, fillRule: 'nonzero' });
+        setGlow(layer, null);
+      }
     } else if (!assignment && state.currentHanId) {
       if (clickable.has(m.code)) {
-        // Clickable (adjacent) — pulsing border hint
-        layer.setStyle({ fillColor: '#fefcf0', color: '#DAA520', weight: 2, fillOpacity: 0.45, opacity: 1, dashArray: '5,4', fillRule: 'nonzero' });
+        // Clickable (adjacent) — dashed hint
+        if (night) {
+          layer.setStyle({ fillColor: '#2b3550', color: '#c9a84c', weight: 1.5, fillOpacity: 0.9, opacity: 1, dashArray: '5,4', fillRule: 'nonzero' });
+        } else {
+          layer.setStyle({ fillColor: '#fefcf0', color: '#DAA520', weight: 2, fillOpacity: 0.45, opacity: 1, dashArray: '5,4', fillRule: 'nonzero' });
+        }
+        setGlow(layer, null);
       } else {
         // Not clickable (not adjacent)
-        layer.setStyle({ fillColor: '#e8e8e8', color: '#ccc', weight: 0.5, fillOpacity: 0.15, opacity: 0.5, dashArray: null, fillRule: 'nonzero' });
+        if (night) {
+          layer.setStyle({ fillColor: '#131a29', color: '#252e42', weight: 0.5, fillOpacity: 0.9, opacity: 0.8, dashArray: null, fillRule: 'nonzero' });
+        } else {
+          layer.setStyle({ fillColor: '#e8e8e8', color: '#ccc', weight: 0.5, fillOpacity: 0.15, opacity: 0.5, dashArray: null, fillRule: 'nonzero' });
+        }
+        setGlow(layer, null);
       }
     } else {
       // Default unassigned, no current han
       layer.setStyle(getDefaultStyle());
+      setGlow(layer, null);
     }
   });
 }
@@ -177,7 +238,12 @@ function highlightLayer(layer, code) {
     if (!clickable.has(code)) return;
   }
 
-  layer.setStyle({ fillColor: '#b5451b', fillOpacity: 0.75 });
+  if (mapTheme === 'night') {
+    layer.setStyle({ fillColor: '#f5c542', fillOpacity: 0.9 });
+    setGlow(layer, '#f5c542');
+  } else {
+    layer.setStyle({ fillColor: '#b5451b', fillOpacity: 0.75 });
+  }
   if (layer.bringToFront) layer.bringToFront();
 }
 

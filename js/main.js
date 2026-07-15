@@ -8,7 +8,7 @@ import {
   setMunicipalities, setAdjacency, setPrefMeta, setCurrentPrefCodes,
 } from './state.js';
 import { calcMunicipalityCost, PREFECTURE_COST } from './cost.js';
-import { initMap, map, setMuniClickHandler, jumpToMuni } from './map.js';
+import { initMap, map, setMuniClickHandler, jumpToMuni, toggleMapTheme, mapTheme } from './map.js';
 import {
   updateSidebar, openHelp, closeHelp,
   showSaveModal, closeSaveModal, showLoadModal, closeLoadModal,
@@ -29,6 +29,12 @@ function wireEvents() {
   document.getElementById('btnLoad').addEventListener('click', () => showLoadModal());
   document.getElementById('btnUndo').addEventListener('click', () => undoAction());
   document.getElementById('btnReset').addEventListener('click', () => resetGame());
+  const btnTheme = document.getElementById('btnTheme');
+  const themeLabel = t => (t === 'night' ? '☀️ 通常' : '🌙 夜景');
+  btnTheme.textContent = themeLabel(mapTheme);
+  btnTheme.addEventListener('click', () => {
+    btnTheme.textContent = themeLabel(toggleMapTheme());
+  });
 
   // Sidebar actions
   document.getElementById('btnNew').addEventListener('click', () => createNewHan());
