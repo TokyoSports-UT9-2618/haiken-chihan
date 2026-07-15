@@ -16,7 +16,10 @@ export async function callAI(system, prompt, retries = 3) {
     });
     if (res.ok) {
       const data = await res.json();
-      return data.text;
+      if (data.text && data.text.trim()) return data.text.trim();
+      // 空応答はリトライ対象（たまにモデルが空白だけ返すことがある）
+      if (attempt < retries) { await sleep(3000); continue; }
+      throw new Error('AI empty response');
     }
     if ((res.status === 429 || res.status === 503) && attempt < retries) {
       await sleep(15000 * (attempt + 1)); // 15s, 30s, 45s
@@ -34,7 +37,7 @@ export const overallReviewPrompt = (score, hanList) =>
   `プレイヤーの藩編成（スコア${score}点）：\n${hanList}\nこの藩編成を評価してください。`;
 
 export const hanCommentSystem = () =>
-  '日本の地理・産業・文化に詳しいアナリストとして、新設される「藩」の特徴を80字程度で端的に説明してください。地形・主要産業・観光資源などの観点を含めてください。';
+  '日本の地理・産業・文化に詳しいアナリストとして、新設される「藩」の特徴を80字程度で端的に説明してください。地形・主要産業・観光資源などの観点を含めてください。説明の本文だけを出力し、文字数のカウントや前置き・補足は一切書かないでください。';
 
 export const hanCommentPrompt = (han, members, pop, prefNames, tokku) =>
   `「${han.name}」の構成市町村: ${members.map(m => m.name).join('、')}\n総人口: ${(pop / 10000).toFixed(1)}万人、エリア: ${prefNames}${tokku}`;
