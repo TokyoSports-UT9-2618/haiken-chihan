@@ -9,9 +9,9 @@ export async function onRequestPost(context) {
     return Response.json({ error: 'API key not configured' }, { status: 500 });
   }
 
-  let system, prompt;
+  let system, prompt, json;
   try {
-    ({ system, prompt } = await context.request.json());
+    ({ system, prompt, json } = await context.request.json());
   } catch {
     return Response.json({ error: 'Invalid JSON' }, { status: 400 });
   }
@@ -34,7 +34,10 @@ export async function onRequestPost(context) {
         body: JSON.stringify({
           ...(system ? { system_instruction: { parts: [{ text: system }] } } : {}),
           contents: [{ role: 'user', parts: [{ text: prompt }] }],
-          generationConfig: { maxOutputTokens: 1024 },
+          // json=true は一括講評用（全藩まとめて1リクエスト）。JSON強制＋トークン上限拡大
+          generationConfig: json
+            ? { maxOutputTokens: 8192, responseMimeType: 'application/json' }
+            : { maxOutputTokens: 1024 },
         }),
       }
     );
