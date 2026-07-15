@@ -115,10 +115,14 @@ function renderGeoJSON(data) {
       // Support both generated format (name/code) and dataofjapan format (N03_004/N03_007/ward_ja)
       const code = feature.properties.code || feature.properties.N03_007 || '';
       const name = feature.properties.name || feature.properties.ward_ja || feature.properties.N03_004 || '';
-      // Name-based match first (GeoJSON codes differ from spec codes in some sources)
-      let matched = name ? MUNICIPALITIES.find(m => m.name === name) : null;
-      if (!matched) matched = findMuniByCode(code);
+      // コード優先で突合（金山町=山形06361/福島07445 など同名市町村の取り違え防止）。
+      // 名前一致は未紐付けのものに限る保険。
+      let matched = findMuniByCode(code);
+      if (!matched && name) {
+        matched = MUNICIPALITIES.find(m => m.name === name && !municipalityLayers[m.code]);
+      }
       if (!matched) return;
+      if (municipalityLayers[matched.code]) return; // 二重紐付け禁止（迷子レイヤー防止）
       municipalityLayers[matched.code] = layer;
       layer.bindTooltip(matched.name + '<br>' + formatPop(matched.pop) + '人', {
         className: 'muni-tooltip', sticky: true
