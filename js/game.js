@@ -3,7 +3,7 @@
 // ============================================================
 import { CONFIG, HAN_COLORS } from './config.js';
 import {
-  state, MUNICIPALITIES, history, saveHistory,
+  state, MUNICIPALITIES, ADJACENCY, history, saveHistory,
   canAddToHan, canRemoveFromHan, checkIsolatedMunicipalities,
   getHanPopulation,
 } from './state.js';
@@ -172,10 +172,33 @@ export function dissolveHan(hanId) {
   showToast('藩を解散しました（Cmd+Zで戻せます）');
 }
 
+// 隣接する確定済み藩と被らない色を選ぶ（地図の塗り分け）。
+// 全色が隣で使われている場合は隣接以外で使用回数が最少の色にフォールバック。
+function pickHanColor(hanId) {
+  const memberCodes = Object.entries(state.assignments)
+    .filter(([, h]) => h === hanId).map(([c]) => c);
+  const neighborHanIds = new Set();
+  memberCodes.forEach(code => {
+    (ADJACENCY[code] || []).forEach(n => {
+      const a = state.assignments[n];
+      if (a && a !== hanId) neighborHanIds.add(a);
+    });
+  });
+  const neighborColors = new Set(
+    state.hans.filter(h => neighborHanIds.has(h.id)).map(h => h.color)
+  );
+  const usage = {};
+  state.hans.forEach(h => { if (h.id !== hanId) usage[h.color] = (usage[h.color] || 0) + 1; });
+  const free = HAN_COLORS.filter(c => !neighborColors.has(c));
+  const pool = free.length > 0 ? free : HAN_COLORS;
+  return pool.reduce((best, c) => ((usage[c] || 0) < (usage[best] || 0) ? c : best), pool[0]);
+}
+
 function finalizeHan(tokkuData) {
   const currentHan = state.hans.find(h => h.id === state.currentHanId);
   if (!currentHan) return;
 
+  currentHan.color = pickHanColor(currentHan.id);
   currentHan.confirmed = true;
   currentHan.tokku = tokkuData;
   state.currentHanId = null;
