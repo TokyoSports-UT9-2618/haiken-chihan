@@ -5,8 +5,9 @@
 
 ## ファイルマップ
 
-- `index.html` — ゲーム本体（HTML のみ。JS は js/、CSS は css/style.css）
-- `landing.html` — LP（CSS はインライン、JS は js/landing.js）
+- `index.html` — トップページ（旧landing.html。CSSインライン、JSは js/landing.js）
+- `game.html` — ゲーム本体（HTML のみ。JS は js/、CSS は css/style.css）
+
 - `js/` — ES Modules。config / geo / cost / state / map / ai / ui / game / pdf / main / landing
 - `css/style.css` — index 用スタイル
 - `data/` — 県・市区町村データ（scripts/ で生成。手編集しない）
@@ -28,8 +29,8 @@
 
 ```bash
 python3 -m http.server 8765
-# http://localhost:8765/landing.html （LP）
-# http://localhost:8765/index.html?prefs=07 （福島単県で直接起動）
+# http://localhost:8765/ （トップページ）
+# http://localhost:8765/game.html?prefs=07 （福島単県で直接起動）
 ```
 
 ## デプロイ

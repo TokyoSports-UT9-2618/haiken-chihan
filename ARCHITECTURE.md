@@ -7,9 +7,9 @@
 
 | ファイル | 役割 |
 |---|---|
-| `landing.html` + `js/landing.js` | LP。日本地図SVGで都道府県を選ぶ → `index.html?prefs=04,07,...` へ遷移 |
-| `index.html` + `js/main.js` | ゲーム本体。市町村を藩に割り当てる |
-| `css/style.css` | index.html のスタイル（landing の CSS はインラインのまま） |
+| `index.html` + `js/landing.js` | トップページ。日本地図SVGで都道府県を選ぶ → `game.html?prefs=04,07,...` へ遷移 |
+| `game.html` + `js/main.js` | ゲーム本体。市町村を藩に割り当てる |
+| `css/style.css` | game.html のスタイル（トップページの CSS はインラインのまま） |
 | `functions/api/ai.js` | Cloudflare Pages Functions。Gemini API プロキシ（要 `GEMINI_API_KEY` 環境変数、GEMINI_SETUP.md参照） |
 
 ## JS モジュール構成（js/）
@@ -59,7 +59,7 @@
 ## ローカル実行 / デプロイ
 
 ```bash
-python3 -m http.server 8765   # → http://localhost:8765/landing.html
+python3 -m http.server 8765   # → http://localhost:8765/
 ```
 ※ AI講評（/api/ai）はローカルサーバーでは動かない（Pages Functions のため）。
 
@@ -78,5 +78,5 @@ python3 -m http.server 8765   # → http://localhost:8765/landing.html
 
 - **Phase D**: ゲーム中の範囲拡張（「＋ 範囲を広げる」ボタンで隣接県を追加読み込み）
 - **URLシェアセーブ**: セーブデータをURL化して共有（現状は localStorage のみ）
-- `/` → `landing.html` へのリダイレクト設定
+- ~~`/` → LPリダイレクト~~ → 済（index.html自体をトップページ化。注意: Pagesは/index.htmlを/に正規化するため`_redirects`の`/`ルールは書かないこと）
 - Cloudflare Pages 環境変数 `GEMINI_API_KEY` の設定（未設定だとAI講評・PDFのAI文が動かない）
