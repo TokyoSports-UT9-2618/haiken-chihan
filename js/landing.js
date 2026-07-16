@@ -1,6 +1,6 @@
 // ============================================================
 // landing.js — ランディングページ（都道府県選択）のロジック
-// 選択した県だけをプレイエリアとして index.html?prefs=... に渡す。
+// 選択した県だけをプレイエリアとして game.html?prefs=... に渡す。
 // 隣接県は「追加可能」としてハイライトされ、クリックで任意追加できる
 // （自動参戦はしない。1県だけでも遊べる）
 // ============================================================
@@ -243,7 +243,7 @@ document.getElementById('presetGrid').addEventListener('click', e => {
 document.getElementById('startBtn').addEventListener('click', () => {
   if (selectedCodes.size === 0) return;
   const prefs = [...selectedCodes].sort().join(',');
-  window.location.href = `index.html?prefs=${prefs}`;
+  window.location.href = `game.html?prefs=${prefs}`;
 });
 
 // ---- BOOT ---------------------------------------------------

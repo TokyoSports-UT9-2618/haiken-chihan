@@ -31,7 +31,7 @@ function wireEvents() {
   document.getElementById('btnReset').addEventListener('click', () => resetGame());
   document.getElementById('btnHome').addEventListener('click', () => {
     // 進行中でも自動保存があるので確認なしで戻ってOK
-    window.location.href = 'landing.html';
+    window.location.href = './';
   });
   const btnTheme = document.getElementById('btnTheme');
   const themeLabel = t => (t === 'night' ? '☀️ 通常' : '🌙 夜景');

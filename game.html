@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>廃県置藩シミュレーター｜福島県</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>廃県置藩シミュレーター</h1>
+    <div class="subtitle" id="headerSubtitle">福島県 59市町村 → 新しい藩へ</div>
+  </div>
+  <div>
+    <button class="save-btn" id="btnHome" title="都道府県選択に戻る">🏠 トップへ</button>
+    <button class="save-btn" id="btnTheme" title="地図の見た目を切り替え">🌙 夜景</button>
+    <button class="help-btn" id="btnHelp">？ 遊び方</button>
+    <button class="save-btn" id="btnSave">💾 保存</button>
+    <button class="save-btn" id="btnLoad">📂 再開</button>
+    <button class="undo-btn" id="btnUndo" disabled>↩ 戻る</button>
+    <button class="reset-btn" id="btnReset">リセット</button>
+  </div>
+</header>
+
+<div class="main">
+  <div id="map"></div>
+  <div class="sidebar" id="sidebar">
+    <!-- Current han section -->
+    <div>
+      <div class="section-title">編集中の藩</div>
+      <div class="current-han" id="currentHanSection">
+        <div class="no-han" id="noHanMsg">「新しい藩を作る」を押してください</div>
+        <div id="currentHanInfo" style="display:none;">
+          <div class="han-name" id="currentHanName"></div>
+          <div class="gauge-container">
+            <div class="gauge-label">
+              <span>人口</span>
+              <span id="gaugePopText">0万人</span>
+            </div>
+            <div class="gauge-bar">
+              <div class="gauge-fill" id="gaugeFill"></div>
+              <div class="gauge-text" id="gaugeBarText"></div>
+            </div>
+            <div class="gauge-label" style="margin-top:2px;">
+              <span style="color:#27ae60;">30万</span>
+              <span>目標 40万</span>
+              <span style="color:#f39c12;">50万</span>
+            </div>
+          </div>
+          <div class="cost-preview" id="costPreview" style="display:none;">
+            <div class="cost-title">行政コスト試算</div>
+            <div class="cost-row"><span>首長・議員報酬</span><span id="costSalary">-</span></div>
+            <div class="cost-row"><span>施設維持費</span><span id="costFacility">-</span></div>
+            <div class="cost-row cost-total"><span>合計</span><span id="costTotal">-</span></div>
+            <div class="cost-row" style="margin-top:6px;padding-top:6px;border-top:1px dashed #ddd;"><span>税収規模（参考）</span><span id="costTax">-</span></div>
+            <div class="cost-note">※概算・推計値</div>
+          </div>
+          <div class="muni-list" id="currentMuniList"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="actions">
+      <button class="btn btn-new" id="btnNew">新しい藩を作る</button>
+      <button class="btn btn-confirm" id="btnConfirm" disabled>この藩を確定する</button>
+    </div>
+
+    <!-- Confirmed hans -->
+    <div>
+      <div class="section-title">確定済みの藩</div>
+      <div class="confirmed-list" id="confirmedList">
+        <div style="color:#999; font-size:13px; font-style:italic;">まだありません</div>
+      </div>
+    </div>
+
+    <!-- Unassigned municipalities -->
+    <div id="unassignedSection" style="display:none;">
+      <div class="section-title" style="color:#e74c3c;">未割り当ての市町村</div>
+      <div id="unassignedList"></div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-section">
+      <div class="progress-text" id="progressText">0 / 59 市町村を割り当て済み</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- Name input dialog -->
+<div class="name-overlay" id="nameOverlay"></div>
+<div class="name-dialog" id="nameDialog">
+  <h3>藩の名前を入力</h3>
+  <input type="text" id="nameInput" placeholder="例: 福島藩" maxlength="20">
+  <br>
+  <button class="btn btn-confirm" id="btnNameSubmit">決定</button>
+</div>
+
+<!-- Tokku dialog -->
+<div class="name-overlay" id="tokkuOverlay"></div>
+<div class="tokku-dialog" id="tokkuDialog">
+  <h3>人口が30万人未満です</h3>
+  <p class="tokku-desc" id="tokkuPopMsg"></p>
+  <p class="tokku-hint">「特区」として設定すると、人口不足の減点が半減されます</p>
+  <select id="tokkuType">
+    <option value="">-- 特区設定なし（このまま確定）--</option>
+    <option value="water">水源・自然保護特区</option>
+    <option value="agri">農業・食料生産特区</option>
+    <option value="fish">漁業・水産特区</option>
+    <option value="tourism">観光・文化特区</option>
+    <option value="nuclear">原子力復興特区</option>
+    <option value="border">国境・防衛特区</option>
+    <option value="custom">自由記述...</option>
+  </select>
+  <input type="text" id="tokkuCustom" placeholder="特区の理由を入力" style="display:none;">
+  <div class="tokku-btn-row">
+    <button class="btn btn-confirm" id="btnTokkuSubmit">確定する</button>
+  </div>
+</div>
+
+<!-- Save modal -->
+<div class="sl-overlay" id="saveOverlay">
+  <div class="sl-modal">
+    <h3>💾 ゲームを保存</h3>
+    <input class="sl-name-input" id="saveNameInput" type="text" placeholder="保存名（省略可）" maxlength="30">
+    <div id="saveSlotList"></div>
+    <div class="sl-btns">
+      <button class="sl-btn sl-btn-cancel" id="btnSaveCancel">キャンセル</button>
+    </div>
+  </div>
+</div>
+
+<!-- Load modal -->
+<div class="sl-overlay" id="loadOverlay">
+  <div class="sl-modal">
+    <h3>📂 セーブデータを読み込む</h3>
+    <div id="loadSlotList"></div>
+    <div class="sl-btns">
+      <button class="sl-btn sl-btn-cancel" id="btnLoadCancel">キャンセル</button>
+    </div>
+  </div>
+</div>
+
+<!-- Help modal -->
+<div class="help-overlay" id="helpOverlay">
+  <div class="help-modal">
+    <div class="help-modal-header" style="position:relative;">
+      <h2>廃県置藩シミュレーター　遊び方</h2>
+      <p id="helpDescription">福島県59市町村を「藩」に再編成するシミュレーターです。<br>江戸時代の廃藩置県を逆転させ、藩＝スマートシュリンクシティのシミュレーションを体感しましょう。</p>
+      <button class="help-modal-close" id="btnHelpClose">✕</button>
+    </div>
+    <div class="help-modal-body">
+
+      <div class="help-section">
+        <h3>▶ 遊び方（5ステップ）</h3>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="help-step-num">1</div>
+            <div class="help-step-body">
+              <h4>新しい藩を作る</h4>
+              <p>サイドパネルの「新しい藩を作る」ボタンを押します。地図上の市町村が選択可能な状態になります。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">2</div>
+            <div class="help-step-body">
+              <h4>地図をクリックして市町村を追加</h4>
+              <p>地図上の市町村をクリックして藩に追加します。金色の枠線が「追加済み」、破線が「追加可能」な市町村です。</p>
+              <p class="help-note">⚠ 飛び地禁止：隣接している市町村のみ追加できます。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">3</div>
+            <div class="help-step-body">
+              <h4>人口ゲージを目標の緑帯に合わせる</h4>
+              <p>1藩あたりの目標人口は <strong>30〜50万人</strong>（理想は40万人）。サイドパネルのゲージが緑になるよう調整しましょう。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">4</div>
+            <div class="help-step-body">
+              <h4>藩を確定する</h4>
+              <p>「この藩を確定する」ボタンを押し、藩名を入力します。人口が30万未満の場合は「特区」設定が可能です（減点が半減されます）。</p>
+            </div>
+          </div>
+          <div class="help-step">
+            <div class="help-step-num">5</div>
+            <div class="help-step-body">
+              <h4 id="helpGoalTitle">全59市町村を割り当ててゴール！</h4>
+              <p>1〜4を繰り返し、全ての市町村を藩に割り当てるとゲームクリアです。AIが藩編成を講評し、PDFレポートが生成できます。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="help-section">
+        <h3>▶ スコアの仕組み</h3>
+        <table class="help-score-table">
+          <thead><tr><th>条件</th><th>点数</th></tr></thead>
+          <tbody>
+            <tr><td>藩ひとつあたりの基本点</td><td>1,000点</td></tr>
+            <tr><td>人口が30〜50万人（適正範囲）</td><td>＋200点</td></tr>
+            <tr><td>人口が25〜30万 or 50〜55万（やや外れ）</td><td>±0点</td></tr>
+            <tr><td>人口が25万未満 or 55万超（大きく外れ）</td><td>－200点</td></tr>
+            <tr><td>特区設定あり（人口不足の減点を半減）</td><td>補正あり</td></tr>
+            <tr><td>藩数ボーナス（4藩以上）</td><td>藩数×100点</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="help-section">
+        <h3>▶ 便利な機能</h3>
+        <div class="help-grid">
+          <div class="help-card">
+            <h4>↩ 戻る（Cmd+Z）</h4>
+            <p>直前の操作を取り消します。最大80手まで遡れます。</p>
+          </div>
+          <div class="help-card orange">
+            <h4>やり直す</h4>
+            <p>確定済みの藩カードにある「やり直す」ボタンで、その藩の割り当てを全解除して再編集できます。</p>
+          </div>
+          <div class="help-card green">
+            <h4>行政コスト試算</h4>
+            <p>藩編集中は首長・議員・施設費の年間コストをリアルタイム表示。廃県置藩前後での削減額も確認できます。</p>
+          </div>
+          <div class="help-card purple">
+            <h4>PDFレポート出力</h4>
+            <p>クリア後にAI講評・各藩コメント・コスト比較・カラー地図を含むPDFをダウンロードできます。</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="help-footer-btn" id="btnHelpStart">さっそく始める →</button>
+    </div>
+  </div>
+</div>
+
+<!-- Game clear modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <h2>ゲームクリア！</h2>
+    <div class="score" id="finalScore"></div>
+    <div class="ai-review" id="aiReview"><span class="ai-loading">AIが評価中...</span></div>
+    <div class="han-summary" id="hanSummary"></div>
+    <div class="cost-comparison" id="costComparison">
+      <h3>行政コスト比較</h3>
+      <div class="cost-block">
+        <div class="cost-block-title" id="beforeCostTitle">【廃県置藩 前】福島県 + 59市町村</div>
+        <div class="cost-line"><span>首長・議員報酬</span><span id="beforeSalary">-</span></div>
+        <div class="cost-line"><span>施設維持費</span><span id="beforeFacility">-</span></div>
+        <div class="cost-line cost-line-total"><span>合計</span><span id="beforeTotal">-</span></div>
+      </div>
+      <div class="cost-block">
+        <div class="cost-block-title" id="afterTitle">【廃県置藩 後】あなたの設計</div>
+        <div class="cost-line"><span>首長・議員報酬</span><span id="afterSalary">-</span></div>
+        <div class="cost-line"><span>施設維持費</span><span id="afterFacility">-</span></div>
+        <div class="cost-line cost-line-total"><span>合計</span><span id="afterTotal">-</span></div>
+      </div>
+      <div class="cost-saving" id="costSaving">-</div>
+      <div id="taxSummary" style="margin:10px 0;padding:10px;background:#f0f4f8;border-radius:6px;font-size:13px;"></div>
+      <div class="slider-section">
+        <div class="slider-title">削減前提の仮定を変えてみよう</div>
+        <div class="slider-row">
+          <label>議員定数削減率</label>
+          <input type="range" id="sliderMember" min="20" max="80" value="50">
+          <span class="slider-val" id="sliderMemberVal">50%</span>
+        </div>
+        <div class="slider-row">
+          <label>施設統廃合率</label>
+          <input type="range" id="sliderFacility" min="10" max="70" value="40">
+          <span class="slider-val" id="sliderFacilityVal">40%</span>
+        </div>
+      </div>
+      <div class="cost-disclaimer">
+        ※概算・推計値です（総務省地方公務員給与実態調査・各市町村条例等より推計）<br>
+        この数字で政策判断はしないでください。廃県置藩の可能性を体感するためのシミュレーターです。
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:10px;">
+      <button class="btn btn-new" id="btnReplay">もう一度プレイ</button>
+      <button class="btn btn-confirm" id="btnPdf">PDFレポートをダウンロード</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden PDF report template -->
+<div id="pdfReport" style="position:fixed;top:-9999px;left:-9999px;width:794px;background:#fff;font-family:sans-serif;line-height:1.5;"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- モジュールは defer 相当のため、上の CDN スクリプト読み込み後に実行される -->
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

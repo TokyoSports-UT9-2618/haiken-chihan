@@ -3,300 +3,669 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>廃県置藩シミュレーター｜福島県</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
-<link rel="stylesheet" href="css/style.css">
+<title>廃県置藩シミュレーター</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Shippori+Mincho:wght@500;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   STEAMPUNK LANDING PAGE
+   ============================================================ */
+:root {
+  --brass: #b8860b;
+  --brass-light: #d4a832;
+  --brass-dark: #8b6508;
+  --copper: #b87333;
+  --copper-light: #da8a47;
+  --iron: #2c2c2c;
+  --iron-light: #444;
+  --parchment: #f4e8c1;
+  --parchment-dark: #d4c89a;
+  --ink: #1a0e05;
+  --steam: rgba(255,255,255,0.08);
+  --glow: #e8a020;
+  --selected: #c9a030;
+  --adjacent: #7a9a6a;
+  --unavailable: #5a5046;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--iron);
+  color: var(--parchment);
+  font-family: 'Noto Sans JP', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── Texture overlays ── */
+body::before {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.03) 2px, rgba(0,0,0,0.03) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+body::after {
+  content: '';
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.06) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(184,115,51,0.04) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Header ── */
+header {
+  position: relative;
+  text-align: center;
+  padding: 40px 20px 24px;
+  background: linear-gradient(180deg, #1a1410 0%, var(--iron) 100%);
+  border-bottom: 3px solid var(--brass-dark);
+  overflow: hidden;
+}
+
+header::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--brass-light), var(--brass), var(--brass-light), transparent);
+}
+
+.header-ornament {
+  font-size: 22px;
+  color: var(--brass);
+  letter-spacing: 12px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+}
+
+h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 800;
+  font-size: clamp(24px, 5vw, 52px);
+  letter-spacing: 0.08em;
+  color: transparent;
+  background: linear-gradient(180deg, var(--brass-light) 0%, var(--brass) 40%, var(--copper) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+  line-height: 1.3;
+}
+
+.subtitle {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(10px, 1.8vw, 14px);
+  letter-spacing: 0.4em;
+  color: var(--copper-light);
+  margin-top: 8px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.tagline {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(12px, 2vw, 16px);
+  color: var(--parchment-dark);
+  margin-top: 12px;
+  opacity: 0.7;
+}
+
+/* ── Main layout ── */
+main {
+  display: flex;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Map panel ── */
+.map-panel {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1;
+}
+
+.map-container svg {
+  width: 100%;
+  height: 100%;
+}
+
+.map-container svg line {
+  display: none;
+}
+
+/* SVG prefecture styles */
+.map-container svg g.prefecture {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.map-container svg g.prefecture polygon,
+.map-container svg g.prefecture path {
+  transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+}
+
+/* Default state */
+.map-container svg g.prefecture.state-default polygon,
+.map-container svg g.prefecture.state-default path {
+  fill: var(--unavailable);
+  stroke: #3a3530;
+  stroke-width: 0.8;
+}
+
+/* Unavailable */
+.map-container svg g.prefecture.state-unavailable polygon,
+.map-container svg g.prefecture.state-unavailable path {
+  fill: #3a342e;
+  stroke: #4a4540;
+  stroke-width: 0.5;
+  cursor: not-allowed;
+}
+
+/* Included (adjacent to selected = auto-included in game) */
+.map-container svg g.prefecture.state-included polygon,
+.map-container svg g.prefecture.state-included path {
+  fill: var(--copper);
+  stroke: var(--copper-light);
+  stroke-width: 1;
+  filter: drop-shadow(0 0 4px rgba(184,115,51,0.4));
+}
+.map-container svg g.prefecture.state-included:hover polygon,
+.map-container svg g.prefecture.state-included:hover path {
+  fill: var(--copper-light);
+  filter: drop-shadow(0 0 8px rgba(218,138,71,0.6));
+}
+
+/* Adjacent (selectable — neighbors of included) */
+.map-container svg g.prefecture.state-adjacent polygon,
+.map-container svg g.prefecture.state-adjacent path {
+  fill: var(--adjacent);
+  stroke: #8ab87a;
+  stroke-width: 1;
+  filter: drop-shadow(0 0 3px rgba(122,154,106,0.4));
+}
+.map-container svg g.prefecture.state-adjacent:hover polygon,
+.map-container svg g.prefecture.state-adjacent:hover path {
+  fill: #8ab87a;
+  filter: drop-shadow(0 0 8px rgba(122,180,106,0.6));
+}
+
+/* Selected */
+.map-container svg g.prefecture.state-selected polygon,
+.map-container svg g.prefecture.state-selected path {
+  fill: var(--selected);
+  stroke: var(--brass-light);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px rgba(200,160,48,0.5));
+}
+.map-container svg g.prefecture.state-selected:hover polygon,
+.map-container svg g.prefecture.state-selected:hover path {
+  fill: var(--brass-light);
+  filter: drop-shadow(0 0 10px rgba(212,168,50,0.7));
+}
+
+.map-instruction {
+  text-align: center;
+  margin-top: 16px;
+  font-family: 'Shippori Mincho', serif;
+  font-size: 14px;
+  color: var(--parchment-dark);
+  opacity: 0.8;
+}
+
+/* ── Side panel ── */
+.side-panel {
+  width: 380px;
+  background: linear-gradient(180deg, #1e1a14 0%, #161210 100%);
+  border-left: 2px solid var(--brass-dark);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow-y: auto;
+}
+
+.side-panel::before {
+  content: '';
+  position: absolute; top: 0; left: 0; width: 2px; height: 100%;
+  background: linear-gradient(180deg, transparent, var(--brass-light) 30%, var(--brass) 70%, transparent);
+}
+
+/* Panel sections */
+.panel-section {
+  background: rgba(244,232,193,0.04);
+  border: 1px solid rgba(184,134,11,0.2);
+  border-radius: 4px;
+  padding: 16px;
+  position: relative;
+}
+
+.panel-section::before {
+  content: '';
+  position: absolute; top: -1px; left: 20px; right: 20px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass-light), transparent);
+}
+
+.section-title {
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--brass-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .gear {
+  display: inline-block;
+  animation: spin 8s linear infinite;
+  font-size: 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Selected area list */
+.selected-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.selected-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px;
+  background: rgba(184,134,11,0.08);
+  border: 1px solid rgba(184,134,11,0.15);
+  border-radius: 3px;
+  font-size: 13px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.selected-item .name {
+  color: var(--parchment);
+  font-weight: 700;
+}
+
+.selected-item .pop {
+  color: var(--copper-light);
+  font-size: 11px;
+}
+
+.selected-item .remove {
+  background: none;
+  border: 1px solid rgba(184,134,11,0.3);
+  color: var(--brass);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  transition: all 0.2s;
+}
+
+.selected-item .remove:hover {
+  background: rgba(184,134,11,0.2);
+  color: var(--parchment);
+}
+
+.empty-msg {
+  color: var(--parchment-dark);
+  opacity: 0.5;
+  font-size: 13px;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Shippori Mincho', serif;
+}
+
+/* Stats gauges */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-gauge {
+  text-align: center;
+  padding: 10px 6px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(184,134,11,0.15);
+  border-radius: 4px;
+}
+
+.stat-gauge .label {
+  font-size: 10px;
+  color: var(--copper-light);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.stat-gauge .value {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 22px;
+  color: var(--brass-light);
+  text-shadow: 0 0 8px rgba(232,160,32,0.3);
+}
+
+.stat-gauge .unit {
+  font-size: 10px;
+  color: var(--parchment-dark);
+  opacity: 0.6;
+}
+
+/* Presets */
+.preset-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.preset-btn {
+  background: rgba(184,134,11,0.06);
+  border: 1px solid rgba(184,134,11,0.2);
+  color: var(--parchment);
+  padding: 8px 6px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: 'Noto Sans JP', sans-serif;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.preset-btn:hover {
+  background: rgba(184,134,11,0.15);
+  border-color: var(--brass);
+  transform: translateY(-1px);
+}
+
+.preset-btn .icon {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+/* Start button */
+.start-btn {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(180deg, var(--brass) 0%, var(--brass-dark) 100%);
+  border: 2px solid var(--brass-light);
+  border-radius: 4px;
+  color: var(--ink);
+  font-family: 'Shippori Mincho', serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.start-btn::before {
+  content: '';
+  position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: left 0.5s;
+}
+
+.start-btn:hover::before {
+  left: 100%;
+}
+
+.start-btn:hover {
+  background: linear-gradient(180deg, var(--brass-light) 0%, var(--brass) 100%);
+  box-shadow: 0 6px 20px rgba(184,134,11,0.4), inset 0 1px 0 rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.start-btn:disabled {
+  background: linear-gradient(180deg, #4a4540 0%, #3a3530 100%);
+  border-color: #5a5550;
+  color: #7a7570;
+  cursor: not-allowed;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.start-btn:disabled::before { display: none; }
+
+/* Tooltip */
+.map-tooltip {
+  position: fixed;
+  background: rgba(26,14,5,0.95);
+  border: 1px solid var(--brass);
+  color: var(--parchment);
+  padding: 8px 14px;
+  border-radius: 3px;
+  font-size: 13px;
+  pointer-events: none;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  font-family: 'Shippori Mincho', serif;
+}
+
+.map-tooltip .tt-name {
+  font-weight: 700;
+  color: var(--brass-light);
+}
+
+.map-tooltip .tt-pop {
+  font-size: 11px;
+  color: var(--copper-light);
+  margin-top: 2px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: 10px;
+  color: var(--parchment-dark);
+  opacity: 0.4;
+  border-top: 1px solid rgba(184,134,11,0.1);
+}
+
+footer a { color: var(--copper-light); text-decoration: none; }
+
+/* ── Legend ── */
+.legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 11px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--parchment-dark);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  main {
+    flex-direction: column;
+  }
+  .side-panel {
+    width: 100%;
+    border-left: none;
+    border-top: 2px solid var(--brass-dark);
+    padding: 20px 16px;
+  }
+  .side-panel::before { display: none; }
+  .map-panel { padding: 16px 10px; }
+  .map-container { max-width: 360px; }
+  header { padding: 24px 16px 16px; }
+  .start-btn {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+    border-radius: 0;
+    margin: 0 -16px;
+    width: calc(100% + 32px);
+  }
+}
+
+/* ── Decorative rivets ── */
+.rivet {
+  width: 8px; height: 8px;
+  background: radial-gradient(circle at 35% 35%, var(--brass-light), var(--brass-dark));
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.5), 0 1px 1px rgba(255,255,255,0.1);
+  position: absolute;
+}
+
+.side-panel .rivet-tl { top: 8px; left: 8px; }
+.side-panel .rivet-tr { top: 8px; right: 8px; }
+.side-panel .rivet-bl { bottom: 8px; left: 8px; }
+.side-panel .rivet-br { bottom: 8px; right: 8px; }
+
+/* ── Steam animation ── */
+@keyframes steamRise {
+  0% { transform: translateY(0) scale(1); opacity: 0.3; }
+  100% { transform: translateY(-60px) scale(1.5); opacity: 0; }
+}
+
+.steam-particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(255,255,255,0.08), transparent);
+  border-radius: 50%;
+  animation: steamRise 3s ease-out infinite;
+  pointer-events: none;
+}
+</style>
 </head>
 <body>
 
 <header>
-  <div>
-    <h1>廃県置藩シミュレーター</h1>
-    <div class="subtitle" id="headerSubtitle">福島県 59市町村 → 新しい藩へ</div>
-  </div>
-  <div>
-    <button class="save-btn" id="btnHome" title="都道府県選択に戻る">🏠 トップへ</button>
-    <button class="save-btn" id="btnTheme" title="地図の見た目を切り替え">🌙 夜景</button>
-    <button class="help-btn" id="btnHelp">？ 遊び方</button>
-    <button class="save-btn" id="btnSave">💾 保存</button>
-    <button class="save-btn" id="btnLoad">📂 再開</button>
-    <button class="undo-btn" id="btnUndo" disabled>↩ 戻る</button>
-    <button class="reset-btn" id="btnReset">リセット</button>
-  </div>
+  <div class="header-ornament">⚙ ⚙ ⚙</div>
+  <h1>廃県置藩シミュレーター</h1>
+  <div class="subtitle">Haiken-Chihan Simulator</div>
+  <div class="tagline">― 江戸の叡智を、令和の地図に刻め ―</div>
 </header>
 
-<div class="main">
-  <div id="map"></div>
-  <div class="sidebar" id="sidebar">
-    <!-- Current han section -->
-    <div>
-      <div class="section-title">編集中の藩</div>
-      <div class="current-han" id="currentHanSection">
-        <div class="no-han" id="noHanMsg">「新しい藩を作る」を押してください</div>
-        <div id="currentHanInfo" style="display:none;">
-          <div class="han-name" id="currentHanName"></div>
-          <div class="gauge-container">
-            <div class="gauge-label">
-              <span>人口</span>
-              <span id="gaugePopText">0万人</span>
-            </div>
-            <div class="gauge-bar">
-              <div class="gauge-fill" id="gaugeFill"></div>
-              <div class="gauge-text" id="gaugeBarText"></div>
-            </div>
-            <div class="gauge-label" style="margin-top:2px;">
-              <span style="color:#27ae60;">30万</span>
-              <span>目標 40万</span>
-              <span style="color:#f39c12;">50万</span>
-            </div>
-          </div>
-          <div class="cost-preview" id="costPreview" style="display:none;">
-            <div class="cost-title">行政コスト試算</div>
-            <div class="cost-row"><span>首長・議員報酬</span><span id="costSalary">-</span></div>
-            <div class="cost-row"><span>施設維持費</span><span id="costFacility">-</span></div>
-            <div class="cost-row cost-total"><span>合計</span><span id="costTotal">-</span></div>
-            <div class="cost-row" style="margin-top:6px;padding-top:6px;border-top:1px dashed #ddd;"><span>税収規模（参考）</span><span id="costTax">-</span></div>
-            <div class="cost-note">※概算・推計値</div>
-          </div>
-          <div class="muni-list" id="currentMuniList"></div>
+<main>
+  <div class="map-panel">
+    <div class="map-container" id="mapContainer">
+      <!-- SVG will be loaded here -->
+    </div>
+    <div class="map-instruction" id="mapInstruction">
+      地図から最初の都道府県を選んでください
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--selected)"></div>選択中</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--adjacent)"></div>追加可能（隣接県）</div>
+    </div>
+  </div>
+
+  <div class="side-panel">
+    <div class="rivet rivet-tl"></div>
+    <div class="rivet rivet-tr"></div>
+    <div class="rivet rivet-bl"></div>
+    <div class="rivet rivet-br"></div>
+
+    <div class="panel-section">
+      <div class="section-title"><span class="gear">⚙</span> 選択エリア</div>
+      <ul class="selected-list" id="selectedList">
+        <li class="empty-msg">未選択</li>
+      </ul>
+    </div>
+
+    <div class="panel-section">
+      <div class="section-title"><span class="gear">⚙</span> 戦況</div>
+      <div class="stats-grid">
+        <div class="stat-gauge">
+          <div class="label">市区町村</div>
+          <div class="value" id="statMuni">0</div>
+        </div>
+        <div class="stat-gauge">
+          <div class="label">総人口</div>
+          <div class="value" id="statPop">0</div>
+          <div class="unit">万人</div>
+        </div>
+        <div class="stat-gauge">
+          <div class="label">推奨藩数</div>
+          <div class="value" id="statHan">0</div>
+        </div>
+        <div class="stat-gauge">
+          <div class="label">選択県数</div>
+          <div class="value" id="statPref">0</div>
         </div>
       </div>
     </div>
 
-    <!-- Action buttons -->
-    <div class="actions">
-      <button class="btn btn-new" id="btnNew">新しい藩を作る</button>
-      <button class="btn btn-confirm" id="btnConfirm" disabled>この藩を確定する</button>
+    <div class="panel-section">
+      <div class="section-title"><span class="gear">⚙</span> 早見表</div>
+      <div class="preset-grid" id="presetGrid"></div>
     </div>
 
-    <!-- Confirmed hans -->
-    <div>
-      <div class="section-title">確定済みの藩</div>
-      <div class="confirmed-list" id="confirmedList">
-        <div style="color:#999; font-size:13px; font-style:italic;">まだありません</div>
-      </div>
-    </div>
-
-    <!-- Unassigned municipalities -->
-    <div id="unassignedSection" style="display:none;">
-      <div class="section-title" style="color:#e74c3c;">未割り当ての市町村</div>
-      <div id="unassignedList"></div>
-    </div>
-
-    <!-- Progress -->
-    <div class="progress-section">
-      <div class="progress-text" id="progressText">0 / 59 市町村を割り当て済み</div>
-      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
-    </div>
+    <button class="start-btn" id="startBtn" disabled>
+      出陣せよ →
+    </button>
   </div>
+</main>
+
+<div class="map-tooltip" id="tooltip">
+  <div class="tt-name"></div>
+  <div class="tt-pop"></div>
 </div>
 
-<!-- Toast -->
-<div class="toast" id="toast"></div>
+<footer>
+  地図データ: <a href="https://github.com/geolonia/japanese-prefectures" target="_blank">Geolonia</a>
+  ／ 統計: 国土数値情報・e-Stat
+</footer>
 
-<!-- Name input dialog -->
-<div class="name-overlay" id="nameOverlay"></div>
-<div class="name-dialog" id="nameDialog">
-  <h3>藩の名前を入力</h3>
-  <input type="text" id="nameInput" placeholder="例: 福島藩" maxlength="20">
-  <br>
-  <button class="btn btn-confirm" id="btnNameSubmit">決定</button>
-</div>
-
-<!-- Tokku dialog -->
-<div class="name-overlay" id="tokkuOverlay"></div>
-<div class="tokku-dialog" id="tokkuDialog">
-  <h3>人口が30万人未満です</h3>
-  <p class="tokku-desc" id="tokkuPopMsg"></p>
-  <p class="tokku-hint">「特区」として設定すると、人口不足の減点が半減されます</p>
-  <select id="tokkuType">
-    <option value="">-- 特区設定なし（このまま確定）--</option>
-    <option value="water">水源・自然保護特区</option>
-    <option value="agri">農業・食料生産特区</option>
-    <option value="fish">漁業・水産特区</option>
-    <option value="tourism">観光・文化特区</option>
-    <option value="nuclear">原子力復興特区</option>
-    <option value="border">国境・防衛特区</option>
-    <option value="custom">自由記述...</option>
-  </select>
-  <input type="text" id="tokkuCustom" placeholder="特区の理由を入力" style="display:none;">
-  <div class="tokku-btn-row">
-    <button class="btn btn-confirm" id="btnTokkuSubmit">確定する</button>
-  </div>
-</div>
-
-<!-- Save modal -->
-<div class="sl-overlay" id="saveOverlay">
-  <div class="sl-modal">
-    <h3>💾 ゲームを保存</h3>
-    <input class="sl-name-input" id="saveNameInput" type="text" placeholder="保存名（省略可）" maxlength="30">
-    <div id="saveSlotList"></div>
-    <div class="sl-btns">
-      <button class="sl-btn sl-btn-cancel" id="btnSaveCancel">キャンセル</button>
-    </div>
-  </div>
-</div>
-
-<!-- Load modal -->
-<div class="sl-overlay" id="loadOverlay">
-  <div class="sl-modal">
-    <h3>📂 セーブデータを読み込む</h3>
-    <div id="loadSlotList"></div>
-    <div class="sl-btns">
-      <button class="sl-btn sl-btn-cancel" id="btnLoadCancel">キャンセル</button>
-    </div>
-  </div>
-</div>
-
-<!-- Help modal -->
-<div class="help-overlay" id="helpOverlay">
-  <div class="help-modal">
-    <div class="help-modal-header" style="position:relative;">
-      <h2>廃県置藩シミュレーター　遊び方</h2>
-      <p id="helpDescription">福島県59市町村を「藩」に再編成するシミュレーターです。<br>江戸時代の廃藩置県を逆転させ、藩＝スマートシュリンクシティのシミュレーションを体感しましょう。</p>
-      <button class="help-modal-close" id="btnHelpClose">✕</button>
-    </div>
-    <div class="help-modal-body">
-
-      <div class="help-section">
-        <h3>▶ 遊び方（5ステップ）</h3>
-        <div class="help-steps">
-          <div class="help-step">
-            <div class="help-step-num">1</div>
-            <div class="help-step-body">
-              <h4>新しい藩を作る</h4>
-              <p>サイドパネルの「新しい藩を作る」ボタンを押します。地図上の市町村が選択可能な状態になります。</p>
-            </div>
-          </div>
-          <div class="help-step">
-            <div class="help-step-num">2</div>
-            <div class="help-step-body">
-              <h4>地図をクリックして市町村を追加</h4>
-              <p>地図上の市町村をクリックして藩に追加します。金色の枠線が「追加済み」、破線が「追加可能」な市町村です。</p>
-              <p class="help-note">⚠ 飛び地禁止：隣接している市町村のみ追加できます。</p>
-            </div>
-          </div>
-          <div class="help-step">
-            <div class="help-step-num">3</div>
-            <div class="help-step-body">
-              <h4>人口ゲージを目標の緑帯に合わせる</h4>
-              <p>1藩あたりの目標人口は <strong>30〜50万人</strong>（理想は40万人）。サイドパネルのゲージが緑になるよう調整しましょう。</p>
-            </div>
-          </div>
-          <div class="help-step">
-            <div class="help-step-num">4</div>
-            <div class="help-step-body">
-              <h4>藩を確定する</h4>
-              <p>「この藩を確定する」ボタンを押し、藩名を入力します。人口が30万未満の場合は「特区」設定が可能です（減点が半減されます）。</p>
-            </div>
-          </div>
-          <div class="help-step">
-            <div class="help-step-num">5</div>
-            <div class="help-step-body">
-              <h4 id="helpGoalTitle">全59市町村を割り当ててゴール！</h4>
-              <p>1〜4を繰り返し、全ての市町村を藩に割り当てるとゲームクリアです。AIが藩編成を講評し、PDFレポートが生成できます。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="help-section">
-        <h3>▶ スコアの仕組み</h3>
-        <table class="help-score-table">
-          <thead><tr><th>条件</th><th>点数</th></tr></thead>
-          <tbody>
-            <tr><td>藩ひとつあたりの基本点</td><td>1,000点</td></tr>
-            <tr><td>人口が30〜50万人（適正範囲）</td><td>＋200点</td></tr>
-            <tr><td>人口が25〜30万 or 50〜55万（やや外れ）</td><td>±0点</td></tr>
-            <tr><td>人口が25万未満 or 55万超（大きく外れ）</td><td>－200点</td></tr>
-            <tr><td>特区設定あり（人口不足の減点を半減）</td><td>補正あり</td></tr>
-            <tr><td>藩数ボーナス（4藩以上）</td><td>藩数×100点</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <div class="help-section">
-        <h3>▶ 便利な機能</h3>
-        <div class="help-grid">
-          <div class="help-card">
-            <h4>↩ 戻る（Cmd+Z）</h4>
-            <p>直前の操作を取り消します。最大80手まで遡れます。</p>
-          </div>
-          <div class="help-card orange">
-            <h4>やり直す</h4>
-            <p>確定済みの藩カードにある「やり直す」ボタンで、その藩の割り当てを全解除して再編集できます。</p>
-          </div>
-          <div class="help-card green">
-            <h4>行政コスト試算</h4>
-            <p>藩編集中は首長・議員・施設費の年間コストをリアルタイム表示。廃県置藩前後での削減額も確認できます。</p>
-          </div>
-          <div class="help-card purple">
-            <h4>PDFレポート出力</h4>
-            <p>クリア後にAI講評・各藩コメント・コスト比較・カラー地図を含むPDFをダウンロードできます。</p>
-          </div>
-        </div>
-      </div>
-
-      <button class="help-footer-btn" id="btnHelpStart">さっそく始める →</button>
-    </div>
-  </div>
-</div>
-
-<!-- Game clear modal -->
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal">
-    <h2>ゲームクリア！</h2>
-    <div class="score" id="finalScore"></div>
-    <div class="ai-review" id="aiReview"><span class="ai-loading">AIが評価中...</span></div>
-    <div class="han-summary" id="hanSummary"></div>
-    <div class="cost-comparison" id="costComparison">
-      <h3>行政コスト比較</h3>
-      <div class="cost-block">
-        <div class="cost-block-title" id="beforeCostTitle">【廃県置藩 前】福島県 + 59市町村</div>
-        <div class="cost-line"><span>首長・議員報酬</span><span id="beforeSalary">-</span></div>
-        <div class="cost-line"><span>施設維持費</span><span id="beforeFacility">-</span></div>
-        <div class="cost-line cost-line-total"><span>合計</span><span id="beforeTotal">-</span></div>
-      </div>
-      <div class="cost-block">
-        <div class="cost-block-title" id="afterTitle">【廃県置藩 後】あなたの設計</div>
-        <div class="cost-line"><span>首長・議員報酬</span><span id="afterSalary">-</span></div>
-        <div class="cost-line"><span>施設維持費</span><span id="afterFacility">-</span></div>
-        <div class="cost-line cost-line-total"><span>合計</span><span id="afterTotal">-</span></div>
-      </div>
-      <div class="cost-saving" id="costSaving">-</div>
-      <div id="taxSummary" style="margin:10px 0;padding:10px;background:#f0f4f8;border-radius:6px;font-size:13px;"></div>
-      <div class="slider-section">
-        <div class="slider-title">削減前提の仮定を変えてみよう</div>
-        <div class="slider-row">
-          <label>議員定数削減率</label>
-          <input type="range" id="sliderMember" min="20" max="80" value="50">
-          <span class="slider-val" id="sliderMemberVal">50%</span>
-        </div>
-        <div class="slider-row">
-          <label>施設統廃合率</label>
-          <input type="range" id="sliderFacility" min="10" max="70" value="40">
-          <span class="slider-val" id="sliderFacilityVal">40%</span>
-        </div>
-      </div>
-      <div class="cost-disclaimer">
-        ※概算・推計値です（総務省地方公務員給与実態調査・各市町村条例等より推計）<br>
-        この数字で政策判断はしないでください。廃県置藩の可能性を体感するためのシミュレーターです。
-      </div>
-    </div>
-    <div style="display:flex;gap:10px;margin-top:10px;">
-      <button class="btn btn-new" id="btnReplay">もう一度プレイ</button>
-      <button class="btn btn-confirm" id="btnPdf">PDFレポートをダウンロード</button>
-    </div>
-  </div>
-</div>
-
-<!-- Hidden PDF report template -->
-<div id="pdfReport" style="position:fixed;top:-9999px;left:-9999px;width:794px;background:#fff;font-family:sans-serif;line-height:1.5;"></div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<!-- モジュールは defer 相当のため、上の CDN スクリプト読み込み後に実行される -->
-<script type="module" src="js/main.js"></script>
+<script type="module" src="js/landing.js"></script>
 </body>
 </html>
